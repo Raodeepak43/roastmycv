@@ -381,21 +381,21 @@ export default function Home() {
       <div className={`flex-1 w-full max-w-6xl mx-auto px-4 md:px-8 ${result ? 'py-4 pb-24 md:py-6 md:pb-6' : 'py-6 md:py-10'}`}>
         {!result ? (
           <>
-            <div className="lg:grid lg:grid-cols-2 lg:gap-10 xl:gap-14 lg:items-start">
-              {/* Hero — left on desktop */}
-              <section className="text-center lg:text-left mb-6 lg:mb-0 lg:pt-2">
+            <div className="max-w-xl mx-auto w-full">
+              {/* Hero */}
+              <section className="text-center mb-8">
                 <p className="font-body text-[11px] text-muted tracking-[0.1em] mb-4">
                   🤖 AI-POWERED · ⚡ INSTANT · 🆓 FREE
                 </p>
                 <h1 className="font-display leading-[0.95] mb-4">
-                  <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[64px] text-white whitespace-nowrap">
+                  <span className="block text-4xl sm:text-5xl md:text-6xl text-white whitespace-nowrap">
                     Tera Resume
                   </span>
-                  <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[64px] text-orange whitespace-nowrap">
+                  <span className="block text-4xl sm:text-5xl md:text-6xl text-orange whitespace-nowrap">
                     Ek Mazaak Hai.
                   </span>
                 </h1>
-                <h2 className="font-body text-sm md:text-base text-muted max-w-md mx-auto lg:mx-0">
+                <h2 className="font-body text-sm md:text-base text-muted">
                   AI batayega sach. Recruiter wala sach.
                 </h2>
                 <p className="font-body text-[13px] text-white mt-4">
@@ -403,7 +403,7 @@ export default function Home() {
                 </p>
               </section>
 
-              {/* Upload + controls — right on desktop */}
+              {/* Upload + controls */}
               <section>
                 <div
                   className={`upload-card p-5 md:p-8 text-center cursor-pointer mb-4 ${dragging ? 'dragover' : ''} ${uploadHighlight ? 'upload-error' : ''}`}
@@ -543,7 +543,7 @@ export default function Home() {
 
         {!result && (
           <>
-            <div className="card-ui grid grid-cols-2 md:grid-cols-4 gap-0 mt-8 md:mt-10 divide-x divide-y md:divide-y-0 divide-border">
+            <div className="card-ui grid grid-cols-2 md:grid-cols-4 gap-0 mt-8 md:mt-10 max-w-4xl mx-auto divide-x divide-y md:divide-y-0 divide-border">
               {[
                 { val: roastCount.toLocaleString('en-US'), color: 'text-orange', label: '🔥 ROASTED' },
                 { val: String(INTENSITY_TABS.length), color: 'text-purple', label: '🎚️ ROAST MODES' },
@@ -557,18 +557,18 @@ export default function Home() {
               ))}
             </div>
 
-            <section className="mt-8 md:mt-10 mb-2 max-w-3xl" aria-label="FAQ">
+            <section className="mt-8 md:mt-10 mb-2 max-w-xl mx-auto" aria-label="FAQ">
               {FAQ.map((item, i) => (
-                <div key={i} className="border-b border-[#111111]">
+                <div key={i} className="border-b border-[#1A1A1A]">
                   <button type="button" onClick={() => setFaqOpen(faqOpen === i ? null : i)}
                     aria-expanded={faqOpen === i}
                     aria-label={`FAQ: ${item.q}`}
-                    className="w-full text-left py-2 font-body text-[12px] text-[#333333] hover:text-[#444444] transition-colors flex justify-between items-center">
+                    className="w-full text-left py-2 font-body text-[12px] text-[#555555] hover:text-[#888888] transition-colors flex justify-between items-center">
                     {item.q}
-                    <span className="text-[#333333] ml-2 text-xs">{faqOpen === i ? '−' : '+'}</span>
+                    <span className="text-[#555555] ml-2 text-xs">{faqOpen === i ? '−' : '+'}</span>
                   </button>
                   {faqOpen === i && (
-                    <p className="font-body text-[12px] text-[#333333] pb-2 leading-relaxed">{item.a}</p>
+                    <p className="font-body text-[12px] text-[#555555] pb-2 leading-relaxed">{item.a}</p>
                   )}
                 </div>
               ))}
