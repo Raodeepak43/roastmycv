@@ -2,7 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from 'react'
 
-const SITE_URL = 'roastmycv.in'
+const SITE_URL = 'https://roastmycv-coral.vercel.app'
 const FREE_LIMIT = 5
 const STORAGE_KEY = 'rcv_uses_left'
 const NAME_KEY = 'rcv_display_name'
@@ -185,7 +185,7 @@ function ShareButtons({ result, copied, onCopy }: { result: RoastResult; copied:
         className="font-body text-[13px] py-2.5 rounded-[10px] border border-border text-white hover:border-white transition-colors">
         {copied ? '✅ Copied' : '📋 Copy'}
       </button>
-      <button type="button" onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=https://${SITE_URL}`, '_blank')}
+      <button type="button" onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(SITE_URL)}`, '_blank')}
         className="font-body text-[13px] py-2.5 rounded-[10px] border border-[#0077B5] text-[#0077B5]">💼 LinkedIn</button>
       <button type="button" onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(getShareText(result))}`, '_blank')}
         className="font-body text-[13px] py-2.5 rounded-[10px] border border-[#1DA1F2] text-[#1DA1F2]">🐦 Twitter</button>
@@ -580,8 +580,8 @@ export default function Home() {
       {/* Footer — full width */}
       <footer className="w-full bg-page border-t border-border mt-auto">
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-5 md:py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <a href={`https://${SITE_URL}`} className="font-body text-[13px] text-white hover:text-orange transition-colors" aria-label="Visit roastmycv.in">
-            🔥 {SITE_URL}
+          <a href={SITE_URL} className="font-body text-[13px] text-white hover:text-orange transition-colors" aria-label="Visit RoastMyCV">
+            🔥 roastmycv-coral.vercel.app
           </a>
           <p className="font-body text-[11px] text-[#333333] text-center">
             No account needed · Built by a desi founder

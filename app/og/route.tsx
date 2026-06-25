@@ -38,7 +38,7 @@ export async function GET() {
             fontWeight: 700,
           }}
         >
-          Try Free → roastmycv.in
+          Try Free → roastmycv-coral.vercel.app
         </div>
       </div>
     ),
