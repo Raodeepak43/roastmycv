@@ -6,13 +6,13 @@ const SITE_URL = 'https://roastmycv-coral.vercel.app'
 const OG_IMAGE = `${SITE_URL}/og`
 
 const SEO_TITLE = 'RoastMyCV — Free AI Resume Roaster in Hinglish | Get Brutally Honest Feedback'
-const SEO_DESC = 'Upload your resume and get a savage AI-powered roast in Hinglish. Free, instant, no signup. Find out why recruiters are rejecting you.'
+const SEO_DESC = 'Free AI resume roaster in 15 languages — Hinglish, English, Spanish, French, German, Arabic, Japanese, Korean, Russian, Chinese and more. Brutal honest feedback. Instant. No signup.'
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'RoastMyCV',
-  description: 'Free AI resume roaster in Hinglish',
+  description: 'Free AI resume roaster in 15 languages',
   url: SITE_URL,
   applicationCategory: 'BusinessApplication',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },

@@ -106,6 +106,14 @@ h1, h2, h3, h4, h5, h6 {
   animation: spin 0.8s linear infinite;
 }
 
-::-webkit-scrollbar { width: 4px; }
+.lang-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.lang-scroll::-webkit-scrollbar {
+  display: none;
+}
 ::-webkit-scrollbar-track { background: #0F0F0F; }
 ::-webkit-scrollbar-thumb { background: #1A1A1A; }

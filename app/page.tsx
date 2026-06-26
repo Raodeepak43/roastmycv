@@ -39,12 +39,52 @@ const INTENSITY_TABS: { id: Intensity; label: string; desc: string }[] = [
   { id: 'savage', label: '💀 Savage', desc: 'Koi mercy nahi. Bilkul seedha.' },
 ]
 
+const LANGUAGES = [
+  { code: 'hinglish', flag: '🇮🇳', name: 'Hinglish' },
+  { code: 'english', flag: '🇺🇸', name: 'English' },
+  { code: 'spanish', flag: '🇪🇸', name: 'Spanish' },
+  { code: 'portuguese', flag: '🇧🇷', name: 'Português' },
+  { code: 'french', flag: '🇫🇷', name: 'Français' },
+  { code: 'german', flag: '🇩🇪', name: 'Deutsch' },
+  { code: 'arabic', flag: '🇸🇦', name: 'العربية' },
+  { code: 'japanese', flag: '🇯🇵', name: '日本語' },
+  { code: 'korean', flag: '🇰🇷', name: '한국어' },
+  { code: 'russian', flag: '🇷🇺', name: 'Русский' },
+  { code: 'chinese', flag: '🇨🇳', name: '中文' },
+  { code: 'turkish', flag: '🇹🇷', name: 'Türkçe' },
+  { code: 'indonesian', flag: '🇮🇩', name: 'Indonesia' },
+  { code: 'italian', flag: '🇮🇹', name: 'Italiano' },
+  { code: 'dutch', flag: '🇳🇱', name: 'Nederlands' },
+]
+
+const heroText: Record<string, { line1: string; line2: string; sub: string }> = {
+  hinglish: { line1: 'Tera Resume', line2: 'Ek Mazaak Hai.', sub: 'AI batayega sach. Recruiter wala sach.' },
+  english: { line1: 'Your Resume', line2: 'Is A Joke.', sub: 'AI tells you what recruiters actually think.' },
+  spanish: { line1: 'Tu CV', line2: 'Es Una Broma.', sub: 'La IA te dice lo que los reclutadores piensan.' },
+  portuguese: { line1: 'Seu Currículo', line2: 'É Uma Piada.', sub: 'A IA diz o que os recrutadores realmente pensam.' },
+  french: { line1: 'Votre CV', line2: 'Est Une Blague.', sub: "L'IA vous dit ce que les recruteurs pensent vraiment." },
+  german: { line1: 'Dein Lebenslauf', line2: 'Ist Ein Witz.', sub: 'KI sagt dir was Recruiter wirklich denken.' },
+  arabic: { line1: 'سيرتك الذاتية', line2: 'مزحة؟', sub: 'الذكاء الاصطناعي يخبرك بما يفكر فيه المسؤولون حقاً.' },
+  japanese: { line1: 'あなたの履歴書は', line2: '冗談ですか？', sub: 'AIが採用担当者の本音を教えます。' },
+  korean: { line1: '당신의 이력서는', line2: '농담입니까？', sub: 'AI가 채용담당자의 진짜 생각을 알려드립니다.' },
+  russian: { line1: 'Ваше резюме —', line2: 'это шутка？', sub: 'ИИ скажет что рекрутеры думают на самом деле.' },
+  chinese: { line1: '你的简历', line2: '是个笑话吗？', sub: 'AI告诉你招聘官真正的想法。' },
+  turkish: { line1: 'Özgeçmişin', line2: 'Bir Şaka mı？', sub: 'AI, işverenlerin gerçekte ne düşündüğünü söyler.' },
+  indonesian: { line1: 'CV Kamu Itu', line2: 'Lelucon？', sub: 'AI kasih tau apa yang rekruter beneran pikirin.' },
+  italian: { line1: 'Il Tuo CV', line2: 'È Uno Scherzo？', sub: "L'AI ti dice cosa pensano davvero i recruiter." },
+  dutch: { line1: 'Jouw CV', line2: 'Is Een Grap？', sub: 'AI vertelt je wat recruiters echt denken.' },
+}
+
 type Intensity = 'clean' | 'gaali_light' | 'savage'
 
 interface RoastResult {
   lines: string[]
   score: number
   intensity: Intensity
+  language: string
+  title?: string
+  verdict?: string
+  fixes?: string[]
 }
 
 function computeScore(intensity: Intensity, lines: string[]): number {
@@ -80,7 +120,7 @@ function getFullRoastText(result: RoastResult) {
 }
 
 function getShareText(result: RoastResult) {
-  const verdict = result.lines[result.lines.length - 1]
+  const verdict = result.verdict || result.lines[result.lines.length - 1]
   return `🔥 Mera resume AI ne roast kiya — ${result.score}/10\n'${verdict}'\n👉 ${SITE_URL}`
 }
 
@@ -94,7 +134,7 @@ async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
   return data as T
 }
 
-function parseStreamingLines(buffer: string): string[] {
+function parseRoastLines(buffer: string): string[] {
   const cleaned = buffer.replace(/```[\s\S]*?```/g, '').trim()
   const numbered = Array.from(cleaned.matchAll(/(?:^|\n)\s*(\d{1,2})\.\s*(.+)/g))
     .sort((a, b) => parseInt(a[1], 10) - parseInt(b[1], 10))
@@ -104,38 +144,30 @@ function parseStreamingLines(buffer: string): string[] {
   return cleaned.split('\n').map((l) => l.replace(/^\s*\d{1,2}\.\s*/, '').trim()).filter((l) => l.length > 10)
 }
 
-async function streamRoast(resumeText: string, intensity: Intensity, onLine: (lines: string[]) => void): Promise<string[]> {
-  const res = await fetch('/api/roast', {
+interface RoastApiResponse {
+  score: number
+  title: string
+  roast: string
+  verdict: string
+  fixes: string[]
+}
+
+async function fetchRoast(resumeText: string, intensity: Intensity, language: string): Promise<Omit<RoastResult, 'intensity'>> {
+  const data = await fetchJson<RoastApiResponse>('/api/roast', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ resumeText, intensity }),
+    body: JSON.stringify({ resumeText, intensity, language }),
   })
-  if (!res.ok) {
-    const text = await res.text()
-    try {
-      const err = JSON.parse(text) as { error?: string }
-      throw new Error(err.error ?? 'Kuch gadbad ho gayi, dobara try karo')
-    } catch (e) {
-      if (e instanceof SyntaxError) throw new Error('Server error — page refresh karo aur dobara try karo')
-      throw e
-    }
-  }
-  if (!res.body) throw new Error('Kuch gadbad ho gayi, dobara try karo')
-  const reader = res.body.getReader()
-  const decoder = new TextDecoder()
-  let buffer = ''
-  while (true) {
-    const { done, value } = await reader.read()
-    if (done) break
-    buffer += decoder.decode(value, { stream: true })
-    const partial = parseStreamingLines(buffer)
-    if (partial.length > 0) onLine(partial)
-  }
-  buffer += decoder.decode()
-  if (buffer.includes('ERROR:')) throw new Error(buffer.split('ERROR:')[1]?.trim() || 'Roast fail ho gaya')
-  const lines = parseStreamingLines(buffer)
+  const lines = parseRoastLines(data.roast)
   if (lines.length < 6) throw new Error('AI ne poora roast nahi diya — dobara try karo')
-  return lines.slice(0, 12)
+  return {
+    lines: lines.slice(0, 12),
+    score: data.score,
+    title: data.title,
+    verdict: data.verdict,
+    fixes: data.fixes?.length ? data.fixes : undefined,
+    language,
+  }
 }
 
 function useCountUp(target: number, duration = 800) {
@@ -201,6 +233,7 @@ export default function Home() {
   const [result, setResult] = useState<RoastResult | null>(null)
   const [error, setError] = useState('')
   const [intensity, setIntensity] = useState<Intensity>('gaali_light')
+  const [language, setLanguage] = useState('hinglish')
   const [roastCount, setRoastCount] = useState(STATS_SEED)
   const [usesLeft, setUsesLeft] = useState(FREE_LIMIT)
   const [showPaywall, setShowPaywall] = useState(false)
@@ -310,17 +343,16 @@ export default function Home() {
       const formData = new FormData()
       formData.append('file', file)
       const parseData = await fetchJson<{ text: string }>('/api/parse', { method: 'POST', body: formData })
-      const lines = await streamRoast(parseData.text, intensity, () => {})
-      const score = computeScore(intensity, lines)
+      const roastData = await fetchRoast(parseData.text, intensity, language)
       const newUses = usesLeft - 1
       setUsesLeft(newUses)
       localStorage.setItem(STORAGE_KEY, String(newUses))
       fetch('/api/stats', { method: 'POST' }).then((r) => r.json()).then((d) => setRoastCount(d.count ?? roastCount + 1)).catch(() => {})
-      setResult({ lines, score, intensity })
+      setResult({ ...roastData, intensity })
       setRoastExpanded(false)
       const displayName = localStorage.getItem(NAME_KEY)
       if (displayName) {
-        postTickerName(displayName, score)
+        postTickerName(displayName, roastData.score)
       }
       setTimeout(() => resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100)
     } catch (err: unknown) {
@@ -330,6 +362,7 @@ export default function Home() {
 
   const activeDesc = INTENSITY_TABS.find((t) => t.id === intensity)?.desc ?? ''
   const tickerItems = [...tickerNames, ...TICKER_ITEMS]
+  const currentHero = heroText[language] || heroText.hinglish
 
   return (
     <main className="min-h-screen flex flex-col bg-page w-full">
@@ -388,15 +421,15 @@ export default function Home() {
                   🤖 AI-POWERED · ⚡ INSTANT · 🆓 FREE
                 </p>
                 <h1 className="font-display leading-[0.95] mb-4">
-                  <span className="block text-4xl sm:text-5xl md:text-6xl text-white whitespace-nowrap">
-                    Tera Resume
+                  <span className={`block text-4xl sm:text-5xl md:text-6xl text-white ${language === 'hinglish' ? 'whitespace-nowrap' : ''}`}>
+                    {currentHero.line1}
                   </span>
-                  <span className="block text-4xl sm:text-5xl md:text-6xl text-orange whitespace-nowrap">
-                    Ek Mazaak Hai.
+                  <span className={`block text-4xl sm:text-5xl md:text-6xl text-orange ${language === 'hinglish' ? 'whitespace-nowrap' : ''}`}>
+                    {currentHero.line2}
                   </span>
                 </h1>
                 <h2 className="font-body text-sm md:text-base text-muted">
-                  AI batayega sach. Recruiter wala sach.
+                  {currentHero.sub}
                 </h2>
                 <p className="font-body text-[13px] text-white mt-4">
                   🔥 {roastCount.toLocaleString('en-US')} resumes already destroyed
@@ -456,7 +489,27 @@ export default function Home() {
                     </button>
                   ))}
                 </div>
-                <p className="font-body text-xs text-muted text-center mb-4">{activeDesc}</p>
+                <p className="font-body text-xs text-muted text-center mb-3">{activeDesc}</p>
+
+                <p className="font-body text-[11px] text-[#444444] uppercase tracking-[0.1em] mb-2">🌍 Choose Language</p>
+                <div className="lang-scroll flex gap-2 pb-1 mb-4 -mx-1 px-1">
+                  {LANGUAGES.map((lang) => (
+                    <button
+                      key={lang.code}
+                      type="button"
+                      onClick={() => setLanguage(lang.code)}
+                      aria-pressed={language === lang.code}
+                      aria-label={`Roast language: ${lang.name}`}
+                      className={`shrink-0 font-body text-xs py-1.5 px-3.5 rounded-full border whitespace-nowrap transition-all ${
+                        language === lang.code
+                          ? 'bg-orange border-orange text-black'
+                          : 'bg-card border-border text-[#666666]'
+                      }`}
+                    >
+                      {lang.flag} {lang.name}
+                    </button>
+                  ))}
+                </div>
 
                 {error && (
                   <div className="card-ui p-3 mb-3 font-body text-sm text-red-400 border-red-500/30">{error}</div>
@@ -480,13 +533,18 @@ export default function Home() {
           </>
         ) : (
           <>
-            <div ref={resultRef} className="fade-up max-w-[600px] mx-auto card-ui px-4 md:px-5">
+            <div
+              ref={resultRef}
+              dir={result.language === 'arabic' ? 'rtl' : 'ltr'}
+              style={{ textAlign: result.language === 'arabic' ? 'right' : 'left' }}
+              className="fade-up max-w-[600px] mx-auto card-ui px-4 md:px-5"
+            >
               <CompactScoreRow score={result.score} />
 
               <div className="py-3 border-b border-[#1A1A1A]">
                 <p className="font-body text-[10px] text-muted uppercase mb-1">🎯 AI KA VERDICT</p>
                 <p className="font-display text-base text-white leading-snug line-clamp-2">
-                  &ldquo;{result.lines[0]}&rdquo;
+                  &ldquo;{result.title || result.lines[0]}&rdquo;
                 </p>
               </div>
 
@@ -511,13 +569,13 @@ export default function Home() {
 
               <div className="py-3 border-b border-[#1A1A1A]">
                 <p className="font-body text-[14px] text-gold leading-[1.4]">
-                  ⚡ &ldquo;{result.lines[result.lines.length - 1]}&rdquo;
+                  ⚡ &ldquo;{result.verdict || result.lines[result.lines.length - 1]}&rdquo;
                 </p>
               </div>
 
               <div className="py-2">
                 <p className="font-body text-[10px] text-muted uppercase mb-1">✅ AB KYA KAR</p>
-                {FIXES.map((fix, i) => (
+                {(result.fixes ?? FIXES).map((fix, i) => (
                   <p key={i} className="font-body text-[13px] text-white leading-[1.4] py-2">
                     {i + 1}. {fix}
                   </p>
@@ -639,7 +697,7 @@ export default function Home() {
             <button onClick={() => setShowPaywall(false)} className="font-body text-[13px] text-[#333333] hover:text-muted">
               baad mein karta hoon
             </button>
-          </div>
+c          </div>
         </div>
       )}
     </main>
