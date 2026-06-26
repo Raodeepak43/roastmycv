@@ -5,13 +5,23 @@ declare global {
   var roastCount: number | undefined
 }
 
-global.roastCount = global.roastCount ?? 1250
+const SEED = 1250
+
+if (global.roastCount === undefined || global.roastCount < SEED) {
+  global.roastCount = SEED
+}
 
 export async function GET() {
-  return NextResponse.json({ count: global.roastCount })
+  return NextResponse.json(
+    { count: global.roastCount ?? SEED },
+    { headers: { 'Cache-Control': 'no-store, max-age=0' } }
+  )
 }
 
 export async function POST() {
-  global.roastCount = (global.roastCount ?? 1250) + 1
-  return NextResponse.json({ count: global.roastCount })
+  global.roastCount = (global.roastCount ?? SEED) + 1
+  return NextResponse.json(
+    { count: global.roastCount },
+    { headers: { 'Cache-Control': 'no-store, max-age=0' } }
+  )
 }

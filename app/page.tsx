@@ -6,7 +6,38 @@ const SITE_URL = 'https://roastmycv-coral.vercel.app'
 const FREE_LIMIT = 5
 const STORAGE_KEY = 'rcv_uses_left'
 const NAME_KEY = 'rcv_display_name'
+const LANGUAGE_KEY = 'rcv_language'
+const ONBOARD_KEY = 'rcv_onboarded'
+const COUNT_KEY = 'rcv_roast_count'
 const STATS_SEED = 1250
+
+function mergeCount(stored: number, apiCount?: number) {
+  return Math.max(stored, apiCount ?? STATS_SEED, STATS_SEED)
+}
+
+function saveCount(count: number) {
+  localStorage.setItem(COUNT_KEY, String(count))
+}
+
+function detectBrowserLanguage(): string {
+  const lang = (typeof navigator !== 'undefined' ? navigator.language : 'en').toLowerCase()
+  if (lang.startsWith('hi')) return 'hinglish'
+  if (lang.startsWith('en')) return 'english'
+  if (lang.startsWith('es')) return 'spanish'
+  if (lang.startsWith('pt')) return 'portuguese'
+  if (lang.startsWith('fr')) return 'french'
+  if (lang.startsWith('de')) return 'german'
+  if (lang.startsWith('ar')) return 'arabic'
+  if (lang.startsWith('ja')) return 'japanese'
+  if (lang.startsWith('ko')) return 'korean'
+  if (lang.startsWith('ru')) return 'russian'
+  if (lang.startsWith('zh')) return 'chinese'
+  if (lang.startsWith('tr')) return 'turkish'
+  if (lang.startsWith('id')) return 'indonesian'
+  if (lang.startsWith('it')) return 'italian'
+  if (lang.startsWith('nl')) return 'dutch'
+  return 'english'
+}
 
 const LOADING_MSGS = [
   '📖 Teri CV padh raha hai...',
@@ -225,6 +256,29 @@ function ShareButtons({ result, copied, onCopy }: { result: RoastResult; copied:
   )
 }
 
+function LanguagePicker({ language, onSelect, compact }: { language: string; onSelect: (code: string) => void; compact?: boolean }) {
+  return (
+    <div className={`flex flex-wrap gap-2 ${compact ? 'max-h-40 overflow-y-auto pr-1' : ''} justify-center`}>
+      {LANGUAGES.map((lang) => (
+        <button
+          key={lang.code}
+          type="button"
+          onClick={() => onSelect(lang.code)}
+          aria-pressed={language === lang.code}
+          aria-label={`Roast language: ${lang.name}`}
+          className={`font-body text-xs py-1.5 px-3 rounded-full border whitespace-nowrap transition-all ${
+            language === lang.code
+              ? 'bg-orange border-orange text-black'
+              : 'bg-card border-border text-[#666666]'
+          }`}
+        >
+          {lang.flag} {lang.name}
+        </button>
+      ))}
+    </div>
+  )
+}
+
 export default function Home() {
   const [file, setFile] = useState<File | null>(null)
   const [dragging, setDragging] = useState(false)
@@ -242,6 +296,10 @@ export default function Home() {
   const [uploadHighlight, setUploadHighlight] = useState(false)
   const [roastExpanded, setRoastExpanded] = useState(false)
   const [showSignup, setShowSignup] = useState(false)
+  const [showOnboarding, setShowOnboarding] = useState(false)
+  const [onboardName, setOnboardName] = useState('')
+  const [onboardError, setOnboardError] = useState('')
+  const [onboardLoading, setOnboardLoading] = useState(false)
   const [signupName, setSignupName] = useState('')
   const [signupEmail, setSignupEmail] = useState('')
   const [signupError, setSignupError] = useState('')
@@ -252,9 +310,34 @@ export default function Home() {
 
   useEffect(() => {
     setUsesLeft(parseInt(localStorage.getItem(STORAGE_KEY) || String(FREE_LIMIT), 10))
-    setSignupName(localStorage.getItem(NAME_KEY) || '')
+    const savedName = localStorage.getItem(NAME_KEY) || ''
+    const savedLang = localStorage.getItem(LANGUAGE_KEY)
+    const onboarded = localStorage.getItem(ONBOARD_KEY)
+
+    setSignupName(savedName)
+    setOnboardName(savedName)
+    setLanguage(savedLang || detectBrowserLanguage())
+
+    if (!onboarded) setShowOnboarding(true)
+
+    const storedCount = mergeCount(
+      parseInt(localStorage.getItem(COUNT_KEY) || String(STATS_SEED), 10),
+      STATS_SEED
+    )
+    setRoastCount(storedCount)
+    saveCount(storedCount)
+
     const fetchStats = () => {
-      fetch('/api/stats').then((r) => r.json()).then((d) => setRoastCount(d.count ?? 0)).catch(() => {})
+      fetch('/api/stats')
+        .then((r) => r.json())
+        .then((d) => {
+          setRoastCount((prev) => {
+            const merged = mergeCount(prev, d.count)
+            saveCount(merged)
+            return merged
+          })
+        })
+        .catch(() => {})
     }
     const fetchTicker = () => {
       fetch('/api/signups').then((r) => r.json()).then((d) => setTickerNames(d.items ?? [])).catch(() => {})
@@ -276,6 +359,30 @@ export default function Home() {
       .catch(() => {})
   }
 
+  const handleOnboarding = async (e: React.FormEvent) => {
+    e.preventDefault()
+    const name = onboardName.trim()
+    if (name.length < 2) { setOnboardError('Apna naam daal yaar'); return }
+    setOnboardLoading(true)
+    setOnboardError('')
+    try {
+      localStorage.setItem(NAME_KEY, name)
+      localStorage.setItem(LANGUAGE_KEY, language)
+      localStorage.setItem(ONBOARD_KEY, '1')
+      setSignupName(name)
+      await fetch('/api/signups', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name }),
+      }).then((r) => r.json()).then((d) => { if (d.items) setTickerNames(d.items) }).catch(() => {})
+      setShowOnboarding(false)
+    } catch {
+      setOnboardError('Kuch gadbad ho gayi, dobara try karo')
+    } finally {
+      setOnboardLoading(false)
+    }
+  }
+
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault()
     const name = signupName.trim()
@@ -284,6 +391,7 @@ export default function Home() {
     setSignupError('')
     try {
       localStorage.setItem(NAME_KEY, name)
+      localStorage.setItem(LANGUAGE_KEY, language)
       if (signupEmail.trim()) localStorage.setItem('rcv_email', signupEmail.trim())
       await fetchJson<{ items: string[] }>('/api/signups', {
         method: 'POST',
@@ -347,7 +455,21 @@ export default function Home() {
       const newUses = usesLeft - 1
       setUsesLeft(newUses)
       localStorage.setItem(STORAGE_KEY, String(newUses))
-      fetch('/api/stats', { method: 'POST' }).then((r) => r.json()).then((d) => setRoastCount(d.count ?? roastCount + 1)).catch(() => {})
+      setRoastCount((prev) => {
+        const next = prev + 1
+        saveCount(next)
+        return next
+      })
+      fetch('/api/stats', { method: 'POST' })
+        .then((r) => r.json())
+        .then((d) => {
+          setRoastCount((prev) => {
+            const merged = mergeCount(prev, d.count)
+            saveCount(merged)
+            return merged
+          })
+        })
+        .catch(() => {})
       setResult({ ...roastData, intensity })
       setRoastExpanded(false)
       const displayName = localStorage.getItem(NAME_KEY)
@@ -420,11 +542,11 @@ export default function Home() {
                 <p className="font-body text-[11px] text-muted tracking-[0.1em] mb-4">
                   🤖 AI-POWERED · ⚡ INSTANT · 🆓 FREE
                 </p>
-                <h1 className="font-display leading-[0.95] mb-4">
-                  <span className={`block text-4xl sm:text-5xl md:text-6xl text-white ${language === 'hinglish' ? 'whitespace-nowrap' : ''}`}>
+                <h1 className="font-display leading-[0.95] mb-4 flex flex-col items-center w-full">
+                  <span className="block text-4xl sm:text-5xl md:text-6xl text-white text-center w-full">
                     {currentHero.line1}
                   </span>
-                  <span className={`block text-4xl sm:text-5xl md:text-6xl text-orange ${language === 'hinglish' ? 'whitespace-nowrap' : ''}`}>
+                  <span className="block text-4xl sm:text-5xl md:text-6xl text-orange text-center w-full">
                     {currentHero.line2}
                   </span>
                 </h1>
@@ -491,25 +613,12 @@ export default function Home() {
                 </div>
                 <p className="font-body text-xs text-muted text-center mb-3">{activeDesc}</p>
 
-                <p className="font-body text-[11px] text-[#444444] uppercase tracking-[0.1em] mb-2">🌍 Choose Language</p>
-                <div className="lang-scroll flex gap-2 pb-1 mb-4 -mx-1 px-1">
-                  {LANGUAGES.map((lang) => (
-                    <button
-                      key={lang.code}
-                      type="button"
-                      onClick={() => setLanguage(lang.code)}
-                      aria-pressed={language === lang.code}
-                      aria-label={`Roast language: ${lang.name}`}
-                      className={`shrink-0 font-body text-xs py-1.5 px-3.5 rounded-full border whitespace-nowrap transition-all ${
-                        language === lang.code
-                          ? 'bg-orange border-orange text-black'
-                          : 'bg-card border-border text-[#666666]'
-                      }`}
-                    >
-                      {lang.flag} {lang.name}
-                    </button>
-                  ))}
-                </div>
+                <p className="font-body text-[11px] text-[#444444] uppercase tracking-[0.1em] mb-2 text-center">🌍 Choose Language</p>
+                <LanguagePicker language={language} onSelect={(code) => {
+                  setLanguage(code)
+                  localStorage.setItem(LANGUAGE_KEY, code)
+                }} />
+                <p className="font-body text-[10px] text-[#333333] text-center mt-1 mb-4">15 languages · tap to switch</p>
 
                 {error && (
                   <div className="card-ui p-3 mb-3 font-body text-sm text-red-400 border-red-500/30">{error}</div>
@@ -646,6 +755,41 @@ export default function Home() {
           </p>
         </div>
       </footer>
+
+      {/* First-time onboarding */}
+      {showOnboarding && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center px-4" style={{ background: 'rgba(0,0,0,0.95)' }}>
+          <div className="card-ui p-6 max-w-md w-full rounded-[20px] max-h-[90vh] overflow-y-auto">
+            <p className="font-display text-2xl text-white mb-1 text-center">🔥 Welcome to RoastMyCV</p>
+            <p className="font-body text-[13px] text-muted mb-5 text-center">
+              Naam bata aur language choose kar — phir resume roast shuru
+            </p>
+            <form onSubmit={handleOnboarding} className="space-y-4">
+              <div>
+                <label className="font-body text-[11px] text-[#444444] uppercase tracking-[0.1em] mb-2 block">Your Name</label>
+                <input
+                  type="text"
+                  value={onboardName}
+                  onChange={(e) => setOnboardName(e.target.value)}
+                  placeholder="Tera naam"
+                  maxLength={30}
+                  autoFocus
+                  className="w-full bg-page border border-border rounded-xl px-4 py-3 font-body text-sm text-white placeholder:text-[#444444] focus:border-orange outline-none"
+                  aria-label="Your name"
+                />
+              </div>
+              <div>
+                <label className="font-body text-[11px] text-[#444444] uppercase tracking-[0.1em] mb-2 block">🌍 Roast Language</label>
+                <LanguagePicker language={language} onSelect={setLanguage} compact />
+              </div>
+              {onboardError && <p className="font-body text-xs text-red-400">{onboardError}</p>}
+              <button type="submit" disabled={onboardLoading} className="btn-roast w-full py-3 text-base">
+                {onboardLoading ? 'Ho raha hai...' : '🔥 Chalo Roast Karein'}
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
 
       {/* Newsletter signup */}
       {showSignup && (
