@@ -1,0 +1,26 @@
+/* Scoped shadcn tokens — avoids clashing with site hex colors (card, border, muted) */
+.shadcn-login-theme {
+  --radius: 0.5rem;
+  --cn-background: 0 0% 100%;
+  --cn-foreground: 240 10% 3.9%;
+  --cn-card: 0 0% 100%;
+  --cn-card-foreground: 240 10% 3.9%;
+  --cn-popover: 0 0% 100%;
+  --cn-popover-foreground: 240 10% 3.9%;
+  --cn-primary: 16 100% 50%;
+  --cn-primary-foreground: 0 0% 100%;
+  --cn-secondary: 240 4.8% 95.9%;
+  --cn-secondary-foreground: 240 5.9% 10%;
+  --cn-muted: 240 4.8% 95.9%;
+  --cn-muted-foreground: 240 3.8% 46.1%;
+  --cn-accent: 240 4.8% 95.9%;
+  --cn-accent-foreground: 240 5.9% 10%;
+  --cn-destructive: 0 84.2% 60.2%;
+  --cn-destructive-foreground: 0 0% 98%;
+  --cn-border: 240 5.9% 90%;
+  --cn-input: 240 5.9% 90%;
+  --cn-ring: 16 100% 50%;
+  font-family: Inter, system-ui, sans-serif;
+  color: hsl(var(--cn-foreground));
+  background-color: hsl(var(--cn-background));
+}

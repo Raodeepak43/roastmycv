@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Anthropic from '@anthropic-ai/sdk'
 import { getRoastModel, RESUME_CHAR_LIMIT, type Intensity } from './prompts'
+import { isLimitReached } from '@/lib/usage'
+import { incrementStatsCount } from '@/lib/stats'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -64,14 +66,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'API key missing — .env.local check karo' }, { status: 500 })
     }
 
-    let body: { resumeText?: string; intensity?: string; language?: string }
+    let body: { resumeText?: string; intensity?: string; language?: string; fp?: string }
     try {
       body = await req.json()
     } catch {
       return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
     }
 
-    const { resumeText, intensity = 'gaali_light', language = 'hinglish' } = body
+    const { resumeText, intensity = 'gaali_light', language = 'hinglish', fp } = body
+
+    const paid = false // Razorpay verification later
+    if (fp && typeof fp === 'string' && (await isLimitReached(fp, paid))) {
+      return NextResponse.json({ error: 'Free limit reached' }, { status: 429 })
+    }
 
     if (!resumeText || typeof resumeText !== 'string') {
       return NextResponse.json({ error: 'Resume text required' }, { status: 400 })
@@ -91,7 +98,7 @@ export async function POST(req: NextRequest) {
       model,
       max_tokens: 2000,
       system: systemPrompt,
-      messages: [{ role: 'user', content: `Analyze and roast this resume:\n\n${trimmed}` }],
+      messages: [{ role: 'user', content: `Analyze and roast this resume. Every field in your JSON response MUST be written in the language from the system instructions (code: ${lang}):\n\n${trimmed}` }],
     })
 
     const raw = message.content
@@ -101,6 +108,7 @@ export async function POST(req: NextRequest) {
 
     const parsed = extractJson(raw)
     const score = typeof parsed.score === 'number' ? Math.min(10, Math.max(1, parsed.score)) : 5
+    const statsCount = await incrementStatsCount()
 
     return NextResponse.json({
       score,
@@ -108,6 +116,7 @@ export async function POST(req: NextRequest) {
       roast: String(parsed.roast ?? ''),
       verdict: String(parsed.verdict ?? ''),
       fixes: Array.isArray(parsed.fixes) ? parsed.fixes.map(String).slice(0, 3) : [],
+      statsCount,
     })
   } catch (err) {
     console.error(err)

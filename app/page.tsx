@@ -1,22 +1,59 @@
 'use client'
 
 import { useState, useRef, useCallback, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import FingerprintJS from '@fingerprintjs/fingerprintjs'
+import { SiteFooter } from '@/components/SiteFooter'
+import { HighVoltageBadge, SectionHeading } from '@/components/UiChrome'
+import { AnimatePresence, MotionFadeUp, MotionStagger, MotionStaggerItem, motion } from '@/components/Motion'
+import { NumberTicker } from '@/components/ui/be-ui-number-animation'
+import { RoastIntensityBackground } from '@/components/ui/roast-intensity-background'
+import { buildTickerMessage, mergeTickerItems, PINNED_TICKER_KEY } from '@/lib/ticker'
+import { createRoastId, saveRoast } from '@/lib/roast-session'
+import { getUi, type IntensityKey, type UiStrings } from './i18n'
 
-const SITE_URL = 'https://roastmycv-coral.vercel.app'
+const SITE_URL = 'mycvroast.in'
+const SHARE_URL = 'https://mycvroast.in'
 const FREE_LIMIT = 5
-const STORAGE_KEY = 'rcv_uses_left'
 const NAME_KEY = 'rcv_display_name'
 const LANGUAGE_KEY = 'rcv_language'
 const ONBOARD_KEY = 'rcv_onboarded'
-const COUNT_KEY = 'rcv_roast_count'
 const STATS_SEED = 1250
+const STATS_FLOOR_KEY = 'rcv_stats_floor'
 
-function mergeCount(stored: number, apiCount?: number) {
-  return Math.max(stored, apiCount ?? STATS_SEED, STATS_SEED)
+function readStatsFloor(): number {
+  try {
+    if (typeof window === 'undefined') return STATS_SEED
+    const raw = localStorage.getItem(STATS_FLOOR_KEY)
+    const n = raw ? parseInt(raw, 10) : NaN
+    return Number.isNaN(n) ? STATS_SEED : Math.max(n, STATS_SEED)
+  } catch {
+    return STATS_SEED
+  }
 }
 
-function saveCount(count: number) {
-  localStorage.setItem(COUNT_KEY, String(count))
+function writeStatsFloor(n: number) {
+  try {
+    localStorage.setItem(STATS_FLOOR_KEY, String(Math.max(n, STATS_SEED)))
+  } catch {
+    /* ignore quota / private mode */
+  }
+}
+
+function parseStatCount(v: unknown): number {
+  if (typeof v === 'number' && !Number.isNaN(v)) return v
+  if (typeof v === 'string') {
+    const n = parseInt(v, 10)
+    if (!Number.isNaN(n)) return n
+  }
+  return STATS_SEED
+}
+
+function mergeStatsCount(prev: number, incoming: unknown): number {
+  const api = parseStatCount(incoming)
+  const next = Math.max(prev, api, readStatsFloor())
+  writeStatsFloor(next)
+  return next
 }
 
 function detectBrowserLanguage(): string {
@@ -39,36 +76,16 @@ function detectBrowserLanguage(): string {
   return 'english'
 }
 
-const LOADING_MSGS = [
-  '📖 Teri CV padh raha hai...',
-  '🔍 Recruiter mode on...',
-  '💀 Roast ready ho raha hai...',
-  '⚡ Bas 2 second...',
-]
+const LOADING_MSGS_FALLBACK = ['📖 ...', '🔍 ...', '💀 ...', '⚡ ...']
 
 const TICKER_ITEMS = [
+  '⚡ WARNING: HIGH VOLTAGE ROASTS',
   '🔥 ZERO SYMPATHY', '⚡ RECRUITER KI NAZAR', '💀 TERI CV NEXT',
   '🤖 AI NEVER LIES', '🚑 BURNOL KE LIYE READY', '😤 SAVAGE MODE ON',
   '🎯 NO SUGARCOATING', '🇮🇳 DESI ROAST',
 ]
 
-const FIXES = [
-  'Fix formatting — ATS ke liye',
-  'Add numbers and metrics',
-  'Write original content',
-]
-
-const FAQ = [
-  { q: 'Resume roast kya hota hai?', a: 'AI tumhara resume padh ke brutally honest feedback deta hai.' },
-  { q: 'Kya ye free hai?', a: 'Haan, 5 roasts free hain. Uske baad ₹49 mein unlimited.' },
-  { q: 'Mera resume safe hai?', a: 'Haan, hum kuch save nahi karte. Process ke baad delete.' },
-]
-
-const INTENSITY_TABS: { id: Intensity; label: string; desc: string }[] = [
-  { id: 'clean', label: '😇 Clean', desc: 'Professional roast. No gaali. Sharp aur fair.' },
-  { id: 'gaali_light', label: '😤 Gaali Light', desc: 'Thodi garam. Dost wali roast. Mild gaali.' },
-  { id: 'savage', label: '💀 Savage', desc: 'Koi mercy nahi. Bilkul seedha.' },
-]
+const INTENSITY_IDS: IntensityKey[] = ['clean', 'gaali_light', 'savage']
 
 const LANGUAGES = [
   { code: 'hinglish', flag: '🇮🇳', name: 'Hinglish' },
@@ -88,80 +105,40 @@ const LANGUAGES = [
   { code: 'dutch', flag: '🇳🇱', name: 'Nederlands' },
 ]
 
-const heroText: Record<string, { line1: string; line2: string; sub: string }> = {
-  hinglish: { line1: 'Tera Resume', line2: 'Ek Mazaak Hai.', sub: 'AI batayega sach. Recruiter wala sach.' },
-  english: { line1: 'Your Resume', line2: 'Is A Joke.', sub: 'AI tells you what recruiters actually think.' },
-  spanish: { line1: 'Tu CV', line2: 'Es Una Broma.', sub: 'La IA te dice lo que los reclutadores piensan.' },
-  portuguese: { line1: 'Seu Currículo', line2: 'É Uma Piada.', sub: 'A IA diz o que os recrutadores realmente pensam.' },
-  french: { line1: 'Votre CV', line2: 'Est Une Blague.', sub: "L'IA vous dit ce que les recruteurs pensent vraiment." },
-  german: { line1: 'Dein Lebenslauf', line2: 'Ist Ein Witz.', sub: 'KI sagt dir was Recruiter wirklich denken.' },
-  arabic: { line1: 'سيرتك الذاتية', line2: 'مزحة؟', sub: 'الذكاء الاصطناعي يخبرك بما يفكر فيه المسؤولون حقاً.' },
-  japanese: { line1: 'あなたの履歴書は', line2: '冗談ですか？', sub: 'AIが採用担当者の本音を教えます。' },
-  korean: { line1: '당신의 이력서는', line2: '농담입니까？', sub: 'AI가 채용담당자의 진짜 생각을 알려드립니다.' },
-  russian: { line1: 'Ваше резюме —', line2: 'это шутка？', sub: 'ИИ скажет что рекрутеры думают на самом деле.' },
-  chinese: { line1: '你的简历', line2: '是个笑话吗？', sub: 'AI告诉你招聘官真正的想法。' },
-  turkish: { line1: 'Özgeçmişin', line2: 'Bir Şaka mı？', sub: 'AI, işverenlerin gerçekte ne düşündüğünü söyler.' },
-  indonesian: { line1: 'CV Kamu Itu', line2: 'Lelucon？', sub: 'AI kasih tau apa yang rekruter beneran pikirin.' },
-  italian: { line1: 'Il Tuo CV', line2: 'È Uno Scherzo？', sub: "L'AI ti dice cosa pensano davvero i recruiter." },
-  dutch: { line1: 'Jouw CV', line2: 'Is Een Grap？', sub: 'AI vertelt je wat recruiters echt denken.' },
+type Intensity = IntensityKey
+
+function HowItWorksIcon({ index }: { index: number }) {
+  const cls = 'w-7 h-7 text-white shrink-0'
+  if (index === 0) {
+    return (
+      <svg className={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+        <path d="M12 16V4m0 0L8 8m4-4 4 4" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M4 14v4a2 2 0 002 2h12a2 2 0 002-2v-4" strokeLinecap="round" />
+      </svg>
+    )
+  }
+  if (index === 1) {
+    return (
+      <svg className={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+        <rect x="4" y="4" width="16" height="16" rx="2" />
+        <path d="M9 9h2v2H9V9zm4 0h2v2h-2V9zM9 13h2v2H9v-2zm4 0h2v2h-2v-2z" fill="currentColor" stroke="none" />
+      </svg>
+    )
+  }
+  return (
+    <svg className={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+      <path d="M12 3c-1.5 2.5-4 4.5-4 8a4 4 0 108 0c0-3.5-2.5-5.5-4-8z" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
 }
 
-type Intensity = 'clean' | 'gaali_light' | 'savage'
-
-interface RoastResult {
-  lines: string[]
-  score: number
-  intensity: Intensity
-  language: string
-  title?: string
-  verdict?: string
-  fixes?: string[]
-}
-
-function computeScore(intensity: Intensity, lines: string[]): number {
-  const base = { clean: 6, gaali_light: 4, savage: 2 }[intensity]
-  return Math.min(10, Math.max(1, base + (lines.join('').length % 4)))
-}
-
-function getScoreEmoji(score: number) {
-  if (score <= 3) return '💀'
-  if (score <= 5) return '😬'
-  if (score <= 7) return '😐'
-  if (score <= 9) return '😎'
-  return '🏆'
-}
-
-function getScoreColor(score: number) {
-  if (score < 4) return '#EF4444'
-  if (score <= 6) return '#F5C542'
-  if (score <= 8) return '#FF4500'
-  return '#22C55E'
-}
-
-function getScoreLabel(score: number) {
-  if (score <= 3) return 'Yaar seedha ghar ja 💀'
-  if (score <= 5) return 'Average jugaad CV 😬'
-  if (score <= 7) return 'Theek hai, better ho sakta 😐'
-  if (score <= 9) return 'Solid hai tera resume 😎'
-  return 'Bhai tu toh set hai 🏆'
-}
-
-function getFullRoastText(result: RoastResult) {
-  return result.lines.map((line, i) => `${String(i + 1).padStart(2, '0')}. ${line}`).join('\n')
-}
-
-function getShareText(result: RoastResult) {
-  const verdict = result.verdict || result.lines[result.lines.length - 1]
-  return `🔥 Mera resume AI ne roast kiya — ${result.score}/10\n'${verdict}'\n👉 ${SITE_URL}`
-}
-
-async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
+async function fetchJson<T>(url: string, options?: RequestInit, fallbackError = 'Something went wrong'): Promise<T> {
   const res = await fetch(url, options)
   if (!res.headers.get('content-type')?.includes('application/json')) {
-    throw new Error('Server ne sahi response nahi diya — page refresh karo aur dobara try karo')
+    throw new Error(fallbackError)
   }
   const data = await res.json()
-  if (!res.ok) throw new Error(data.error ?? 'Kuch gadbad ho gayi, dobara try karo')
+  if (!res.ok) throw new Error(data.error ?? fallbackError)
   return data as T
 }
 
@@ -181,16 +158,17 @@ interface RoastApiResponse {
   roast: string
   verdict: string
   fixes: string[]
+  statsCount?: number
 }
 
-async function fetchRoast(resumeText: string, intensity: Intensity, language: string): Promise<Omit<RoastResult, 'intensity'>> {
+async function fetchRoast(resumeText: string, intensity: Intensity, language: string, fp: string, incompleteError: string) {
   const data = await fetchJson<RoastApiResponse>('/api/roast', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ resumeText, intensity, language }),
-  })
+    body: JSON.stringify({ resumeText, intensity, language, fp }),
+  }, incompleteError)
   const lines = parseRoastLines(data.roast)
-  if (lines.length < 6) throw new Error('AI ne poora roast nahi diya — dobara try karo')
+  if (lines.length < 6) throw new Error(incompleteError)
   return {
     lines: lines.slice(0, 12),
     score: data.score,
@@ -198,22 +176,8 @@ async function fetchRoast(resumeText: string, intensity: Intensity, language: st
     verdict: data.verdict,
     fixes: data.fixes?.length ? data.fixes : undefined,
     language,
+    statsCount: data.statsCount,
   }
-}
-
-function useCountUp(target: number, duration = 800) {
-  const [val, setVal] = useState(0)
-  useEffect(() => {
-    let start = 0
-    const step = target / (duration / 16)
-    const timer = setInterval(() => {
-      start += step
-      if (start >= target) { setVal(target); clearInterval(timer) }
-      else setVal(Math.round(start))
-    }, 16)
-    return () => clearInterval(timer)
-  }, [target, duration])
-  return val
 }
 
 function UploadIcon() {
@@ -226,196 +190,229 @@ function UploadIcon() {
   )
 }
 
-function CompactScoreRow({ score }: { score: number }) {
-  const animated = useCountUp(score)
+function LanguagePicker({ language, onSelect, compact, scrollHint }: { language: string; onSelect: (code: string) => void; compact?: boolean; scrollHint?: string }) {
   return (
-    <div className="flex items-center gap-3 py-4 border-b border-[#1A1A1A]">
-      <span className="text-[32px] leading-none shrink-0">{getScoreEmoji(score)}</span>
-      <span className="font-display text-[48px] leading-none shrink-0" style={{ color: getScoreColor(score) }}>
-        {animated}<span className="text-xl text-muted">/10</span>
-      </span>
-      <span className="font-body text-[12px] text-[#444444] leading-snug flex-1 min-w-0">
-        {getScoreLabel(score)}
-      </span>
-    </div>
-  )
-}
-
-function ShareButtons({ result, copied, onCopy }: { result: RoastResult; copied: boolean; onCopy: () => void }) {
-  return (
-    <div className="grid grid-cols-3 gap-2">
-      <button type="button" onClick={onCopy}
-        className="font-body text-[13px] py-2.5 rounded-[10px] border border-border text-white hover:border-white transition-colors">
-        {copied ? '✅ Copied' : '📋 Copy'}
-      </button>
-      <button type="button" onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(SITE_URL)}`, '_blank')}
-        className="font-body text-[13px] py-2.5 rounded-[10px] border border-[#0077B5] text-[#0077B5]">💼 LinkedIn</button>
-      <button type="button" onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(getShareText(result))}`, '_blank')}
-        className="font-body text-[13px] py-2.5 rounded-[10px] border border-[#1DA1F2] text-[#1DA1F2]">🐦 Twitter</button>
-    </div>
-  )
-}
-
-function LanguagePicker({ language, onSelect, compact }: { language: string; onSelect: (code: string) => void; compact?: boolean }) {
-  return (
-    <div className={`flex flex-wrap gap-2 ${compact ? 'max-h-40 overflow-y-auto pr-1' : ''} justify-center`}>
-      {LANGUAGES.map((lang) => (
-        <button
-          key={lang.code}
-          type="button"
-          onClick={() => onSelect(lang.code)}
-          aria-pressed={language === lang.code}
-          aria-label={`Roast language: ${lang.name}`}
-          className={`font-body text-xs py-1.5 px-3 rounded-full border whitespace-nowrap transition-all ${
-            language === lang.code
-              ? 'bg-orange border-orange text-black'
-              : 'bg-card border-border text-[#666666]'
-          }`}
-        >
-          {lang.flag} {lang.name}
-        </button>
-      ))}
+    <div>
+      <div className={`${compact ? 'flex flex-wrap gap-2 max-h-40 overflow-y-auto pr-1 justify-center' : 'lang-scroll flex gap-2 flex-nowrap md:flex-wrap justify-start md:justify-center pb-1'}`}>
+        {LANGUAGES.map((lang) => (
+          <button
+            key={lang.code}
+            type="button"
+            onClick={() => onSelect(lang.code)}
+            aria-pressed={language === lang.code}
+            aria-label={`Roast language: ${lang.name}`}
+            className={`font-body text-xs py-1.5 px-3 rounded-full border whitespace-nowrap transition-all shrink-0 ${
+              language === lang.code
+                ? 'bg-orange border-orange text-black'
+                : 'bg-card border-border text-[#666666]'
+            }`}
+          >
+            {lang.flag} {lang.name}
+          </button>
+        ))}
+      </div>
+      {!compact && scrollHint && (
+        <p className="md:hidden font-body text-[10px] text-[#444444] text-center mt-1.5">{scrollHint}</p>
+      )}
     </div>
   )
 }
 
 export default function Home() {
+  const router = useRouter()
   const [file, setFile] = useState<File | null>(null)
   const [dragging, setDragging] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [loadingLang, setLoadingLang] = useState<string | null>(null)
   const [loadMsgIdx, setLoadMsgIdx] = useState(0)
-  const [result, setResult] = useState<RoastResult | null>(null)
   const [error, setError] = useState('')
   const [intensity, setIntensity] = useState<Intensity>('gaali_light')
   const [language, setLanguage] = useState('hinglish')
   const [roastCount, setRoastCount] = useState(STATS_SEED)
+  const [statsLoading, setStatsLoading] = useState(true)
   const [usesLeft, setUsesLeft] = useState(FREE_LIMIT)
+  const [fp, setFp] = useState('')
   const [showPaywall, setShowPaywall] = useState(false)
-  const [copied, setCopied] = useState(false)
   const [faqOpen, setFaqOpen] = useState<number | null>(null)
   const [uploadHighlight, setUploadHighlight] = useState(false)
-  const [roastExpanded, setRoastExpanded] = useState(false)
   const [showSignup, setShowSignup] = useState(false)
   const [showOnboarding, setShowOnboarding] = useState(false)
+  const [onboardStep, setOnboardStep] = useState<1 | 2>(1)
   const [onboardName, setOnboardName] = useState('')
   const [onboardError, setOnboardError] = useState('')
   const [onboardLoading, setOnboardLoading] = useState(false)
-  const [signupName, setSignupName] = useState('')
-  const [signupEmail, setSignupEmail] = useState('')
-  const [signupError, setSignupError] = useState('')
-  const [signupLoading, setSignupLoading] = useState(false)
+  const [captureEmail, setCaptureEmail] = useState('')
+  const [captureError, setCaptureError] = useState('')
+  const [captureLoading, setCaptureLoading] = useState(false)
+  const [captureSuccess, setCaptureSuccess] = useState(false)
   const [tickerNames, setTickerNames] = useState<string[]>([])
+  const [pinnedTicker, setPinnedTicker] = useState<string | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
-  const resultRef = useRef<HTMLDivElement>(null)
+
+  const t = getUi(language)
+  const loadingT = getUi(loadingLang ?? language)
+  const isRtl = language === 'arabic'
+
+  const selectLanguage = (code: string) => {
+    setLanguage(code)
+    localStorage.setItem(LANGUAGE_KEY, code)
+  }
 
   useEffect(() => {
-    setUsesLeft(parseInt(localStorage.getItem(STORAGE_KEY) || String(FREE_LIMIT), 10))
     const savedName = localStorage.getItem(NAME_KEY) || ''
     const savedLang = localStorage.getItem(LANGUAGE_KEY)
     const onboarded = localStorage.getItem(ONBOARD_KEY)
 
-    setSignupName(savedName)
     setOnboardName(savedName)
     setLanguage(savedLang || detectBrowserLanguage())
 
+    const savedPinned = sessionStorage.getItem(PINNED_TICKER_KEY)
+    if (savedPinned) setPinnedTicker(savedPinned)
+
     if (!onboarded) setShowOnboarding(true)
 
-    const storedCount = mergeCount(
-      parseInt(localStorage.getItem(COUNT_KEY) || String(STATS_SEED), 10),
-      STATS_SEED
-    )
-    setRoastCount(storedCount)
-    saveCount(storedCount)
+    const getFingerprint = async () => {
+      try {
+        const fpAgent = await FingerprintJS.load()
+        const result = await fpAgent.get()
+        const visitorId = result.visitorId
+        setFp(visitorId)
+        const res = await fetch(`/api/usage?fp=${encodeURIComponent(visitorId)}`)
+        const data = await res.json()
+        setUsesLeft(data.usesLeft ?? FREE_LIMIT)
+      } catch {
+        setUsesLeft(FREE_LIMIT)
+      }
+    }
+    getFingerprint()
+
+    setRoastCount((prev) => mergeStatsCount(prev, readStatsFloor()))
 
     const fetchStats = () => {
-      fetch('/api/stats')
+      fetch('/api/stats', { cache: 'no-store' })
         .then((r) => r.json())
         .then((d) => {
-          setRoastCount((prev) => {
-            const merged = mergeCount(prev, d.count)
-            saveCount(merged)
-            return merged
-          })
+          setRoastCount((prev) => mergeStatsCount(prev, d.count))
+        })
+        .catch(() => {})
+        .finally(() => setStatsLoading(false))
+    }
+    const fetchTicker = () => {
+      fetch('/api/signups', { cache: 'no-store' })
+        .then((r) => r.json())
+        .then((d) => {
+          setTickerNames(d.items ?? [])
+          const pinned = sessionStorage.getItem(PINNED_TICKER_KEY)
+          if (pinned) setPinnedTicker(pinned)
         })
         .catch(() => {})
     }
-    const fetchTicker = () => {
-      fetch('/api/signups').then((r) => r.json()).then((d) => setTickerNames(d.items ?? [])).catch(() => {})
-    }
     fetchStats()
     fetchTicker()
-    const interval = setInterval(() => { fetchStats(); fetchTicker() }, 30000)
+    const interval = setInterval(() => { fetchStats(); fetchTicker() }, 15000)
     return () => clearInterval(interval)
   }, [])
 
-  const postTickerName = (name: string, score?: number) => {
+  const publishRoastToTicker = useCallback((name: string, score?: number, lang?: string) => {
+    const roastLang = lang ?? language
+    const msg = buildTickerMessage(name, score, roastLang)
+    sessionStorage.setItem(PINNED_TICKER_KEY, msg)
+    setPinnedTicker(msg)
+    setTickerNames((prev) => mergeTickerItems(msg, prev).slice(0, 4))
     fetch('/api/signups', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, score }),
+      body: JSON.stringify({ name, score, language: roastLang }),
     })
       .then((r) => r.json())
-      .then((d) => { if (d.items) setTickerNames(d.items) })
+      .then((d) => {
+        if (d.items?.length) {
+          setTickerNames(d.items)
+          setPinnedTicker(msg)
+          sessionStorage.setItem(PINNED_TICKER_KEY, msg)
+        }
+      })
       .catch(() => {})
-  }
+  }, [language])
+
+  const resolveDisplayName = useCallback(() => {
+    const fromStorage = localStorage.getItem(NAME_KEY)?.trim() ?? ''
+    if (fromStorage.length >= 2) return fromStorage
+    const fromOnboard = onboardName.trim()
+    if (fromOnboard.length >= 2) return fromOnboard
+    return ''
+  }, [onboardName])
 
   const handleOnboarding = async (e: React.FormEvent) => {
     e.preventDefault()
     const name = onboardName.trim()
-    if (name.length < 2) { setOnboardError('Apna naam daal yaar'); return }
+    if (name.length < 2) { setOnboardError(t.onboarding.nameError); return }
     setOnboardLoading(true)
     setOnboardError('')
     try {
       localStorage.setItem(NAME_KEY, name)
       localStorage.setItem(LANGUAGE_KEY, language)
       localStorage.setItem(ONBOARD_KEY, '1')
-      setSignupName(name)
-      await fetch('/api/signups', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name }),
-      }).then((r) => r.json()).then((d) => { if (d.items) setTickerNames(d.items) }).catch(() => {})
+      publishRoastToTicker(name, undefined, language)
       setShowOnboarding(false)
     } catch {
-      setOnboardError('Kuch gadbad ho gayi, dobara try karo')
+      setOnboardError(t.genericError)
     } finally {
       setOnboardLoading(false)
     }
   }
 
-  const handleSignup = async (e: React.FormEvent) => {
+  const handleOnboardNext = () => {
+    localStorage.setItem(LANGUAGE_KEY, language)
+    setOnboardStep(2)
+  }
+
+  const handleEmailCapture = async (e: React.FormEvent) => {
     e.preventDefault()
-    const name = signupName.trim()
-    if (name.length < 2) { setSignupError('Apna naam daal yaar'); return }
-    setSignupLoading(true)
-    setSignupError('')
+    const email = captureEmail.trim()
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setCaptureError('Please enter a valid email')
+      return
+    }
+    setCaptureLoading(true)
+    setCaptureError('')
     try {
-      localStorage.setItem(NAME_KEY, name)
-      localStorage.setItem(LANGUAGE_KEY, language)
-      if (signupEmail.trim()) localStorage.setItem('rcv_email', signupEmail.trim())
-      await fetchJson<{ items: string[] }>('/api/signups', {
+      await fetchJson('/api/email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name }),
-      }).then((d) => setTickerNames(d.items))
-      setShowSignup(false)
+        body: JSON.stringify({ email }),
+      }, t.genericError)
+      setCaptureSuccess(true)
+      localStorage.setItem('rcv_email', email)
     } catch (err: unknown) {
-      setSignupError(err instanceof Error ? err.message : 'Signup fail ho gaya')
+      setCaptureError(err instanceof Error ? err.message : t.genericError)
     } finally {
-      setSignupLoading(false)
+      setCaptureLoading(false)
     }
   }
 
+  const openEmailCapture = () => {
+    setCaptureEmail('')
+    setCaptureError('')
+    setCaptureSuccess(false)
+    setShowSignup(true)
+  }
+
+  useEffect(() => {
+    setLoadMsgIdx(0)
+  }, [language])
+
   useEffect(() => {
     if (!loading) return
-    const t = setInterval(() => setLoadMsgIdx((i) => (i + 1) % LOADING_MSGS.length), 1500)
-    return () => clearInterval(t)
-  }, [loading])
+    const msgs = loadingT.loading.length ? loadingT.loading : LOADING_MSGS_FALLBACK
+    const interval = setInterval(() => setLoadMsgIdx((i) => (i + 1) % msgs.length), 1500)
+    return () => clearInterval(interval)
+  }, [loading, loadingLang, loadingT.loading])
 
   const handleFile = (f: File) => {
-    if (!f.name.match(/\.(pdf|txt)$/i)) { setError('PDF ya TXT file upload karo yaar'); return }
-    if (f.size > 5 * 1024 * 1024) { setError('File 5MB se choti honi chahiye'); return }
-    setFile(f); setError(''); setResult(null); setUploadHighlight(false)
+    if (!f.name.match(/\.(pdf|txt)$/i)) { setError(t.fileTypeError); return }
+    if (f.size > 5 * 1024 * 1024) { setError(t.fileSizeError); return }
+    setFile(f); setError(''); setUploadHighlight(false)
   }
 
   const handleDrop = useCallback((e: React.DragEvent) => {
@@ -424,139 +421,209 @@ export default function Home() {
     if (f) handleFile(f)
   }, [])
 
-  const reset = () => {
-    setResult(null); setFile(null); setError(''); setRoastExpanded(false)
-    if (fileInputRef.current) fileInputRef.current.value = ''
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
-  const copyShare = () => {
-    if (!result) return
-    navigator.clipboard.writeText(getShareText(result))
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
-
   const handleRoast = async () => {
     if (!file) {
-      setError('Pehle CV upload karo!')
+      setError(t.uploadFirst)
       setUploadHighlight(true)
       setTimeout(() => setUploadHighlight(false), 2000)
       return
     }
     if (usesLeft <= 0) { setShowPaywall(true); return }
-    setLoading(true); setLoadMsgIdx(0); setResult(null); setError('')
+    if (!fp) { setError(t.genericError); return }
+    setLoadingLang(language)
+    setLoading(true); setLoadMsgIdx(0); setError('')
 
     try {
       const formData = new FormData()
       formData.append('file', file)
-      const parseData = await fetchJson<{ text: string }>('/api/parse', { method: 'POST', body: formData })
-      const roastData = await fetchRoast(parseData.text, intensity, language)
-      const newUses = usesLeft - 1
-      setUsesLeft(newUses)
-      localStorage.setItem(STORAGE_KEY, String(newUses))
+      const parseData = await fetchJson<{ text: string }>('/api/parse', { method: 'POST', body: formData }, t.genericError)
+      const roastData = await fetchRoast(parseData.text, intensity, language, fp, t.genericError)
+
+      const usageRes = await fetch('/api/usage', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fp }),
+      })
+      const usageData = await usageRes.json()
+      if (usageRes.ok) setUsesLeft(usageData.usesLeft ?? 0)
+
       setRoastCount((prev) => {
-        const next = prev + 1
-        saveCount(next)
+        const server = parseStatCount(roastData.statsCount ?? prev + 1)
+        const next = Math.max(prev + 1, server, readStatsFloor())
+        writeStatsFloor(next)
         return next
       })
-      fetch('/api/stats', { method: 'POST' })
-        .then((r) => r.json())
-        .then((d) => {
-          setRoastCount((prev) => {
-            const merged = mergeCount(prev, d.count)
-            saveCount(merged)
-            return merged
-          })
-        })
-        .catch(() => {})
-      setResult({ ...roastData, intensity })
-      setRoastExpanded(false)
-      const displayName = localStorage.getItem(NAME_KEY)
+
+      const displayName = resolveDisplayName()
       if (displayName) {
-        postTickerName(displayName, roastData.score)
+        if (!localStorage.getItem(NAME_KEY)) {
+          localStorage.setItem(NAME_KEY, displayName)
+        }
+        publishRoastToTicker(displayName, roastData.score)
       }
-      setTimeout(() => resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100)
+
+      const roastId = createRoastId()
+      saveRoast(roastId, {
+        lines: roastData.lines,
+        score: roastData.score,
+        intensity,
+        language: roastData.language,
+        title: roastData.title,
+        verdict: roastData.verdict,
+        fixes: roastData.fixes,
+        showTickerNamePrompt: !displayName,
+      })
+      router.push(`/roast/${roastId}`)
     } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : 'Kuch gadbad ho gayi, dobara try karo')
-    } finally { setLoading(false) }
+      if (err instanceof Error && err.message.includes('Free limit')) {
+        setShowPaywall(true)
+        setUsesLeft(0)
+      } else {
+        setError(err instanceof Error ? err.message : t.genericError)
+      }
+    } finally {
+      setLoading(false)
+      setLoadingLang(null)
+    }
   }
 
-  const activeDesc = INTENSITY_TABS.find((t) => t.id === intensity)?.desc ?? ''
-  const tickerItems = [...tickerNames, ...TICKER_ITEMS]
-  const currentHero = heroText[language] || heroText.hinglish
+  const activeDesc = t.intensity[intensity]?.desc ?? ''
+
+  const userTicker = mergeTickerItems(pinnedTicker, tickerNames.slice(0, 4))
+  const tickerItems = userTicker.length > 0 ? userTicker : TICKER_ITEMS
+  const loadingMsgs = loadingT.loading.length ? loadingT.loading : LOADING_MSGS_FALLBACK
 
   return (
-    <main className="min-h-screen flex flex-col bg-page w-full">
+    <main
+      className="min-h-screen flex flex-col w-full relative overflow-x-hidden"
+      dir={isRtl ? 'rtl' : 'ltr'}
+      lang={language}
+    >
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <RoastIntensityBackground intensity={intensity} className="absolute inset-0" />
+      </div>
+
+      <div className="relative z-10 flex flex-col flex-1 min-h-screen">
       {/* Header — full width */}
-      <header className="w-full border-b border-border">
+      <header className="w-full border-b border-border bg-black/50 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-3 md:py-4 flex items-center justify-between">
-          {result ? (
-            <button
-              type="button"
-              onClick={reset}
-              className="font-body text-[13px] text-[#888888] hover:text-white transition-colors"
+          <div className="flex items-center gap-2 md:gap-3 min-w-0 flex-1 mr-2">
+            <a
+              href="/"
+              className="font-display text-lg md:text-xl text-white hover:text-orange transition-colors shrink-0"
+              aria-label="MyCVRoast home"
             >
-              ← Try Again
-            </button>
-          ) : (
-            <a href="/" className="font-display text-lg md:text-xl text-white hover:text-orange transition-colors" aria-label="RoastMyCV home">
-              🔥 RoastMyCV
+              🔥 MyCVRoast
             </a>
-          )}
-          <div className="flex items-center gap-2">
+            {process.env.NEXT_PUBLIC_BUILD_ID && (
+              <span className="font-body text-[9px] text-[#333] hidden sm:inline" title="Build ID">
+                ·{process.env.NEXT_PUBLIC_BUILD_ID}
+              </span>
+            )}
+            <span
+              className="font-body text-[10px] md:text-[11px] text-[#888888] truncate"
+              aria-live="polite"
+            >
+              {statsLoading ? (
+                <span className="skeleton inline-block h-3 w-24 md:w-32 align-middle" />
+              ) : (
+                <>
+                  <span className="text-orange font-medium inline-flex items-center gap-0.5">
+                    🔥{' '}
+                    <NumberTicker
+                      value={roastCount}
+                      startOnView={false}
+                      duration={0.6}
+                      format={(n) => n.toLocaleString('en-US')}
+                      className="text-orange font-medium"
+                    />
+                  </span>
+                  <span className="hidden sm:inline"> {t.destroyed}</span>
+                </>
+              )}
+            </span>
+          </div>
+          <div className="flex items-center gap-2 md:gap-3">
+            <a href="/blog" className="font-body text-[11px] text-[#888888] hover:text-orange transition-colors hidden sm:inline">
+              Blog
+            </a>
+            <a href="/resume-builder" className="font-body text-[11px] text-[#888888] hover:text-orange transition-colors hidden sm:inline">
+              📄 Resume Builder
+            </a>
             <button
               type="button"
-              onClick={() => setShowSignup(true)}
+              onClick={openEmailCapture}
               className="font-body text-[11px] text-white border border-border px-2.5 py-1 rounded-full hover:border-orange hover:text-orange transition-colors"
               aria-label="Join newsletter"
             >
-              📬 Join
+              {t.join}
             </button>
             <span
               className="font-body text-xs text-orange border border-orange px-3 py-1 rounded-full cursor-default"
-              title={`You have ${usesLeft} free roast${usesLeft === 1 ? '' : 's'} remaining`}
-              aria-label={`${usesLeft} free roasts remaining`}
+              title={`${usesLeft} ${t.roastsFree}`}
+              aria-label={`${usesLeft} ${t.roastsFree}`}
             >
-              {usesLeft} roasts free
+              {usesLeft} {t.roastsFree}
             </span>
           </div>
         </div>
-        <div className="w-full bg-card border-t border-border overflow-hidden py-2">
-          <div className="ticker-track font-body text-[11px] text-white whitespace-nowrap">
-            {[...tickerItems, ...tickerItems].map((item, i) => (
-              <span key={i} className="mx-5">
-                <span className="text-orange mr-1.5">·</span>{item}
-              </span>
-            ))}
+        <div className="w-full bg-card/80 backdrop-blur-sm border-t border-border overflow-hidden py-2">
+          <div className="ticker-track font-body text-[11px] whitespace-nowrap">
+            {[...tickerItems, ...tickerItems].map((item, i) => {
+              const isYou = pinnedTicker != null && item === pinnedTicker
+              return (
+                <span
+                  key={`${item}-${i}`}
+                  className={`mx-5 inline-flex items-center ${isYou ? 'text-orange font-semibold' : 'text-white'}`}
+                >
+                  <span className="text-orange mr-1.5">·</span>
+                  {item}
+                </span>
+              )
+            })}
           </div>
         </div>
       </header>
 
-      <div className={`flex-1 w-full max-w-6xl mx-auto px-4 md:px-8 ${result ? 'py-4 pb-24 md:py-6 md:pb-6' : 'py-6 md:py-10'}`}>
-        {!result ? (
-          <>
-            <div className="max-w-xl mx-auto w-full">
+      <div className="flex-1 w-full max-w-6xl mx-auto px-4 md:px-8 py-6 md:py-10">
+        <div className="max-w-xl mx-auto w-full">
               {/* Hero */}
-              <section className="text-center mb-8">
+              <MotionFadeUp inView={false} className="text-center mb-8">
+                <HighVoltageBadge text={t.warningBadge} className="mx-auto mb-4" />
                 <p className="font-body text-[11px] text-muted tracking-[0.1em] mb-4">
-                  🤖 AI-POWERED · ⚡ INSTANT · 🆓 FREE
+                  {t.tagline}
                 </p>
-                <h1 className="font-display leading-[0.95] mb-4 flex flex-col items-center w-full">
-                  <span className="block text-4xl sm:text-5xl md:text-6xl text-white text-center w-full">
-                    {currentHero.line1}
+                <h1 className="font-display leading-[1.05] mb-4 text-center w-full px-1">
+                  <span className="block text-[clamp(2rem,7vw,3.75rem)] text-white">
+                    {t.hero.line1}
                   </span>
-                  <span className="block text-4xl sm:text-5xl md:text-6xl text-orange text-center w-full">
-                    {currentHero.line2}
+                  <span className="block text-[clamp(2rem,7vw,3.75rem)] text-orange mt-1 md:mt-2">
+                    {t.hero.line2}
                   </span>
                 </h1>
-                <h2 className="font-body text-sm md:text-base text-muted">
-                  {currentHero.sub}
+                <h2 className="font-body text-sm text-muted">
+                  {t.hero.sub}
                 </h2>
                 <p className="font-body text-[13px] text-white mt-4">
-                  🔥 {roastCount.toLocaleString('en-US')} resumes already destroyed
+                  {statsLoading ? (
+                    <span className="inline-flex items-center gap-2 justify-center">
+                      🔥 <span className="skeleton inline-block h-4 w-14" /> <span className="skeleton inline-block h-4 w-36" />
+                    </span>
+                  ) : (
+                    <>🔥{' '}
+                      <NumberTicker
+                        value={roastCount}
+                        startOnView
+                        blur
+                        duration={0.85}
+                        format={(n) => n.toLocaleString('en-US')}
+                        className="text-white font-medium"
+                      />{' '}
+                      {t.destroyed}
+                    </>
+                  )}
                 </p>
-              </section>
+              </MotionFadeUp>
 
               {/* Upload + controls */}
               <section>
@@ -585,244 +652,246 @@ export default function Home() {
                     <>
                       <p className="text-4xl mb-2">✅</p>
                       <p className="font-display text-lg text-orange mb-1 truncate px-2">{file.name}</p>
-                      <p className="font-body text-[13px] text-muted">Ready to roast 🔥</p>
+                      <p className="font-body text-[13px] text-muted">{t.readyRoast}</p>
                     </>
                   ) : (
                     <>
                       <UploadIcon />
-                      <p className="font-display text-xl md:text-2xl text-white mb-1">Drop your resume here</p>
-                      <p className="font-body text-[13px] text-muted">or click to upload</p>
-                      <p className="font-body text-[11px] text-[#333333] mt-1">PDF or TXT · Max 5MB</p>
+                      <p className="font-display text-xl md:text-2xl text-white mb-1">{t.dropResume}</p>
+                      <p className="font-body text-[13px] text-muted">{t.clickUpload}</p>
+                      <p className="font-body text-[11px] text-[#333333] mt-1">{t.fileLimit}</p>
                     </>
                   )}
                 </div>
 
-                <div className="flex gap-2 mb-2">
-                  {INTENSITY_TABS.map((tab) => (
-                    <button key={tab.id} type="button" onClick={() => setIntensity(tab.id)}
-                      aria-label={`${tab.label} roast mode`}
-                      aria-pressed={intensity === tab.id}
-                      className={`flex-1 font-body text-[12px] md:text-[13px] py-2 md:py-2.5 px-1.5 md:px-2 rounded-xl border transition-all ${
-                        intensity === tab.id
-                          ? 'bg-orange border-orange text-black font-medium'
-                          : 'bg-card border-border text-muted'
-                      }`}>
-                      {tab.label}
+                <div className="mb-3 flex justify-center">
+                  <HighVoltageBadge text={t.warningBadge} />
+                </div>
+
+                <div className="flex gap-2 mb-2 max-[380px]:flex-col min-[381px]:overflow-x-auto min-[381px]:flex-nowrap lang-scroll pb-1">
+                  {INTENSITY_IDS.map((id) => (
+                    <button
+                      key={id}
+                      type="button"
+                      onClick={() => setIntensity(id)}
+                      aria-label={`${t.intensity[id].label} roast mode`}
+                      aria-pressed={intensity === id}
+                      className="intensity-btn max-[380px]:w-full min-[381px]:flex-shrink-0 rounded-none"
+                    >
+                      {t.intensity[id].label}
                     </button>
                   ))}
                 </div>
                 <p className="font-body text-xs text-muted text-center mb-3">{activeDesc}</p>
 
-                <p className="font-body text-[11px] text-[#444444] uppercase tracking-[0.1em] mb-2 text-center">🌍 Choose Language</p>
-                <LanguagePicker language={language} onSelect={(code) => {
-                  setLanguage(code)
-                  localStorage.setItem(LANGUAGE_KEY, code)
-                }} />
-                <p className="font-body text-[10px] text-[#333333] text-center mt-1 mb-4">15 languages · tap to switch</p>
+                <p className="font-body text-[11px] text-[#444444] uppercase tracking-[0.1em] mb-2 text-center">{t.chooseLang}</p>
+                <LanguagePicker language={language} onSelect={selectLanguage} scrollHint={t.scrollHint} />
+                <p className="font-body text-[10px] text-[#333333] text-center mt-1 mb-4 hidden md:block">{t.langHint}</p>
 
                 {error && (
                   <div className="card-ui p-3 mb-3 font-body text-sm text-red-400 border-red-500/30">{error}</div>
                 )}
 
                 {loading ? (
-                  <div className="btn-roast w-full py-3.5 md:py-4 flex items-center justify-center gap-3 opacity-90 text-base">
-                    <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full spinner" />
-                    <span className="font-body text-sm">{LOADING_MSGS[loadMsgIdx]}</span>
+                  <div className="btn-roast w-full py-3.5 md:py-4 flex flex-col items-center justify-center gap-1.5 opacity-90">
+                    <div className="flex items-center justify-center gap-3">
+                      <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full spinner shrink-0" />
+                      <span className="font-display text-base md:text-lg text-black">{loadingT.roastingBtn}</span>
+                    </div>
+                    <span className="font-body text-xs text-black/70">{loadingMsgs[loadMsgIdx % loadingMsgs.length]}</span>
                   </div>
                 ) : (
                   <button
                     onClick={handleRoast}
-                    aria-label="Roast my resume"
+                    aria-label={t.roastBtn}
                     className="btn-roast w-full py-3.5 md:py-4 text-base md:text-lg">
-                    🔥 Roast Kar Mere Resume Ko
+                    {t.roastBtn}
                   </button>
                 )}
               </section>
-            </div>
-          </>
-        ) : (
-          <>
-            <div
-              ref={resultRef}
-              dir={result.language === 'arabic' ? 'rtl' : 'ltr'}
-              style={{ textAlign: result.language === 'arabic' ? 'right' : 'left' }}
-              className="fade-up max-w-[600px] mx-auto card-ui px-4 md:px-5"
-            >
-              <CompactScoreRow score={result.score} />
+        </div>
 
-              <div className="py-3 border-b border-[#1A1A1A]">
-                <p className="font-body text-[10px] text-muted uppercase mb-1">🎯 AI KA VERDICT</p>
-                <p className="font-display text-base text-white leading-snug line-clamp-2">
-                  &ldquo;{result.title || result.lines[0]}&rdquo;
-                </p>
-              </div>
-
-              <div className="py-3 border-b border-[#1A1A1A]">
-                <p className="font-body text-[10px] text-muted uppercase mb-2">🔥 THE ROAST</p>
-                {(roastExpanded ? result.lines : result.lines.slice(0, 4)).map((line, i) => (
-                  <div key={i} className="flex gap-2 py-1">
-                    <span className="font-body text-[11px] text-orange shrink-0">{String(i + 1).padStart(2, '0')}</span>
-                    <span className="font-body text-[13px] text-[#CCCCCC] leading-[1.4]">{line}</span>
+        <div className="section-stack space-y-10 md:space-y-14 mt-8 md:mt-10 px-0.5">
+            <MotionFadeUp className="stats-panel">
+              <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-border">
+                {[
+                  { val: roastCount, color: 'text-orange', label: t.stats.roasted, skeleton: statsLoading, animate: true },
+                  { val: String(INTENSITY_IDS.length), color: 'text-purple', label: t.stats.modes },
+                  { val: '0', color: 'text-white', label: t.stats.mercy },
+                  { val: '∞', color: 'text-gold', label: t.stats.dmg },
+                ].map((s) => (
+                  <div key={s.label} className="py-4 md:py-5 text-center px-2">
+                    {'skeleton' in s && s.skeleton ? (
+                      <div className="skeleton h-9 md:h-10 w-20 mx-auto mb-1.5" />
+                    ) : 'animate' in s && s.animate ? (
+                      <p className={`font-display text-3xl md:text-[40px] leading-none ${s.color}`}>
+                        <NumberTicker
+                          value={s.val as number}
+                          startOnView
+                          blur
+                          duration={1}
+                          format={(n) => n.toLocaleString('en-US')}
+                          className={`font-display text-3xl md:text-[40px] leading-none ${s.color}`}
+                        />
+                      </p>
+                    ) : (
+                      <p className={`font-display text-3xl md:text-[40px] leading-none ${s.color}`}>{s.val}</p>
+                    )}
+                    <p className="font-body text-[10px] md:text-[11px] text-muted uppercase tracking-[0.1em] mt-1.5">{s.label}</p>
                   </div>
                 ))}
-                {!roastExpanded && result.lines.length > 4 && (
-                  <button
-                    type="button"
-                    onClick={() => setRoastExpanded(true)}
-                    className="font-body text-[13px] text-orange mt-2 hover:text-white transition-colors"
-                  >
-                    Poora Roast Dekh 👇
-                  </button>
-                )}
               </div>
+            </MotionFadeUp>
 
-              <div className="py-3 border-b border-[#1A1A1A]">
-                <p className="font-body text-[14px] text-gold leading-[1.4]">
-                  ⚡ &ldquo;{result.verdict || result.lines[result.lines.length - 1]}&rdquo;
-                </p>
-              </div>
-
-              <div className="py-2">
-                <p className="font-body text-[10px] text-muted uppercase mb-1">✅ AB KYA KAR</p>
-                {(result.fixes ?? FIXES).map((fix, i) => (
-                  <p key={i} className="font-body text-[13px] text-white leading-[1.4] py-2">
-                    {i + 1}. {fix}
-                  </p>
+            <section id="how-it-works" aria-label={t.howItWorks.title}>
+              <SectionHeading title={t.howItWorks.title} />
+              <MotionStagger className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+                {t.howItWorks.steps.map((step, i) => (
+                  <MotionStaggerItem key={step.step} className="step-card">
+                    <div className="flex items-start justify-between gap-3 mb-5">
+                      <p className="font-body text-[11px] text-orange tracking-[0.14em]">{step.step}</p>
+                      <HowItWorksIcon index={i} />
+                    </div>
+                    <h3 className="font-display text-xl md:text-[1.65rem] text-white mb-3 leading-tight tracking-wide">
+                      {step.title}
+                    </h3>
+                    <p className="font-body text-[12px] md:text-[13px] text-dim leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </MotionStaggerItem>
                 ))}
-              </div>
-
-              <div className="hidden md:block py-4 border-t border-[#1A1A1A]">
-                <p className="font-body text-[10px] text-muted uppercase mb-3">📤 DOSTO KO JALAO BHI</p>
-                <div className="bg-page border border-border rounded-xl p-4 mb-4 font-body text-[14px] text-white whitespace-pre-wrap min-h-[100px] leading-[1.4]">
-                  {getShareText(result)}
-                </div>
-                <ShareButtons result={result} copied={copied} onCopy={copyShare} />
-              </div>
-            </div>
-
-            <div className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-page border-t border-[#1A1A1A] px-4 py-3">
-              <div className="max-w-[600px] mx-auto">
-                <ShareButtons result={result} copied={copied} onCopy={copyShare} />
-              </div>
-            </div>
-          </>
-        )}
-
-        {!result && (
-          <>
-            <div className="card-ui grid grid-cols-2 md:grid-cols-4 gap-0 mt-8 md:mt-10 max-w-4xl mx-auto divide-x divide-y md:divide-y-0 divide-border">
-              {[
-                { val: roastCount.toLocaleString('en-US'), color: 'text-orange', label: '🔥 ROASTED' },
-                { val: String(INTENSITY_TABS.length), color: 'text-purple', label: '🎚️ ROAST MODES' },
-                { val: '0', color: 'text-white', label: '😇 MERCY GIVEN' },
-                { val: '∞', color: 'text-gold', label: '⚡ EMOTIONAL DMG' },
-              ].map((s) => (
-                <div key={s.label} className="py-4 md:py-5 text-center px-2">
-                  <p className={`font-display text-3xl md:text-[40px] leading-none ${s.color}`}>{s.val}</p>
-                  <p className="font-body text-[10px] md:text-[11px] text-muted uppercase tracking-[0.1em] mt-1.5">{s.label}</p>
-                </div>
-              ))}
-            </div>
-
-            <section className="mt-8 md:mt-10 mb-2 max-w-xl mx-auto" aria-label="FAQ">
-              {FAQ.map((item, i) => (
-                <div key={i} className="border-b border-[#1A1A1A]">
-                  <button type="button" onClick={() => setFaqOpen(faqOpen === i ? null : i)}
-                    aria-expanded={faqOpen === i}
-                    aria-label={`FAQ: ${item.q}`}
-                    className="w-full text-left py-2 font-body text-[12px] text-[#555555] hover:text-[#888888] transition-colors flex justify-between items-center">
-                    {item.q}
-                    <span className="text-[#555555] ml-2 text-xs">{faqOpen === i ? '−' : '+'}</span>
-                  </button>
-                  {faqOpen === i && (
-                    <p className="font-body text-[12px] text-[#555555] pb-2 leading-relaxed">{item.a}</p>
-                  )}
-                </div>
-              ))}
+              </MotionStagger>
             </section>
-          </>
-        )}
+
+            <section aria-label={t.disclaimer.title}>
+              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-3">
+                <p className="section-label mb-0">
+                  <span aria-hidden>⚠</span> {t.disclaimer.title}
+                </p>
+                <HighVoltageBadge text={t.warningBadge} className="sm:mb-0 self-start sm:self-auto" />
+              </div>
+              <MotionFadeUp delay={0.08} className="disclaimer-box">
+                <p className="font-body text-[13px] md:text-sm text-white leading-relaxed mb-5">
+                  {t.disclaimer.body}
+                </p>
+                <div className="flex flex-wrap gap-x-5 gap-y-2 pt-4 border-t border-border">
+                  {t.disclaimer.tags.map((tag) => (
+                    <span key={tag} className="font-body text-[10px] text-muted tracking-[0.1em] uppercase">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </MotionFadeUp>
+            </section>
+
+            <section id="faq" aria-label="FAQ">
+              <SectionHeading title="FAQ" />
+              <MotionFadeUp delay={0.1} className="neo-frame neo-frame--soft border-border px-4 md:px-5">
+                {t.faq.map((item, i) => (
+                  <div key={i} className="border-b border-border last:border-b-0">
+                    <button
+                      type="button"
+                      onClick={() => setFaqOpen(faqOpen === i ? null : i)}
+                      aria-expanded={faqOpen === i}
+                      aria-label={`FAQ: ${item.q}`}
+                      className="w-full text-left py-3 font-body text-[12px] md:text-[13px] text-dim hover:text-white transition-colors flex justify-between items-center gap-3"
+                    >
+                      {item.q}
+                      <span className="text-orange shrink-0 text-sm">{faqOpen === i ? '−' : '+'}</span>
+                    </button>
+                    <AnimatePresence initial={false}>
+                      {faqOpen === i && (
+                        <motion.p
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                          className="font-body text-[12px] md:text-[13px] text-dim pb-3 leading-relaxed overflow-hidden"
+                        >
+                          {item.a}
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+              </MotionFadeUp>
+            </section>
+        </div>
       </div>
 
-      {/* Footer — full width */}
-      <footer className="w-full bg-page border-t border-border mt-auto">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-5 md:py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <a href={SITE_URL} className="font-body text-[13px] text-white hover:text-orange transition-colors" aria-label="Visit RoastMyCV">
-            🔥 roastmycv-coral.vercel.app
-          </a>
-          <p className="font-body text-[11px] text-[#333333] text-center">
-            No account needed · Built by a desi founder
-          </p>
-        </div>
-      </footer>
+      <SiteFooter tagline={t.footer} support={t.support} />
 
       {/* First-time onboarding */}
       {showOnboarding && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center px-4" style={{ background: 'rgba(0,0,0,0.95)' }}>
-          <div className="card-ui p-6 max-w-md w-full rounded-[20px] max-h-[90vh] overflow-y-auto">
-            <p className="font-display text-2xl text-white mb-1 text-center">🔥 Welcome to RoastMyCV</p>
-            <p className="font-body text-[13px] text-muted mb-5 text-center">
-              Naam bata aur language choose kar — phir resume roast shuru
-            </p>
-            <form onSubmit={handleOnboarding} className="space-y-4">
-              <div>
-                <label className="font-body text-[11px] text-[#444444] uppercase tracking-[0.1em] mb-2 block">Your Name</label>
+          <div className="neo-frame neo-frame--orange p-6 max-w-md w-full max-h-[90vh] overflow-y-auto" dir={isRtl ? 'rtl' : 'ltr'}>
+            <p className="font-display text-2xl text-white mb-1 text-center">{t.onboarding.welcome}</p>
+            {onboardStep === 1 ? (
+              <>
+                <p className="font-body text-[13px] text-muted mb-5 text-center">
+                  {t.onboarding.pickLangSub}
+                </p>
+                <p className="font-body text-[11px] text-[#444444] uppercase tracking-[0.1em] mb-3 text-center">{t.onboarding.pickLang}</p>
+                <LanguagePicker language={language} onSelect={selectLanguage} compact />
+                <button
+                  type="button"
+                  onClick={handleOnboardNext}
+                  className="btn-roast w-full py-3 text-base mt-5"
+                >
+                  {t.onboarding.next}
+                </button>
+              </>
+            ) : (
+              <form onSubmit={handleOnboarding} className="space-y-4 mt-4">
+                <p className="font-body text-[13px] text-muted mb-2 text-center">{t.onboarding.yourName}</p>
                 <input
                   type="text"
                   value={onboardName}
                   onChange={(e) => setOnboardName(e.target.value)}
-                  placeholder="Tera naam"
+                  placeholder={t.onboarding.namePlaceholder}
                   maxLength={30}
                   autoFocus
                   className="w-full bg-page border border-border rounded-xl px-4 py-3 font-body text-sm text-white placeholder:text-[#444444] focus:border-orange outline-none"
-                  aria-label="Your name"
+                  aria-label={t.onboarding.yourName}
                 />
-              </div>
-              <div>
-                <label className="font-body text-[11px] text-[#444444] uppercase tracking-[0.1em] mb-2 block">🌍 Roast Language</label>
-                <LanguagePicker language={language} onSelect={setLanguage} compact />
-              </div>
-              {onboardError && <p className="font-body text-xs text-red-400">{onboardError}</p>}
-              <button type="submit" disabled={onboardLoading} className="btn-roast w-full py-3 text-base">
-                {onboardLoading ? 'Ho raha hai...' : '🔥 Chalo Roast Karein'}
-              </button>
-            </form>
+                {onboardError && <p className="font-body text-xs text-red-400">{onboardError}</p>}
+                <button type="submit" disabled={onboardLoading} className="btn-roast w-full py-3 text-base">
+                  {onboardLoading ? t.onboarding.loading : t.onboarding.start}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       )}
 
-      {/* Newsletter signup */}
+      {/* Email capture */}
       {showSignup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4" style={{ background: 'rgba(0,0,0,0.9)' }}>
-          <div className="card-ui p-6 max-w-sm w-full rounded-[20px]">
-            <p className="font-display text-xl text-white mb-1">📬 Join the Roast List</p>
-            <p className="font-body text-[13px] text-muted mb-5">Naam daal — ticker pe dikhega jab roast hogi 🔥</p>
-            <form onSubmit={handleSignup} className="space-y-3">
-              <input
-                type="text"
-                value={signupName}
-                onChange={(e) => setSignupName(e.target.value)}
-                placeholder="Tera naam"
-                maxLength={30}
-                className="w-full bg-page border border-border rounded-xl px-4 py-3 font-body text-sm text-white placeholder:text-[#444444] focus:border-orange outline-none"
-                aria-label="Your name"
-              />
-              <input
-                type="email"
-                value={signupEmail}
-                onChange={(e) => setSignupEmail(e.target.value)}
-                placeholder="Email (optional — updates ke liye)"
-                className="w-full bg-page border border-border rounded-xl px-4 py-3 font-body text-sm text-white placeholder:text-[#444444] focus:border-orange outline-none"
-                aria-label="Email optional"
-              />
-              {signupError && <p className="font-body text-xs text-red-400">{signupError}</p>}
-              <button type="submit" disabled={signupLoading} className="btn-roast w-full py-3 text-base">
-                {signupLoading ? 'Ho raha hai...' : '🔥 Join Kar'}
-              </button>
-              <button type="button" onClick={() => setShowSignup(false)} className="w-full font-body text-[13px] text-[#333333] hover:text-muted py-1">
-                baad mein
-              </button>
-            </form>
+          <div className="card-ui p-6 max-w-sm w-full rounded-[20px]" dir={isRtl ? 'rtl' : 'ltr'}>
+            {captureSuccess ? (
+              <p className="font-display text-xl text-white text-center py-4">{t.emailCapture.success}</p>
+            ) : (
+              <form onSubmit={handleEmailCapture} className="space-y-3">
+                <input
+                  type="email"
+                  value={captureEmail}
+                  onChange={(e) => setCaptureEmail(e.target.value)}
+                  placeholder={t.emailCapture.emailPh}
+                  autoFocus
+                  required
+                  className="w-full bg-page border border-border rounded-xl px-4 py-3 font-body text-sm text-white placeholder:text-[#444444] focus:border-orange outline-none"
+                  aria-label={t.emailCapture.emailPh}
+                />
+                <p className="font-body text-[11px] text-[#444444]">{t.emailCapture.noSpam}</p>
+                {captureError && <p className="font-body text-xs text-red-400">{captureError}</p>}
+                <button type="submit" disabled={captureLoading} className="btn-roast w-full py-3 text-base">
+                  {captureLoading ? t.onboarding.loading : t.emailCapture.submit}
+                </button>
+              </form>
+            )}
+            <button type="button" onClick={() => setShowSignup(false)} className="w-full font-body text-[13px] text-[#333333] hover:text-muted py-1 mt-2">
+              {t.signup.later}
+            </button>
           </div>
         </div>
       )}
@@ -830,20 +899,21 @@ export default function Home() {
       {/* Paywall */}
       {showPaywall && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4" style={{ background: 'rgba(0,0,0,0.9)' }}>
-          <div className="card-ui p-8 max-w-sm w-full text-center rounded-[20px]">
+          <div className="neo-frame neo-frame--orange p-8 max-w-sm w-full text-center" dir={isRtl ? 'rtl' : 'ltr'}>
             <p className="text-[48px] mb-4">😅</p>
-            <h3 className="font-display text-[28px] text-white mb-2">Free Limit Khatam Bhai</h3>
-            <p className="font-body text-sm text-muted mb-6">5 free roasts use ho gaye</p>
+            <h3 className="font-display text-[28px] text-white mb-2">{t.paywall.title}</h3>
+            <p className="font-body text-sm text-muted mb-6">{t.paywall.sub}</p>
             <span className="inline-block bg-orange text-black font-body text-[13px] px-4 py-1.5 rounded-full mb-6">
-              ₹49 · Lifetime Unlimited
+              {t.paywall.price}
             </span>
-            <button className="btn-roast w-full py-3 text-base mb-3 block">🔥 Razorpay se Unlock Kar</button>
+            <button className="btn-roast w-full py-3 text-base mb-3 block">{t.paywall.unlock}</button>
             <button onClick={() => setShowPaywall(false)} className="font-body text-[13px] text-[#333333] hover:text-muted">
-              baad mein karta hoon
+              {t.paywall.later}
             </button>
-c          </div>
+          </div>
         </div>
       )}
+      </div>
     </main>
   )
 }

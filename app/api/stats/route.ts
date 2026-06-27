@@ -1,27 +1,17 @@
 import { NextResponse } from 'next/server'
+import { getStatsCount, incrementStatsCount } from '@/lib/stats'
 
-declare global {
-  // eslint-disable-next-line no-var
-  var roastCount: number | undefined
-}
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
-const SEED = 1250
-
-if (global.roastCount === undefined || global.roastCount < SEED) {
-  global.roastCount = SEED
-}
+const noStore = { headers: { 'Cache-Control': 'no-store, max-age=0, must-revalidate' } }
 
 export async function GET() {
-  return NextResponse.json(
-    { count: global.roastCount ?? SEED },
-    { headers: { 'Cache-Control': 'no-store, max-age=0' } }
-  )
+  const count = await getStatsCount()
+  return NextResponse.json({ count }, noStore)
 }
 
 export async function POST() {
-  global.roastCount = (global.roastCount ?? SEED) + 1
-  return NextResponse.json(
-    { count: global.roastCount },
-    { headers: { 'Cache-Control': 'no-store, max-age=0' } }
-  )
+  const count = await incrementStatsCount()
+  return NextResponse.json({ count }, noStore)
 }

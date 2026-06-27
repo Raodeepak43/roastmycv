@@ -19,7 +19,7 @@ export async function GET() {
       >
         <div style={{ fontSize: 80, marginBottom: 20 }}>🔥</div>
         <div style={{ fontSize: 72, fontWeight: 900, color: 'white', lineHeight: 1 }}>
-          RoastMyCV.in
+          MyCVRoast.in
         </div>
         <div style={{ fontSize: 36, color: '#FF4500', marginTop: 16, fontWeight: 700 }}>
           Tera Resume Ek Mazaak Hai.
@@ -38,7 +38,7 @@ export async function GET() {
             fontWeight: 700,
           }}
         >
-          Try Free → roastmycv-coral.vercel.app
+          Try Free → mycvroast.in
         </div>
       </div>
     ),

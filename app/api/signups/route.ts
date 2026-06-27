@@ -1,28 +1,18 @@
 import { NextResponse } from 'next/server'
+import {
+  appendTickerEntry,
+  entriesToMessages,
+  getTickerEntries,
+  TICKER_DISPLAY_COUNT,
+} from '@/lib/ticker-store'
+import { buildTickerMessage } from '@/lib/ticker'
 
-declare global {
-  // eslint-disable-next-line no-var
-  var roastTicker: { name: string; score?: number }[] | undefined
-}
-
-global.roastTicker = global.roastTicker ?? [
-  { name: 'Arjun', score: 3 },
-  { name: 'Neha', score: 7 },
-  { name: 'Rohan', score: 2 },
-  { name: 'Priya', score: 5 },
-]
-
-function toMessage(entry: { name: string; score?: number }) {
-  const first = entry.name.trim().split(/\s+/)[0]
-  if (entry.score != null) {
-    return `💀 ${first} got roasted — ${entry.score}/10`
-  }
-  return `🔥 ${first} ne apni CV roast karwai`
-}
+export const dynamic = 'force-dynamic'
 
 export async function GET() {
-  const items = (global.roastTicker ?? []).slice(-20).map(toMessage)
-  return NextResponse.json({ items })
+  const entries = await getTickerEntries()
+  const items = entriesToMessages(entries, TICKER_DISPLAY_COUNT)
+  return NextResponse.json({ items, entries: entries.slice(0, TICKER_DISPLAY_COUNT) })
 }
 
 export async function POST(req: Request) {
@@ -34,10 +24,13 @@ export async function POST(req: Request) {
     }
 
     const score = typeof body.score === 'number' ? body.score : undefined
-    const entry = { name, score }
+    const language = typeof body.language === 'string' ? body.language.trim().slice(0, 32) : undefined
 
-    global.roastTicker = [...(global.roastTicker ?? []), entry].slice(-50)
-    return NextResponse.json({ items: global.roastTicker.map(toMessage) })
+    const entries = await appendTickerEntry({ name, score, language })
+    const msg = buildTickerMessage(name, score, language)
+    const items = entriesToMessages(entries, TICKER_DISPLAY_COUNT)
+
+    return NextResponse.json({ items, message: msg })
   } catch {
     return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
   }

@@ -1,22 +1,13 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { siteJsonLd } from '@/lib/schema'
 import './globals.css'
 
-const SITE_URL = 'https://roastmycv-coral.vercel.app'
-const OG_IMAGE = `${SITE_URL}/og`
+const gaId = process.env.NEXT_PUBLIC_GA_ID
 
-const SEO_TITLE = 'RoastMyCV — Free AI Resume Roaster in Hinglish | Get Brutally Honest Feedback'
-const SEO_DESC = 'Free AI resume roaster in 15 languages — Hinglish, English, Spanish, French, German, Arabic, Japanese, Korean, Russian, Chinese and more. Brutal honest feedback. Instant. No signup.'
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'RoastMyCV',
-  description: 'Free AI resume roaster in 15 languages',
-  url: SITE_URL,
-  applicationCategory: 'BusinessApplication',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
-}
+const SITE_URL = 'https://mycvroast.in'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -25,26 +16,39 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: SEO_TITLE,
-  description: SEO_DESC,
-  keywords: 'resume roast, AI resume feedback, resume review India, hinglish resume roast, free resume checker',
+  title: 'MyCVRoast — Free AI Resume Roaster | Brutal Honest Feedback',
+  description: 'Get your resume brutally roasted by AI in Hinglish, English, Spanish and 12 more languages. Free, instant, no signup. Find out why recruiters are rejecting you.',
+  keywords: 'resume roast, AI resume review, free resume checker, hinglish resume roast, resume roaster India, AI resume analyzer, brutal resume feedback, resume score, mycvroast, my cv roast',
+  metadataBase: new URL(SITE_URL),
   alternates: { canonical: SITE_URL },
   openGraph: {
-    title: SEO_TITLE,
-    description: SEO_DESC,
+    title: 'MyCVRoast — AI Roasts Your Resume Brutally 🔥',
+    description: 'Upload your resume. AI destroys it. You fix it. You get hired. Free, instant, 15 languages.',
     url: SITE_URL,
-    images: [OG_IMAGE],
+    siteName: 'MyCVRoast',
+    images: [{
+      url: `${SITE_URL}/og-image.png`,
+      width: 1200,
+      height: 630,
+      alt: 'MyCVRoast - AI Resume Roaster',
+    }],
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    images: [OG_IMAGE],
+    title: 'MyCVRoast — AI Roasts Your Resume Brutally 🔥',
+    description: 'Upload your resume. AI destroys it. You fix it. You get hired.',
+    images: [`${SITE_URL}/og-image.png`],
+    creator: '@deepak_yadav82',
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: { index: true, follow: true },
   },
   verification: {
-    google: 'x3_qbTelJcqcONGP5XO32t1pJrPJZF7jaqLTJHbGQcU',
+    google: '45rPCZJdtfkjEph7g-f9UKWrYI4_5F6Jcv-eeZHbsH0',
   },
 }
 
@@ -52,18 +56,41 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="45rPCZJdtfkjEph7g-f9UKWrYI4_5F6Jcv-eeZHbsH0" />
         <link
           href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
         />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8959559679161401"
+          crossOrigin="anonymous"
+        />
+        {gaId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaId}');
+              `}
+            </Script>
+          </>
+        )}
       </head>
       <body className="font-body antialiased">
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

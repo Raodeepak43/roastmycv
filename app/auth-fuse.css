@@ -1,0 +1,328 @@
+/* Auth fuse — self-contained styles (no dependency on cn-* Tailwind tokens) */
+
+.auth-fuse-theme {
+  --auth-bg: #0a0a0b;
+  --auth-fg: #fafafa;
+  --auth-muted: #a1a1aa;
+  --auth-border: #27272a;
+  --auth-input: #27272a;
+  --auth-accent: #18181b;
+  --auth-primary: #ff4500;
+  --auth-primary-fg: #ffffff;
+  --auth-radius: 0.75rem;
+
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: var(--auth-bg);
+  color: var(--auth-fg);
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  letter-spacing: normal;
+}
+
+@media (min-width: 768px) {
+  .auth-fuse-theme {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.auth-fuse-theme h1,
+.auth-fuse-theme h2,
+.auth-fuse-theme h3 {
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.auth-fuse-form-panel {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+.auth-fuse-form-inner {
+  width: 100%;
+  max-width: 22rem;
+}
+
+.auth-fuse-image-panel {
+  display: none;
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease;
+}
+
+@media (min-width: 768px) {
+  .auth-fuse-image-panel {
+    display: block;
+  }
+}
+
+.auth-fuse-image-gradient {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--auth-bg), transparent);
+  pointer-events: none;
+}
+
+.auth-fuse-quote-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.auth-fuse-quote {
+  margin: 0;
+  text-align: center;
+  max-width: 28rem;
+}
+
+.auth-fuse-quote p {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 0 0.5rem;
+}
+
+.auth-fuse-quote cite {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-style: normal;
+  color: var(--auth-muted);
+}
+
+.auth-fuse-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.auth-fuse-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.auth-fuse-header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.auth-fuse-header p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--auth-muted);
+}
+
+.auth-fuse-fields {
+  display: grid;
+  gap: 1rem;
+}
+
+.auth-fuse-field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.auth-fuse-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.auth-fuse-input {
+  display: flex;
+  height: 3rem;
+  width: 100%;
+  border-radius: var(--auth-radius);
+  border: 1px solid var(--auth-input);
+  background-color: var(--auth-bg);
+  color: var(--auth-fg);
+  padding: 0 0.875rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.auth-fuse-input::placeholder {
+  color: color-mix(in srgb, var(--auth-muted) 70%, transparent);
+}
+
+.auth-fuse-input:focus {
+  border-color: var(--auth-primary);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--auth-primary) 25%, transparent);
+}
+
+.auth-fuse-password-wrap {
+  position: relative;
+}
+
+.auth-fuse-password-wrap .auth-fuse-input {
+  padding-right: 2.75rem;
+}
+
+.auth-fuse-eye-btn {
+  position: absolute;
+  inset-block: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  border: none;
+  background: transparent;
+  color: var(--auth-muted);
+  cursor: pointer;
+  padding: 0;
+}
+
+.auth-fuse-eye-btn:hover {
+  color: var(--auth-fg);
+}
+
+.auth-fuse-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 3rem;
+  width: 100%;
+  border-radius: var(--auth-radius);
+  border: 1px solid var(--auth-border);
+  background: transparent;
+  color: var(--auth-fg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+}
+
+.auth-fuse-btn:hover:not(:disabled) {
+  background: var(--auth-accent);
+}
+
+.auth-fuse-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.auth-fuse-btn-link {
+  display: inline;
+  height: auto;
+  width: auto;
+  padding: 0 0 0 0.25rem;
+  border: none;
+  background: none;
+  color: var(--auth-fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: inherit;
+}
+
+.auth-fuse-btn-link:hover:not(:disabled) {
+  background: none;
+  opacity: 0.85;
+}
+
+.auth-fuse-divider {
+  position: relative;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--auth-muted);
+  margin: 0.25rem 0;
+}
+
+.auth-fuse-divider::before {
+  content: '';
+  position: absolute;
+  inset: 50% 0 auto;
+  height: 1px;
+  background: var(--auth-border);
+  z-index: 0;
+}
+
+.auth-fuse-divider span {
+  position: relative;
+  z-index: 1;
+  background: var(--auth-bg);
+  padding: 0 0.5rem;
+}
+
+.auth-fuse-toggle-row {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--auth-muted);
+}
+
+.auth-fuse-alert {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--auth-radius);
+  font-size: 0.875rem;
+  text-align: center;
+  line-height: 1.45;
+}
+
+.auth-fuse-alert-warn {
+  color: #fcd34d;
+  background: rgb(120 53 15 / 0.35);
+  border: 1px solid rgb(180 83 9 / 0.45);
+}
+
+.auth-fuse-alert-error {
+  color: #fca5a5;
+  background: rgb(127 29 29 / 0.35);
+  border: 1px solid rgb(153 27 27 / 0.45);
+}
+
+.auth-fuse-alert-success {
+  color: #86efac;
+  background: rgb(20 83 45 / 0.35);
+  border: 1px solid rgb(22 101 52 / 0.45);
+}
+
+.auth-fuse-alert code {
+  font-size: 0.75rem;
+  background: rgb(0 0 0 / 0.25);
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem;
+}
+
+.auth-fuse-google-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.auth-fuse-theme input[type='password']::-ms-reveal,
+.auth-fuse-theme input[type='password']::-ms-clear {
+  display: none;
+}
+
+.auth-fuse-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--auth-bg, #0a0a0b);
+  color: var(--auth-muted, #a1a1aa);
+  font-family: Inter, system-ui, sans-serif;
+}
