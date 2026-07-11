@@ -1,18 +1,34 @@
 ---
-title: "Professional CV Writing: A Complete 2026 Guide"
-slug: "professional-cv-writing-guide"
-date: "2025-11-05"
-description: "Master professional CV writing in 2026. Learn how to write a professional CV that beats ATS, impresses Indian recruiters, and turns your experience into interviews."
-keywords: "professional cv, cv writing, professional cv writing, how to write a professional cv, professional curriculum vitae"
+title: 'Professional CV Writing: A Complete 2026 Guide'
+slug: professional-cv-writing-guide
+date: '2025-11-05'
+description: >-
+  Master professional CV writing in 2026. Learn how to write a professional CV
+  that beats ATS, impresses Indian recruiters, and turns your experience into
+  interviews.
+keywords: >-
+  professional cv, cv writing, professional cv writing, how to write a
+  professional cv, professional curriculum vitae
 faq:
-  - q: "What is Professional CV Writing: A Complete 2026 Guide?"
-    a: "Master professional CV writing in 2026. Learn how to write a professional CV that beats ATS, impresses Indian recruiters, and turns your experience into interviews."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Professional CV Writing: A Complete 2026 Guide?'
+    a: >-
+      Master professional CV writing in 2026. Learn how to write a professional
+      CV that beats ATS, impresses Indian recruiters, and turns your experience
+      into interviews.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Professional CV Writing: A Complete 2026 Guide'
 ---
 
 A **professional cv** is not just a list of where you have worked — it is a persuasion document engineered to make a busy recruiter stop scrolling and think "I need to talk to this person." Most CVs fail not because the candidate is unqualified, but because the writing is lazy: duties instead of achievements, jargon instead of clarity, and a layout that fights the reader. This guide teaches professional cv writing the way it actually works in 2026 — structured for both the human reading it for six seconds and the ATS scanning it in milliseconds. Whether you are building your first professional curriculum vitae or upgrading a tired one, these principles apply.

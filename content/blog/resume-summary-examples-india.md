@@ -1,18 +1,33 @@
 ---
-title: "Resume Summary Examples for Indian Job Seekers (2026)"
-slug: "resume-summary-examples-india"
-date: "2026-05-20"
-description: "Copy-ready resume summary examples for freshers and experienced professionals in India. Professional summary templates for IT, marketing, finance, and more."
-keywords: "resume summary examples, professional summary for resume india, cv summary examples fresher, resume objective vs summary, profile summary resume"
+title: Resume Summary Examples for Indian Job Seekers (2026)
+slug: resume-summary-examples-india
+date: '2026-05-20'
+description: >-
+  Copy-ready resume summary examples for freshers and experienced professionals
+  in India. Professional summary templates for IT, marketing, finance, and more.
+keywords: >-
+  resume summary examples, professional summary for resume india, cv summary
+  examples fresher, resume objective vs summary, profile summary resume
 faq:
-  - q: "What is Resume Summary Examples for Indian Job Seekers?"
-    a: "Copy-ready resume summary examples for freshers and experienced professionals in India. Professional summary templates for IT, marketing, finance, and more."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: What is Resume Summary Examples for Indian Job Seekers?
+    a: >-
+      Copy-ready resume summary examples for freshers and experienced
+      professionals in India. Professional summary templates for IT, marketing,
+      finance, and more.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: Resume Summary Examples for Indian Job Seekers
 ---
 
 Your **resume summary** is the first thing a recruiter reads after your name — and often the only thing they read if it bores them. In India, candidates still copy 2015 "career objective" lines like "To obtain a challenging position in a reputed organization." Recruiters skip these instantly.

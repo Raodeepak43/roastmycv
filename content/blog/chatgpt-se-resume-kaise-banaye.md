@@ -1,18 +1,30 @@
 ---
-title: "ChatGPT se Resume Kaise Banaye — AI Use Karo, Galtiyan Mat Karo"
-slug: "chatgpt-se-resume-kaise-banaye"
-date: "2026-07-03"
+title: ChatGPT se Resume Kaise Banaye
+slug: chatgpt-se-resume-kaise-banaye
+date: '2026-07-03'
 type: guide
 author: MyCVRoast Team
-description: "ChatGPT se resume kaise banaye — prompts, sections, fact-checking, aur kahan AI fail hota hai. Indian fresher ke liye safe workflow + free roast check."
-keywords: "chatgpt se resume kaise banaye, resume guide hindi, fresher resume india, mycvroast"
+description: >-
+  ChatGPT se resume kaise banaye — prompts jo kaam karte hain, galtiyan jo ATS
+  fail karti hain, aur free roast se verify kaise karein.
+keywords: >-
+  chatgpt se resume kaise banaye, resume guide hindi, fresher resume india,
+  mycvroast
 faq:
-  - q: "Kya poora resume ChatGPT se likh sakte hain?"
-    a: "Draft ho sakta hai — lekin facts, dates, company names, aur metrics aapko verify karne padenge. AI kabhi fake numbers bana deta hai."
-  - q: "ChatGPT resume ATS friendly deta hai?"
-    a: "Kabhi-kabhi — lekin aapko one-column plain format enforce karna padta hai. Upload ke baad checker se verify karo."
-  - q: "MyCVRoast aur ChatGPT me kya fark hai?"
-    a: "ChatGPT generic likhta hai; MyCVRoast aapka upload padh ke roast karta hai — weak bullets quote karke batata hai."
+  - q: Kya poora resume ChatGPT se likh sakte hain?
+    a: >-
+      Draft ho sakta hai — lekin facts, dates, company names, aur metrics aapko
+      verify karne padenge. AI kabhi fake numbers bana deta hai.
+  - q: ChatGPT resume ATS friendly deta hai?
+    a: >-
+      Kabhi-kabhi — lekin aapko one-column plain format enforce karna padta hai.
+      Upload ke baad checker se verify karo.
+  - q: MyCVRoast aur ChatGPT me kya fark hai?
+    a: >-
+      ChatGPT generic likhta hai; MyCVRoast aapka upload padh ke roast karta hai
+      — weak bullets quote karke batata hai.
+metaTitle: ChatGPT se Resume Kaise Banaye? Free AI Tips
+h1: ChatGPT se Resume Kaise Banaye
 ---
 
 **ChatGPT se resume kaise banaye** — AI se draft lena smart hai, blind copy-paste dumb hai. Bahut freshers prompt maarte hain, jo output aata hai use bina edit Naukri pe daal dete hain — phir "AI ne resume banaya phir bhi reject" meme ban jata hai. Sahi workflow yeh hai:

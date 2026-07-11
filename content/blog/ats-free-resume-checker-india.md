@@ -1,16 +1,29 @@
 ---
-title: "ATS Free Resume Checker India — No Paywall Guide (2026)"
-slug: "ats-free-resume-checker-india"
-date: "2026-07-02"
-description: "Best ats free resume checkers for India in 2026. Compare Jobscan, Enhancv, Kickresume vs MyCVRoast ATS tools — live SERP evidence and fresher-friendly picks."
-keywords: "ats free resume, ats free resume checker india, free ats resume scan, ats resume checker free"
+title: ATS Free Resume Checker India
+slug: ats-free-resume-checker-india
+date: '2026-07-02'
+description: >-
+  ATS free resume checker for India — see if bots can read your CV, fix
+  formatting, and improve shortlist rate before applying.
+keywords: >-
+  ats free resume, ats free resume checker india, free ats resume scan, ats
+  resume checker free
 faq:
-  - q: "Is there a free ATS resume checker?"
-    a: "Yes. Jobscan, Enhancv, and Kickresume offer free ATS scans (with limits). MyCVRoast includes ATS-weighted scoring in its free resume roast plus a dedicated fresher ATS checker tool."
-  - q: "Does ATS checker work for Indian company resumes?"
-    a: "Yes — TCS, Infosys, Wipro, and startups use ATS parsers. Avoid columns, graphics, and tables. Single-column PDFs parse best."
-  - q: "ATS check or resume roast first?"
-    a: "Roast first for content fixes, then ATS check against a specific JD. Format + keywords both matter."
+  - q: Is there a free ATS resume checker?
+    a: >-
+      Yes. Jobscan, Enhancv, and Kickresume offer free ATS scans (with limits).
+      MyCVRoast includes ATS-weighted scoring in its free resume roast plus a
+      dedicated fresher ATS checker tool.
+  - q: Does ATS checker work for Indian company resumes?
+    a: >-
+      Yes — TCS, Infosys, Wipro, and startups use ATS parsers. Avoid columns,
+      graphics, and tables. Single-column PDFs parse best.
+  - q: ATS check or resume roast first?
+    a: >-
+      Roast first for content fixes, then ATS check against a specific JD.
+      Format + keywords both matter.
+metaTitle: ATS Free Resume Checker India — Test Your CV
+h1: ATS Free Resume Checker India
 ---
 
 **ATS free resume** tools promise to save you from the black hole where 75% of CVs never reach a human. Google's July 2026 SERP for this query shows **Jobscan #5**, **Enhancv #3**, **Kickresume #7** — all Western-first products. Indian freshers need parsers that understand one-page campus CVs, not just Silicon Valley formats.

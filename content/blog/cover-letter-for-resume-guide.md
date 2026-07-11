@@ -1,18 +1,34 @@
 ---
-title: "Cover Letter for Resume: Indian Job Seeker Guide 2026"
-slug: "cover-letter-for-resume-guide"
-date: "2026-03-04"
-description: "How to write a cover letter for resume in 2026 with sample cover letter for resume, fresher examples, and templates that actually get Indian recruiters to read your CV."
-keywords: "cover letter for resume, resume cover letter examples, resume and cover letter, cover letter for resume for fresher, sample cover letter for resume"
+title: 'Cover Letter for Resume: Indian Job Seeker Guide 2026'
+slug: cover-letter-for-resume-guide
+date: '2026-03-04'
+description: >-
+  Cover Letter for Resume: Indian Job Seeker Guide 2026 — practical format tips,
+  examples, and mistakes to avoid for Indian freshers. Free AI resume check
+  linked.
+keywords: >-
+  cover letter for resume, resume cover letter examples, resume and cover
+  letter, cover letter for resume for fresher, sample cover letter for resume
 faq:
-  - q: "What is Cover Letter for Resume: Indian Job Seeker Guide 2026?"
-    a: "How to write a cover letter for resume in 2026 with sample cover letter for resume, fresher examples, and templates that actually get Indian recruiters to read your CV."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Cover Letter for Resume: Indian Job Seeker Guide 2026?'
+    a: >-
+      How to write a cover letter for resume in 2026 with sample cover letter
+      for resume, fresher examples, and templates that actually get Indian
+      recruiters to read your CV.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Cover Letter for Resume: Indian Job Seeker Guide 2026'
 ---
 
 A **cover letter for resume** is the short message that travels with your CV and decides whether a recruiter opens your attachment with interest or deletes it without a second look. In the Indian job market — where one opening attracts hundreds of applicants — a sharp, specific cover letter is one of the few legal ways to jump the queue. Yet most candidates either skip it entirely or paste the same generic "Respected Sir/Madam, I am writing to apply..." paragraph everywhere.

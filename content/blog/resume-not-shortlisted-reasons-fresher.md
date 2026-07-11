@@ -1,18 +1,32 @@
 ---
-title: "Why Your Resume Isn't Getting Shortlisted (Fresher Edition)"
-slug: "resume-not-shortlisted-reasons-fresher"
-date: "2026-06-29"
-description: "Resume not getting shortlisted reasons for freshers in India — CGPA gates, ATS, generic CV, wrong keywords. Fix with free AI roast."
-keywords: "resume not getting shortlisted reasons fresher, fresher resume rejected, no shortlist campus"
+title: Why Your Resume Isn't Getting Shortlisted (Fresher Edition)
+slug: resume-not-shortlisted-reasons-fresher
+date: '2026-06-29'
+description: >-
+  Resume not getting shortlisted reasons for freshers in India — CGPA gates,
+  ATS, generic CV, wrong keywords. Fix with free AI roast.
+keywords: >-
+  resume not getting shortlisted reasons fresher, fresher resume rejected, no
+  shortlist campus
 faq:
-  - q: "What is Why Your Resume Isn't Getting Shortlisted (Fresher Edition)?"
-    a: "Resume not getting shortlisted reasons for freshers in India — CGPA gates, ATS, generic CV, wrong keywords. Fix with free AI roast."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: What is Why Your Resume Isn't Getting Shortlisted (Fresher Edition)?
+    a: >-
+      Resume not getting shortlisted reasons for freshers in India — CGPA gates,
+      ATS, generic CV, wrong keywords. Fix with free AI roast.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: Why Your Resume Isn't Getting Shortlisted (Fresher E…
 ---
 
 **Resume not getting shortlisted** as a fresher usually is not one big failure — it is 3–4 small signals recruiters filter on in the first pass.

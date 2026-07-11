@@ -1,16 +1,29 @@
 ---
-title: "Freelance Jobs for Beginners in India: 2026 Starter Guide"
-slug: "freelance-jobs-beginners-india"
-date: "2026-04-01"
-description: "A practical guide to freelance jobs for beginners in India 2026 — freelancing for beginners, best freelance websites, and how to land your first paying client."
-keywords: "freelance jobs for beginners, freelancing for beginners, freelance jobs online, best freelance websites, freelancing platforms"
+title: 'Freelance Jobs for Beginners in India: 2026 Starter Guide'
+slug: freelance-jobs-beginners-india
+date: '2026-04-01'
+description: >-
+  A practical guide to freelance jobs for beginners in India 2026 — freelancing
+  for beginners, best freelance websites, and how to land your first paying
+  client.
+keywords: >-
+  freelance jobs for beginners, freelancing for beginners, freelance jobs
+  online, best freelance websites, freelancing platforms
 faq:
-  - q: "What is Freelance Jobs for Beginners in India: 2026 Starter Guide?"
-    a: "A practical guide to freelance jobs for beginners in India 2026 — freelancing for beginners, best freelance websites, and how to land your first paying client."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
+  - q: 'What is Freelance Jobs for Beginners in India: 2026 Starter Guide?'
+    a: >-
+      A practical guide to freelance jobs for beginners in India 2026 —
+      freelancing for beginners, best freelance websites, and how to land your
+      first paying client.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+metaTitle: 'Freelance Jobs for Beginners in India: 2026 Starter…'
 ---
 
 **Freelance jobs for beginners** are one of the fastest ways for Indian students, freshers, and career-switchers to earn money and build real experience without waiting for a full-time offer. Whether you write, design, code, edit videos, or run social media, there is a market for your skills online. The challenge is not a lack of opportunity — it is knowing where to start, how to win your first client, and how to avoid the trap of working for free forever.

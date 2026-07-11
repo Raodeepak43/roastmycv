@@ -1,18 +1,34 @@
 ---
-title: "Online Resume Maker Guide: Build a CV Free in 2026"
-slug: "online-resume-maker-guide"
-date: "2025-08-12"
-description: "A complete online resume maker guide for India. Learn how to create a resume online free, pick ATS templates, and avoid the mistakes that get CVs auto-rejected in 2026."
-keywords: "online resume maker, create resume online free, resume online, online resume builder, resume maker online free, resume maker guide"
+title: 'Online Resume Maker Guide: Build a CV Free in 2026'
+slug: online-resume-maker-guide
+date: '2025-08-12'
+description: >-
+  Online Resume Maker Guide: Build a CV Free in 2026 — practical format tips,
+  examples, and mistakes to avoid for Indian freshers. Free AI resume check
+  linked.
+keywords: >-
+  online resume maker, create resume online free, resume online, online resume
+  builder, resume maker online free, resume maker guide
 faq:
-  - q: "What is Online Resume Maker Guide: Build a CV Free in 2026?"
-    a: "A complete online resume maker guide for India. Learn how to create a resume online free, pick ATS templates, and avoid the mistakes that get CVs auto-rejected in 2026."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Online Resume Maker Guide: Build a CV Free in 2026?'
+    a: >-
+      A complete online resume maker guide for India. Learn how to create a
+      resume online free, pick ATS templates, and avoid the mistakes that get
+      CVs auto-rejected in 2026.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Online Resume Maker Guide: Build a CV Free in 2026'
 ---
 
 An **online resume maker** lets you create a professional CV from your browser in minutes — no software install, no formatting headaches, and no design degree required. The catch is that not all of them are equal. Some produce ATS-safe PDFs that get parsed cleanly by recruiters; others spit out beautiful designs that break the moment they hit a company's screening software. This guide walks you through how to create a resume online free, the right way, for the Indian job market in 2026.

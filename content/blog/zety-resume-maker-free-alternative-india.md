@@ -1,20 +1,36 @@
 ---
-title: "Zety Resume Maker Free Alternative India — Honest Comparison 2026"
-slug: "zety-resume-maker-free-alternative-india"
-date: "2026-07-12"
+title: Zety Resume Maker Free Alternative for India
+slug: zety-resume-maker-free-alternative-india
+date: '2026-07-12'
 type: comparison
 author: MyCVRoast Team
-description: "Zety resume maker free alternative for India — download paywall truth, ATS safety, vs MyCVRoast free PDF + AI roast. Freshers guide 2026."
-keywords: "zety resume maker, zety resume maker free, zety free resume, zety resume builder free, zety alternative india"
+description: >-
+  Zety resume maker free alternative — honest comparison of download limits, ATS
+  safety, and free PDF export for Indian freshers.
+keywords: >-
+  zety resume maker, zety resume maker free, zety free resume, zety resume
+  builder free, zety alternative india
 faq:
-  - q: "Is Zety resume maker really free?"
-    a: "You can build a resume in the browser for free, but PDF download usually needs a paid plan or trial. MyCVRoast exports PDF on the free tier without a download paywall."
-  - q: "What is the best Zety resume maker free alternative in India?"
-    a: "For Indian freshers who need free PDF export plus honest AI feedback, MyCVRoast combines an ATS resume builder with a free AI roast — including Hinglish."
-  - q: "Is Zety good for TCS and Infosys campus drives?"
-    a: "Some Zety templates use columns and graphics that ATS systems parse poorly. Single-column ATS builders are safer for mass hiring in India."
-  - q: "Can I use both Zety and MyCVRoast?"
-    a: "Yes — build structure anywhere, then export ATS-safe PDF from MyCVRoast and run a free roast before you apply."
+  - q: Is Zety resume maker really free?
+    a: >-
+      You can build a resume in the browser for free, but PDF download usually
+      needs a paid plan or trial. MyCVRoast exports PDF on the free tier without
+      a download paywall.
+  - q: What is the best Zety resume maker free alternative in India?
+    a: >-
+      For Indian freshers who need free PDF export plus honest AI feedback,
+      MyCVRoast combines an ATS resume builder with a free AI roast — including
+      Hinglish.
+  - q: Is Zety good for TCS and Infosys campus drives?
+    a: >-
+      Some Zety templates use columns and graphics that ATS systems parse
+      poorly. Single-column ATS builders are safer for mass hiring in India.
+  - q: Can I use both Zety and MyCVRoast?
+    a: >-
+      Yes — build structure anywhere, then export ATS-safe PDF from MyCVRoast
+      and run a free roast before you apply.
+metaTitle: Zety Resume Maker Free Alternative India (2026)
+h1: Zety Resume Maker Free Alternative for India
 ---
 
 Searching **zety resume maker** usually means you want a guided online tool that walks you through each resume section and outputs a professional PDF. **Zety** is popular globally — but Indian freshers often hit a **paywall at download** after spending an hour filling every field.

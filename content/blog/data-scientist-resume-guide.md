@@ -1,18 +1,33 @@
 ---
-title: "Data Scientist Resume Guide 2026 (India): Examples + Tips"
-slug: "data-scientist-resume-guide"
-date: "2026-06-10"
-description: "Write a data scientist resume that gets interviews in 2026. India guide with skills, summary examples, ML project bullets, ATS keywords, and fresher tips."
-keywords: "data scientist resume, data science resume for freshers, data scientist fresher jobs, data scientist resume for fresher, data science careers"
+title: 'Data Scientist Resume Guide 2026 (India): Examples + Tips'
+slug: data-scientist-resume-guide
+date: '2026-06-10'
+description: >-
+  Write a data scientist resume that gets interviews in 2026. India guide with
+  skills, summary examples, ML project bullets, ATS keywords, and fresher tips.
+keywords: >-
+  data scientist resume, data science resume for freshers, data scientist
+  fresher jobs, data scientist resume for fresher, data science careers
 faq:
-  - q: "What is Data Scientist Resume Guide 2026 (India): Examples + Tips?"
-    a: "Write a data scientist resume that gets interviews in 2026. India guide with skills, summary examples, ML project bullets, ATS keywords, and fresher tips."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Data Scientist Resume Guide 2026 (India): Examples + Tips?'
+    a: >-
+      Write a data scientist resume that gets interviews in 2026. India guide
+      with skills, summary examples, ML project bullets, ATS keywords, and
+      fresher tips.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Data Scientist Resume Guide 2026 (India): Examples + Tips'
 ---
 
 A strong **data scientist resume** has to prove something harder than tool knowledge: that you can frame a problem, build a model, and tie it to a real outcome. India's data science careers are crowded with candidates who list "Python, ML, deep learning" and stop there. Recruiters skip those CVs. What earns interviews is evidence — a project that solved something, a model with measurable performance, and a clear story of impact. This guide is built for both experienced candidates and those chasing data scientist fresher jobs, with India-specific examples you can adapt.

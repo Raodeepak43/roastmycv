@@ -1,16 +1,30 @@
 ---
-title: "Best Resume Roast Websites in India — Honest Comparison (2026)"
-slug: "best-resume-roast-website-india"
-date: "2026-07-02"
-description: "Best resume roast websites for Indian job seekers — MyCVRoast vs roasted.cv, roastmyresu.me, pankajk.tech. Which link actually works free, with Hinglish, and no signup tricks."
-keywords: "resume roast website, best resume roast site, resume roast online free india, cv roast website"
+title: Best Resume Roast Websites in India — Honest Comparison (2026)
+slug: best-resume-roast-website-india
+date: '2026-07-02'
+description: >-
+  Best Resume Roast Websites in India — side-by-side for Indian freshers: free
+  tiers, ATS safety, and which option fits your job search in 2026.
+keywords: >-
+  resume roast website, best resume roast site, resume roast online free india,
+  cv roast website
 faq:
-  - q: "What is the best resume roast website?"
-    a: "For Indian freshers wanting Hinglish feedback with no signup, MyCVRoast (mycvroast.in) is the strongest full-stack option. For quick English roasts, roastmyresu.me works. For extreme Hinglish comedy, resume.pankajk.tech ranks in Google."
-  - q: "Are resume roast websites safe?"
-    a: "Use sites that state they delete your resume after processing. MyCVRoast does not store CVs after the roast completes. Avoid uploading to unknown sites that ask for unnecessary permissions."
-  - q: "Which resume roast website is free without signup?"
-    a: "MyCVRoast shows score and fixes on first upload without email. Always test the upload flow before sharing sensitive CV data."
+  - q: What is the best resume roast website?
+    a: >-
+      For Indian freshers wanting Hinglish feedback with no signup, MyCVRoast
+      (mycvroast.in) is the strongest full-stack option. For quick English
+      roasts, roastmyresu.me works. For extreme Hinglish comedy,
+      resume.pankajk.tech ranks in Google.
+  - q: Are resume roast websites safe?
+    a: >-
+      Use sites that state they delete your resume after processing. MyCVRoast
+      does not store CVs after the roast completes. Avoid uploading to unknown
+      sites that ask for unnecessary permissions.
+  - q: Which resume roast website is free without signup?
+    a: >-
+      MyCVRoast shows score and fixes on first upload without email. Always test
+      the upload flow before sharing sensitive CV data.
+metaTitle: Best Resume Roast Websites in India (2026)
 ---
 
 Searching **resume roast website**? Google autocomplete flags it as a top related query (July 2026). The problem: half the links are dead Vercel demos, Instagram prompts, or US tools that don't understand Indian campus CVs.

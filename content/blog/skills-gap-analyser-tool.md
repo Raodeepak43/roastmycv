@@ -1,16 +1,26 @@
 ---
-title: "Skills Gap Analyser: Find What Your Target Role Needs in 2026"
-slug: "skills-gap-analyser-tool"
-date: "2026-06-01"
-description: "Free AI skills gap analyser for Indian job seekers. Compare your CV to any target role, see missing skills, and get a learning plan with real courses."
-keywords: "skills gap analysis, skills gap analyser, career skills gap, missing skills resume, upskilling plan"
+title: 'Skills Gap Analyser: Find What Your Target Role Needs in 2026'
+slug: skills-gap-analyser-tool
+date: '2026-06-01'
+description: >-
+  Free AI skills gap analyser for Indian job seekers. Compare your CV to any
+  target role, see missing skills, and get a learning plan with real courses.
+keywords: >-
+  skills gap analysis, skills gap analyser, career skills gap, missing skills
+  resume, upskilling plan
 faq:
-  - q: "Is the Skills Gap Analyser tool free?"
-    a: "3 free analyses per day on the free plan."
-  - q: "Who should use Skills Gap Analyser?"
-    a: "Freshers pivoting roles, experienced professionals switching industries, and anyone who gets \"we went with another candidate\" without feedback."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Skills Gap Analyser tool free?
+    a: 3 free analyses per day on the free plan.
+  - q: Who should use Skills Gap Analyser?
+    a: >-
+      Freshers pivoting roles, experienced professionals switching industries,
+      and anyone who gets "we went with another candidate" without feedback.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: Skills Gap Analyser — Free Tool Guide
 ---
 
 You keep applying but never get shortlisted. Often the problem is not your degree — it is a **skills gap** between your CV and what employers actually list in job descriptions. A skills gap analyser reads your resume and target role, then shows exactly what you have, what you are missing, and how to close the gap fast.

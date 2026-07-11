@@ -1,16 +1,26 @@
 ---
-title: "Job Offer Comparator: Compare CTC, Growth, and Culture Side by Side"
-slug: "job-offer-comparator-tool"
-date: "2026-06-26"
-description: "Compare 2–3 job offers with AI — salary, growth, red flags, and negotiation script for your preferred offer."
-keywords: "compare job offers, job offer comparison, multiple offers which to choose, ctc comparison"
+title: 'Job Offer Comparator: Compare CTC, Growth, and Culture Side by Side'
+slug: job-offer-comparator-tool
+date: '2026-06-26'
+description: >-
+  Compare 2–3 job offers with AI — salary, growth, red flags, and negotiation
+  script for your preferred offer.
+keywords: >-
+  compare job offers, job offer comparison, multiple offers which to choose, ctc
+  comparison
 faq:
-  - q: "Is the Offer Comparator tool free?"
-    a: "Pro plan feature."
-  - q: "Who should use Offer Comparator?"
-    a: "Candidates with 2+ active offers in the same week — common in campus and hot tech markets."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Offer Comparator tool free?
+    a: Pro plan feature.
+  - q: Who should use Offer Comparator?
+    a: >-
+      Candidates with 2+ active offers in the same week — common in campus and
+      hot tech markets.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: Job Offer Comparator — Free Tool Guide
 ---
 
 Two offers. One pays ₹2 LPA more. The other has better learning and brand. Spreadsheets do not capture **growth potential** or **culture red flags**. **Offer Comparator** breaks down 2–3 offers and recommends which to take — with negotiation script for the winner.

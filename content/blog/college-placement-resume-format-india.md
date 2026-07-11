@@ -1,16 +1,29 @@
 ---
-title: "College Placement Resume Format — TPO-Approved Guide (2026)"
-slug: "college-placement-resume-format-india"
-date: "2026-07-02"
-description: "College placement resume format for Indian students — section order, one-page rule, CGPA placement, and ATS-safe layout TPOs actually approve for TCS, Infosys, Wipro drives."
-keywords: "college placement resume format, campus placement resume format, placement cv format india, tpo resume format"
+title: College Placement Resume Format — TPO-Approved Guide (2026)
+slug: college-placement-resume-format-india
+date: '2026-07-02'
+description: >-
+  College Placement Resume Format — practical format tips, examples, and
+  mistakes to avoid for Indian freshers. Free AI resume check linked.
+keywords: >-
+  college placement resume format, campus placement resume format, placement cv
+  format india, tpo resume format
 faq:
-  - q: "What is the correct college placement resume format?"
-    a: "One page, single column: Contact → Summary → Education (CGPA) → Skills → Projects → Internships → Achievements. No photo, no graphics, standard fonts. PDF export only."
-  - q: "How long should a campus placement resume be?"
-    a: "One page for mass hiring (TCS, Infosys, Wipro, Cognizant). Two pages only if TPO explicitly allows and you have 2+ years experience."
-  - q: "Can I use Canva for college placement resume?"
-    a: "Risky — multi-column Canva templates break ATS parsers. Use ATS-safe builder or Google Docs single-column template, then roast before uploading to TPO portal."
+  - q: What is the correct college placement resume format?
+    a: >-
+      One page, single column: Contact → Summary → Education (CGPA) → Skills →
+      Projects → Internships → Achievements. No photo, no graphics, standard
+      fonts. PDF export only.
+  - q: How long should a campus placement resume be?
+    a: >-
+      One page for mass hiring (TCS, Infosys, Wipro, Cognizant). Two pages only
+      if TPO explicitly allows and you have 2+ years experience.
+  - q: Can I use Canva for college placement resume?
+    a: >-
+      Risky — multi-column Canva templates break ATS parsers. Use ATS-safe
+      builder or Google Docs single-column template, then roast before uploading
+      to TPO portal.
+metaTitle: College Placement Resume Format
 ---
 
 **College placement resume format** is not the same as a LinkedIn profile or a creative portfolio. TPO portals, company ATS, and mass recruiters scan 500+ CVs in a day — wrong format = rejected before a human reads your project title.

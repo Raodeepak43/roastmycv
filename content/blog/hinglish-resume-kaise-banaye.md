@@ -1,18 +1,31 @@
 ---
-title: "Hinglish Resume Kaise Banaye — Step by Step Guide"
-slug: "hinglish-resume-kaise-banaye"
-date: "2026-06-28"
-description: "Hinglish resume kaise banaye — step by step guide for Indian freshers. Format, summary, projects, skills + free AI roast."
-keywords: "hinglish resume kaise banaye, hinglish cv, resume hindi english mix"
+title: Hinglish Resume Kaise Banaye — India Guide
+slug: hinglish-resume-kaise-banaye
+date: '2026-06-28'
+description: >-
+  Hinglish resume kaise banaye — kab English, kab Hindi mix, aur
+  recruiter-friendly format for Indian job applications.
+keywords: 'hinglish resume kaise banaye, hinglish cv, resume hindi english mix'
 faq:
-  - q: "What is Hinglish Resume Kaise Banaye — Step by Step Guide?"
-    a: "Hinglish resume kaise banaye — step by step guide for Indian freshers. Format, summary, projects, skills + free AI roast."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: What is Hinglish Resume Kaise Banaye — Step by Step Guide?
+    a: >-
+      Hinglish resume kaise banaye — step by step guide for Indian freshers.
+      Format, summary, projects, skills + free AI roast.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: Hinglish Resume Kaise Banaye? Format & Tips
+h1: Hinglish Resume Kaise Banaye — India Guide
 ---
 
 **Hinglish resume kaise banaye** — yeh sawal har campus season pe WhatsApp groups mein ghoomta hai. Matlab English corporate template copy karna nahi; aisi CV jo Indian recruiter ko natural lage aur ATS bhi parse kar sake.

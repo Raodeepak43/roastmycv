@@ -1,18 +1,33 @@
 ---
-title: "Modern CV Examples That Get Interviews (2026)"
-slug: "modern-cv-examples"
-date: "2025-12-10"
-description: "See modern CV examples that actually land interviews in 2026. Learn what makes a modern curriculum vitae work, with creative and elegant CV ideas that still pass ATS."
-keywords: "modern cv, modern cv examples, modern curriculum vitae, creative cv, elegant cv"
+title: Modern CV Examples That Get Interviews (2026)
+slug: modern-cv-examples
+date: '2025-12-10'
+description: >-
+  Modern CV Examples That Get Interviews — practical format tips, examples, and
+  mistakes to avoid for Indian freshers. Free AI resume check linked.
+keywords: >-
+  modern cv, modern cv examples, modern curriculum vitae, creative cv, elegant
+  cv
 faq:
-  - q: "What is Modern CV Examples That Get Interviews?"
-    a: "See modern CV examples that actually land interviews in 2026. Learn what makes a modern curriculum vitae work, with creative and elegant CV ideas that still pass ATS."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: What is Modern CV Examples That Get Interviews?
+    a: >-
+      See modern CV examples that actually land interviews in 2026. Learn what
+      makes a modern curriculum vitae work, with creative and elegant CV ideas
+      that still pass ATS.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: Modern CV Examples That Get Interviews
 ---
 
 A **modern cv** in 2026 is not about gradients, photos, and skill rating bars — it is about clean, confident presentation that reads instantly and survives the software filters between you and a human. There is a dangerous myth that "modern" means "designed to death," and it leads thousands of Indian job seekers to build gorgeous documents that get silently rejected. Real modern CV examples balance visual freshness with machine readability, leading with content and using design only to guide the eye. This guide shows what a genuinely modern curriculum vitae looks like, walks through examples by situation, and explains how to make a creative CV that still gets parsed and read.

@@ -1,20 +1,38 @@
 ---
-title: "CV Layout Examples — Best Resume Layout for Freshers India 2026"
-slug: "cv-layout-examples"
-date: "2025-11-12"
-description: "CV layout examples for freshers in India — best single-column resume layout, ATS-safe structure, and curriculum vitae format that gets read in 2026."
-keywords: "layout cv, cv layout, cv layout examples, best cv layout for freshers, resume layout india, curriculum vitae layout"
+title: 'CV Layout Examples: Best Structures for Freshers'
+slug: cv-layout-examples
+date: '2025-11-12'
+description: >-
+  Layout CV the right way — single-column examples that pass ATS, section order
+  for freshers, and mistakes that get CVs rejected.
+keywords: >-
+  layout cv, cv layout, cv layout examples, best cv layout for freshers, resume
+  layout india, curriculum vitae layout
 faq:
-  - q: "What is the best CV layout for a fresher in India?"
-    a: "Single column, standard headings (Education, Experience, Skills, Projects), text-based PDF, no tables or graphics. Education and projects lead for freshers; work experience leads for experienced candidates."
-  - q: "Does layout cv matter for ATS?"
-    a: "Yes. Two-column and graphic layouts often fail ATS parsing. Use a single-column layout cv structure so bots read sections in order."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: What is the best CV layout for a fresher in India?
+    a: >-
+      Single column, standard headings (Education, Experience, Skills,
+      Projects), text-based PDF, no tables or graphics. Education and projects
+      lead for freshers; work experience leads for experienced candidates.
+  - q: Does layout cv matter for ATS?
+    a: >-
+      Yes. Two-column and graphic layouts often fail ATS parsing. Use a
+      single-column layout cv structure so bots read sections in order.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: CV Layout Examples — Best Resume Layout for Freshers
+h1: 'CV Layout Examples: Best Structures for Freshers'
 ---
 
 Your **cv layout** is the first thing a recruiter judges — before they read a single word, they form an impression from how the page looks. A cluttered, two-column, multi-color design screams "hard to read," while a clean, logical structure says "this person respects my time." The frustrating part is that gorgeous CV layouts you find online often perform *worst*, because they break Applicant Tracking Systems and scramble in parsers. This guide walks through the best cv layout examples for 2026, explains which curriculum vitae layout actually passes the filters, and shows you how to structure your CV so both software and humans can read it instantly.

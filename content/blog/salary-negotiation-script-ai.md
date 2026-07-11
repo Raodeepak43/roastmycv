@@ -1,16 +1,26 @@
 ---
-title: "Salary Negotiation Script: What to Say When HR Names a Number"
-slug: "salary-negotiation-script-ai"
-date: "2026-06-08"
-description: "AI salary negotiation scripts for India — counter offers, competing offers, and fresher packages. Word-for-word lines that stay professional."
-keywords: "salary negotiation script, how to negotiate salary india, counter offer script, salary discussion hr"
+title: 'Salary Negotiation Script: What to Say When HR Names a Number'
+slug: salary-negotiation-script-ai
+date: '2026-06-08'
+description: >-
+  AI salary negotiation scripts for India — counter offers, competing offers,
+  and fresher packages. Word-for-word lines that stay professional.
+keywords: >-
+  salary negotiation script, how to negotiate salary india, counter offer
+  script, salary discussion hr
 faq:
-  - q: "Is the Salary Script tool free?"
-    a: "Pro plan feature."
-  - q: "Who should use Salary Script?"
-    a: "Anyone who received an offer in the last 7 days — especially first job and job-switchers."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Salary Script tool free?
+    a: Pro plan feature.
+  - q: Who should use Salary Script?
+    a: >-
+      Anyone who received an offer in the last 7 days — especially first job and
+      job-switchers.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: 'Salary Negotiation Script: What to Say When HR Names…'
 ---
 
 HR says "This is our best offer." Most candidates say "Okay." That one moment can cost you ₹2–5 LPA over three years. The **Salary Script** tool generates negotiation language tailored to your role, experience, and market — so you know exactly what to say on the call.

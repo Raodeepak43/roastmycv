@@ -1,17 +1,30 @@
 ---
-title: "Gemini Resume Roast Prompt — Copy-Paste for Indian Freshers"
-metaTitle: "Free Resume Roast (Better Than Gemini Prompts) India"
-slug: "gemini-resume-roast-prompt-india"
-date: "2026-07-02"
-description: "Gemini resume roast prompts for India — or skip prompts: upload PDF for free instant score, Hinglish roast & fixes in 30 sec. No signup."
-keywords: "gemini resume roast prompt, google gemini resume review, gemini cv roast prompt, ai resume roast prompt"
+title: Gemini Resume Roast Prompt — Copy-Paste for Indian Freshers
+metaTitle: Gemini Resume Roast Prompt
+slug: gemini-resume-roast-prompt-india
+date: '2026-07-02'
+description: >-
+  Gemini resume roast prompts for India — or skip prompts: upload PDF for free
+  instant score, Hinglish roast & fixes in 30 sec. No signup.
+keywords: >-
+  gemini resume roast prompt, google gemini resume review, gemini cv roast
+  prompt, ai resume roast prompt
 faq:
-  - q: "Can Gemini roast my resume?"
-    a: "Yes — paste your resume text into Gemini with a structured roast prompt. It won't parse PDF layout well. For direct PDF upload and Hinglish output, use MyCVRoast instead."
-  - q: "What is the best Gemini resume roast prompt?"
-    a: "Ask Gemini to act as a harsh Indian recruiter: score /10, quote 3 weak lines, list 5 fixes, flag ATS risks. Target a specific role (SDE-1, campus TCS, etc.) for useful output."
-  - q: "Gemini vs MyCVRoast for resume roast?"
-    a: "Gemini is flexible for one-off custom questions. MyCVRoast is faster for structured roast + score + fixes with PDF upload and Hinglish built in — no prompt engineering."
+  - q: Can Gemini roast my resume?
+    a: >-
+      Yes — paste your resume text into Gemini with a structured roast prompt.
+      It won't parse PDF layout well. For direct PDF upload and Hinglish output,
+      use MyCVRoast instead.
+  - q: What is the best Gemini resume roast prompt?
+    a: >-
+      Ask Gemini to act as a harsh Indian recruiter: score /10, quote 3 weak
+      lines, list 5 fixes, flag ATS risks. Target a specific role (SDE-1, campus
+      TCS, etc.) for useful output.
+  - q: Gemini vs MyCVRoast for resume roast?
+    a: >-
+      Gemini is flexible for one-off custom questions. MyCVRoast is faster for
+      structured roast + score + fixes with PDF upload and Hinglish built in —
+      no prompt engineering.
 ---
 
 Google autocomplete surfaces **gemini resume roast prompt** as a rising query (July 2026). Freshers copy prompts from Instagram reels, paste into Gemini, and still get polite fluff back.

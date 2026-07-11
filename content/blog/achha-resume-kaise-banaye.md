@@ -1,18 +1,28 @@
 ---
-title: "Achha Resume Kaise Banaye — Indian Fresher ke Liye Poora Guide"
-slug: "achha-resume-kaise-banaye"
-date: "2026-07-03"
+title: Achha Resume Kaise Banaye — Indian Fresher Guide
+slug: achha-resume-kaise-banaye
+date: '2026-07-03'
 type: guide
 author: MyCVRoast Team
-description: "Achha resume kaise banaye — section-by-section Hinglish guide. Summary, skills, projects, CGPA, ATS format, aur free AI review tips for campus & off-campus."
-keywords: "achha resume kaise banaye, resume guide hindi, fresher resume india, mycvroast"
+description: >-
+  Achha resume kaise banaye — summary, skills, projects aur format Hinglish me
+  step-by-step. Examples ke saath free check.
+keywords: 'achha resume kaise banaye, resume guide hindi, fresher resume india, mycvroast'
 faq:
-  - q: "Achha resume ka matlab kya hai?"
-    a: "Recruiter 10 second me samajh jaye aap kaun ho, kya stack aata hai, aur kyun interview pe bulaye — bina photo clutter ya generic \"team player\" ke."
-  - q: "Template se achha resume ban sakta hai?"
-    a: "Template start point hai — content aapka hona chahiye. Canva image CV ATS fail karta hai; simple one-column PDF best."
-  - q: "Hinglish me feedback milega?"
-    a: "Haan — MyCVRoast par Hinglish roast mode hai jo desi tone me honestly batata hai kya weak hai."
+  - q: Achha resume ka matlab kya hai?
+    a: >-
+      Recruiter 10 second me samajh jaye aap kaun ho, kya stack aata hai, aur
+      kyun interview pe bulaye — bina photo clutter ya generic "team player" ke.
+  - q: Template se achha resume ban sakta hai?
+    a: >-
+      Template start point hai — content aapka hona chahiye. Canva image CV ATS
+      fail karta hai; simple one-column PDF best.
+  - q: Hinglish me feedback milega?
+    a: >-
+      Haan — MyCVRoast par Hinglish roast mode hai jo desi tone me honestly
+      batata hai kya weak hai.
+metaTitle: Achha Resume Kaise Banaye? Fresher Guide (Hindi)
+h1: Achha Resume Kaise Banaye — Indian Fresher Guide
 ---
 
 **Achha resume kaise banaye** — sabko lagta hai unka CV "theek" hai jab tak 50 applications ke baad koi call nahi aata. Achha resume woh hai jo recruiter ko 6-10 second me bataye: kaun ho, kya kar sakte ho, proof kya hai. Yeh guide Indian fresher tone me poora flow deti hai.

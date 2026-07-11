@@ -1,16 +1,26 @@
 ---
-title: "Referral Request Email: Ask Without Being Awkward"
-slug: "referral-request-email-tool"
-date: "2026-06-15"
-description: "Write referral request emails to employees and alumni — specific, respectful, and easy for them to forward to HR."
-keywords: "referral request email, ask for referral, employee referral email template, referral message linkedin"
+title: 'Referral Request Email: Ask Without Being Awkward'
+slug: referral-request-email-tool
+date: '2026-06-15'
+description: >-
+  Write referral request emails to employees and alumni — specific, respectful,
+  and easy for them to forward to HR.
+keywords: >-
+  referral request email, ask for referral, employee referral email template,
+  referral message linkedin
 faq:
-  - q: "Is the Referral Ask tool free?"
-    a: "Pro plan feature."
-  - q: "Who should use Referral Ask?"
-    a: "Candidates targeting specific companies where they have 1st or 2nd degree connections."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Referral Ask tool free?
+    a: Pro plan feature.
+  - q: Who should use Referral Ask?
+    a: >-
+      Candidates targeting specific companies where they have 1st or 2nd degree
+      connections.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: Referral Request Email — Free Tool Guide
 ---
 
 Referrals get 4× more responses than cold applications. But "Can you refer me?" to someone you met once at a webinar feels cringe. **Referral Ask** writes messages that make it **easy for them to say yes** — short, specific, with your CV highlights attached in text.

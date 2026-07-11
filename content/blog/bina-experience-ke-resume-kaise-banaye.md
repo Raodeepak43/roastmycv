@@ -1,18 +1,30 @@
 ---
-title: "Bina Experience ke Resume Kaise Banaye — Zero Job History Guide"
-slug: "bina-experience-ke-resume-kaise-banaye"
-date: "2026-07-03"
+title: Bina Experience ke Resume Kaise Banaye
+slug: bina-experience-ke-resume-kaise-banaye
+date: '2026-07-03'
 type: guide
 author: MyCVRoast Team
-description: "Bina experience ke resume kaise banaye — projects, internships, college work, skills section tips for Indian freshers. ATS-friendly format + free checker."
-keywords: "bina experience ke resume kaise banaye, resume guide hindi, fresher resume india, mycvroast"
+description: >-
+  Experience nahi hai to resume kaise banaye? Projects, skills aur education ko
+  sahi format me likhna seekhein. Free check.
+keywords: >-
+  bina experience ke resume kaise banaye, resume guide hindi, fresher resume
+  india, mycvroast
 faq:
-  - q: "Experience zero ho to resume reject ho jata hai?"
-    a: "Nahi — freshers ke liye projects, internships, hackathons, aur college roles experience ki jagah le sakte hain agar bullets strong hon."
-  - q: "Fake experience likh sakte hain?"
-    a: "Bilkul nahi — background check aur interview me pakde jaoge. Real projects aur coursework highlight karo."
-  - q: "Kitne projects likhein?"
-    a: "2-3 strong projects jo aap confidently explain kar sako — tech stack, aapka role, aur outcome ke saath."
+  - q: Experience zero ho to resume reject ho jata hai?
+    a: >-
+      Nahi — freshers ke liye projects, internships, hackathons, aur college
+      roles experience ki jagah le sakte hain agar bullets strong hon.
+  - q: Fake experience likh sakte hain?
+    a: >-
+      Bilkul nahi — background check aur interview me pakde jaoge. Real projects
+      aur coursework highlight karo.
+  - q: Kitne projects likhein?
+    a: >-
+      2-3 strong projects jo aap confidently explain kar sako — tech stack,
+      aapka role, aur outcome ke saath.
+metaTitle: Bina Experience ke Resume Kaise Banaye?
+h1: Bina Experience ke Resume Kaise Banaye
 ---
 
 **Bina experience ke resume kaise banaye** — sabse bada myth: "bina job experience ke CV blank hota hai." Sach yeh hai ki **har fresher** yahi stage se start karta hai. Recruiters India me internship aur projects se potential judge karte hain jab full-time history nahi hoti.

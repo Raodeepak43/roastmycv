@@ -1,16 +1,26 @@
 ---
-title: "JD Match Tool: ATS Score Your Resume Against Any Job Description"
-slug: "jd-match-ats-score-tool"
-date: "2026-06-04"
-description: "Match your CV to a job description with an ATS score out of 100. See missing keywords, rewrites, and what to cut — free for Indian job seekers."
-keywords: "jd match resume, ats score job description, resume keyword match, cv job description match"
+title: 'JD Match Tool: ATS Score Your Resume Against Any Job Description'
+slug: jd-match-ats-score-tool
+date: '2026-06-04'
+description: >-
+  Match your CV to a job description with an ATS score out of 100. See missing
+  keywords, rewrites, and what to cut — free for Indian job seekers.
+keywords: >-
+  jd match resume, ats score job description, resume keyword match, cv job
+  description match
 faq:
-  - q: "Is the Job Match (JD Match) tool free?"
-    a: "2 free matches on the free plan."
-  - q: "Who should use Job Match (JD Match)?"
-    a: "Anyone applying to a specific role they care about — not spray-and-pray applicants."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Job Match (JD Match) tool free?
+    a: 2 free matches on the free plan.
+  - q: Who should use Job Match (JD Match)?
+    a: >-
+      Anyone applying to a specific role they care about — not spray-and-pray
+      applicants.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: JD Match Tool — Free Tool Guide
 ---
 
 You send the same CV to 50 companies and hear nothing. ATS systems at TCS, Amazon India, and startups rank candidates by **keyword match** to the job description. The **JD Match** tool scores your CV against any pasted JD and tells you exactly what to add, rewrite, or remove.

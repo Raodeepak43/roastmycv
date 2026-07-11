@@ -1,16 +1,29 @@
 ---
-title: "TCS NQT Resume Format — What Gets Shortlisted (2026)"
-slug: "tcs-nqt-resume-format-fresher"
-date: "2026-07-02"
-description: "TCS NQT resume format for freshers — section order, CGPA rules, project proof, and ATS layout that survives Tata Consultancy Services national qualifier screening."
-keywords: "tcs nqt resume format, tcs resume format fresher, tcs nqt cv format, tcs placement resume india"
+title: TCS NQT Resume Format — What Gets Shortlisted (2026)
+slug: tcs-nqt-resume-format-fresher
+date: '2026-07-02'
+description: >-
+  TCS NQT resume format for freshers — section order, CGPA rules, project proof,
+  and ATS layout that survives Tata Consultancy Services national qualifier
+  screening.
+keywords: >-
+  tcs nqt resume format, tcs resume format fresher, tcs nqt cv format, tcs
+  placement resume india
 faq:
-  - q: "What resume format does TCS NQT require?"
-    a: "One-page, single-column PDF with contact, education (CGPA), skills, projects, and internships. No photo, no graphics, standard fonts. Match keywords from TCS job description for your role."
-  - q: "Should I include CGPA for TCS NQT?"
-    a: "Yes — TCS eligibility often includes CGPA cutoff (varies by college). Put CGPA clearly in Education. See our CGPA guide for placement rules."
-  - q: "How do I check if my resume is TCS-ready?"
-    a: "Use MyCVRoast campus placement checker or TCS-specific ATS tool page, then free roast for content fixes before NQT application."
+  - q: What resume format does TCS NQT require?
+    a: >-
+      One-page, single-column PDF with contact, education (CGPA), skills,
+      projects, and internships. No photo, no graphics, standard fonts. Match
+      keywords from TCS job description for your role.
+  - q: Should I include CGPA for TCS NQT?
+    a: >-
+      Yes — TCS eligibility often includes CGPA cutoff (varies by college). Put
+      CGPA clearly in Education. See our CGPA guide for placement rules.
+  - q: How do I check if my resume is TCS-ready?
+    a: >-
+      Use MyCVRoast campus placement checker or TCS-specific ATS tool page, then
+      free roast for content fixes before NQT application.
+metaTitle: TCS NQT Resume Format
 ---
 
 **TCS NQT resume format** trips up thousands of freshers every year — not because they lack talent, but because they submit a Canva CV with vague projects and a hidden CGPA. TCS National Qualifier Test pipelines are high-volume: ATS parse first, human scan second.

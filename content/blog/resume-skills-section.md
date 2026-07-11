@@ -1,18 +1,34 @@
 ---
-title: "Resume Skills Section: What to List & How in 2026"
-slug: "resume-skills-section"
-date: "2026-02-11"
-description: "Build a strong resume skills section in 2026. Pick the right skills for resume, balance technical skills and soft skills, and avoid the mistakes that get CVs ignored."
-keywords: "resume skills, skills for resume, resume skills section, technical skills resume, soft skills resume"
+title: 'Resume Skills Section: What to List & How in 2026'
+slug: resume-skills-section
+date: '2026-02-11'
+description: >-
+  Resume Skills Section: What to List & How in 2026 — practical format tips,
+  examples, and mistakes to avoid for Indian freshers. Free AI resume check
+  linked.
+keywords: >-
+  resume skills, skills for resume, resume skills section, technical skills
+  resume, soft skills resume
 faq:
-  - q: "What is Resume Skills Section: What to List & How in 2026?"
-    a: "Build a strong resume skills section in 2026. Pick the right skills for resume, balance technical skills and soft skills, and avoid the mistakes that get CVs ignored."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Resume Skills Section: What to List & How in 2026?'
+    a: >-
+      Build a strong resume skills section in 2026. Pick the right skills for
+      resume, balance technical skills and soft skills, and avoid the mistakes
+      that get CVs ignored.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Resume Skills Section: What to List & How in 2026'
 ---
 
 The **resume skills** section looks simple — just a list, right? Yet it is one of the most misused parts of a CV. Candidates either dump 40 random tools in one line, rate themselves with meaningless star bars, or fill it with "hardworking team player" filler that every recruiter ignores. Done well, a focused skills section helps you pass Applicant Tracking Systems (ATS), reinforces your experience, and tells a recruiter in two seconds that you fit the role. This guide shows you exactly which skills for resume to include, how to group them, and how to balance technical skills and soft skills in 2026.

@@ -1,16 +1,24 @@
 ---
-title: "AI Career Path Planner: Routes From Your Current Role"
-slug: "ai-career-path-planner"
-date: "2026-06-16"
-description: "Explore career paths from your CV — next roles, skills to build, and realistic timelines for Indian job market 2026."
-keywords: "career path planner, career progression plan, next career move, career roadmap ai"
+title: 'AI Career Path Planner: Routes From Your Current Role'
+slug: ai-career-path-planner
+date: '2026-06-16'
+description: >-
+  Explore career paths from your CV — next roles, skills to build, and realistic
+  timelines for Indian job market 2026.
+keywords: >-
+  career path planner, career progression plan, next career move, career roadmap
+  ai
 faq:
-  - q: "Is the Career Paths tool free?"
-    a: "Pro plan feature."
-  - q: "Who should use Career Paths?"
-    a: "2–7 year professionals feeling plateaued or considering a pivot."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Career Paths tool free?
+    a: Pro plan feature.
+  - q: Who should use Career Paths?
+    a: 2–7 year professionals feeling plateaued or considering a pivot.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: 'AI Career Path Planner: Routes From Your Current Role'
 ---
 
 Stuck as "Software Engineer" with no idea if you should go toward PM, DevOps, or engineering manager? **Career Paths** maps realistic next steps from your actual CV — not generic "learn leadership" advice.

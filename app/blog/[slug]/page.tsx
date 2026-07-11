@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getBlogSlugs, getPostBySlug, getPostLastModified } from '@/lib/blog'
 import { articleJsonLd, breadcrumbJsonLd, faqPageJsonLd } from '@/lib/schema'
-import { DEFAULT_OG_IMAGE, blogSerpTitle, siteUrl } from '@/lib/seo'
+import { DEFAULT_OG_IMAGE, blogHeadline, blogSerpTitle, siteUrl } from '@/lib/seo'
 import { BlogBreadcrumb, BlogCta, BlogFooter, BlogHeader } from '@/components/BlogChrome'
 import { BlogFeaturedBanner } from '@/components/BlogFeaturedBanner'
 import {
@@ -30,28 +30,39 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const url = siteUrl(`/blog/${post.slug}`)
   const serpTitle = blogSerpTitle(post)
+  const headline = blogHeadline(post)
 
   return {
     title: serpTitle,
     description: post.description,
-    keywords: post.keywords,
     alternates: { canonical: url },
     openGraph: {
-      title: post.metaTitle ?? post.title,
+      title: headline,
       description: post.description,
       url,
       siteName: 'MyCVRoast',
       type: 'article',
       publishedTime: post.date,
+      locale: 'en_IN',
       images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.metaTitle ?? post.title,
+      title: headline,
       description: post.description,
       images: [DEFAULT_OG_IMAGE.url],
     },
-    robots: { index: true, follow: true },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+      },
+    },
   }
 }
 
@@ -63,6 +74,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   const typeLabel =
     post.type === 'comparison' ? 'Comparison' : post.type === 'tool' ? 'Product Guide' : 'Career Guide'
   const modifiedIso = getPostLastModified(post.slug, post.date).toISOString()
+  const headline = blogHeadline(post)
 
   return (
     <div className="min-h-screen flex flex-col bg-bg-beige">
@@ -71,13 +83,13 @@ export default async function BlogPostPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            articleJsonLd(post.title, post.date, post.slug, post.description, modifiedIso),
+            articleJsonLd(headline, post.date, post.slug, post.description, modifiedIso),
           ),
         }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(post.title, post.slug)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(headline, post.slug)) }}
       />
       {post.faq && post.faq.length > 0 && (
         <script
@@ -91,14 +103,14 @@ export default async function BlogPostPage({ params }: PageProps) {
         <BlogBreadcrumb title={post.title} />
         <article>
           <BlogFeaturedBanner
-            title={post.title}
+            title={headline}
             slug={post.slug}
             showTitle
             label={`${typeLabel} · ${category}`}
           />
           <BlogArticleMeta post={post} />
           <h1 className="font-display text-3xl md:text-[2.35rem] text-text-dark mb-4 leading-tight tracking-tight">
-            {post.title}
+            {headline}
           </h1>
           {post.description && (
             <p className="font-body text-base text-dim leading-relaxed mb-8 border-l-2 border-orange/50 pl-4">

@@ -1,18 +1,33 @@
 ---
-title: "Simple Resume Format: Clean Examples That Win in 2026"
-slug: "simple-resume-format"
-date: "2025-12-31"
-description: "A simple resume format beats fancy designs in 2026. Simple resume maker guide with basic resume examples, clean layout, and ATS tips for India job seekers."
-keywords: "simple resume, simple resume maker, simple resume builder, basic resume, simple resume format, basic resume examples, simple resume maker free"
+title: 'Simple Resume Format: Clean Examples That Win in 2026'
+slug: simple-resume-format
+date: '2025-12-31'
+description: >-
+  A simple resume format beats fancy designs in 2026. Simple resume maker guide
+  with basic resume examples, clean layout, and ATS tips for India job seekers.
+keywords: >-
+  simple resume, simple resume maker, simple resume builder, basic resume,
+  simple resume format, basic resume examples, simple resume maker free
 faq:
-  - q: "What is Simple Resume Format: Clean Examples That Win in 2026?"
-    a: "A simple resume format beats fancy designs in 2026. See basic resume examples, simple resume format structure, and a clean layout that passes ATS in India."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Simple Resume Format: Clean Examples That Win in 2026?'
+    a: >-
+      A simple resume format beats fancy designs in 2026. See basic resume
+      examples, simple resume format structure, and a clean layout that passes
+      ATS in India.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Simple Resume Format: Clean Examples That Win in 2026'
 ---
 
 A **simple resume** almost always beats a flashy one — and not because recruiters are boring. Clean, single-column layouts parse correctly through Applicant Tracking Systems (ATS), load fast on a recruiter's phone, and let your actual content do the talking. The fancy template with sidebars, icons, and three colors? It often turns into scrambled text the moment software reads it. This guide shows you a reliable simple resume format with basic resume examples you can adapt today.

@@ -1,16 +1,24 @@
 ---
-title: "Job Application Follow-Up Email: When and What to Write"
-slug: "job-application-follow-up-email"
-date: "2026-06-12"
-description: "Follow-up email after applying or interviewing — professional nudge templates for Indian job search without sounding desperate."
-keywords: "follow up email job application, application follow up, follow up after interview no response"
+title: 'Job Application Follow-Up Email: When and What to Write'
+slug: job-application-follow-up-email
+date: '2026-06-12'
+description: >-
+  Follow-up email after applying or interviewing — professional nudge templates
+  for Indian job search without sounding desperate.
+keywords: >-
+  follow up email job application, application follow up, follow up after
+  interview no response
 faq:
-  - q: "Is the Follow-Up Email tool free?"
-    a: "Unlimited on free plan."
-  - q: "Who should use Follow-Up Email?"
-    a: "Active job seekers managing 20+ applications who lose track of timelines."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Follow-Up Email tool free?
+    a: Unlimited on free plan.
+  - q: Who should use Follow-Up Email?
+    a: Active job seekers managing 20+ applications who lose track of timelines.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: Job Application Follow
 ---
 
 Applied two weeks ago. Silence. A single **follow-up email** can resurface your application — if it is timed right and does not read like "please please hire me." The **Follow-Up** tool writes context-aware nudges for post-application or post-interview scenarios.

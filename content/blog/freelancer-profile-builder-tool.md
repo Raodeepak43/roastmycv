@@ -1,16 +1,26 @@
 ---
-title: "Freelancer Profile Builder: Upwork, Fiverr, and LinkedIn Bio"
-slug: "freelancer-profile-builder-tool"
-date: "2026-06-29"
-description: "Build freelancer profile text from your CV — bio, service descriptions, and portfolio bullets for Upwork, Fiverr, and direct clients."
-keywords: "freelancer profile, upwork profile bio, fiverr description, freelance portfolio india"
+title: 'Freelancer Profile Builder: Upwork, Fiverr, and LinkedIn Bio'
+slug: freelancer-profile-builder-tool
+date: '2026-06-29'
+description: >-
+  Build freelancer profile text from your CV — bio, service descriptions, and
+  portfolio bullets for Upwork, Fiverr, and direct clients.
+keywords: >-
+  freelancer profile, upwork profile bio, fiverr description, freelance
+  portfolio india
 faq:
-  - q: "Is the Freelancer Profile tool free?"
-    a: "2 free generations per day."
-  - q: "Who should use Freelancer Profile?"
-    a: "Side hustlers, developers, designers, and writers starting freelance in India."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Freelancer Profile tool free?
+    a: 2 free generations per day.
+  - q: Who should use Freelancer Profile?
+    a: >-
+      Side hustlers, developers, designers, and writers starting freelance in
+      India.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: Freelancer Profile Builder — Free Tool Guide
 ---
 
 Your resume is for jobs. Freelance platforms need a **different pitch** — outcome-focused bio, service packages, and keywords clients search. **Freelancer Profile** converts your CV into platform-ready copy for Upwork, Fiverr, and LinkedIn Services.

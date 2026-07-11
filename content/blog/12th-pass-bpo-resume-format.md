@@ -1,20 +1,35 @@
 ---
-title: "12th Pass BPO Resume Format — Call Centre & Customer Support 2026"
-slug: "12th-pass-bpo-resume-format"
-date: "2026-07-12"
+title: 12th Pass BPO Resume Format for Call Centre Jobs
+slug: 12th-pass-bpo-resume-format
+date: '2026-07-12'
 type: guide
 author: MyCVRoast Team
-description: "12th pass BPO resume format India — voice & non-voice call centre, customer support jobs. Sample objective, skills, typing WPM. Free AI check 2026."
-keywords: "12th pass bpo resume, bpo resume format fresher, call centre resume 12th pass, bpo resume format india, customer support resume fresher"
+description: >-
+  12th pass BPO resume format — voice/non-voice call centre ke liye objective,
+  skills, typing speed aur sample lines. Free AI check.
+keywords: >-
+  12th pass bpo resume, bpo resume format fresher, call centre resume 12th pass,
+  bpo resume format india, customer support resume fresher
 faq:
-  - q: "12th pass BPO me resume chahiye?"
-    a: "Haan — voice process, non-voice, chat support, aur back-office roles me simple one-page resume maanga jata hai. Walk-in drives pe hard copy bhi le jao."
-  - q: "BPO resume me typing speed likhni chahiye?"
-    a: "Haan agar sach ho — 30–40 WPM non-voice ke liye useful. Jhoot mat likho; typing test hota hai onboarding me."
-  - q: "Night shift likhna chahiye resume me?"
-    a: "Agar comfortable ho to 'open to rotational/night shifts' likh sakte ho — BPO hiring me common filter hai."
-  - q: "Photo lagani chahiye BPO resume me?"
-    a: "Kuch consultancies maangti hain — ek passport size photo resume ke saath alag bhi rakho. PDF me photo optional unless walk-in form maange."
+  - q: 12th pass BPO me resume chahiye?
+    a: >-
+      Haan — voice process, non-voice, chat support, aur back-office roles me
+      simple one-page resume maanga jata hai. Walk-in drives pe hard copy bhi le
+      jao.
+  - q: BPO resume me typing speed likhni chahiye?
+    a: >-
+      Haan agar sach ho — 30–40 WPM non-voice ke liye useful. Jhoot mat likho;
+      typing test hota hai onboarding me.
+  - q: Night shift likhna chahiye resume me?
+    a: >-
+      Agar comfortable ho to 'open to rotational/night shifts' likh sakte ho —
+      BPO hiring me common filter hai.
+  - q: Photo lagani chahiye BPO resume me?
+    a: >-
+      Kuch consultancies maangti hain — ek passport size photo resume ke saath
+      alag bhi rakho. PDF me photo optional unless walk-in form maange.
+metaTitle: 12th Pass BPO Resume Format — Call Centre Jobs 2026
+h1: 12th Pass BPO Resume Format for Call Centre Jobs
 ---
 
 **12th pass BPO resume format** — call centre aur customer support India me sabse zyada **12th pass + fluent Hindi/English** hiring hoti hai. Voice process, non-voice, chat support, email support — sab me **simple one-page resume** chahiye: clear phone, typing speed (honest), languages, aur night shift willingness.

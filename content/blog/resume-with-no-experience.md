@@ -1,18 +1,34 @@
 ---
-title: "Resume With No Experience: Land Your First Job 2026"
-slug: "resume-with-no-experience"
-date: "2026-01-14"
-description: "How to write a resume with no experience in 2026. A resume for first job seekers and beginners with no work experience — fill the page honestly and get shortlisted."
-keywords: "resume with no experience, resume for first job, resume with no work experience, resume for beginners with no experience, first resume"
+title: 'Resume With No Experience: Land Your First Job 2026'
+slug: resume-with-no-experience
+date: '2026-01-14'
+description: >-
+  How to write a resume with no experience in 2026. A resume for first job
+  seekers and beginners with no work experience — fill the page honestly and get
+  shortlisted.
+keywords: >-
+  resume with no experience, resume for first job, resume with no work
+  experience, resume for beginners with no experience, first resume
 faq:
-  - q: "What is Resume With No Experience: Land Your First Job 2026?"
-    a: "How to write a resume with no experience in 2026. A resume for first job seekers and beginners with no work experience — fill the page honestly and get shortlisted."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Resume With No Experience: Land Your First Job 2026?'
+    a: >-
+      How to write a resume with no experience in 2026. A resume for first job
+      seekers and beginners with no work experience — fill the page honestly and
+      get shortlisted.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Resume With No Experience: Land Your First Job 2026'
 ---
 
 Writing a **resume with no experience** feels impossible — the page stares back at you, the "Work Experience" section is empty, and every job posting seems to demand the thing you are trying to get. Here is the reframe that changes everything: a resume for first job seekers is not about hiding the gap, it is about proving capability through what you *have* done. Projects, coursework, internships, volunteering, and freelance work all count. In 2026, freshers across India land roles with exactly this kind of resume every placement season.

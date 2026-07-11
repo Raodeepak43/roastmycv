@@ -1,18 +1,34 @@
 ---
-title: "CV for Freshers: Format That Lands Interviews (2026)"
-slug: "cv-format-for-freshers"
-date: "2025-10-30"
-description: "The right CV for freshers can beat 500 other applicants. Learn the best CV format for freshers in India, what to include with no experience, and free tools to build it."
-keywords: "cv for freshers, cv format for freshers, cv maker for freshers, free cv for freshers, cv for freshers with no experience"
+title: 'CV for Freshers: Format That Lands Interviews (2026)'
+slug: cv-format-for-freshers
+date: '2025-10-30'
+description: >-
+  CV for Freshers: Format That Lands Interviews — practical format tips,
+  examples, and mistakes to avoid for Indian freshers. Free AI resume check
+  linked.
+keywords: >-
+  cv for freshers, cv format for freshers, cv maker for freshers, free cv for
+  freshers, cv for freshers with no experience
 faq:
-  - q: "What is CV for Freshers: Format That Lands Interviews?"
-    a: "The right CV for freshers can beat 500 other applicants. Learn the best CV format for freshers in India, what to include with no experience, and free tools to build it."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is CV for Freshers: Format That Lands Interviews?'
+    a: >-
+      The right CV for freshers can beat 500 other applicants. Learn the best CV
+      format for freshers in India, what to include with no experience, and free
+      tools to build it.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'CV for Freshers: Format That Lands Interviews'
 ---
 
 Writing a **cv for freshers** feels impossible when your work-experience section is basically empty — and that panic leads to two equally bad outcomes: a CV padded with fluff, or a CV so bare it looks unfinished. Here is the good news: recruiters hiring freshers in India do not expect years of experience. They expect a clean, well-structured document that proves you can learn, communicate, and contribute. This guide gives you the exact CV format for freshers that works in the Indian job market, what to put in every section when you have no experience, and how to make it stand out among the 500 applications flooding every campus role.

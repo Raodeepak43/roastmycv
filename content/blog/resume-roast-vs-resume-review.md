@@ -1,19 +1,31 @@
 ---
-title: "Resume Roast vs Resume Review — What's the Difference?"
-metaTitle: "Resume Roast vs Review — Which Is Better? (India)"
-slug: "resume-roast-vs-resume-review"
-date: "2026-06-29"
-description: "Resume roast vs review — honest line-by-line AI feedback vs generic checker scores. See examples, when to use each, and free roast for India."
-keywords: "resume roast vs resume review difference, roast vs review cv, ai resume roast"
+title: Resume Roast vs Resume Review — What's the Difference?
+metaTitle: Resume Roast vs Resume Review (2026)
+slug: resume-roast-vs-resume-review
+date: '2026-06-29'
+description: >-
+  Resume roast vs review — honest line-by-line AI feedback vs generic checker
+  scores. See examples, when to use each, and free roast for India.
+keywords: 'resume roast vs resume review difference, roast vs review cv, ai resume roast'
 faq:
-  - q: "What is the difference between a resume roast and a resume review?"
-    a: "A resume review gives generic scores and checklist tips. A resume roast reads your specific CV, quotes weak lines, and gives direct feedback — often in Hinglish for Indian job seekers."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: What is the difference between a resume roast and a resume review?
+    a: >-
+      A resume review gives generic scores and checklist tips. A resume roast
+      reads your specific CV, quotes weak lines, and gives direct feedback —
+      often in Hinglish for Indian job seekers.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
 ---
 
 **Resume roast vs resume review** — dono mein feedback milta hai, par intent aur tone alag hai. Choose wrong tool → polite generic tips, zero behavior change.

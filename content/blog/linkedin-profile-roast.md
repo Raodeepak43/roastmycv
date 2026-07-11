@@ -1,16 +1,27 @@
 ---
-title: "LinkedIn Profile Roast — Free AI Review That Actually Helps"
-slug: "linkedin-profile-roast"
-date: "2026-06-30"
-description: "Roast your LinkedIn profile with AI. Get brutal honest feedback on headline, about, experience, skills and activity — free, no signup."
-keywords: "linkedin roast, linkedin profile roast, ai linkedin review, linkedin profile feedback"
+title: LinkedIn Profile Roast — Free AI Review That Actually Helps
+slug: linkedin-profile-roast
+date: '2026-06-30'
+description: >-
+  Roast your LinkedIn profile with AI. Get brutal honest feedback on headline,
+  about, experience, skills and activity — free, no signup.
+keywords: >-
+  linkedin roast, linkedin profile roast, ai linkedin review, linkedin profile
+  feedback
 faq:
-  - q: "What is LinkedIn Profile Roast — Free AI Review That Actually Helps?"
-    a: "Roast your LinkedIn profile with AI. Get brutal honest feedback on headline, about, experience, skills and activity — free, no signup."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
+  - q: What is LinkedIn Profile Roast — Free AI Review That Actually Helps?
+    a: >-
+      Roast your LinkedIn profile with AI. Get brutal honest feedback on
+      headline, about, experience, skills and activity — free, no signup.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+metaTitle: LinkedIn Profile Roast
 ---
 
 Your **LinkedIn profile** is your digital first impression — and most profiles are painfully generic. "Passionate professional | Team player | Open to opportunities" tells recruiters nothing. They scroll past in two seconds.

@@ -18,7 +18,15 @@ export function serpTitle(title: string, brand = 'MyCVRoast'): string {
 }
 
 export function blogSerpTitle(post: { metaTitle?: string; title: string }): string {
-  return serpTitle(post.metaTitle ?? post.title, 'MyCVRoast')
+  const base = (post.metaTitle ?? post.title).trim()
+  const suffix = ' | MyCVRoast'
+  // Prefer full metaTitle on mobile SERP when close to limit (GSC CTR testing)
+  if (base.length + suffix.length <= 62) return `${base}${suffix}`
+  return serpTitle(base, 'MyCVRoast')
+}
+
+export function blogHeadline(post: { h1?: string; title: string }): string {
+  return (post.h1 ?? post.title).trim()
 }
 
 export const HOME_KEYWORDS =

@@ -1,18 +1,34 @@
 ---
-title: "Resume Action Verbs: Power Words That Win in 2026"
-slug: "resume-action-verbs"
-date: "2026-02-18"
-description: "The best resume action verbs and power words for resume bullets in 2026. Replace weak phrases with strong, effective resume writing examples that get you shortlisted."
-keywords: "resume action verbs, strong resume, power words for resume, effective resume, resume writing examples"
+title: 'Resume Action Verbs: Power Words That Win in 2026'
+slug: resume-action-verbs
+date: '2026-02-18'
+description: >-
+  Resume Action Verbs: Power Words That Win in 2026 — practical format tips,
+  examples, and mistakes to avoid for Indian freshers. Free AI resume check
+  linked.
+keywords: >-
+  resume action verbs, strong resume, power words for resume, effective resume,
+  resume writing examples
 faq:
-  - q: "What is Resume Action Verbs: Power Words That Win in 2026?"
-    a: "The best resume action verbs and power words for resume bullets in 2026. Replace weak phrases with strong, effective resume writing examples that get you shortlisted."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Resume Action Verbs: Power Words That Win in 2026?'
+    a: >-
+      The best resume action verbs and power words for resume bullets in 2026.
+      Replace weak phrases with strong, effective resume writing examples that
+      get you shortlisted.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Resume Action Verbs: Power Words That Win in 2026'
 ---
 
 Strong **resume action verbs** are the cheapest, fastest upgrade you can make to your CV. Change "responsible for managing a team" to "led a team," and the same achievement suddenly sounds confident, active, and results-driven. Recruiters scan dozens of resumes a day, and the verb at the start of each bullet sets the tone instantly. This guide gives you power words for resume bullets, shows you which weak phrases to delete, and provides effective resume writing examples you can adapt today.

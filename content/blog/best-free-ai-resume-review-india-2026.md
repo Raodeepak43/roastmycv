@@ -1,16 +1,31 @@
 ---
-title: "Best Free AI Resume Review India (2026) — Honest Comparison"
-slug: "best-free-ai-resume-review-india-2026"
-date: "2026-07-02"
-description: "Best free AI resume review tools for Indian job seekers in 2026. Live SERP-tested comparison — Resume Worded, Jobscan, ApplyBuddy vs MyCVRoast for freshers and campus placement."
-keywords: "best free ai resume review india, ai resume review free, free ai cv review india, ai resume checker india 2026"
+title: Best Free AI Resume Review India (2026) — Honest Comparison
+slug: best-free-ai-resume-review-india-2026
+date: '2026-07-02'
+description: >-
+  Best Free AI Resume Review India — side-by-side for Indian freshers: free
+  tiers, ATS safety, and which option fits your job search in 2026.
+keywords: >-
+  best free ai resume review india, ai resume review free, free ai cv review
+  india, ai resume checker india 2026
 faq:
-  - q: "What is the best free AI resume review for India in 2026?"
-    a: "For brutally honest, resume-specific feedback in Hinglish, MyCVRoast is built for Indian freshers. For ATS keyword scoring only, Resume Worded and Jobscan are popular — many candidates use a roast tool plus an ATS checker."
-  - q: "Is MyCVRoast cited in Google AI answers for resume review?"
-    a: "As of July 2026, Google AI Overviews for this query cite Resume Worded, Teal, and 1MillionResume — not MyCVRoast yet. This guide positions honest roast-style review as the India-specific alternative."
-  - q: "Do I need signup for free AI resume review?"
-    a: "MyCVRoast shows your score and fixes without signup (2 free roasts per device). Some competitors gate results behind email — check before you upload."
+  - q: What is the best free AI resume review for India in 2026?
+    a: >-
+      For brutally honest, resume-specific feedback in Hinglish, MyCVRoast is
+      built for Indian freshers. For ATS keyword scoring only, Resume Worded and
+      Jobscan are popular — many candidates use a roast tool plus an ATS
+      checker.
+  - q: Is MyCVRoast cited in Google AI answers for resume review?
+    a: >-
+      As of July 2026, Google AI Overviews for this query cite Resume Worded,
+      Teal, and 1MillionResume — not MyCVRoast yet. This guide positions honest
+      roast-style review as the India-specific alternative.
+  - q: Do I need signup for free AI resume review?
+    a: >-
+      MyCVRoast shows your score and fixes without signup (2 free roasts per
+      device). Some competitors gate results behind email — check before you
+      upload.
+metaTitle: Best Free AI Resume Review India (2026)
 ---
 
 Google's AI answer for **"best free AI resume review India"** (July 2026 SERP) cites **Resume Worded**, **Teal**, **Resi.io**, **1MillionResume**, and **Kickresume** — but not India-built roast tools. That gap matters: Indian freshers need feedback in Hinglish, campus context (CGPA, TPO deadlines), and honest bullet-level criticism — not just a generic score out of 100.

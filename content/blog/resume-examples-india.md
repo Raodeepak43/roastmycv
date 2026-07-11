@@ -1,18 +1,34 @@
 ---
-title: "Resume Examples India: Real Samples That Work in 2026"
-slug: "resume-examples-india"
-date: "2025-12-24"
-description: "Study real resume examples for Indian job seekers in 2026. See good resume examples, before/after bullets, and professional resume examples for freshers and pros."
-keywords: "resume examples, best resume examples, good resume examples, professional resume examples, resume examples for job"
+title: 'Resume Examples India: Real Samples That Work in 2026'
+slug: resume-examples-india
+date: '2025-12-24'
+description: >-
+  Study real resume examples for Indian job seekers in 2026. See good resume
+  examples, before/after bullets, and professional resume examples for freshers
+  and pros.
+keywords: >-
+  resume examples, best resume examples, good resume examples, professional
+  resume examples, resume examples for job
 faq:
-  - q: "What is Resume Examples India: Real Samples That Work in 2026?"
-    a: "Study real resume examples for Indian job seekers in 2026. See good resume examples, before/after bullets, and professional resume examples for freshers and pros."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Resume Examples India: Real Samples That Work in 2026?'
+    a: >-
+      Study real resume examples for Indian job seekers in 2026. See good resume
+      examples, before/after bullets, and professional resume examples for
+      freshers and pros.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Resume Examples India: Real Samples That Work in 2026'
 ---
 
 Looking at strong **resume examples** is the fastest way to fix your own CV — you instantly see what a recruiter notices, what feels cluttered, and where weak bullets hide. But most "best resume examples" floating around Indian WhatsApp groups are recycled 2018 templates with photos, declaration lines, and "references available on request." This guide shows what actually works in 2026, with real before/after samples you can copy the *structure* of (not the content).

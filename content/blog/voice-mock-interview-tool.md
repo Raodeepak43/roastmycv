@@ -1,16 +1,24 @@
 ---
-title: "Voice Mock Interview: Speak Your Answers, Get AI Feedback"
-slug: "voice-mock-interview-tool"
-date: "2026-06-23"
-description: "Voice-based mock interview — talk through answers aloud, AI listens and probes like a real interviewer. Best for spoken fluency."
-keywords: "voice mock interview, speak interview practice, ai voice interview, oral interview prep"
+title: 'Voice Mock Interview: Speak Your Answers, Get AI Feedback'
+slug: voice-mock-interview-tool
+date: '2026-06-23'
+description: >-
+  Voice-based mock interview — talk through answers aloud, AI listens and probes
+  like a real interviewer. Best for spoken fluency.
+keywords: >-
+  voice mock interview, speak interview practice, ai voice interview, oral
+  interview prep
 faq:
-  - q: "Is the Voice Interview tool free?"
-    a: "Pro plan feature."
-  - q: "Who should use Voice Interview?"
-    a: "Candidates weak in spoken English or who panic on phone interviews."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Voice Interview tool free?
+    a: Pro plan feature.
+  - q: Who should use Voice Interview?
+    a: Candidates weak in spoken English or who panic on phone interviews.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: Voice Mock Interview — Free Tool Guide
 ---
 
 Typing answers is easy. Saying them aloud while a stranger watches is not. **Voice Interview** runs a spoken mock round — a natural AI voice reads questions aloud, you talk back via mic or keyboard, and AI probes with follow-ups like a real interviewer.

@@ -1,16 +1,30 @@
 ---
-title: "Free Resume Maker India — No Paywall, ATS-Safe (2026)"
-slug: "free-resume-maker-india-no-paywall"
-date: "2026-07-02"
-description: "Best free resume maker for India without download paywalls. Compare Canva, Resume.io, Novoresume vs MyCVRoast — SERP-tested picks for freshers and job seekers."
-keywords: "free resume maker, free resume maker india, resume maker online free, free cv maker india no paywall"
+title: 'Free Resume Maker India — No Paywall, ATS-Safe (2026)'
+slug: free-resume-maker-india-no-paywall
+date: '2026-07-02'
+description: >-
+  Best free resume maker for India without download paywalls. Compare Canva,
+  Resume.io, Novoresume vs MyCVRoast — SERP-tested picks for freshers and job
+  seekers.
+keywords: >-
+  free resume maker, free resume maker india, resume maker online free, free cv
+  maker india no paywall
 faq:
-  - q: "Is there a 100% free resume builder?"
-    a: "Yes — but many hide paywalls at download. MyCVRoast resume builder offers one free PDF export with live ATS score. Always test the download step before investing time."
-  - q: "Which free resume maker is best for India?"
-    a: "For ATS-safe fresher CVs without paywall tricks, MyCVRoast and Google Docs templates work well. Canva ranks #1 for 'free resume maker' but many templates break ATS parsers."
-  - q: "Canva vs MyCVRoast resume builder?"
-    a: "Canva wins on design variety; MyCVRoast wins on ATS score, India fresher sections, and integration with free AI roast before you apply."
+  - q: Is there a 100% free resume builder?
+    a: >-
+      Yes — but many hide paywalls at download. MyCVRoast resume builder offers
+      one free PDF export with live ATS score. Always test the download step
+      before investing time.
+  - q: Which free resume maker is best for India?
+    a: >-
+      For ATS-safe fresher CVs without paywall tricks, MyCVRoast and Google Docs
+      templates work well. Canva ranks #1 for 'free resume maker' but many
+      templates break ATS parsers.
+  - q: Canva vs MyCVRoast resume builder?
+    a: >-
+      Canva wins on design variety; MyCVRoast wins on ATS score, India fresher
+      sections, and integration with free AI roast before you apply.
+metaTitle: Free Resume Maker India
 ---
 
 **Free resume maker** searches in July 2026 SERP are dominated by **Canva #1**, **Resume-now #2**, **Resume.com #3**, **MyPerfectResume #5**, and **Novoresume #11** — all global tools. Indian job seekers hit the same wall: beautiful template → build for 40 minutes → **paywall at download**.

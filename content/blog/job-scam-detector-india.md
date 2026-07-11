@@ -1,16 +1,24 @@
 ---
-title: "Job Scam Detector India: Spot Fake Jobs on WhatsApp and Naukri"
-slug: "job-scam-detector-india"
-date: "2026-06-22"
-description: "AI job scam detector for India — fake recruiter messages, registration fee traps, Telegram job scams, and too-good salary offers."
-keywords: "job scam detector, fake job offer india, whatsapp job scam, naukri fake jobs"
+title: 'Job Scam Detector India: Spot Fake Jobs on WhatsApp and Naukri'
+slug: job-scam-detector-india
+date: '2026-06-22'
+description: >-
+  AI job scam detector for India — fake recruiter messages, registration fee
+  traps, Telegram job scams, and too-good salary offers.
+keywords: 'job scam detector, fake job offer india, whatsapp job scam, naukri fake jobs'
 faq:
-  - q: "Is the Job Scam Detector tool free?"
-    a: "Unlimited on free plan."
-  - q: "Who should use Job Scam Detector?"
-    a: "Freshers, work-from-home seekers, and anyone contacted by unknown \"HR\" on WhatsApp."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Job Scam Detector tool free?
+    a: Unlimited on free plan.
+  - q: Who should use Job Scam Detector?
+    a: >-
+      Freshers, work-from-home seekers, and anyone contacted by unknown "HR" on
+      WhatsApp.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: 'Job Scam Detector India: Spot Fake Jobs on WhatsApp…'
 ---
 
 ₹45,000/month work-from-home data entry. Pay ₹999 registration. Interview only on Telegram. If it sounds too good, it probably is a **job scam** — and India saw a surge in fake recruiter fraud in 2024–2026. **Job Scam Detector** analyses suspicious messages and job posts before you share Aadhaar or pay anyone.

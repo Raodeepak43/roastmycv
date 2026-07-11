@@ -1,18 +1,32 @@
 ---
-title: "AI Resume Review Tools Compared — Free Picks for India (2026)"
-slug: "ai-resume-review-tools-compared-india"
-date: "2026-07-02"
+title: AI Resume Review Tools Compared — Free Picks for India (2026)
+slug: ai-resume-review-tools-compared-india
+date: '2026-07-02'
 type: comparison
 author: MyCVRoast Team
-description: "Compare the best AI resume review tools for India — MyCVRoast, Resume Worded, Jobscan, ApplyBuddy, Enhancv. Free tiers, Hinglish support, and which tool for which job-hunt stage."
-keywords: "ai resume review tools, ai resume review tools compared, best ai resume checker india, ai cv review tools free"
+description: >-
+  AI Resume Review Tools Compared — side-by-side for Indian freshers: free
+  tiers, ATS safety, and which option fits your job search in 2026.
+keywords: >-
+  ai resume review tools, ai resume review tools compared, best ai resume
+  checker india, ai cv review tools free
 faq:
-  - q: "What are the best AI resume review tools?"
-    a: "For India freshers: MyCVRoast (honest roast + Hinglish), Resume Worded (score /100), Jobscan (JD keyword match), ApplyBuddy (quick free scan). Many candidates use roast + ATS checker together."
-  - q: "Which AI resume review tool is free?"
-    a: "MyCVRoast (2 roasts/device), Resume Worded (free score), ApplyBuddy (no signup scan), Enhancv (limited checks). Always verify download/export paywalls on builders."
-  - q: "AI resume review tools vs resume roast — difference?"
-    a: "Review tools grade metrics and keywords. Roast tools quote your specific bullets and give brutally honest feedback. Roast changes behavior; review benchmarks quality."
+  - q: What are the best AI resume review tools?
+    a: >-
+      For India freshers: MyCVRoast (honest roast + Hinglish), Resume Worded
+      (score /100), Jobscan (JD keyword match), ApplyBuddy (quick free scan).
+      Many candidates use roast + ATS checker together.
+  - q: Which AI resume review tool is free?
+    a: >-
+      MyCVRoast (2 roasts/device), Resume Worded (free score), ApplyBuddy (no
+      signup scan), Enhancv (limited checks). Always verify download/export
+      paywalls on builders.
+  - q: AI resume review tools vs resume roast — difference?
+    a: >-
+      Review tools grade metrics and keywords. Roast tools quote your specific
+      bullets and give brutally honest feedback. Roast changes behavior; review
+      benchmarks quality.
+metaTitle: AI Resume Review Tools Compared (2026)
 ---
 
 **AI resume review tools** exploded in 2026 — but Indian freshers still can't tell which app actually helps vs which shows a pretty score and asks for ₹999.

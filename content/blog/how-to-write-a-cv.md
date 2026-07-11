@@ -1,18 +1,34 @@
 ---
-title: "How to Write a CV: Step-by-Step Guide (2026)"
-slug: "how-to-write-a-cv"
-date: "2025-11-19"
-description: "Learn how to write a CV from scratch in 2026. A step-by-step guide to writing a curriculum vitae for jobs in India, with examples, structure, and free tools."
-keywords: "how to write a cv, cv how to write, sample how to write a cv, writing a curriculum vitae, cv writing for job"
+title: 'How to Write a CV: Step-by-Step Guide (2026)'
+slug: how-to-write-a-cv
+date: '2025-11-19'
+description: >-
+  Learn how to write a CV from scratch in 2026. A step-by-step guide to writing
+  a curriculum vitae for jobs in India, with examples, structure, and free
+  tools.
+keywords: >-
+  how to write a cv, cv how to write, sample how to write a cv, writing a
+  curriculum vitae, cv writing for job
 faq:
-  - q: "What is How to Write a CV: Step-by-Step Guide?"
-    a: "Learn how to write a CV from scratch in 2026. A step-by-step guide to writing a curriculum vitae for jobs in India, with examples, structure, and free tools."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is How to Write a CV: Step-by-Step Guide?'
+    a: >-
+      Learn how to write a CV from scratch in 2026. A step-by-step guide to
+      writing a curriculum vitae for jobs in India, with examples, structure,
+      and free tools.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'How to Write a CV: Step'
 ---
 
 Learning **how to write a cv** from a blank page is intimidating — you stare at the cursor, unsure what to include, what to leave out, and what recruiters actually want to see. The truth is that writing a curriculum vitae is a repeatable process, not a creative gift. Follow the right steps in the right order and you will produce a clean, persuasive CV that survives ATS filters and earns the six-second recruiter scan. This guide walks you through cv how to write it from scratch — section by section, with examples geared to the Indian job market and a clear path from blank document to interview-ready.

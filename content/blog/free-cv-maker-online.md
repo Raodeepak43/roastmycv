@@ -1,19 +1,31 @@
 ---
-title: "Free CV Maker Online: Build a Job-Ready CV (2026)"
-metaTitle: "Free CV Maker Online India — Build + Roast Free"
-slug: "free-cv-maker-online"
-date: "2025-10-23"
-description: "Free CV maker online for India — ATS templates, free PDF download, no paywall. Build your CV then get an instant AI roast score before you apply."
-keywords: "free cv maker, cv maker free, cv maker online free, free cv, online cv maker"
+title: 'Free CV Maker Online: Build a Job-Ready CV (2026)'
+metaTitle: 'Free CV Maker Online: Build a Job'
+slug: free-cv-maker-online
+date: '2025-10-23'
+description: >-
+  Free CV maker online for India — ATS templates, free PDF download, no paywall.
+  Build your CV then get an instant AI roast score before you apply.
+keywords: 'free cv maker, cv maker free, cv maker online free, free cv, online cv maker'
 faq:
-  - q: "What is Free CV Maker Online: Build a Job-Ready CV?"
-    a: "Looking for a free CV maker online? Learn how to build an ATS-friendly CV free in 2026, what features matter, and which free CV maker actually lands interviews."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Free CV Maker Online: Build a Job-Ready CV?'
+    a: >-
+      Looking for a free CV maker online? Learn how to build an ATS-friendly CV
+      free in 2026, what features matter, and which free CV maker actually lands
+      interviews.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
 ---
 
 A good **free cv maker** should do one job well: turn your raw experience into a clean, recruiter-ready document without charging you halfway through or trapping your file behind a paywall. The problem is that most "free" tools let you build a beautiful CV and then demand ₹500–₹2,000 the moment you click download. For Indian freshers and job seekers watching every rupee, that bait-and-switch is infuriating. This guide cuts through the noise: what a genuinely free cv maker online should offer, how to build a strong CV in minutes, and how to make sure the document actually passes the filters before a human ever sees it.

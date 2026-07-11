@@ -1,20 +1,37 @@
 ---
-title: "Free Resume Review Online India — AI Score in 30 Seconds (2026)"
-slug: "free-resume-review-online-india-2026"
-date: "2026-07-12"
+title: Free Resume Review Online India (2026)
+slug: free-resume-review-online-india-2026
+date: '2026-07-12'
 type: guide
 author: MyCVRoast Team
-description: "Free resume review online India — upload CV, get AI score & fixes in 30 seconds. No signup. ATS check, Hinglish feedback for freshers 2026."
-keywords: "free resume review online india, resume review, ai resume review, free cv review india, online resume check free"
+description: >-
+  Free resume review online for India — upload CV, get AI score and specific
+  fixes in 30 seconds. No signup on first check.
+keywords: >-
+  free resume review online india, resume review, ai resume review, free cv
+  review india, online resume check free
 faq:
-  - q: "Is there a truly free resume review online for India?"
-    a: "Yes. MyCVRoast offers 2 free AI resume reviews per device with no signup — score out of 10, specific bullet fixes, and Hinglish feedback in ~30 seconds."
-  - q: "What does a good resume review check?"
-    a: "ATS parsing, weak bullets, missing metrics, formatting errors, keyword gaps vs your target role, and fresher-specific issues like CGPA placement and project clarity."
-  - q: "Resume review vs resume roast — same thing?"
-    a: "Review is general feedback. Roast on MyCVRoast is brutally honest AI feedback — often in Hinglish — with a score and fix checklist. Both are free to start."
-  - q: "Do I need to create an account?"
-    a: "No for the first 2 roasts on the homepage. Sign up for a free account to save history and use dashboard career tools."
+  - q: Is there a truly free resume review online for India?
+    a: >-
+      Yes. MyCVRoast offers 2 free AI resume reviews per device with no signup —
+      score out of 10, specific bullet fixes, and Hinglish feedback in ~30
+      seconds.
+  - q: What does a good resume review check?
+    a: >-
+      ATS parsing, weak bullets, missing metrics, formatting errors, keyword
+      gaps vs your target role, and fresher-specific issues like CGPA placement
+      and project clarity.
+  - q: Resume review vs resume roast — same thing?
+    a: >-
+      Review is general feedback. Roast on MyCVRoast is brutally honest AI
+      feedback — often in Hinglish — with a score and fix checklist. Both are
+      free to start.
+  - q: Do I need to create an account?
+    a: >-
+      No for the first 2 roasts on the homepage. Sign up for a free account to
+      save history and use dashboard career tools.
+metaTitle: Free Resume Review Online India — AI Score in 30 Sec
+h1: Free Resume Review Online India (2026)
 ---
 
 A **free resume review online** should not mean a generic blog checklist or a tool that hides your score behind a paywall. If you are job hunting in India — campus, off-campus, Naukri, or LinkedIn — you need **instant, specific feedback** on *your* CV before you send application #50 with the same mistakes.

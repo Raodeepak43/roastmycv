@@ -1,18 +1,34 @@
 ---
-title: "AI Resume Review India: Free Honest Feedback in 2026"
-slug: "ai-resume-review-india"
-date: "2026-04-15"
-description: "Best free AI resume review tools for Indian job seekers in 2026. Get instant CV feedback, ATS checks, and specific fixes without paying a career coach."
-keywords: "ai resume review india, ai cv review free, resume review ai, ai resume analyzer india, automated resume feedback"
+title: 'AI Resume Review India: Free Honest Feedback'
+slug: ai-resume-review-india
+date: '2026-04-15'
+description: >-
+  Best free AI resume review for Indian job seekers — instant CV feedback, ATS
+  flags, and fixes without paying a career coach.
+keywords: >-
+  ai resume review india, ai cv review free, resume review ai, ai resume
+  analyzer india, automated resume feedback
 faq:
-  - q: "What is AI Resume Review India: Free Honest Feedback in 2026?"
-    a: "Best free AI resume review tools for Indian job seekers in 2026. Get instant CV feedback, ATS checks, and specific fixes without paying a career coach."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is AI Resume Review India: Free Honest Feedback in 2026?'
+    a: >-
+      Best free AI resume review tools for Indian job seekers in 2026. Get
+      instant CV feedback, ATS checks, and specific fixes without paying a
+      career coach.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: AI Resume Review India — Free Honest CV Feedback
+h1: 'AI Resume Review India: Free Honest Feedback'
 ---
 
 An **AI resume review India** job seekers can trust in 2026 does more than spell-check your CV. It reads your actual bullet points, flags ATS problems, spots weak sections recruiters skip in six seconds, and tells you what to fix — usually in under a minute. Whether you are applying to Infosys, a Bangalore startup, or remote roles abroad, AI review helps you iterate faster than waiting weeks for human feedback that never comes.

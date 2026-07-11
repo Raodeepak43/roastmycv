@@ -1,18 +1,32 @@
 ---
-title: "Best Mock Interview AI Tools India (2026) — Free vs Pro Compared"
-slug: "best-mock-interview-ai-india-2026"
-date: "2026-07-03"
+title: Best Mock Interview AI Tools India (2026) — Free vs Pro Compared
+slug: best-mock-interview-ai-india-2026
+date: '2026-07-03'
 type: comparison
 author: MyCVRoast Team
-description: "Compare the best AI mock interview tools for Indian job seekers — MyCVRoast, Pramp, Interview Warmup, and chat-only bots. Voice practice, CV-aware questions, and free vs paid tiers."
-keywords: "mock interview ai india, ai mock interview free, online mock interview india, practice interview ai, voice mock interview"
+description: >-
+  Best Mock Interview AI Tools India — side-by-side for Indian freshers: free
+  tiers, ATS safety, and which option fits your job search in 2026.
+keywords: >-
+  mock interview ai india, ai mock interview free, online mock interview india,
+  practice interview ai, voice mock interview
 faq:
-  - q: "What is the best AI mock interview for India in 2026?"
-    a: "For CV-aware practice with natural voice, MyCVRoast Pro reads your resume and speaks questions aloud. For peer-to-peer practice, Pramp is popular globally. Chat-only bots help with question lists but not spoken fluency."
-  - q: "Is there a free AI mock interview?"
-    a: "Most voice mock interviews are paid. MyCVRoast includes Interview Prep free; full mock interview with AI voice is on Pro (₹149 one-time). Google Interview Warmup is free but not CV-specific."
-  - q: "Mock interview AI vs reading questions — difference?"
-    a: "Reading questions builds familiarity. Mock interview AI probes your answers, asks follow-ups, and flags vague responses — closer to real HR and technical rounds."
+  - q: What is the best AI mock interview for India in 2026?
+    a: >-
+      For CV-aware practice with natural voice, MyCVRoast Pro reads your resume
+      and speaks questions aloud. For peer-to-peer practice, Pramp is popular
+      globally. Chat-only bots help with question lists but not spoken fluency.
+  - q: Is there a free AI mock interview?
+    a: >-
+      Most voice mock interviews are paid. MyCVRoast includes Interview Prep
+      free; full mock interview with AI voice is on Pro (₹149 one-time). Google
+      Interview Warmup is free but not CV-specific.
+  - q: Mock interview AI vs reading questions — difference?
+    a: >-
+      Reading questions builds familiarity. Mock interview AI probes your
+      answers, asks follow-ups, and flags vague responses — closer to real HR
+      and technical rounds.
+metaTitle: Best Mock Interview AI Tools India (2026)
 ---
 
 **Mock interview AI** tools exploded in 2026 — but most Indian freshers still practice by reading Naukri "top 50 HR questions" in their head. That does not prepare you for follow-ups, silence, or "walk me through this project on your CV."

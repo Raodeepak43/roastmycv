@@ -1,16 +1,29 @@
 ---
-title: "Best Job Search Sites in India 2026: Where to Apply"
-slug: "best-job-search-sites-india"
-date: "2026-03-18"
-description: "The best job search sites in India for 2026 — top job portals, job websites, and job hunting sites for freshers and professionals, plus how to use each effectively."
-keywords: "job search sites, best job search engines, job portal, job websites, job hunting sites"
+title: 'Best Job Search Sites in India 2026: Where to Apply'
+slug: best-job-search-sites-india
+date: '2026-03-18'
+description: >-
+  The best job search sites in India for 2026 — top job portals, job websites,
+  and job hunting sites for freshers and professionals, plus how to use each
+  effectively.
+keywords: >-
+  job search sites, best job search engines, job portal, job websites, job
+  hunting sites
 faq:
-  - q: "What is Best Job Search Sites in India 2026: Where to Apply?"
-    a: "The best job search sites in India for 2026 — top job portals, job websites, and job hunting sites for freshers and professionals, plus how to use each effectively."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
+  - q: 'What is Best Job Search Sites in India 2026: Where to Apply?'
+    a: >-
+      The best job search sites in India for 2026 — top job portals, job
+      websites, and job hunting sites for freshers and professionals, plus how
+      to use each effectively.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+metaTitle: 'Best Job Search Sites in India 2026: Where to Apply'
 ---
 
 Choosing the right **job search sites** can save you weeks of wasted effort. India has dozens of job portals, but they are not interchangeable — a fresher hunting for a campus-adjacent role needs a very different platform than a senior engineer targeting product companies or a designer chasing remote gigs. Spraying the same resume across every job website rarely works; knowing which platform suits your goal does.

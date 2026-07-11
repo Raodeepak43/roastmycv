@@ -1,16 +1,29 @@
 ---
-title: "How to Write a Cover Letter in 2026 (Step-by-Step)"
-slug: "how-to-write-cover-letter"
-date: "2026-03-11"
-description: "Learn how to write a cover letter in 2026 with cover letter examples, a line-by-line template, and tips for sending your resume with a job application letter."
-keywords: "how to write a cover letter, cover letter examples, job application letter with resume, cover letter for sending resume, application letter and cv"
+title: How to Write a Cover Letter in 2026 (Step-by-Step)
+slug: how-to-write-cover-letter
+date: '2026-03-11'
+description: >-
+  Learn how to write a cover letter in 2026 with cover letter examples, a
+  line-by-line template, and tips for sending your resume with a job application
+  letter.
+keywords: >-
+  how to write a cover letter, cover letter examples, job application letter
+  with resume, cover letter for sending resume, application letter and cv
 faq:
-  - q: "What is How to Write a Cover Letter in 2026 (Step-by-Step)?"
-    a: "Learn how to write a cover letter in 2026 with cover letter examples, a line-by-line template, and tips for sending your resume with a job application letter."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
+  - q: What is How to Write a Cover Letter in 2026 (Step-by-Step)?
+    a: >-
+      Learn how to write a cover letter in 2026 with cover letter examples, a
+      line-by-line template, and tips for sending your resume with a job
+      application letter.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+metaTitle: How to Write a Cover Letter in 2026 (Step
 ---
 
 Knowing **how to write a cover letter** is one of the highest-return skills in a job hunt, and almost nobody bothers to learn it properly. While hundreds of candidates fire off the same copy-pasted "Respected Sir, kindly find my resume attached" message, you can stand out with a focused, 200-word letter that speaks directly to the role. This guide walks you through the process line by line, with real cover letter examples you can adapt for any application in the Indian market.

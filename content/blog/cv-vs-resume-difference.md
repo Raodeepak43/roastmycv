@@ -1,18 +1,34 @@
 ---
-title: "CV vs Resume: The Real Difference (2026 Guide)"
-slug: "cv-vs-resume-difference"
-date: "2025-10-16"
-description: "CV vs resume confusion costs Indian job seekers interviews. Learn the real difference between CV and resume, when to use each, and which one Indian recruiters expect."
-keywords: "cv vs resume, cv resume, cv and resume, difference between cv and resume, curriculum vitae"
+title: 'CV vs Resume: The Real Difference (2026 Guide)'
+slug: cv-vs-resume-difference
+date: '2025-10-16'
+description: >-
+  CV vs Resume: The Real Difference (2026 Guide) — side-by-side for Indian
+  freshers: free tiers, ATS safety, and which option fits your job search in
+  2026.
+keywords: >-
+  cv vs resume, cv resume, cv and resume, difference between cv and resume,
+  curriculum vitae
 faq:
-  - q: "What is CV vs Resume: The Real Difference (2026 Guide)?"
-    a: "CV vs resume confusion costs Indian job seekers interviews. Learn the real difference between CV and resume, when to use each, and which one Indian recruiters expect."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is CV vs Resume: The Real Difference (2026 Guide)?'
+    a: >-
+      CV vs resume confusion costs Indian job seekers interviews. Learn the real
+      difference between CV and resume, when to use each, and which one Indian
+      recruiters expect.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'CV vs Resume: The Real Difference (2026 Guide)'
 ---
 
 The **cv vs resume** debate trips up thousands of Indian job seekers every single day, and the confusion is genuinely costing people interviews. You send a five-page academic CV to a startup that wanted a tight one-pager, or you submit a skimpy resume when a research institute asked for a full curriculum vitae. Both mistakes signal the same thing to a recruiter: you did not read the brief. This guide settles the cv and resume question once and for all, with the India context built in — because what works in the US or UK does not always match how recruiters at TCS, Flipkart, or a Bangalore startup actually hire.

@@ -1,16 +1,26 @@
 ---
-title: "LinkedIn Profile Audit: Section-by-Section Score and Fixes"
-slug: "linkedin-profile-audit-tool"
-date: "2026-06-17"
-description: "Full LinkedIn profile audit — headline, about, experience, skills, and recruiter search visibility. AI scores each section."
-keywords: "linkedin profile audit, linkedin profile review, linkedin score checker, linkedin profile analysis"
+title: 'LinkedIn Profile Audit: Section-by-Section Score and Fixes'
+slug: linkedin-profile-audit-tool
+date: '2026-06-17'
+description: >-
+  Full LinkedIn profile audit — headline, about, experience, skills, and
+  recruiter search visibility. AI scores each section.
+keywords: >-
+  linkedin profile audit, linkedin profile review, linkedin score checker,
+  linkedin profile analysis
 faq:
-  - q: "Is the LinkedIn Audit tool free?"
-    a: "Pro plan feature."
-  - q: "Who should use LinkedIn Audit?"
-    a: "Anyone who gets profile views but no InMails, or who has not updated LinkedIn in 12+ months."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the LinkedIn Audit tool free?
+    a: Pro plan feature.
+  - q: Who should use LinkedIn Audit?
+    a: >-
+      Anyone who gets profile views but no InMails, or who has not updated
+      LinkedIn in 12+ months.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: LinkedIn Profile Audit — Free Tool Guide
 ---
 
 LinkedIn Writer fixes your About section. **LinkedIn Audit** reviews your **entire profile** — headline keyword density, experience bullets, skills order, banner, and recruiter discoverability — with a prioritized fix list.

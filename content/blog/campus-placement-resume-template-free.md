@@ -1,16 +1,29 @@
 ---
-title: "Campus Placement Resume Template — Free ATS-Safe Layout (2026)"
-slug: "campus-placement-resume-template-free"
-date: "2026-07-02"
-description: "Free campus placement resume template for Indian students — ATS-safe single-column layout, section headings, and how to build it without Canva paywalls or broken parsers."
-keywords: "campus placement resume template, college placement resume template free, placement cv template india, fresher resume template ats"
+title: Campus Placement Resume Template — Free ATS-Safe Layout (2026)
+slug: campus-placement-resume-template-free
+date: '2026-07-02'
+description: >-
+  Campus Placement Resume Template — practical format tips, examples, and
+  mistakes to avoid for Indian freshers. Free AI resume check linked.
+keywords: >-
+  campus placement resume template, college placement resume template free,
+  placement cv template india, fresher resume template ats
 faq:
-  - q: "Where can I get a free campus placement resume template?"
-    a: "MyCVRoast resume builder includes ATS-safe fresher templates with live score — one free PDF export. Google Docs and Microsoft Word also offer free single-column ATS templates."
-  - q: "What should a campus placement resume template include?"
-    a: "Contact, 2-line summary, education with CGPA, skills, 2–3 projects, internships, achievements. One page, no photo, no columns."
-  - q: "Are Canva resume templates good for campus placement?"
-    a: "Many Canva templates use columns and graphics that break ATS. Fine for creative roles sent by email — risky for TCS/Infosys/Naukri bulk applications."
+  - q: Where can I get a free campus placement resume template?
+    a: >-
+      MyCVRoast resume builder includes ATS-safe fresher templates with live
+      score — one free PDF export. Google Docs and Microsoft Word also offer
+      free single-column ATS templates.
+  - q: What should a campus placement resume template include?
+    a: >-
+      Contact, 2-line summary, education with CGPA, skills, 2–3 projects,
+      internships, achievements. One page, no photo, no columns.
+  - q: Are Canva resume templates good for campus placement?
+    a: >-
+      Many Canva templates use columns and graphics that break ATS. Fine for
+      creative roles sent by email — risky for TCS/Infosys/Naukri bulk
+      applications.
+metaTitle: Campus Placement Resume Template
 ---
 
 Need a **campus placement resume template** that survives TPO upload, company ATS, and a recruiter's six-second scan? Google autocomplete ranks this query #10 for campus placement searches (July 2026).

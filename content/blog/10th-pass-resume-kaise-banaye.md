@@ -1,18 +1,31 @@
 ---
-title: "10th Pass Resume Kaise Banaye — Job ke Liye Simple Format (2026)"
-slug: "10th-pass-resume-kaise-banaye"
-date: "2026-07-12"
+title: 10th Pass Resume Kaise Banaye — Job ke Liye Format
+slug: 10th-pass-resume-kaise-banaye
+date: '2026-07-12'
 type: guide
 author: MyCVRoast Team
-description: "10th pass resume kaise banaye — BPO, retail, data entry, apprenticeship ke liye one-page format. Free sample + AI check India 2026."
-keywords: "10th pass resume kaise banaye, 10th pass resume format, 10th pass job resume india, matric pass resume hindi"
+description: >-
+  10th pass ke baad BPO, retail ya data entry ke liye resume kaise banaye?
+  Simple one-page format, skills aur free check.
+keywords: >-
+  10th pass resume kaise banaye, 10th pass resume format, 10th pass job resume
+  india, matric pass resume hindi
 faq:
-  - q: "10th pass ke liye resume ya biodata?"
-    a: "Private companies (BPO, retail, delivery) usually simple one-page resume prefer karti hain. Government form me kabhi biodata maanga jata hai — form ke hisaab se bharo."
-  - q: "10th pass resume me photo lagani chahiye?"
-    a: "Retail aur local shop jobs me kabhi maangte hain. BPO aur MNC me usually avoid karo unless JD me likha ho."
-  - q: "Experience nahi hai to kya likhein?"
-    a: "Family shop help, tuition, NSS, computer course, part-time — jo sach ho, hours + task ke saath likho."
+  - q: 10th pass ke liye resume ya biodata?
+    a: >-
+      Private companies (BPO, retail, delivery) usually simple one-page resume
+      prefer karti hain. Government form me kabhi biodata maanga jata hai — form
+      ke hisaab se bharo.
+  - q: 10th pass resume me photo lagani chahiye?
+    a: >-
+      Retail aur local shop jobs me kabhi maangte hain. BPO aur MNC me usually
+      avoid karo unless JD me likha ho.
+  - q: Experience nahi hai to kya likhein?
+    a: >-
+      Family shop help, tuition, NSS, computer course, part-time — jo sach ho,
+      hours + task ke saath likho.
+metaTitle: 10th Pass Resume Kaise Banaye? Simple Job Format 2026
+h1: 10th Pass Resume Kaise Banaye — Job ke Liye Format
 ---
 
 **10th pass resume kaise banaye** — matric pass hone ke baad bhi BPO, retail billing, data entry, warehouse, delivery partner, aur apprenticeship roles me resume maanga jata hai. Graduation nahi hai to format simple rakho: one page, clear phone number, practical skills, honest experience.

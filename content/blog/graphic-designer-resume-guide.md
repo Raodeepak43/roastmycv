@@ -1,18 +1,34 @@
 ---
-title: "Graphic Designer Resume Guide 2026 (India): Examples"
-slug: "graphic-designer-resume-guide"
-date: "2026-06-03"
-description: "Build a graphic designer resume that gets you hired in 2026. India guide with skills, summary examples, portfolio tips, strong bullet points, and mistakes to avoid."
-keywords: "graphic designer resume, graphic designer cv, graphic designer resume examples, graphic design jobs, designer cv"
+title: 'Graphic Designer Resume Guide 2026 (India): Examples'
+slug: graphic-designer-resume-guide
+date: '2026-06-03'
+description: >-
+  Build a graphic designer resume that gets you hired in 2026. India guide with
+  skills, summary examples, portfolio tips, strong bullet points, and mistakes
+  to avoid.
+keywords: >-
+  graphic designer resume, graphic designer cv, graphic designer resume
+  examples, graphic design jobs, designer cv
 faq:
-  - q: "What is Graphic Designer Resume Guide 2026 (India): Examples?"
-    a: "Build a graphic designer resume that gets you hired in 2026. India guide with skills, summary examples, portfolio tips, strong bullet points, and mistakes to avoid."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Graphic Designer Resume Guide 2026 (India): Examples?'
+    a: >-
+      Build a graphic designer resume that gets you hired in 2026. India guide
+      with skills, summary examples, portfolio tips, strong bullet points, and
+      mistakes to avoid.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Graphic Designer Resume Guide 2026 (India): Examples'
 ---
 
 A strong **graphic designer resume** has to prove two things at once: that you have taste and that you deliver results. Many designers nail the first and forget the second — they hand over a beautifully laid-out CV that says nothing about impact. For graphic design jobs across India, from agencies in Mumbai to D2C brands and startups, recruiters want to see a clean designer cv, a working portfolio, and proof your work moved a number. This guide gives you graphic designer resume examples and a clear formula to build yours.

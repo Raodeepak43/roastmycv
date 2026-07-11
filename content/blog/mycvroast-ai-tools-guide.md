@@ -1,16 +1,29 @@
 ---
-title: "MyCVRoast AI Tools: Complete Guide to 29+ Free Career Tools (2026)"
-slug: "mycvroast-ai-tools-guide"
-date: "2026-06-30"
-description: "Full list of MyCVRoast AI tools for Indian job seekers — resume roast, JD match, interview prep, cover letters, scam detector, and more. Free and Pro features explained."
-keywords: "mycvroast tools, ai career tools india, resume ai tools, job search ai tools, free resume tools"
+title: 'MyCVRoast AI Tools: Complete Guide to 29+ Free Career Tools (2026)'
+slug: mycvroast-ai-tools-guide
+date: '2026-06-30'
+description: >-
+  MyCVRoast AI Tools: Complete Guide to 29+ Free Career Tools — practical format
+  tips, examples, and mistakes to avoid for Indian freshers. Free AI resume
+  check linked.
+keywords: >-
+  mycvroast tools, ai career tools india, resume ai tools, job search ai tools,
+  free resume tools
 faq:
-  - q: "How many AI tools does MyCVRoast offer?"
-    a: "29 dashboard AI tools plus free resume roast, LinkedIn roast, resume builder, and job application tracker — 33+ features total."
-  - q: "Are MyCVRoast tools free?"
-    a: "Many tools have free tiers (unlimited thank-you emails, gap explainer, scam detector). Pro unlocks interview prep, salary scripts, and unlimited usage on capped tools."
-  - q: "Do I need a separate account for each tool?"
-    a: "No. One MyCVRoast account gives access to all dashboard tools from a single sidebar."
+  - q: How many AI tools does MyCVRoast offer?
+    a: >-
+      29 dashboard AI tools plus free resume roast, LinkedIn roast, resume
+      builder, and job application tracker — 33+ features total.
+  - q: Are MyCVRoast tools free?
+    a: >-
+      Many tools have free tiers (unlimited thank-you emails, gap explainer,
+      scam detector). Pro unlocks interview prep, salary scripts, and unlimited
+      usage on capped tools.
+  - q: Do I need a separate account for each tool?
+    a: >-
+      No. One MyCVRoast account gives access to all dashboard tools from a
+      single sidebar.
+metaTitle: 'MyCVRoast AI Tools: Complete Guide to 29+ Free Career Tools'
 ---
 
 MyCVRoast is not just a **resume roast** site. Behind the free homepage roast is a full **AI career toolkit** — 29 dashboard tools covering every stage of the Indian job hunt: tailoring your CV, writing emails, preparing for interviews, comparing offers, and spotting scams.

@@ -1,18 +1,34 @@
 ---
-title: "One Page Resume Builder: Fit Everything In 2026"
-slug: "one-page-resume-guide"
-date: "2025-09-11"
-description: "Use a one page resume builder to create a sharp, single-page CV. See one page resume examples, when one page is enough, and how to cut clutter for the Indian job market in 2026."
-keywords: "one page resume builder, one page resume examples, one page resume maker, resume pages, single page resume"
+title: 'One Page Resume Builder: Fit Everything In 2026'
+slug: one-page-resume-guide
+date: '2025-09-11'
+description: >-
+  One Page Resume Builder: Fit Everything In 2026 — practical format tips,
+  examples, and mistakes to avoid for Indian freshers. Free AI resume check
+  linked.
+keywords: >-
+  one page resume builder, one page resume examples, one page resume maker,
+  resume pages, single page resume
 faq:
-  - q: "What is One Page Resume Builder: Fit Everything In 2026?"
-    a: "Use a one page resume builder to create a sharp, single-page CV. See one page resume examples, when one page is enough, and how to cut clutter for the Indian job market in 2026."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is One Page Resume Builder: Fit Everything In 2026?'
+    a: >-
+      Use a one page resume builder to create a sharp, single-page CV. See one
+      page resume examples, when one page is enough, and how to cut clutter for
+      the Indian job market in 2026.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'One Page Resume Builder: Fit Everything In 2026'
 ---
 
 A **one page resume builder** forces you to do the hardest thing in job hunting: decide what actually matters. Recruiters in India spend 6–10 seconds on the first scan, and a tight single page respects that reality. The myth that "more pages means more impressive" is exactly backwards — a focused one-page resume reads as confident and intentional, while a padded two-pager reads as someone who could not edit. This guide shows you how to fit everything that matters on one page, with examples and a clear rule for when one page is enough.

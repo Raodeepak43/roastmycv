@@ -1,18 +1,34 @@
 ---
-title: "Resume Mistakes to Avoid: 12 CV Killers in 2026"
-slug: "resume-mistakes-to-avoid"
-date: "2026-02-25"
-description: "The most common resume mistakes that get CVs rejected in 2026. Fix these resume errors with practical resume tips and learn why your resume keeps getting rejected."
-keywords: "resume mistakes, common resume mistakes, resume errors, why resume rejected, resume tips"
+title: 'Resume Mistakes to Avoid: 12 CV Killers in 2026'
+slug: resume-mistakes-to-avoid
+date: '2026-02-25'
+description: >-
+  The most common resume mistakes that get CVs rejected in 2026. Fix these
+  resume errors with practical resume tips and learn why your resume keeps
+  getting rejected.
+keywords: >-
+  resume mistakes, common resume mistakes, resume errors, why resume rejected,
+  resume tips
 faq:
-  - q: "What is Resume Mistakes to Avoid: 12 CV Killers in 2026?"
-    a: "The most common resume mistakes that get CVs rejected in 2026. Fix these resume errors with practical resume tips and learn why your resume keeps getting rejected."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Resume Mistakes to Avoid: 12 CV Killers in 2026?'
+    a: >-
+      The most common resume mistakes that get CVs rejected in 2026. Fix these
+      resume errors with practical resume tips and learn why your resume keeps
+      getting rejected.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Resume Mistakes to Avoid: 12 CV Killers in 2026'
 ---
 
 Most rejections are not about your qualifications — they are about avoidable **resume mistakes** that quietly knock you out before anyone reads your achievements. A broken layout, a vague summary, or a single typo can end your application in seconds. The encouraging part: every one of these errors is fixable in an afternoon. This guide walks through the 12 most common resume mistakes that get CVs rejected in 2026 and gives you the resume tips to fix each one.

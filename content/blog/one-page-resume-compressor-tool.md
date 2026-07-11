@@ -1,16 +1,24 @@
 ---
-title: "1-Page Resume Compressor: Cut Your CV Without Losing Impact"
-slug: "one-page-resume-compressor-tool"
-date: "2026-06-19"
-description: "AI resume compressor — fit 2-page CV to one page for freshers and experienced hires. Keeps strongest bullets, cuts fluff."
-keywords: "one page resume, compress resume, shorten cv, 2 page resume to 1 page"
+title: '1-Page Resume Compressor: Cut Your CV Without Losing Impact'
+slug: one-page-resume-compressor-tool
+date: '2026-06-19'
+description: >-
+  AI resume compressor — fit 2-page CV to one page for freshers and experienced
+  hires. Keeps strongest bullets, cuts fluff.
+keywords: 'one page resume, compress resume, shorten cv, 2 page resume to 1 page'
 faq:
-  - q: "Is the 1-Page Compressor tool free?"
-    a: "Pro plan feature."
-  - q: "Who should use 1-Page Compressor?"
-    a: "Freshers with 2-page CVs and professionals applying to consulting/finance where brevity matters."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the 1-Page Compressor tool free?
+    a: Pro plan feature.
+  - q: Who should use 1-Page Compressor?
+    a: >-
+      Freshers with 2-page CVs and professionals applying to consulting/finance
+      where brevity matters.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: 1 — Free Tool Guide
 ---
 
 Recruiters prefer one page for freshers and under-7-year profiles. You have two pages of repetition, old internships, and "hobbies: reading." **1-Page Compressor** intelligently cuts and merges — keeping metrics and impact, removing filler.

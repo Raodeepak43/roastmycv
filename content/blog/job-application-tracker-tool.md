@@ -1,16 +1,27 @@
 ---
-title: "Job Application Tracker: Never Lose Track of Applications Again"
-slug: "job-application-tracker-tool"
-date: "2026-06-30"
-description: "Free job application tracker for Indian job seekers — log company, role, status, dates, and notes. Built into MyCVRoast dashboard."
-keywords: "job application tracker, track job applications, application spreadsheet, job hunt organizer india"
+title: 'Job Application Tracker: Never Lose Track of Applications Again'
+slug: job-application-tracker-tool
+date: '2026-06-30'
+description: >-
+  Free job application tracker for Indian job seekers — log company, role,
+  status, dates, and notes. Built into MyCVRoast dashboard.
+keywords: >-
+  job application tracker, track job applications, application spreadsheet, job
+  hunt organizer india
 faq:
-  - q: "Is the job application tracker free?"
-    a: "Yes — included free with your MyCVRoast account. Log unlimited applications."
-  - q: "Can I track interview stages?"
-    a: "Yes. Status options include Applied, Screening, Interview, Offer, Rejected, and Withdrawn."
-  - q: "Does it replace Excel?"
-    a: "For most job seekers applying to 20–100 roles, yes. Faster than spreadsheets and linked to your MyCVRoast account."
+  - q: Is the job application tracker free?
+    a: >-
+      Yes — included free with your MyCVRoast account. Log unlimited
+      applications.
+  - q: Can I track interview stages?
+    a: >-
+      Yes. Status options include Applied, Screening, Interview, Offer,
+      Rejected, and Withdrawn.
+  - q: Does it replace Excel?
+    a: >-
+      For most job seekers applying to 20–100 roles, yes. Faster than
+      spreadsheets and linked to your MyCVRoast account.
+metaTitle: Job Application Tracker — Free Tool Guide
 ---
 
 Applying to 40 companies without a **job application tracker** is how you forget to follow up, double-apply, or miss an interview email buried in promotions. Spreadsheets work — until they don't. MyCVRoast **Application Tracker** lives in your dashboard next to your AI tools, so tracking and action stay in one place.

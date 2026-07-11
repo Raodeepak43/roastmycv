@@ -1,16 +1,26 @@
 ---
-title: "Cold Email to Recruiters: AI Outreach That Gets Replies"
-slug: "cold-email-recruiter-tool"
-date: "2026-06-07"
-description: "Write cold emails to recruiters under 150 words — specific subject lines, one achievement, clear ask. Built for Indian job hunt outreach."
-keywords: "cold email recruiter, outreach email job search, email recruiter for job, cold email template job"
+title: 'Cold Email to Recruiters: AI Outreach That Gets Replies'
+slug: cold-email-recruiter-tool
+date: '2026-06-07'
+description: >-
+  Write cold emails to recruiters under 150 words — specific subject lines, one
+  achievement, clear ask. Built for Indian job hunt outreach.
+keywords: >-
+  cold email recruiter, outreach email job search, email recruiter for job, cold
+  email template job
 faq:
-  - q: "Is the Cold Email tool free?"
-    a: "Pro plan feature."
-  - q: "Who should use Cold Email?"
-    a: "Mid-level professionals, niche role seekers, and anyone targeting dream companies directly."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Cold Email tool free?
+    a: Pro plan feature.
+  - q: Who should use Cold Email?
+    a: >-
+      Mid-level professionals, niche role seekers, and anyone targeting dream
+      companies directly.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: Cold Email to Recruiters — Free Tool Guide
 ---
 
 LinkedIn Easy Apply is a black hole. A sharp **cold email** to a recruiter or hiring manager can skip the queue — if it is under 150 words, specific, and not "Dear Sir/Madam I hope this email finds you well." The **Cold Email** tool writes human outreach from your CV.

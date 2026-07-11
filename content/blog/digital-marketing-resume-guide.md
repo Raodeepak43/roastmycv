@@ -1,18 +1,34 @@
 ---
-title: "Digital Marketing Resume Guide 2026 (India): Examples"
-slug: "digital-marketing-resume-guide"
-date: "2026-06-22"
-description: "Write a digital marketing resume that gets interviews in 2026. India guide with skills, summary examples, metric-driven bullets, ATS keywords, and mistakes to avoid."
-keywords: "digital marketing resume, marketing cv examples, digital marketing jobs, marketing entry level jobs, digital marketing vacancy"
+title: 'Digital Marketing Resume Guide 2026 (India): Examples'
+slug: digital-marketing-resume-guide
+date: '2026-06-22'
+description: >-
+  Write a digital marketing resume that gets interviews in 2026. India guide
+  with skills, summary examples, metric-driven bullets, ATS keywords, and
+  mistakes to avoid.
+keywords: >-
+  digital marketing resume, marketing cv examples, digital marketing jobs,
+  marketing entry level jobs, digital marketing vacancy
 faq:
-  - q: "What is Digital Marketing Resume Guide 2026 (India): Examples?"
-    a: "Write a digital marketing resume that gets interviews in 2026. India guide with skills, summary examples, metric-driven bullets, ATS keywords, and mistakes to avoid."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Digital Marketing Resume Guide 2026 (India): Examples?'
+    a: >-
+      Write a digital marketing resume that gets interviews in 2026. India guide
+      with skills, summary examples, metric-driven bullets, ATS keywords, and
+      mistakes to avoid.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Digital Marketing Resume Guide 2026 (India): Examples'
 ---
 
 A strong **digital marketing resume** lives and dies by one thing: numbers. Marketing is the most measurable career there is, so a CV without metrics tells recruiters you either did not move the needle or did not track it. For digital marketing jobs across India — at agencies, D2C brands, startups, and SaaS companies — hiring managers want to see campaigns you ran, channels you owned, and the results you drove. This guide gives you marketing cv examples, a metric-first structure, and clear tips whether you are chasing marketing entry level jobs or your next senior digital marketing vacancy.

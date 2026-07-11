@@ -1,16 +1,29 @@
 ---
-title: "Job Interview Preparation 2026: A Complete Guide"
-slug: "job-interview-preparation"
-date: "2026-04-29"
-description: "Complete job interview preparation guide for 2026 — interview tips, common job interview questions, how to prepare for interview, and using your CV effectively."
-keywords: "job interview preparation, interview tips, cv for job interview, how to prepare for interview, job interview questions"
+title: 'Job Interview Preparation 2026: A Complete Guide'
+slug: job-interview-preparation
+date: '2026-04-29'
+description: >-
+  Complete job interview preparation guide for 2026 — interview tips, common job
+  interview questions, how to prepare for interview, and using your CV
+  effectively.
+keywords: >-
+  job interview preparation, interview tips, cv for job interview, how to
+  prepare for interview, job interview questions
 faq:
-  - q: "What is Job Interview Preparation 2026: A Complete Guide?"
-    a: "Complete job interview preparation guide for 2026 — interview tips, common job interview questions, how to prepare for interview, and using your CV effectively."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
+  - q: 'What is Job Interview Preparation 2026: A Complete Guide?'
+    a: >-
+      Complete job interview preparation guide for 2026 — interview tips, common
+      job interview questions, how to prepare for interview, and using your CV
+      effectively.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+metaTitle: 'Job Interview Preparation 2026: A Complete Guide'
 ---
 
 Solid **job interview preparation** is what separates candidates who get offers from equally qualified ones who get polite rejections. Getting the interview call is a win — but it is only half the battle. In India's competitive market, where a single role may interview a dozen shortlisted candidates, the person who prepares thoroughly almost always edges out the one who improvises. The good news: interview success is a skill you can build with a clear, repeatable process.

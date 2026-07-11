@@ -1,16 +1,22 @@
 ---
-title: "First 90 Days Plan: Hit the Ground Running in a New Job"
-slug: "first-90-days-plan-tool"
-date: "2026-06-27"
-description: "AI 30-60-90 day plan for new joiners — week-by-week actions, quick wins, and who to meet. Built from your CV and new role."
-keywords: "30 60 90 day plan, first 90 days new job, onboarding plan, new job action plan"
+title: 'First 90 Days Plan: Hit the Ground Running in a New Job'
+slug: first-90-days-plan-tool
+date: '2026-06-27'
+description: >-
+  AI 30-60-90 day plan for new joiners — week-by-week actions, quick wins, and
+  who to meet. Built from your CV and new role.
+keywords: '30 60 90 day plan, first 90 days new job, onboarding plan, new job action plan'
 faq:
-  - q: "Is the First 90 Days tool free?"
-    a: "Pro plan feature."
-  - q: "Who should use First 90 Days?"
-    a: "New joiners, especially lateral hires and first-time managers."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the First 90 Days tool free?
+    a: Pro plan feature.
+  - q: Who should use First 90 Days?
+    a: 'New joiners, especially lateral hires and first-time managers.'
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: First 90 Days Plan — Free Tool Guide
 ---
 
 Starting a new job without a plan means reactive firefighting for three months. A **30-60-90 day plan** shows your manager you are strategic — and helps you earn trust fast. **First 90 Days** generates a role-specific plan from your CV and new job details.

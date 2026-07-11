@@ -1,19 +1,33 @@
 ---
-title: "Work Experience Resume Section: Write It Right in 2026"
-metaTitle: "Resume Experience Section — Examples + Free AI Check"
-slug: "work-experience-resume-section"
-date: "2026-02-04"
-description: "Resume experience section examples that get callbacks. Learn impact bullets, then free AI roast quotes YOUR weak lines — instant score, no signup."
-keywords: "work experience resume, resume experience example, work experience in cv, work experience resume examples, professional experience examples"
+title: 'Work Experience Resume Section: Write It Right in 2026'
+metaTitle: 'Work Experience Resume Section: Write It Right in 2026'
+slug: work-experience-resume-section
+date: '2026-02-04'
+description: >-
+  Resume experience section examples that get callbacks. Learn impact bullets,
+  then free AI roast quotes YOUR weak lines — instant score, no signup.
+keywords: >-
+  work experience resume, resume experience example, work experience in cv, work
+  experience resume examples, professional experience examples
 faq:
-  - q: "What is Work Experience Resume Section: Write It Right in 2026?"
-    a: "Master the work experience resume section in 2026. Resume experience examples, how to write work experience in a CV, and professional experience examples that impress."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Work Experience Resume Section: Write It Right in 2026?'
+    a: >-
+      Master the work experience resume section in 2026. Resume experience
+      examples, how to write work experience in a CV, and professional
+      experience examples that impress.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
 ---
 
 The **work experience resume** section is where most candidates win or lose the shortlist. Recruiters spend their precious 6–10 seconds here, scanning for proof that you delivered results — not a list of duties copied from a job description. The difference between a resume that gets a callback and one that gets ignored often comes down to how you write these bullets. This guide shows you how to write work experience in a CV using resume experience examples and the impact-first formula that actually works in 2026.

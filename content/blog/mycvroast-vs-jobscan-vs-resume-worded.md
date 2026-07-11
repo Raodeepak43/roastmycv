@@ -1,16 +1,30 @@
 ---
-title: "MyCVRoast vs Jobscan vs Resume Worded — Which Free Tool Wins in India?"
-slug: "mycvroast-vs-jobscan-vs-resume-worded"
-date: "2026-07-02"
-description: "MyCVRoast vs Jobscan vs Resume Worded for Indian job seekers. Honest comparison of free tiers, ATS checks, Hinglish roast, and who each tool is actually for."
-keywords: "mycvroast vs jobscan, mycvroast vs resume worded, resume worded alternative india, jobscan alternative free"
+title: MyCVRoast vs Jobscan vs Resume Worded — Which Free Tool Wins in India?
+slug: mycvroast-vs-jobscan-vs-resume-worded
+date: '2026-07-02'
+description: >-
+  MyCVRoast vs Jobscan vs Resume Worded for Indian job seekers. Honest
+  comparison of free tiers, ATS checks, Hinglish roast, and who each tool is
+  actually for.
+keywords: >-
+  mycvroast vs jobscan, mycvroast vs resume worded, resume worded alternative
+  india, jobscan alternative free
 faq:
-  - q: "Is MyCVRoast better than Resume Worded?"
-    a: "Different jobs. Resume Worded scores generic metrics out of 100. MyCVRoast roasts your specific bullets in Hinglish — better for honest feedback; Resume Worded better for structured scoring."
-  - q: "Is Jobscan free for resume review?"
-    a: "Jobscan has a limited free tier for ATS keyword matching against job descriptions. MyCVRoast offers 2 free full roasts per device with no signup."
-  - q: "Which tool is best for Indian freshers?"
-    a: "MyCVRoast — built for campus placement, CGPA, internships, and Hinglish feedback. Pair with Jobscan when you have a specific JD to match."
+  - q: Is MyCVRoast better than Resume Worded?
+    a: >-
+      Different jobs. Resume Worded scores generic metrics out of 100. MyCVRoast
+      roasts your specific bullets in Hinglish — better for honest feedback;
+      Resume Worded better for structured scoring.
+  - q: Is Jobscan free for resume review?
+    a: >-
+      Jobscan has a limited free tier for ATS keyword matching against job
+      descriptions. MyCVRoast offers 2 free full roasts per device with no
+      signup.
+  - q: Which tool is best for Indian freshers?
+    a: >-
+      MyCVRoast — built for campus placement, CGPA, internships, and Hinglish
+      feedback. Pair with Jobscan when you have a specific JD to match.
+metaTitle: MyCVRoast vs Jobscan vs Resume Worded (2026)
 ---
 
 **MyCVRoast vs Jobscan vs Resume Worded** — three names that show up when Indian job seekers search for free resume help. But they do very different things. Pick wrong and you get a polite score while your bullets stay weak.

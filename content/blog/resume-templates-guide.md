@@ -1,18 +1,34 @@
 ---
-title: "Resume Templates Guide 2026: Pick One That Works"
-slug: "resume-templates-guide"
-date: "2025-09-26"
-description: "A practical resume templates guide for India. Learn which professional, editable, and modern resume layouts pass ATS and get shortlisted — and which pretty ones get you rejected."
-keywords: "resume templates, editable resume, resume layout, professional resume, modern resume, resume template india"
+title: 'Resume Templates Guide 2026: Pick One That Works'
+slug: resume-templates-guide
+date: '2025-09-26'
+description: >-
+  Resume Templates Guide 2026: Pick One That Works — practical format tips,
+  examples, and mistakes to avoid for Indian freshers. Free AI resume check
+  linked.
+keywords: >-
+  resume templates, editable resume, resume layout, professional resume, modern
+  resume, resume template india
 faq:
-  - q: "What is Resume Templates Guide 2026: Pick One That Works?"
-    a: "A practical resume templates guide for India. Learn which professional, editable, and modern resume layouts pass ATS and get shortlisted — and which pretty ones get you rejected."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Resume Templates Guide 2026: Pick One That Works?'
+    a: >-
+      A practical resume templates guide for India. Learn which professional,
+      editable, and modern resume layouts pass ATS and get shortlisted — and
+      which pretty ones get you rejected.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Resume Templates Guide 2026: Pick One That Works'
 ---
 
 Choosing from the thousands of **resume templates** online feels easy until you realize that the prettiest one might be the reason you keep getting rejected. The hard truth: a template's job is not to look impressive in a gallery — it is to present your content clearly to both an ATS and a recruiter who spends 8 seconds on the first scan. A clean, professional, editable resume layout beats a graphics-heavy "modern" design every time it hits a company's screening software. This guide helps you pick a template that actually gets you shortlisted in India.

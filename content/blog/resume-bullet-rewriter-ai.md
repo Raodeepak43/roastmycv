@@ -1,16 +1,26 @@
 ---
-title: "Resume Bullet Rewriter: Turn Weak Lines Into Metric-Driven Bullets"
-slug: "resume-bullet-rewriter-ai"
-date: "2026-06-05"
-description: "AI resume bullet rewriter for Indian CVs. Fix vague experience lines with action verbs, numbers, and ATS-friendly phrasing in seconds."
-keywords: "resume bullet rewriter, cv bullet points ai, resume bullet point generator, weak resume bullets"
+title: 'Resume Bullet Rewriter: Turn Weak Lines Into Metric-Driven Bullets'
+slug: resume-bullet-rewriter-ai
+date: '2026-06-05'
+description: >-
+  AI resume bullet rewriter for Indian CVs. Fix vague experience lines with
+  action verbs, numbers, and ATS-friendly phrasing in seconds.
+keywords: >-
+  resume bullet rewriter, cv bullet points ai, resume bullet point generator,
+  weak resume bullets
 faq:
-  - q: "Is the Bullet Rewriter tool free?"
-    a: "5 rewrites per day on free plan."
-  - q: "Who should use Bullet Rewriter?"
-    a: "Freshers with empty-looking project sections and professionals whose bullets read like job descriptions."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Bullet Rewriter tool free?
+    a: 5 rewrites per day on free plan.
+  - q: Who should use Bullet Rewriter?
+    a: >-
+      Freshers with empty-looking project sections and professionals whose
+      bullets read like job descriptions.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: 'Resume Bullet Rewriter: Turn Weak Lines Into Metric'
 ---
 
 "Worked on various projects" and "Responsible for team coordination" are resume killers. Recruiters want **metrics, action verbs, and outcomes**. The **Bullet Rewriter** takes your existing bullets and returns stronger versions grounded in what you actually did — without inventing fake numbers.

@@ -1,16 +1,29 @@
 ---
-title: "Resume Roast AI — Best Free Tools for India (2026)"
-slug: "resume-roast-ai-free-india"
-date: "2026-07-02"
-description: "Best resume roast AI tools for Indian job seekers in 2026. Free AI that roasts your CV brutally — compare MyCVRoast, roastmyresu.me, and Hinglish alternatives with live autocomplete demand."
-keywords: "resume roast ai, ai resume roast free, resume roast ai india, free ai cv roast"
+title: Resume Roast AI Free India
+slug: resume-roast-ai-free-india
+date: '2026-07-02'
+description: >-
+  Free AI resume roast for India — brutally honest feedback in Hinglish or
+  English. Score, weak bullets, and fix list in 30 sec.
+keywords: 'resume roast ai, ai resume roast free, resume roast ai india, free ai cv roast'
 faq:
-  - q: "What is resume roast AI?"
-    a: "Resume roast AI reads your full CV and gives brutally honest feedback — quoting weak lines, scoring out of 10, and listing specific fixes. Unlike generic checkers, it criticizes YOUR resume, not template advice."
-  - q: "Is resume roast AI free in India?"
-    a: "MyCVRoast offers 2 free AI roasts per device with no signup. Competitors like roastmyresu.me and resume.pankajk.tech also have free tiers — compare before uploading."
-  - q: "Resume roast AI vs resume review — which is better?"
-    a: "Review tools score generic metrics. Roast AI quotes your actual bullets and tells you what recruiters skip in six seconds. For Indian freshers, roast-style feedback changes behavior faster."
+  - q: What is resume roast AI?
+    a: >-
+      Resume roast AI reads your full CV and gives brutally honest feedback —
+      quoting weak lines, scoring out of 10, and listing specific fixes. Unlike
+      generic checkers, it criticizes YOUR resume, not template advice.
+  - q: Is resume roast AI free in India?
+    a: >-
+      MyCVRoast offers 2 free AI roasts per device with no signup. Competitors
+      like roastmyresu.me and resume.pankajk.tech also have free tiers — compare
+      before uploading.
+  - q: Resume roast AI vs resume review — which is better?
+    a: >-
+      Review tools score generic metrics. Roast AI quotes your actual bullets
+      and tells you what recruiters skip in six seconds. For Indian freshers,
+      roast-style feedback changes behavior faster.
+metaTitle: Resume Roast AI Free India — Honest CV Feedback
+h1: Resume Roast AI Free India
 ---
 
 **Resume roast AI** is what happens when you stop asking "is my resume good?" and start asking "roast my resume like a recruiter would." Google autocomplete ranks *resume roast ai* as a top related query (July 2026) — demand is real, but most tools are US-built and miss Indian fresher context.

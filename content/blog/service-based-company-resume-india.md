@@ -1,16 +1,29 @@
 ---
-title: "Service-Based Company Resume Guide — TCS, Infosys, Wipro (2026)"
-slug: "service-based-company-resume-india"
-date: "2026-07-02"
-description: "Service-based company resume format for India — TCS, Infosys, Wipro, Cognizant, Accenture fresher hiring. ATS layout, keywords, and what mass recruiters scan in 10 seconds."
-keywords: "service based company resume, tcs infosys wipro resume format, service company cv fresher india, mass recruiter resume"
+title: 'Service-Based Company Resume Guide — TCS, Infosys, Wipro (2026)'
+slug: service-based-company-resume-india
+date: '2026-07-02'
+description: >-
+  Service — practical format tips, examples, and mistakes to avoid for Indian
+  freshers. Free AI resume check linked.
+keywords: >-
+  service based company resume, tcs infosys wipro resume format, service company
+  cv fresher india, mass recruiter resume
 faq:
-  - q: "What is a service-based company resume format?"
-    a: "One-page ATS-safe CV for mass hiring: education with CGPA, technical skills matching JD, 2–3 projects, internships, no photo, single column. Optimized for TCS, Infosys, Wipro, Cognizant pipelines."
-  - q: "How is service company resume different from product startup CV?"
-    a: "Service companies prioritize eligibility (CGPA, backlogs), keyword match, and stable format over flashy design. Startups want GitHub, product metrics, and side projects more prominently."
-  - q: "Which tool checks TCS Infosys Wipro resume format?"
-    a: "MyCVRoast ATS resume checker for TCS/Infosys/Wipro freshers plus campus placement checker — free roast for content fixes."
+  - q: What is a service-based company resume format?
+    a: >-
+      One-page ATS-safe CV for mass hiring: education with CGPA, technical
+      skills matching JD, 2–3 projects, internships, no photo, single column.
+      Optimized for TCS, Infosys, Wipro, Cognizant pipelines.
+  - q: How is service company resume different from product startup CV?
+    a: >-
+      Service companies prioritize eligibility (CGPA, backlogs), keyword match,
+      and stable format over flashy design. Startups want GitHub, product
+      metrics, and side projects more prominently.
+  - q: Which tool checks TCS Infosys Wipro resume format?
+    a: >-
+      MyCVRoast ATS resume checker for TCS/Infosys/Wipro freshers plus campus
+      placement checker — free roast for content fixes.
+metaTitle: Service
 ---
 
 **Service-based company resume** — TCS, Infosys, Wipro, Cognizant, Accenture, HCL — hire tens of thousands of Indian freshers per cycle. Your CV hits an ATS, then a recruiter who has **10 seconds** and **300 more PDFs** in queue.

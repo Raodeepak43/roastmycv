@@ -1,18 +1,34 @@
 ---
-title: "Editable Resume Templates: Word & Free Options 2026"
-slug: "editable-resume-templates"
-date: "2025-10-09"
-description: "Find the best editable resume templates for India in 2026. Compare Word, free editable CV layouts, and ATS-safe options you can customize per job to get shortlisted faster."
-keywords: "editable resume, editable resume templates, resume word, resume layout word, editable cv"
+title: 'Editable Resume Templates: Word & Free Options 2026'
+slug: editable-resume-templates
+date: '2025-10-09'
+description: >-
+  Editable Resume Templates: Word & Free Options 2026 — practical format tips,
+  examples, and mistakes to avoid for Indian freshers. Free AI resume check
+  linked.
+keywords: >-
+  editable resume, editable resume templates, resume word, resume layout word,
+  editable cv
 faq:
-  - q: "What is Editable Resume Templates: Word & Free Options 2026?"
-    a: "Find the best editable resume templates for India in 2026. Compare Word, free editable CV layouts, and ATS-safe options you can customize per job to get shortlisted faster."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Editable Resume Templates: Word & Free Options 2026?'
+    a: >-
+      Find the best editable resume templates for India in 2026. Compare Word,
+      free editable CV layouts, and ATS-safe options you can customize per job
+      to get shortlisted faster.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Editable Resume Templates: Word & Free Options 2026'
 ---
 
 The best resume is one you can actually change — which is why **editable resume** templates matter more than the prettiest locked design. A job hunt means applying to dozens of roles, and each one deserves a slightly tailored CV: a tweaked summary, reordered skills, a swapped project. A static, non-editable PDF makes that impossible. This guide covers the best editable resume templates for India — from Word-based layouts to free online builders — and how to customize an editable CV per job without breaking ATS in 2026.

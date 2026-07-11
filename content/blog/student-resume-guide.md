@@ -1,19 +1,33 @@
 ---
-title: "Student Resume Guide: Examples & Format for 2026"
-metaTitle: "Student Resume Examples — Free AI Score (2026)"
-slug: "student-resume-guide"
-date: "2026-01-21"
-description: "Student resume guide with examples for no work experience. Free AI roast checks YOUR CV — score, fixes & Hinglish feedback in 30 sec."
-keywords: "student resume, student resume examples, student resume with no work experience, resume for students with no experience, university student resume"
+title: 'Student Resume Guide: Examples & Format for 2026'
+metaTitle: 'Student Resume Guide: Examples & Format for 2026'
+slug: student-resume-guide
+date: '2026-01-21'
+description: >-
+  Student resume guide with examples for no work experience. Free AI roast
+  checks YOUR CV — score, fixes & Hinglish feedback in 30 sec.
+keywords: >-
+  student resume, student resume examples, student resume with no work
+  experience, resume for students with no experience, university student resume
 faq:
-  - q: "What is Student Resume Guide: Examples & Format for 2026?"
-    a: "A student resume guide for 2026 with student resume examples, format tips, and how to write a university student resume with no work experience that gets noticed."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Student Resume Guide: Examples & Format for 2026?'
+    a: >-
+      A student resume guide for 2026 with student resume examples, format tips,
+      and how to write a university student resume with no work experience that
+      gets noticed.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
 ---
 
 A strong **student resume** is your entry ticket to internships, part-time roles, and campus placements — and the good news is you have more to write about than you think. A university student resume does not need a long job history; it needs to package your projects, coursework, clubs, and skills into a clean, confident document. This guide gives you student resume examples and a format that works whether you are in your first year hunting for an internship or final year facing placements.

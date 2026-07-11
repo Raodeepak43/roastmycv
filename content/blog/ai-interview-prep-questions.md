@@ -1,16 +1,24 @@
 ---
-title: "AI Interview Prep: Questions You Will Actually Be Asked"
-slug: "ai-interview-prep-questions"
-date: "2026-06-09"
-description: "Generate 10–12 interview questions from your CV and target role — behavioural, technical, and CV-specific with answer frameworks."
-keywords: "interview prep ai, interview questions from resume, behavioural interview prep, cv based interview questions"
+title: 'AI Interview Prep: Questions You Will Actually Be Asked'
+slug: ai-interview-prep-questions
+date: '2026-06-09'
+description: >-
+  Generate 10–12 interview questions from your CV and target role — behavioural,
+  technical, and CV-specific with answer frameworks.
+keywords: >-
+  interview prep ai, interview questions from resume, behavioural interview
+  prep, cv based interview questions
 faq:
-  - q: "Is the Interview Prep tool free?"
-    a: "Pro plan feature."
-  - q: "Who should use Interview Prep?"
-    a: "Campus placement, off-campus, and lateral hire candidates at any level."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Interview Prep tool free?
+    a: Pro plan feature.
+  - q: Who should use Interview Prep?
+    a: 'Campus placement, off-campus, and lateral hire candidates at any level.'
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: 'AI Interview Prep: Questions You Will Actually Be Asked'
 ---
 
 Generic interview question lists on Google do not know you had a 8-month gap, switched from mechanical to IT, or led a college fest with 500 attendees. **Interview Prep** reads your CV and generates questions interviewers will ask **you** — with answer frameworks using your real experience.

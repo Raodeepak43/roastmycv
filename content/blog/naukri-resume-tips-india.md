@@ -1,16 +1,30 @@
 ---
-title: "Naukri Resume Tips — Why Recruiters Skip Your Profile (2026)"
-slug: "naukri-resume-tips-india"
-date: "2026-07-02"
-description: "Naukri resume tips for Indian job seekers — why your profile gets zero recruiter views, how Naukri ATS ranks CVs, and fixes before you apply on India's biggest job portal."
-keywords: "naukri resume tips, naukri cv tips, naukri profile not getting views, naukri resume format india"
+title: Naukri Resume Tips — Why Recruiters Skip Your Profile (2026)
+slug: naukri-resume-tips-india
+date: '2026-07-02'
+description: >-
+  Naukri Resume Tips — practical format tips, examples, and mistakes to avoid
+  for Indian freshers. Free AI resume check linked.
+keywords: >-
+  naukri resume tips, naukri cv tips, naukri profile not getting views, naukri
+  resume format india
 faq:
-  - q: "Why is my Naukri resume not getting views?"
-    a: "Common causes: incomplete profile, generic headline, missing keywords from job titles you target, outdated resume PDF, low Naukri profile completeness score, and applying to mismatched roles."
-  - q: "How do I optimize my resume for Naukri?"
-    a: "Match headline to target role, upload ATS-safe PDF, fill key skills Naukri suggests, keep resume updated within 90 days, and tailor keywords per application — not one generic CV for every job."
-  - q: "Should I use Naukri resume builder or external CV?"
-    a: "External ATS-safe PDF (from MyCVRoast builder or Word) often parses better. Upload to Naukri and ensure text is extractable — test by copying text from preview."
+  - q: Why is my Naukri resume not getting views?
+    a: >-
+      Common causes: incomplete profile, generic headline, missing keywords from
+      job titles you target, outdated resume PDF, low Naukri profile
+      completeness score, and applying to mismatched roles.
+  - q: How do I optimize my resume for Naukri?
+    a: >-
+      Match headline to target role, upload ATS-safe PDF, fill key skills Naukri
+      suggests, keep resume updated within 90 days, and tailor keywords per
+      application — not one generic CV for every job.
+  - q: Should I use Naukri resume builder or external CV?
+    a: >-
+      External ATS-safe PDF (from MyCVRoast builder or Word) often parses
+      better. Upload to Naukri and ensure text is extractable — test by copying
+      text from preview.
+metaTitle: Naukri Resume Tips
 ---
 
 **Naukri resume tips** matter because Naukri is still India's largest job portal — but uploading a PDF and clicking "Apply" 200 times is not a strategy. Recruiters search Naukri's database; if your profile ranks low, you get **zero views** while competitors with keyword-matched headlines show up first.

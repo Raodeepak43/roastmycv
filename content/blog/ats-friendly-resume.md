@@ -1,19 +1,35 @@
 ---
-title: "Is My Resume ATS Friendly? Free Check Guide 2026"
-metaTitle: "Check If Resume Is ATS Friendly — Free Test India"
-slug: "ats-friendly-resume"
-date: "2025-07-19"
-description: "Check if your resume is ATS friendly — free instant test for India. Upload PDF, get parsing score & fixes in 30 sec. 2 free checks, no signup."
-keywords: "is my resume ats friendly, check if resume is ats friendly, ats friendly resume, ats resume checker free, analyse ats friendly cv"
+title: Is My Resume ATS Friendly? Free Check Guide
+metaTitle: Check If Resume Is ATS Friendly — Free Test India
+slug: ats-friendly-resume
+date: '2025-07-19'
+description: >-
+  Check if your resume is ATS friendly before you apply. Learn what ATS checks,
+  common formatting mistakes, and free instant test for India.
+keywords: >-
+  is my resume ats friendly, check if resume is ats friendly, ats friendly
+  resume, ats resume checker free, analyse ats friendly cv
 faq:
-  - q: "Is my resume ATS friendly?"
-    a: "Copy-paste your PDF into plain text — if sections scramble, ATS will too. Use MyCVRoast's free ATS checker at /ats-friendly-resume-checker for an instant score and parsing feedback."
-  - q: "How do I check if my resume is ATS friendly for free?"
-    a: "Upload your CV at mycvroast.in/ats-friendly-resume-checker. You get a score, formatting flags, and specific fixes in 30 seconds — 2 free checks per device, no signup."
-  - q: "What makes a resume ATS friendly?"
-    a: "Single-column layout, standard headings (Experience, Education, Skills), text-based PDF, no tables or graphics, and keywords from the job description."
-  - q: "Can I analyse if my ATS friendly CV will pass Indian company filters?"
-    a: "Yes. MyCVRoast checks parsing, keyword density, and fresher-specific sections (CGPA, projects) used by TCS, Infosys, and Naukri employers."
+  - q: Is my resume ATS friendly?
+    a: >-
+      Copy-paste your PDF into plain text — if sections scramble, ATS will too.
+      Use MyCVRoast's free ATS checker at /ats-friendly-resume-checker for an
+      instant score and parsing feedback.
+  - q: How do I check if my resume is ATS friendly for free?
+    a: >-
+      Upload your CV at mycvroast.in/ats-friendly-resume-checker. You get a
+      score, formatting flags, and specific fixes in 30 seconds — 2 free checks
+      per device, no signup.
+  - q: What makes a resume ATS friendly?
+    a: >-
+      Single-column layout, standard headings (Experience, Education, Skills),
+      text-based PDF, no tables or graphics, and keywords from the job
+      description.
+  - q: Can I analyse if my ATS friendly CV will pass Indian company filters?
+    a: >-
+      Yes. MyCVRoast checks parsing, keyword density, and fresher-specific
+      sections (CGPA, projects) used by TCS, Infosys, and Naukri employers.
+h1: Is My Resume ATS Friendly? Free Check Guide
 ---
 
 > **Quick check:** Upload your CV to our [free ATS friendly resume checker](/ats-friendly-resume-checker) — see if bots can read your resume in 30 seconds.

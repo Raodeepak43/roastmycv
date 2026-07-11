@@ -1,18 +1,34 @@
 ---
-title: "Free Resume Builder India: Make a Pro CV in 2026"
-slug: "free-resume-builder-india"
-date: "2025-08-04"
-description: "Build a professional resume without spending a rupee. This free resume builder guide for India covers ATS templates, fresher tips, and how to make a CV that gets shortlisted."
-keywords: "free resume builder, resume maker free, free resume builder online, free resume, build your resume for free, resume builder india"
+title: 'Free Resume Builder India: Make a Pro CV in 2026'
+slug: free-resume-builder-india
+date: '2025-08-04'
+description: >-
+  Free Resume Builder India: Make a Pro CV in 2026 — practical format tips,
+  examples, and mistakes to avoid for Indian freshers. Free AI resume check
+  linked.
+keywords: >-
+  free resume builder, resume maker free, free resume builder online, free
+  resume, build your resume for free, resume builder india
 faq:
-  - q: "What is Free Resume Builder India: Make a Pro CV in 2026?"
-    a: "Build a professional resume without spending a rupee. This free resume builder guide for India covers ATS templates, fresher tips, and how to make a CV that gets shortlisted."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Free Resume Builder India: Make a Pro CV in 2026?'
+    a: >-
+      Build a professional resume without spending a rupee. This free resume
+      builder guide for India covers ATS templates, fresher tips, and how to
+      make a CV that gets shortlisted.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Free Resume Builder India: Make a Pro CV in 2026'
 ---
 
 A good **free resume builder** should do three things: give you a clean ATS-safe layout, let you build your resume for free without a hidden paywall at the download step, and produce a PDF that recruiters in India actually open without formatting breaking. Most "free" tools fail on at least one of these — they tease you with a nice template and then ask for ₹999 right when you click download. This guide shows you how to make a genuinely free resume that competes in the 2026 Indian job market.

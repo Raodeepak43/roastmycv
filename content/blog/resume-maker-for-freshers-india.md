@@ -1,18 +1,34 @@
 ---
-title: "Resume Maker for Freshers India: Build a CV in 2026"
-slug: "resume-maker-for-freshers-india"
-date: "2025-08-28"
-description: "A resume maker for freshers in India that actually gets you shortlisted. Learn how to create a resume with no experience, ATS tips, and free tools for campus placements in 2026."
-keywords: "resume maker for freshers, resume builder for freshers, resume for freshers, create resume for freshers, resume maker online free for freshers"
+title: 'Resume Maker for Freshers India: Build a CV in 2026'
+slug: resume-maker-for-freshers-india
+date: '2025-08-28'
+description: >-
+  Resume Maker for Freshers India: Build a CV in 2026 — practical format tips,
+  examples, and mistakes to avoid for Indian freshers. Free AI resume check
+  linked.
+keywords: >-
+  resume maker for freshers, resume builder for freshers, resume for freshers,
+  create resume for freshers, resume maker online free for freshers
 faq:
-  - q: "What is Resume Maker for Freshers India: Build a CV in 2026?"
-    a: "A resume maker for freshers in India that actually gets you shortlisted. Learn how to create a resume with no experience, ATS tips, and free tools for campus placements in 2026."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Resume Maker for Freshers India: Build a CV in 2026?'
+    a: >-
+      A resume maker for freshers in India that actually gets you shortlisted.
+      Learn how to create a resume with no experience, ATS tips, and free tools
+      for campus placements in 2026.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Resume Maker for Freshers India: Build a CV in 2026'
 ---
 
 A **resume maker for freshers** has one hard job: making a candidate with no full-time experience look genuinely hireable. As a fresher, you cannot lean on years of job titles, so your resume has to sell your education, projects, internships, and potential — all on a single, clean page. The good news is that with the right resume builder for freshers and the right structure, you can compete with anyone in your batch, even if your CGPA is average.

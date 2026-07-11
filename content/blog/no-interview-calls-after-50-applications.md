@@ -1,16 +1,27 @@
 ---
-title: "Applied to 50+ Jobs, Still No Calls? Here's What's Actually Wrong"
-slug: "no-interview-calls-after-50-applications"
-date: "2026-06-30"
-description: "No interview calls after 50 applications? Resume, ATS, spray-and-pray apply, LinkedIn gap — diagnostic checklist for India job search."
-keywords: "no interview calls after 50 applications, applied many jobs no response, job search india no calls"
+title: 'Applied to 50+ Jobs, Still No Calls? Here''s What''s Actually Wrong'
+slug: no-interview-calls-after-50-applications
+date: '2026-06-30'
+description: >-
+  No interview calls after 50 applications? Resume, ATS, spray-and-pray apply,
+  LinkedIn gap — diagnostic checklist for India job search.
+keywords: >-
+  no interview calls after 50 applications, applied many jobs no response, job
+  search india no calls
 faq:
-  - q: "What is Applied to 50+ Jobs, Still No Calls? Here's What's Actually Wrong?"
-    a: "No interview calls after 50 applications? Resume, ATS, spray-and-pray apply, LinkedIn gap — diagnostic checklist for India job search."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
+  - q: 'What is Applied to 50+ Jobs, Still No Calls? Here''s What''s Actually Wrong?'
+    a: >-
+      No interview calls after 50 applications? Resume, ATS, spray-and-pray
+      apply, LinkedIn gap — diagnostic checklist for India job search.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+metaTitle: 'Applied to 50+ Jobs, Still No Calls? Here''s What''s A…'
 ---
 
 **Applied to 50+ jobs and still no calls?** You're not alone — and it's usually not *only* the job market. One broken resume multiplied by 50 applications still equals zero interviews.

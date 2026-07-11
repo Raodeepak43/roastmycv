@@ -1,18 +1,33 @@
 ---
-title: "How Long Should a Resume Be? Pages Guide for 2026"
-slug: "how-many-pages-resume"
-date: "2026-05-06"
-description: "How long should a resume be in 2026? A clear guide to resume length and pages — one page vs two, what to cut, and the right CV pages for freshers and pros."
-keywords: "how long should a resume be, resume pages, cv pages, one page resume, resume length"
+title: How Long Should a Resume Be? Pages Guide for 2026
+slug: how-many-pages-resume
+date: '2026-05-06'
+description: >-
+  How long should a resume be in 2026? A clear guide to resume length and pages
+  — one page vs two, what to cut, and the right CV pages for freshers and pros.
+keywords: >-
+  how long should a resume be, resume pages, cv pages, one page resume, resume
+  length
 faq:
-  - q: "What is How Long Should a Resume Be? Pages Guide for 2026?"
-    a: "How long should a resume be in 2026? A clear guide to resume length and pages — one page vs two, what to cut, and the right CV pages for freshers and pros."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: What is How Long Should a Resume Be? Pages Guide for 2026?
+    a: >-
+      How long should a resume be in 2026? A clear guide to resume length and
+      pages — one page vs two, what to cut, and the right CV pages for freshers
+      and pros.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: How Long Should a Resume Be? Pages Guide for 2026
 ---
 
 "**How long should a resume be**?" is one of the most common — and most over-thought — questions in any job hunt. The short answer: as long as it needs to be to prove your value, and not a line more. For most Indian job seekers, that means one page for freshers and one to two pages for experienced professionals. But length is really a symptom of a deeper issue: relevance. A bloated resume usually means weak editing, not a rich career.

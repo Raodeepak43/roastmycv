@@ -1,21 +1,33 @@
 ---
-title: "12th Pass Resume Kaise Banaye — Job & Internship ke Liye Format"
-slug: "12th-pass-resume-kaise-banaye"
-date: "2026-07-03"
+title: 12th Pass Resume Kaise Banaye? Complete Guide for Freshers
+slug: 12th-pass-resume-kaise-banaye
+date: '2026-07-03'
 type: guide
 author: MyCVRoast Team
-description: "12th pass resume kaise banaye — education-first format, skills, part-time work, BPO/retail/ apprenticeship applications. Free AI check for India."
-keywords: "12th pass resume kaise banaye, resume guide hindi, fresher resume india, mycvroast"
+description: >-
+  12th pass ke baad job ke liye resume kaise banaye? Step-by-step format,
+  fresher example aur common mistakes. Apna resume free check karein.
+keywords: >-
+  12th pass resume kaise banaye, resume guide hindi, fresher resume india,
+  mycvroast
 faq:
-  - q: "12th pass ko resume chahiye ya biodata?"
-    a: "Private companies aur BPOs usually resume prefer karte hain — simple one page English/Hinglish mix chalega."
-  - q: "Graduation nahi hai to skills kya likhein?"
-    a: "MS Office, typing speed, basic English, customer handling, cash billing, computer course — jo sach ho."
-  - q: "Photo lagani chahiye?"
-    a: "Retail/BPO me kabhi maangte hain — IT/MNC me avoid karo unless JD me likha ho."
+  - q: 12th pass ko resume chahiye ya biodata?
+    a: >-
+      Private companies aur BPOs usually resume prefer karte hain — simple one
+      page English/Hinglish mix chalega.
+  - q: Graduation nahi hai to skills kya likhein?
+    a: >-
+      MS Office, typing speed, basic English, customer handling, cash billing,
+      computer course — jo sach ho.
+  - q: Photo lagani chahiye?
+    a: >-
+      Retail/BPO me kabhi maangte hain — IT/MNC me avoid karo unless JD me likha
+      ho.
+metaTitle: 12th Pass Resume Kaise Banaye? Free Format & Example 2026
+h1: 12th Pass Resume Kaise Banaye? Complete Guide for Freshers
 ---
+12th pass ke baad job ke liye resume banana confusing ho sakta hai — graduation nahi hai to bhi retail, BPO, data entry aur apprenticeship roles me CV maanga jata hai. Yeh guide step-by-step batati hai **12th pass resume kaise banaye**, kya information include karni hai, aur freshers kin galtiyon se bachna chahiye.
 
-**12th pass resume kaise banaye** — graduation nahi hai to bhi retail, BPO, data entry, field sales, aur apprenticeship me resume maanga jata hai. Format thoda alag hota hai: education upar, skills practical, language simple English/Hinglish mix chalega.
 
 **[12th pass CV free check →](/cv-checker-for-freshers)**
 
@@ -58,9 +70,11 @@ Naukri "12th pass" filter, local consultancies, walk-in malls, BPO hiring drives
 
 ## Banane ke baad check kaise karein
 
-Spelling errors fatal hain — especially phone number. MyCVRoast par upload karo ya dost se padhwa ke clarity check karo.
+Spelling errors fatal hain — especially phone number. Resume bana liya? Ab free mein check karo ki recruiter ko kya weak lag sakta hai.
 
-[Free resume checker India](/free-resume-checker-india) page se bhi upload kar sakte ho.
+**[Apna resume free check karo →](/)** — 30 second mein score aur fix list.
+
+[Free resume checker India](/free-resume-checker-india) · [Check if resume is ATS friendly](/blog/ats-friendly-resume)
 
 ## Checklist
 

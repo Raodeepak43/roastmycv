@@ -1,18 +1,34 @@
 ---
-title: "Free ATS Resume Builder: Beat the Bots in 2026"
-slug: "ats-resume-builder-free"
-date: "2025-09-03"
-description: "Use a free ATS resume builder to beat applicant tracking systems in India. Learn ATS keywords, formatting rules, and how to make an ATS friendly resume that gets shortlisted in 2026."
-keywords: "free ats resume builder, ats friendly resume, free ats resume maker, ats keywords, ats resume checker"
+title: 'Free ATS Resume Builder: Beat the Bots in 2026'
+slug: ats-resume-builder-free
+date: '2025-09-03'
+description: >-
+  Free ATS Resume Builder: Beat the Bots in 2026 — practical format tips,
+  examples, and mistakes to avoid for Indian freshers. Free AI resume check
+  linked.
+keywords: >-
+  free ats resume builder, ats friendly resume, free ats resume maker, ats
+  keywords, ats resume checker
 faq:
-  - q: "What is Free ATS Resume Builder: Beat the Bots in 2026?"
-    a: "Use a free ATS resume builder to beat applicant tracking systems in India. Learn ATS keywords, formatting rules, and how to make an ATS friendly resume that gets shortlisted in 2026."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Free ATS Resume Builder: Beat the Bots in 2026?'
+    a: >-
+      Use a free ATS resume builder to beat applicant tracking systems in India.
+      Learn ATS keywords, formatting rules, and how to make an ATS friendly
+      resume that gets shortlisted in 2026.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Free ATS Resume Builder: Beat the Bots in 2026'
 ---
 
 A **free ATS resume builder** solves a problem most job seekers do not even know they have: your resume is read by software before any human sees it, and that software rejects more candidates than any recruiter ever will. In India, every large employer — TCS, Infosys, Wipro, Amazon India, Flipkart — runs applications through an Applicant Tracking System (ATS). If your CV is not formatted for the bots, it gets filtered out no matter how qualified you are. This guide shows you how to build a free, ATS-friendly resume that actually gets through.

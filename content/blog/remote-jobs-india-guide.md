@@ -1,16 +1,28 @@
 ---
-title: "Remote Jobs in India 2026: Find Work From Home Roles"
-slug: "remote-jobs-india-guide"
-date: "2026-03-25"
-description: "How to find legit remote jobs in India in 2026 — work from home jobs, online jobs, and remote roles that are hiring, plus how to apply and avoid scams."
-keywords: "remote jobs, work from home jobs, online jobs, remote working jobs, remote jobs hiring"
+title: 'Remote Jobs in India 2026: Find Work From Home Roles'
+slug: remote-jobs-india-guide
+date: '2026-03-25'
+description: >-
+  How to find legit remote jobs in India in 2026 — work from home jobs, online
+  jobs, and remote roles that are hiring, plus how to apply and avoid scams.
+keywords: >-
+  remote jobs, work from home jobs, online jobs, remote working jobs, remote
+  jobs hiring
 faq:
-  - q: "What is Remote Jobs in India 2026: Find Work From Home Roles?"
-    a: "How to find legit remote jobs in India in 2026 — work from home jobs, online jobs, and remote roles that are hiring, plus how to apply and avoid scams."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
+  - q: 'What is Remote Jobs in India 2026: Find Work From Home Roles?'
+    a: >-
+      How to find legit remote jobs in India in 2026 — work from home jobs,
+      online jobs, and remote roles that are hiring, plus how to apply and avoid
+      scams.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+metaTitle: 'Remote Jobs in India 2026: Find Work From Home Roles'
 ---
 
 **Remote jobs** are no longer a pandemic-era experiment in India — they are a permanent part of the hiring landscape. From Bangalore startups hiring engineers across the country to global companies recruiting Indian talent for distributed teams, work from home jobs now span software, design, marketing, customer support, content, and operations. But with opportunity comes noise: for every genuine remote opening, there are a dozen scams promising easy money.

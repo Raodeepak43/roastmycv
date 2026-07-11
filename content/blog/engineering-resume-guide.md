@@ -1,18 +1,34 @@
 ---
-title: "Engineering Resume Guide 2026 (India): Examples + Tips"
-slug: "engineering-resume-guide"
-date: "2026-06-29"
-description: "Build an engineering resume that gets interviews in 2026. India guide for civil, mechanical & more with skills, summary examples, project bullets, and ATS tips."
-keywords: "engineering resume, engineering jobs, job for civil engineer, mechanical engineer resume, fresher engineer resume"
+title: 'Engineering Resume Guide 2026 (India): Examples + Tips'
+slug: engineering-resume-guide
+date: '2026-06-29'
+description: >-
+  Build an engineering resume that gets interviews in 2026. India guide for
+  civil, mechanical & more with skills, summary examples, project bullets, and
+  ATS tips.
+keywords: >-
+  engineering resume, engineering jobs, job for civil engineer, mechanical
+  engineer resume, fresher engineer resume
 faq:
-  - q: "What is Engineering Resume Guide 2026 (India): Examples + Tips?"
-    a: "Build an engineering resume that gets interviews in 2026. India guide for civil, mechanical & more with skills, summary examples, project bullets, and ATS tips."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Engineering Resume Guide 2026 (India): Examples + Tips?'
+    a: >-
+      Build an engineering resume that gets interviews in 2026. India guide for
+      civil, mechanical & more with skills, summary examples, project bullets,
+      and ATS tips.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Engineering Resume Guide 2026 (India): Examples + Tips'
 ---
 
 A strong **engineering resume** has to do something many freshers miss: translate technical work into outcomes a recruiter understands in six seconds. Whether you are after core engineering jobs in civil, mechanical, electrical, or chemical fields, or trying to break into your first role, hiring managers want proof — projects you built, problems you solved, and tools you can actually use. This guide is built for Indian engineers across branches, with examples for a fresher engineer resume, a job for civil engineer, a mechanical engineer resume, and beyond.

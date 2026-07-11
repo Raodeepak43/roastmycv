@@ -1,18 +1,29 @@
 ---
-title: "ITI & Diploma Resume Format India — Fresher CV Sample 2026"
-slug: "iti-diploma-resume-format-india"
-date: "2026-07-12"
+title: ITI & Diploma Resume Format India — Fresher CV Sample 2026
+slug: iti-diploma-resume-format-india
+date: '2026-07-12'
 type: guide
 author: MyCVRoast Team
-description: "ITI resume format and diploma CV sample for India — electrician, fitter, COPA, mechanical jobs. Apprenticeship & factory roles. Free AI check."
-keywords: "iti resume format, diploma resume format india, iti fresher resume, polytechnic resume format, iti cv sample"
+description: >-
+  ITI resume format and diploma CV sample for India — electrician, fitter, COPA,
+  mechanical jobs. Apprenticeship & factory roles. Free AI check.
+keywords: >-
+  iti resume format, diploma resume format india, iti fresher resume,
+  polytechnic resume format, iti cv sample
 faq:
-  - q: "ITI resume me trade likhna zaroori hai?"
-    a: "Haan — headline ya objective me trade clear likho: Electrician, Fitter, COPA, Welder, etc. Recruiter trade se filter karta hai."
-  - q: "Diploma aur ITI dono hai to kya order?"
-    a: "Higher qualification upar — Diploma pehle, phir ITI, phir 10th/12th. Dono relevant hain to dono likho."
-  - q: "Apprenticeship experience kaise likhein?"
-    a: "Company name, trade, duration, tools/machines jin par kaam kiya — safety training mention karo agar hai."
+  - q: ITI resume me trade likhna zaroori hai?
+    a: >-
+      Haan — headline ya objective me trade clear likho: Electrician, Fitter,
+      COPA, Welder, etc. Recruiter trade se filter karta hai.
+  - q: Diploma aur ITI dono hai to kya order?
+    a: >-
+      Higher qualification upar — Diploma pehle, phir ITI, phir 10th/12th. Dono
+      relevant hain to dono likho.
+  - q: Apprenticeship experience kaise likhein?
+    a: >-
+      Company name, trade, duration, tools/machines jin par kaam kiya — safety
+      training mention karo agar hai.
+metaTitle: ITI & Diploma Resume Format India
 ---
 
 **ITI resume format** aur **diploma resume format** India me factory, PSU apprenticeship, private manufacturing, automobile, electrical, aur government trainee roles ke liye alag hota hai — CGPA se zyada **trade + workshop skills + apprenticeship** matter karte hain.

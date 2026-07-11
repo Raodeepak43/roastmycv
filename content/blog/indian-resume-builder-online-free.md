@@ -1,19 +1,38 @@
 ---
-title: "Indian Resume Builder Online Free — ATS CV Maker 2026"
-slug: "indian-resume-builder-online-free"
-date: "2026-07-05"
-description: "Indian resume builder built for campus placement, CGPA, fresher projects & ATS screening. Create resume online free — PDF download, live score, no Zety paywall."
-keywords: "indian resume builder, indian resume maker, resume builder india, indian cv maker, indian resume builder online free, resume builder online india, free resume builder india"
+title: Indian Resume Builder Online Free — ATS CV Maker 2026
+slug: indian-resume-builder-online-free
+date: '2026-07-05'
+description: >-
+  Indian resume builder built for campus placement, CGPA, fresher projects & ATS
+  screening. Create resume online free — PDF download, live score, no Zety
+  paywall.
+keywords: >-
+  indian resume builder, indian resume maker, resume builder india, indian cv
+  maker, indian resume builder online free, resume builder online india, free
+  resume builder india
 type: comparison
 faq:
-  - q: "What is the best Indian resume builder?"
-    a: "MyCVRoast resume builder is built for India — ATS templates, CGPA and project sections, live ATS score, free PDF export, plus free AI resume roast. It beats generic US-focused tools for TCS, Infosys, and campus drives."
-  - q: "Is there a free Indian resume maker online?"
-    a: "Yes. MyCVRoast lets you build and download an ATS-friendly resume PDF free. No subscription required for basic export."
-  - q: "Indian resume builder vs Zety or Canva?"
-    a: "Zety often paywalls PDF download. Canva breaks ATS parsing. An Indian-focused ATS builder uses single-column layouts recruiters and bots in India actually read."
-  - q: "Does Indian resume builder work for freshers?"
-    a: "Yes. Sections are designed for education, projects, internships, and skills — the fresher hiring model used across Indian IT and product companies."
+  - q: What is the best Indian resume builder?
+    a: >-
+      MyCVRoast resume builder is built for India — ATS templates, CGPA and
+      project sections, live ATS score, free PDF export, plus free AI resume
+      roast. It beats generic US-focused tools for TCS, Infosys, and campus
+      drives.
+  - q: Is there a free Indian resume maker online?
+    a: >-
+      Yes. MyCVRoast lets you build and download an ATS-friendly resume PDF
+      free. No subscription required for basic export.
+  - q: Indian resume builder vs Zety or Canva?
+    a: >-
+      Zety often paywalls PDF download. Canva breaks ATS parsing. An
+      Indian-focused ATS builder uses single-column layouts recruiters and bots
+      in India actually read.
+  - q: Does Indian resume builder work for freshers?
+    a: >-
+      Yes. Sections are designed for education, projects, internships, and
+      skills — the fresher hiring model used across Indian IT and product
+      companies.
+metaTitle: Indian Resume Builder Online Free (2026)
 ---
 
 An **Indian resume builder** is not just a resume tool with ".in" in the URL. It should understand **CGPA**, campus placement timelines, service-based company formats, Naukri uploads, and **ATS screening** at TCS, Infosys, Wipro, HCL, and Amazon India. Most global builders — Zety, Resume.io, Canva — optimize for US/Europe hiring and hide the PDF behind a paywall.

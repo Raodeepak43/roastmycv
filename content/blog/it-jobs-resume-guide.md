@@ -1,18 +1,32 @@
 ---
-title: "IT Resume Guide 2026 (India): Examples + ATS Tips"
-slug: "it-jobs-resume-guide"
-date: "2026-06-17"
-description: "Build an IT resume that lands interviews in 2026. India guide with skills, summary examples, strong bullets, IT cv example tips, and entry level mistakes to avoid."
-keywords: "it resume, it jobs, it resume examples, it cv example, entry level it resume"
+title: 'IT Resume Guide 2026 (India): Examples + ATS Tips'
+slug: it-jobs-resume-guide
+date: '2026-06-17'
+description: >-
+  Build an IT resume that lands interviews in 2026. India guide with skills,
+  summary examples, strong bullets, IT cv example tips, and entry level mistakes
+  to avoid.
+keywords: 'it resume, it jobs, it resume examples, it cv example, entry level it resume'
 faq:
-  - q: "What is IT Resume Guide 2026 (India): Examples + ATS Tips?"
-    a: "Build an IT resume that lands interviews in 2026. India guide with skills, summary examples, strong bullets, IT cv example tips, and entry level mistakes to avoid."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is IT Resume Guide 2026 (India): Examples + ATS Tips?'
+    a: >-
+      Build an IT resume that lands interviews in 2026. India guide with skills,
+      summary examples, strong bullets, IT cv example tips, and entry level
+      mistakes to avoid.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'IT Resume Guide 2026 (India): Examples + ATS Tips'
 ---
 
 A strong **it resume** has to work across a huge range of roles — support, systems, networking, cloud, security, and infrastructure — while still feeling specific to the job you want. That is the tricky part. Many candidates applying for IT jobs in India send one generic CV everywhere and wonder why nothing lands. Recruiters at service giants and product companies alike want to see relevant certifications, hands-on skills, and proof you can keep systems running. This guide gives you IT resume examples, a clear structure, and an it cv example framework you can adapt — including a clean entry level it resume path for freshers.

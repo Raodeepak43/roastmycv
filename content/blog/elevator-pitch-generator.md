@@ -1,16 +1,26 @@
 ---
-title: "Elevator Pitch Generator: Introduce Yourself in 30 Seconds"
-slug: "elevator-pitch-generator"
-date: "2026-06-14"
-description: "AI elevator pitch from your CV — for networking events, \"tell me about yourself,\" and LinkedIn DMs. Clear, confident, no jargon."
-keywords: "elevator pitch generator, tell me about yourself answer, 30 second introduction, networking pitch"
+title: 'Elevator Pitch Generator: Introduce Yourself in 30 Seconds'
+slug: elevator-pitch-generator
+date: '2026-06-14'
+description: >-
+  AI elevator pitch from your CV — for networking events, "tell me about
+  yourself," and LinkedIn DMs. Clear, confident, no jargon.
+keywords: >-
+  elevator pitch generator, tell me about yourself answer, 30 second
+  introduction, networking pitch
 faq:
-  - q: "Is the Elevator Pitch tool free?"
-    a: "Unlimited on free plan."
-  - q: "Who should use Elevator Pitch?"
-    a: "Freshers, career switchers, and anyone who rambles when asked to introduce themselves."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Elevator Pitch tool free?
+    a: Unlimited on free plan.
+  - q: Who should use Elevator Pitch?
+    a: >-
+      Freshers, career switchers, and anyone who rambles when asked to introduce
+      themselves.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: 'Elevator Pitch Generator: Introduce Yourself in 30 S…'
 ---
 
 "Tell me about yourself" is not your life story. It is a **30-second pitch**: who you are, what you do best, and what you want next. The **Elevator Pitch** tool compresses your CV into spoken intro versions for interviews, campus fairs, and LinkedIn cold messages.

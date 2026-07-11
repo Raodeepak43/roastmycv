@@ -1,16 +1,24 @@
 ---
-title: "Resume Bias Checker: Age, Gender, and Photo Flags on Your CV"
-slug: "resume-bias-checker-tool"
-date: "2026-06-20"
-description: "Detect unconscious bias triggers on your CV — photos, age hints, marital status, religion — for fair hiring in India and abroad."
-keywords: "resume bias checker, cv discrimination, resume photo india, unbiased resume"
+title: 'Resume Bias Checker: Age, Gender, and Photo Flags on Your CV'
+slug: resume-bias-checker-tool
+date: '2026-06-20'
+description: >-
+  Detect unconscious bias triggers on your CV — photos, age hints, marital
+  status, religion — for fair hiring in India and abroad.
+keywords: 'resume bias checker, cv discrimination, resume photo india, unbiased resume'
 faq:
-  - q: "Is the Bias Detector tool free?"
-    a: "Unlimited on free plan."
-  - q: "Who should use Bias Detector?"
-    a: "Women returning to workforce, older candidates, and anyone applying internationally from India."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Bias Detector tool free?
+    a: Unlimited on free plan.
+  - q: Who should use Bias Detector?
+    a: >-
+      Women returning to workforce, older candidates, and anyone applying
+      internationally from India.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: Resume Bias Checker — Free Tool Guide
 ---
 
 Indian CVs often include date of birth, photo, marital status, and religion — all of which can trigger **unconscious bias** and get you filtered before skills are read. Abroad, some of these are illegal to ask. **Bias Detector** flags risky content and suggests neutral alternatives.

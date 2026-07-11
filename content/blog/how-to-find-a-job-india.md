@@ -1,16 +1,29 @@
 ---
-title: "How to Find a Job in India 2026: A Step-by-Step Plan"
-slug: "how-to-find-a-job-india"
-date: "2026-04-08"
-description: "Learn how to find a job in India in 2026 with a step-by-step job hunting plan — where to look for job opportunities, how to apply, network, and get hired faster."
-keywords: "how to find a job, find a job, looking for a job, job hunting, job opportunities"
+title: 'How to Find a Job in India 2026: A Step-by-Step Plan'
+slug: how-to-find-a-job-india
+date: '2026-04-08'
+description: >-
+  Learn how to find a job in India in 2026 with a step-by-step job hunting plan
+  — where to look for job opportunities, how to apply, network, and get hired
+  faster.
+keywords: >-
+  how to find a job, find a job, looking for a job, job hunting, job
+  opportunities
 faq:
-  - q: "What is How to Find a Job in India 2026: A Step-by-Step Plan?"
-    a: "Learn how to find a job in India in 2026 with a step-by-step job hunting plan — where to look for job opportunities, how to apply, network, and get hired faster."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
+  - q: 'What is How to Find a Job in India 2026: A Step-by-Step Plan?'
+    a: >-
+      Learn how to find a job in India in 2026 with a step-by-step job hunting
+      plan — where to look for job opportunities, how to apply, network, and get
+      hired faster.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+metaTitle: 'How to Find a Job in India 2026: A Step'
 ---
 
 Figuring out **how to find a job** in India can feel overwhelming when one opening attracts hundreds of applicants and your applications seem to vanish into a void. But job hunting is not luck — it is a process. The candidates who get hired fastest are not always the most qualified; they are the ones who run a structured search: a strong resume, the right platforms, active networking, and consistent follow-up.

@@ -1,16 +1,24 @@
 ---
-title: "CV Localiser: Adapt Your Resume for US, UK, EU, and Gulf Markets"
-slug: "cv-localiser-international-jobs"
-date: "2026-06-18"
-description: "Localise your Indian CV for international job applications — format, sections, spelling, and cultural norms by country."
-keywords: "international cv format, localise resume, cv for us jobs, uk cv format from india"
+title: 'CV Localiser: Adapt Your Resume for US, UK, EU, and Gulf Markets'
+slug: cv-localiser-international-jobs
+date: '2026-06-18'
+description: >-
+  Localise your Indian CV for international job applications — format, sections,
+  spelling, and cultural norms by country.
+keywords: >-
+  international cv format, localise resume, cv for us jobs, uk cv format from
+  india
 faq:
-  - q: "Is the CV Localiser tool free?"
-    a: "Pro plan feature."
-  - q: "Who should use CV Localiser?"
-    a: "Indian professionals applying abroad or to MNC regional offices."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the CV Localiser tool free?
+    a: Pro plan feature.
+  - q: Who should use CV Localiser?
+    a: Indian professionals applying abroad or to MNC regional offices.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: 'CV Localiser: Adapt Your Resume for US, UK, EU, and…'
 ---
 
 Your Indian CV with photo, 10th marks, and "father's name" will get rejected in the US and UK in seconds. **CV Localiser** adapts your content to target country conventions — not just spelling, but what to remove, add, and reorder.

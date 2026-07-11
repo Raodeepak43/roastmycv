@@ -1,16 +1,29 @@
 ---
-title: "ChatGPT Resume Review vs AI Roast — Which Works Better?"
-slug: "chatgpt-resume-review-vs-roast"
-date: "2026-07-02"
-description: "ChatGPT resume review vs dedicated AI roast tools for India. Google PAA answer — when to use ChatGPT, when to use MyCVRoast, and prompt limits freshers hit."
-keywords: "chatgpt resume review, can chatgpt review my resume, chatgpt vs resume roast, ai resume review chatgpt"
+title: ChatGPT Resume Review vs AI Roast — Which Works Better?
+slug: chatgpt-resume-review-vs-roast
+date: '2026-07-02'
+description: >-
+  ChatGPT resume review vs dedicated AI roast tools for India. Google PAA answer
+  — when to use ChatGPT, when to use MyCVRoast, and prompt limits freshers hit.
+keywords: >-
+  chatgpt resume review, can chatgpt review my resume, chatgpt vs resume roast,
+  ai resume review chatgpt
 faq:
-  - q: "Can ChatGPT review my resume?"
-    a: "Yes — paste your resume text and ask for feedback. It won't read PDF layout well and tends to be polite unless you prompt aggressively. MyCVRoast uploads PDF directly and returns structured roast + score."
-  - q: "Is ChatGPT better than resume roast tools?"
-    a: "ChatGPT is flexible for custom questions. Roast tools are faster for structured brutal feedback, Hinglish tone, and repeatable scoring — better for iterative CV improvement."
-  - q: "Is ChatGPT resume review free?"
-    a: "ChatGPT free tier has usage limits. MyCVRoast offers 2 free roasts per device with no OpenAI account needed."
+  - q: Can ChatGPT review my resume?
+    a: >-
+      Yes — paste your resume text and ask for feedback. It won't read PDF
+      layout well and tends to be polite unless you prompt aggressively.
+      MyCVRoast uploads PDF directly and returns structured roast + score.
+  - q: Is ChatGPT better than resume roast tools?
+    a: >-
+      ChatGPT is flexible for custom questions. Roast tools are faster for
+      structured brutal feedback, Hinglish tone, and repeatable scoring — better
+      for iterative CV improvement.
+  - q: Is ChatGPT resume review free?
+    a: >-
+      ChatGPT free tier has usage limits. MyCVRoast offers 2 free roasts per
+      device with no OpenAI account needed.
+metaTitle: ChatGPT Resume Review vs AI Roast (2026)
 ---
 
 Google's People Also Ask for *ai resume review free* includes: **"Can ChatGPT review my resume?"** — yes, but most freshers do it wrong.

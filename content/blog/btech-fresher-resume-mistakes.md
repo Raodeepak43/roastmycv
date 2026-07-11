@@ -1,18 +1,32 @@
 ---
-title: "10 BTech Fresher Resume Mistakes That Kill Your Shortlist Chances"
-slug: "btech-fresher-resume-mistakes"
-date: "2026-06-28"
-description: "BTech fresher resume mistakes — objective lines, CGPA hiding, empty projects, MS Word skills. Fix before campus season."
-keywords: "btech fresher resume mistakes, engineering resume mistakes, campus placement cv errors"
+title: 10 BTech Fresher Resume Mistakes That Kill Your Shortlist Chances
+slug: btech-fresher-resume-mistakes
+date: '2026-06-28'
+description: >-
+  BTech fresher resume mistakes — objective lines, CGPA hiding, empty projects,
+  MS Word skills. Fix before campus season.
+keywords: >-
+  btech fresher resume mistakes, engineering resume mistakes, campus placement
+  cv errors
 faq:
-  - q: "What is 10 BTech Fresher Resume Mistakes That Kill Your Shortlist Chances?"
-    a: "BTech fresher resume mistakes — objective lines, CGPA hiding, empty projects, MS Word skills. Fix before campus season."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: What is 10 BTech Fresher Resume Mistakes That Kill Your Shortlist Chances?
+    a: >-
+      BTech fresher resume mistakes — objective lines, CGPA hiding, empty
+      projects, MS Word skills. Fix before campus season.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 10 BTech Fresher Resume Mistakes That Kill Your Shor…
 ---
 
 **BTech fresher resume mistakes** cost shortlists silently — TPO ne forward kar diya, par ATS ya recruiter ne 8 seconds mein reject kar diya. Yeh 10 errors Indian engineering campus cycles mein sabse common hain.

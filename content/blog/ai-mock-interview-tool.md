@@ -1,16 +1,24 @@
 ---
-title: "AI Mock Interview: Practice With an Interviewer Who Read Your CV"
-slug: "ai-mock-interview-tool"
-date: "2026-06-10"
-description: "Mock interview simulator powered by AI — technical, HR, or mixed rounds. Answers evaluated against your resume and target role."
-keywords: "mock interview ai, online mock interview, practice interview ai, mock hr interview"
+title: 'AI Mock Interview: Practice With an Interviewer Who Read Your CV'
+slug: ai-mock-interview-tool
+date: '2026-06-10'
+description: >-
+  Mock interview simulator powered by AI — technical, HR, or mixed rounds.
+  Answers evaluated against your resume and target role.
+keywords: >-
+  mock interview ai, online mock interview, practice interview ai, mock hr
+  interview
 faq:
-  - q: "Is the Mock Interview tool free?"
-    a: "Pro plan feature."
-  - q: "Who should use Mock Interview?"
-    a: "Candidates who freeze in interviews despite knowing the material."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Mock Interview tool free?
+    a: Pro plan feature.
+  - q: Who should use Mock Interview?
+    a: Candidates who freeze in interviews despite knowing the material.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: AI Mock Interview — Free Tool Guide
 ---
 
 Reading questions is not the same as answering under pressure. **Mock Interview** simulates a real round: AI asks follow-ups, probes weak CV areas, and gives feedback on clarity and structure — before the actual call with a hiring manager. Turn on **Voice mode** for a natural AI interviewer that reads questions aloud (multiple voice options). Answer by **typing or speaking** — mic auto-sends after a short pause.

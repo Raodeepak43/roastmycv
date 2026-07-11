@@ -1,16 +1,26 @@
 ---
-title: "How to Reply to a Rejection Email (And Stay on Their Radar)"
-slug: "rejection-email-reply-tool"
-date: "2026-06-13"
-description: "Professional rejection reply templates — gracious, brief, and smart enough to leave the door open for future roles."
-keywords: "reply to rejection email, rejection email response, how to respond job rejection, rejection reply template"
+title: How to Reply to a Rejection Email (And Stay on Their Radar)
+slug: rejection-email-reply-tool
+date: '2026-06-13'
+description: >-
+  Professional rejection reply templates — gracious, brief, and smart enough to
+  leave the door open for future roles.
+keywords: >-
+  reply to rejection email, rejection email response, how to respond job
+  rejection, rejection reply template
 faq:
-  - q: "Is the Rejection Reply tool free?"
-    a: "Unlimited on free plan."
-  - q: "Who should use Rejection Reply?"
-    a: "Anyone who wants to build long-term recruiter relationships in a tight market."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Rejection Reply tool free?
+    a: Unlimited on free plan.
+  - q: Who should use Rejection Reply?
+    a: >-
+      Anyone who wants to build long-term recruiter relationships in a tight
+      market.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: How to Reply to a Rejection Email (And Stay on The
 ---
 
 You got the "we regret to inform you" mail. Ignore it, or send a 3-sentence reply that hiring managers remember when the next role opens? **Rejection Reply** writes gracious responses that keep relationships warm — without arguing the decision.

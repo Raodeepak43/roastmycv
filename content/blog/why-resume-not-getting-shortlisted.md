@@ -1,16 +1,30 @@
 ---
-title: "Why Is My Resume Not Getting Shortlisted? (Real Reasons)"
-slug: "why-resume-not-getting-shortlisted"
-date: "2026-06-30"
-description: "Why is my resume not getting shortlisted? Real reasons — ATS, generic CV, missing metrics, wrong format. Free AI diagnostic."
-keywords: "why is my resume not getting shortlisted, resume not shortlisted, cv rejected reasons"
+title: Why Is My Resume Not Getting Shortlisted? (Real Reasons)
+slug: why-resume-not-getting-shortlisted
+date: '2026-06-30'
+description: >-
+  Why is my resume not getting shortlisted? Real reasons — ATS, generic CV,
+  missing metrics, wrong format. Free AI diagnostic.
+keywords: >-
+  why is my resume not getting shortlisted, resume not shortlisted, cv rejected
+  reasons
 faq:
-  - q: "Why is my resume not getting shortlisted?"
-    a: "Most often: ATS cannot parse your PDF, your CV looks generic like hundreds of others, or your skills do not match the job description keywords. Less often: CGPA cutoff or eligibility filters reject you before a human reads your file."
-  - q: "How long do recruiters look at a resume?"
-    a: "Campus and high-volume hiring: about 6–10 seconds on the first screen. Your summary and project lines must prove fit instantly."
-  - q: "Can I fix shortlist issues without rewriting everything?"
-    a: "Yes. Fix summary, add metrics to top 2 projects, match 5 keywords from the job post, and use a single-column ATS-safe PDF. Then re-test with a free AI roast."
+  - q: Why is my resume not getting shortlisted?
+    a: >-
+      Most often: ATS cannot parse your PDF, your CV looks generic like hundreds
+      of others, or your skills do not match the job description keywords. Less
+      often: CGPA cutoff or eligibility filters reject you before a human reads
+      your file.
+  - q: How long do recruiters look at a resume?
+    a: >-
+      Campus and high-volume hiring: about 6–10 seconds on the first screen.
+      Your summary and project lines must prove fit instantly.
+  - q: Can I fix shortlist issues without rewriting everything?
+    a: >-
+      Yes. Fix summary, add metrics to top 2 projects, match 5 keywords from the
+      job post, and use a single-column ATS-safe PDF. Then re-test with a free
+      AI roast.
+metaTitle: Why Is My Resume Not Getting Shortlisted? (Real Reas…
 ---
 
 **Why is my resume not getting shortlisted?** Because recruiters and ATS filter out most files in seconds — not because you have zero talent. The fix starts with diagnosing *which* filter is killing you.

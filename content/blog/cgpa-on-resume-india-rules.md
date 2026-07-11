@@ -1,16 +1,29 @@
 ---
-title: "Should You Put CGPA on Your Resume? India Fresher Rules (2026)"
-slug: "cgpa-on-resume-india-rules"
-date: "2026-07-02"
-description: "CGPA on resume India — when to show it, when to hide it, percentage conversion, and what TCS, Infosys, and startups expect from freshers in 2026."
-keywords: "cgpa on resume india, should i put cgpa on resume, cgpa in resume fresher, resume cgpa format india"
+title: Should You Put CGPA on Your Resume? India Fresher Rules (2026)
+slug: cgpa-on-resume-india-rules
+date: '2026-07-02'
+description: >-
+  CGPA on resume India — when to show it, when to hide it, percentage
+  conversion, and what TCS, Infosys, and startups expect from freshers in 2026.
+keywords: >-
+  cgpa on resume india, should i put cgpa on resume, cgpa in resume fresher,
+  resume cgpa format india
 faq:
-  - q: "Should I put CGPA on my resume as a fresher?"
-    a: "Yes for campus and off-campus fresher roles in India — recruiters expect it in the Education section. Hide only if below company cutoff and you're leading with strong projects/internships instead (risky)."
-  - q: "Where should CGPA go on a resume?"
-    a: "Education line: Degree | College | CGPA: X.X/10 | Year. Not in footer, not buried in skills section."
-  - q: "CGPA or percentage on resume India?"
-    a: "Use whatever your university officially reports. If transcript shows CGPA, write CGPA. If percentage, write percentage. Don't convert unless employer asks."
+  - q: Should I put CGPA on my resume as a fresher?
+    a: >-
+      Yes for campus and off-campus fresher roles in India — recruiters expect
+      it in the Education section. Hide only if below company cutoff and you're
+      leading with strong projects/internships instead (risky).
+  - q: Where should CGPA go on a resume?
+    a: >-
+      Education line: Degree | College | CGPA: X.X/10 | Year. Not in footer, not
+      buried in skills section.
+  - q: CGPA or percentage on resume India?
+    a: >-
+      Use whatever your university officially reports. If transcript shows CGPA,
+      write CGPA. If percentage, write percentage. Don't convert unless employer
+      asks.
+metaTitle: Should You Put CGPA on Your Resume? India Fresher Rules
 ---
 
 **CGPA on resume India** — show it or hide it? Freshers debate this every placement season. Hide a 9.2 and you look suspicious. Flash a 6.8 without context and TCS auto-filters you.

@@ -1,18 +1,29 @@
 ---
-title: "CV Kaise Banaye — Fresher Guide 2026 (Step-by-Step Hinglish)"
-slug: "cv-kaise-banaye"
-date: "2026-07-03"
+title: CV Kaise Banaye — Complete Fresher Guide
+slug: cv-kaise-banaye
+date: '2026-07-03'
 type: guide
 author: MyCVRoast Team
-description: "CV kaise banaye — complete Hinglish guide for Indian freshers. Format, sections, ATS tips, common galtiyan, aur free AI roast se check kaise karein."
-keywords: "cv kaise banaye, resume guide hindi, fresher resume india, mycvroast"
+description: >-
+  CV kaise banaye India me — fresher ke liye section order, sample lines aur
+  common mistakes. Free AI CV check.
+keywords: 'cv kaise banaye, resume guide hindi, fresher resume india, mycvroast'
 faq:
-  - q: "CV aur resume me kya difference hai?"
-    a: "India me dono aksar same cheez hain — 1-2 page professional document. CV kabhi-kabhi academic ya detailed hota hai; job apply ke liye resume/CV dono chalte hain."
-  - q: "Fresher ka CV kitne page ka hona chahiye?"
-    a: "Ek page best hai 0-2 saal experience ke liye. Do page tab jab projects/internships zyada hon aur sab relevant ho."
-  - q: "CV banane ke baad check kaise karein?"
-    a: "MyCVRoast par free upload karo — 30 second me score, roast lines, aur fix list milti hai. Signup optional."
+  - q: CV aur resume me kya difference hai?
+    a: >-
+      India me dono aksar same cheez hain — 1-2 page professional document. CV
+      kabhi-kabhi academic ya detailed hota hai; job apply ke liye resume/CV
+      dono chalte hain.
+  - q: Fresher ka CV kitne page ka hona chahiye?
+    a: >-
+      Ek page best hai 0-2 saal experience ke liye. Do page tab jab
+      projects/internships zyada hon aur sab relevant ho.
+  - q: CV banane ke baad check kaise karein?
+    a: >-
+      MyCVRoast par free upload karo — 30 second me score, roast lines, aur fix
+      list milti hai. Signup optional.
+metaTitle: CV Kaise Banaye? Fresher Format & Example 2026
+h1: CV Kaise Banaye — Complete Fresher Guide
 ---
 
 **CV kaise banaye** — yeh sawal har fresher Google pe type karta hai jab pehli baar campus ya Naukri pe apply karta hai. Problem yeh nahi ki template nahi milta; problem yeh hai ki template bharne ke baad bhi callback nahi aata. Is guide me step-by-step samjhenge Indian job market ke liye CV ka structure, common galtiyan, aur free me check kaise karein.

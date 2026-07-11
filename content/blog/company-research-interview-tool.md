@@ -1,16 +1,24 @@
 ---
-title: "Company Research for Interviews: 5-Minute Brief Before You Walk In"
-slug: "company-research-interview-tool"
-date: "2026-06-25"
-description: "AI company research brief — overview, recent news, culture signals, smart questions to ask, and red flags. Tailored to your role."
-keywords: "company research interview, interview prep company, questions to ask interviewer, company brief interview"
+title: 'Company Research for Interviews: 5-Minute Brief Before You Walk In'
+slug: company-research-interview-tool
+date: '2026-06-25'
+description: >-
+  AI company research brief — overview, recent news, culture signals, smart
+  questions to ask, and red flags. Tailored to your role.
+keywords: >-
+  company research interview, interview prep company, questions to ask
+  interviewer, company brief interview
 faq:
-  - q: "Is the Company Research tool free?"
-    a: "Pro plan feature."
-  - q: "Who should use Company Research?"
-    a: "Final-round and HR interviews where culture fit matters."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Company Research tool free?
+    a: Pro plan feature.
+  - q: Who should use Company Research?
+    a: Final-round and HR interviews where culture fit matters.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: Company Research for Interviews — Free Tool Guide
 ---
 
 "What do you know about our company?" eliminates candidates who did not prepare. **Company Research** builds a 5-minute brief: what they do, recent moves, culture clues from public info, and **5 smart questions** to ask your interviewer.

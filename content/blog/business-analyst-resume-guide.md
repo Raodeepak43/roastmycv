@@ -1,18 +1,34 @@
 ---
-title: "Business Analyst Resume Guide 2026 (India): Examples"
-slug: "business-analyst-resume-guide"
-date: "2026-06-27"
-description: "Write a business analyst resume that gets interviews in 2026. India guide with skills, summary examples, metric-driven bullets, ATS keywords, and mistakes to avoid."
-keywords: "business analyst resume, business analyst jobs, business intelligence analyst, analyst jobs, ba resume"
+title: 'Business Analyst Resume Guide 2026 (India): Examples'
+slug: business-analyst-resume-guide
+date: '2026-06-27'
+description: >-
+  Write a business analyst resume that gets interviews in 2026. India guide with
+  skills, summary examples, metric-driven bullets, ATS keywords, and mistakes to
+  avoid.
+keywords: >-
+  business analyst resume, business analyst jobs, business intelligence analyst,
+  analyst jobs, ba resume
 faq:
-  - q: "What is Business Analyst Resume Guide 2026 (India): Examples?"
-    a: "Write a business analyst resume that gets interviews in 2026. India guide with skills, summary examples, metric-driven bullets, ATS keywords, and mistakes to avoid."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Business Analyst Resume Guide 2026 (India): Examples?'
+    a: >-
+      Write a business analyst resume that gets interviews in 2026. India guide
+      with skills, summary examples, metric-driven bullets, ATS keywords, and
+      mistakes to avoid.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Business Analyst Resume Guide 2026 (India): Examples'
 ---
 
 A strong **business analyst resume** has to prove a rare combination: you understand the business, you can talk to technical teams, and you turn fuzzy problems into clear requirements that ship. For business analyst jobs across India — in IT services, banking, consulting, and product companies — recruiters want evidence that you bridged stakeholders and delivered measurable outcomes. This guide gives you a clear ba resume framework, examples, and ATS tips, whether you are aiming for your first analyst role or a senior business intelligence analyst position.

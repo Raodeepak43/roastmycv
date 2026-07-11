@@ -1,18 +1,35 @@
 ---
-title: "Free Resume Checker — Tool Comparison Guide India 2026"
-slug: "free-resume-checker-india"
-date: "2025-05-08"
-description: "Compare the best free resume checker tools for India in 2026. See which free resume checker gives ATS scores, honest feedback, and fixes — not vague percentages."
-keywords: "free resume checker, free resume checker india, resume checker online free, resume analyzer free, ai resume review"
+title: Free Resume Checker India
+slug: free-resume-checker-india
+date: '2025-05-08'
+description: >-
+  Free resume checker for India — upload PDF, get score and fixes in 30 seconds.
+  Built for freshers and campus placement.
+keywords: >-
+  free resume checker, free resume checker india, resume checker online free,
+  resume analyzer free, ai resume review
 faq:
-  - q: "What is the best free resume checker for India?"
-    a: "MyCVRoast offers a free resume checker with 2 roasts per device — instant ATS-style score, quotes your weak bullets, and gives specific fixes. No signup required. Try it at /best-resume-checker-india."
-  - q: "Is there a truly free resume checker with no paywall?"
-    a: "Yes. MyCVRoast, Resume Worded (limited scans), and Teal have free tiers. MyCVRoast is built for Indian freshers with Hinglish feedback and no credit card."
-  - q: "How can I check my resume score for free?"
-    a: "Upload your CV at mycvroast.in/best-resume-checker-india — get a score out of 10, roast feedback, and a fix list in under 30 seconds."
-  - q: "Does a free resume checker work for fresher resumes in India?"
-    a: "Yes. Look for tools that understand CGPA, campus projects, and Indian formats. MyCVRoast is tuned for TCS, Infosys, startups, and Naukri applications."
+  - q: What is the best free resume checker for India?
+    a: >-
+      MyCVRoast offers a free resume checker with 2 roasts per device — instant
+      ATS-style score, quotes your weak bullets, and gives specific fixes. No
+      signup required. Try it at /best-resume-checker-india.
+  - q: Is there a truly free resume checker with no paywall?
+    a: >-
+      Yes. MyCVRoast, Resume Worded (limited scans), and Teal have free tiers.
+      MyCVRoast is built for Indian freshers with Hinglish feedback and no
+      credit card.
+  - q: How can I check my resume score for free?
+    a: >-
+      Upload your CV at mycvroast.in/best-resume-checker-india — get a score out
+      of 10, roast feedback, and a fix list in under 30 seconds.
+  - q: Does a free resume checker work for fresher resumes in India?
+    a: >-
+      Yes. Look for tools that understand CGPA, campus projects, and Indian
+      formats. MyCVRoast is tuned for TCS, Infosys, startups, and Naukri
+      applications.
+metaTitle: Free Resume Checker India — Instant AI Score
+h1: Free Resume Checker India
 ---
 
 > **Want to check your CV now?** Use our [free resume checker](/best-resume-checker-india) — upload PDF, get instant score & fixes. No signup.

@@ -1,18 +1,34 @@
 ---
-title: "How to Make a Resume Online Free: 2026 Step Guide"
-slug: "how-to-make-resume-online"
-date: "2025-10-02"
-description: "Learn how to create a resume online free with this step-by-step guide for India. Build a resume that passes ATS, impresses recruiters, and gets you shortlisted in 2026."
-keywords: "create resume online, make resume online, create a resume, create resume online free, build my resume"
+title: 'How to Make a Resume Online Free: 2026 Step Guide'
+slug: how-to-make-resume-online
+date: '2025-10-02'
+description: >-
+  How to Make a Resume Online Free: 2026 Step Guide — practical format tips,
+  examples, and mistakes to avoid for Indian freshers. Free AI resume check
+  linked.
+keywords: >-
+  create resume online, make resume online, create a resume, create resume
+  online free, build my resume
 faq:
-  - q: "What is How to Make a Resume Online Free: 2026 Step Guide?"
-    a: "Learn how to create a resume online free with this step-by-step guide for India. Build a resume that passes ATS, impresses recruiters, and gets you shortlisted in 2026."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is How to Make a Resume Online Free: 2026 Step Guide?'
+    a: >-
+      Learn how to create a resume online free with this step-by-step guide for
+      India. Build a resume that passes ATS, impresses recruiters, and gets you
+      shortlisted in 2026.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'How to Make a Resume Online Free: 2026 Step Guide'
 ---
 
 Learning to **create resume online** is the fastest way to go from a blank screen to a recruiter-ready CV — no software install, no formatting battles, and in most cases, no cost. If you have been putting off your job hunt because you do not know where to start, this step-by-step guide removes every excuse. By the end, you will know exactly how to build my resume from scratch, make it pass ATS, and get it in front of recruiters in the Indian job market in 2026.

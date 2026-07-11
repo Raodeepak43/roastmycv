@@ -1,16 +1,24 @@
 ---
-title: "Thank You Email After Interview: Templates That Stand Out"
-slug: "thank-you-email-after-interview"
-date: "2026-06-11"
-description: "Write a thank-you email after interview in 60 seconds — references the conversation, reinforces fit, and stays under 120 words."
-keywords: "thank you email after interview, post interview thank you, interview follow up thank you email"
+title: 'Thank You Email After Interview: Templates That Stand Out'
+slug: thank-you-email-after-interview
+date: '2026-06-11'
+description: >-
+  Write a thank-you email after interview in 60 seconds — references the
+  conversation, reinforces fit, and stays under 120 words.
+keywords: >-
+  thank you email after interview, post interview thank you, interview follow up
+  thank you email
 faq:
-  - q: "Is the Thank You Email tool free?"
-    a: "Unlimited on free plan."
-  - q: "Who should use Thank You Email?"
-    a: "Anyone who completed a phone screen, technical round, or final HR round."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Thank You Email tool free?
+    a: Unlimited on free plan.
+  - q: Who should use Thank You Email?
+    a: 'Anyone who completed a phone screen, technical round, or final HR round.'
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: 'Thank You Email After Interview: Templates That Stan…'
 ---
 
 Sending a thank-you email within 24 hours puts you ahead of 70% of candidates who never follow up. It is not grovelling — it is professional closure plus one more chance to reinforce why you fit. The **Thank You Email** tool writes it from your CV and interview notes.

@@ -1,19 +1,33 @@
 ---
-title: "Resume for Internship: Examples & Format for 2026"
-metaTitle: "Internship Resume Examples — Free AI Check (2026)"
-slug: "internship-resume-guide"
-date: "2026-01-28"
-description: "Internship resume examples for India with no experience. Format guide + free AI roast — upload PDF, get score & fixes in 30 seconds."
-keywords: "resume for internship, internship resume examples, resume for internship no experience, sample resume for internship, cv for internship"
+title: 'Resume for Internship: Examples & Format for 2026'
+metaTitle: 'Resume for Internship: Examples & Format for 2026'
+slug: internship-resume-guide
+date: '2026-01-28'
+description: >-
+  Internship resume examples for India with no experience. Format guide + free
+  AI roast — upload PDF, get score & fixes in 30 seconds.
+keywords: >-
+  resume for internship, internship resume examples, resume for internship no
+  experience, sample resume for internship, cv for internship
 faq:
-  - q: "What is Resume for Internship: Examples & Format for 2026?"
-    a: "Write a winning resume for internship in 2026. Internship resume examples, a sample resume for internship no experience, and a CV for internship format for India."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Resume for Internship: Examples & Format for 2026?'
+    a: >-
+      Write a winning resume for internship in 2026. Internship resume examples,
+      a sample resume for internship no experience, and a CV for internship
+      format for India.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
 ---
 
 A focused **resume for internship** applications is different from a full-time job CV — recruiters know you are early in your journey, so they are scanning for raw skill, eagerness to learn, and any proof you can apply knowledge. The good news: you do not need prior internships to land your first one. With the right structure and honest, specific content, a resume for internship no experience can absolutely get shortlisted. This guide gives you internship resume examples and a CV for internship format that works across Indian companies in 2026.

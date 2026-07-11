@@ -1,18 +1,34 @@
 ---
-title: "Campus Placement Resume Tips: Beat TPO Shortlists in 2026"
-slug: "campus-placement-resume-tips"
-date: "2026-06-10"
-description: "Campus placement resume tips for Indian engineering and MBA students. TPO-approved format, common mistakes, and how to get shortlisted by Infosys, TCS, and product companies."
-keywords: "campus placement resume, tpo resume format, placement cv india, campus recruitment resume, engineering placement resume tips"
+title: 'Campus Placement Resume Tips: Beat TPO Shortlists in 2026'
+slug: campus-placement-resume-tips
+date: '2026-06-10'
+description: >-
+  Campus Placement Resume Tips: Beat TPO Shortlists in 2026 — practical format
+  tips, examples, and mistakes to avoid for Indian freshers. Free AI resume
+  check linked.
+keywords: >-
+  campus placement resume, tpo resume format, placement cv india, campus
+  recruitment resume, engineering placement resume tips
 faq:
-  - q: "What is Campus Placement Resume Tips: Beat TPO Shortlists in 2026?"
-    a: "Campus placement resume tips for Indian engineering and MBA students. TPO-approved format, common mistakes, and how to get shortlisted by Infosys, TCS, and product companies."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Campus Placement Resume Tips: Beat TPO Shortlists in 2026?'
+    a: >-
+      Campus placement resume tips for Indian engineering and MBA students.
+      TPO-approved format, common mistakes, and how to get shortlisted by
+      Infosys, TCS, and product companies.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Campus Placement Resume Tips: Beat TPO Shortlists in…'
 ---
 
 Your **campus placement resume** is not the same document you send on LinkedIn after graduation. TPO portals, company-specific formats, and batch-wide competition change the rules. One weak section — wrong CGPA format, missing project detail, photo in header — and your CV never reaches the recruiter even if you are technically qualified.

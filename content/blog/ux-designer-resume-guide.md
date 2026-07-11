@@ -1,18 +1,34 @@
 ---
-title: "UX Designer Resume Guide 2026 (India): Examples + Tips"
-slug: "ux-designer-resume-guide"
-date: "2026-05-27"
-description: "Craft a UX designer resume that lands interviews in 2026. India guide with UI UX skills, summary examples, portfolio tips, metric bullets, and mistakes to avoid."
-keywords: "ux designer resume, ui ux resume, ux designer jobs, ui ux designer cv, ux designer portfolio"
+title: 'UX Designer Resume Guide 2026 (India): Examples + Tips'
+slug: ux-designer-resume-guide
+date: '2026-05-27'
+description: >-
+  Craft a UX designer resume that lands interviews in 2026. India guide with UI
+  UX skills, summary examples, portfolio tips, metric bullets, and mistakes to
+  avoid.
+keywords: >-
+  ux designer resume, ui ux resume, ux designer jobs, ui ux designer cv, ux
+  designer portfolio
 faq:
-  - q: "What is UX Designer Resume Guide 2026 (India): Examples + Tips?"
-    a: "Craft a UX designer resume that lands interviews in 2026. India guide with UI UX skills, summary examples, portfolio tips, metric bullets, and mistakes to avoid."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is UX Designer Resume Guide 2026 (India): Examples + Tips?'
+    a: >-
+      Craft a UX designer resume that lands interviews in 2026. India guide with
+      UI UX skills, summary examples, portfolio tips, metric bullets, and
+      mistakes to avoid.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'UX Designer Resume Guide 2026 (India): Examples + Tips'
 ---
 
 A winning **ux designer resume** has to do something ironic: it must demonstrate good design and great communication on a single page. If your own CV is cluttered, hard to scan, or full of vague claims, no recruiter will believe you can design clean, user-friendly products. For UX and UI UX designer roles in India — at startups, product companies, and agencies — your resume and portfolio work as a pair. This guide shows you how to make both convince a hiring manager fast.

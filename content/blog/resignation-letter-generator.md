@@ -1,16 +1,25 @@
 ---
-title: "Resignation Letter Generator Free India — Format & Sample 2026"
-slug: "resignation-letter-generator"
-date: "2026-06-28"
-description: "Free resignation letter generator for India — 2 weeks notice format, formal & warm samples, counter-offer tips. Generate in 30 seconds."
-keywords: "resignation letter generator, resignation letter generator free, resignation letter format india, how to write resignation, notice period letter"
+title: 'Resignation Letter Generator: Professional Exit Guide'
+slug: resignation-letter-generator
+date: '2026-06-28'
+description: >-
+  Free resignation letter generator for India — 2 weeks notice format, formal &
+  warm samples, handover checklist. Generate in minutes.
+keywords: >-
+  resignation letter generator, resignation letter generator free, resignation
+  letter format india, how to write resignation, notice period letter
 faq:
-  - q: "Is the Resignation Letter tool free?"
-    a: "Unlimited on free plan."
-  - q: "Who should use Resignation Letter?"
-    a: "Anyone resigning with standard 30–90 day notice in India."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Resignation Letter tool free?
+    a: Unlimited on free plan.
+  - q: Who should use Resignation Letter?
+    a: Anyone resigning with standard 30–90 day notice in India.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: Resignation Letter Generator Free — India Format
+h1: 'Resignation Letter Generator: Professional Exit Guide'
 ---
 
 Resigning badly burns bridges. Resigning well keeps references and LinkedIn goodwill. **Resignation Letter** generates a professional letter with correct notice period, gratitude, and handover offer — tailored to Indian corporate norms.

@@ -1,18 +1,34 @@
 ---
-title: "Software Engineer Resume Guide 2026 (India): Examples"
-slug: "software-engineer-resume-guide"
-date: "2026-05-20"
-description: "Write a software engineer resume that beats ATS and gets interviews in 2026. India-focused skills, summary examples, project bullets, and mistakes to avoid."
-keywords: "software engineer resume, jobs for software engineer, software developer job, entry level software engineer jobs, software engineer career path"
+title: 'Software Engineer Resume Guide 2026 (India): Examples'
+slug: software-engineer-resume-guide
+date: '2026-05-20'
+description: >-
+  Write a software engineer resume that beats ATS and gets interviews in 2026.
+  India-focused skills, summary examples, project bullets, and mistakes to
+  avoid.
+keywords: >-
+  software engineer resume, jobs for software engineer, software developer job,
+  entry level software engineer jobs, software engineer career path
 faq:
-  - q: "What is Software Engineer Resume Guide 2026 (India): Examples?"
-    a: "Write a software engineer resume that beats ATS and gets interviews in 2026. India-focused skills, summary examples, project bullets, and mistakes to avoid."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Software Engineer Resume Guide 2026 (India): Examples?'
+    a: >-
+      Write a software engineer resume that beats ATS and gets interviews in
+      2026. India-focused skills, summary examples, project bullets, and
+      mistakes to avoid.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Software Engineer Resume Guide 2026 (India): Examples'
 ---
 
 A great **software engineer resume** is not a list of every language you have touched — it is proof that you can ship working software and solve real problems. Recruiters screening for jobs for software engineer roles in India see hundreds of CVs that all say "proficient in Java, Python, C++." What gets you the call is evidence: projects that run, features you built, bugs you fixed, and the impact behind them. This guide breaks down exactly how to build that resume, whether you are after entry level software engineer jobs or your next software developer job.

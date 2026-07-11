@@ -1,16 +1,26 @@
 ---
-title: "AI Cover Letter Generator: Tailored Letters From Your CV + JD"
-slug: "ai-cover-letter-generator"
-date: "2026-06-06"
-description: "Write a cover letter matched to your CV and job description in under a minute. No generic \"I am writing to apply\" openers."
-keywords: "ai cover letter generator, cover letter from resume, tailored cover letter, cover letter job description"
+title: 'AI Cover Letter Generator: Tailored Letters From Your CV + JD'
+slug: ai-cover-letter-generator
+date: '2026-06-06'
+description: >-
+  Write a cover letter matched to your CV and job description in under a minute.
+  No generic "I am writing to apply" openers.
+keywords: >-
+  ai cover letter generator, cover letter from resume, tailored cover letter,
+  cover letter job description
 faq:
-  - q: "Is the Cover Letter Generator tool free?"
-    a: "1 free cover letter on the free plan."
-  - q: "Who should use Cover Letter Generator?"
-    a: "Roles where cover letters are expected — consulting, marketing, government, and senior individual contributor roles."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Cover Letter Generator tool free?
+    a: 1 free cover letter on the free plan.
+  - q: Who should use Cover Letter Generator?
+    a: >-
+      Roles where cover letters are expected — consulting, marketing,
+      government, and senior individual contributor roles.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: 'AI Cover Letter Generator: Tailored Letters From You…'
 ---
 
 Most cover letters are copy-paste disasters. Hiring managers spot generic letters in one line. A good cover letter connects **your CV achievements** to **this specific job** — and the **Cover Letter** tool does that automatically.

@@ -1,16 +1,26 @@
 ---
-title: "Interview Debrief: Learn From Every Round You Completed"
-slug: "interview-debrief-tool"
-date: "2026-06-24"
-description: "Post-interview debrief AI — paste what you remember, get analysis of what went well, red flags, and prep for the next round."
-keywords: "interview debrief, post interview analysis, interview reflection, interview feedback ai"
+title: 'Interview Debrief: Learn From Every Round You Completed'
+slug: interview-debrief-tool
+date: '2026-06-24'
+description: >-
+  Post-interview debrief AI — paste what you remember, get analysis of what went
+  well, red flags, and prep for the next round.
+keywords: >-
+  interview debrief, post interview analysis, interview reflection, interview
+  feedback ai
 faq:
-  - q: "Is the Interview Debrief tool free?"
-    a: "Unlimited on free plan."
-  - q: "Who should use Interview Debrief?"
-    a: "Multi-round interview processes — product, consulting, and senior tech roles."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Interview Debrief tool free?
+    a: Unlimited on free plan.
+  - q: Who should use Interview Debrief?
+    a: >-
+      Multi-round interview processes — product, consulting, and senior tech
+      roles.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: Interview Debrief — Free Tool Guide
 ---
 
 You walk out of an interview unsure if you nailed it or bombed it. **Interview Debrief** turns your raw notes into structured feedback: strong moments, weak answers, likely interviewer concerns, and prep for round 2.

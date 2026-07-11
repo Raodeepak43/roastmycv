@@ -1,16 +1,30 @@
 ---
-title: "How to Ask AI to Improve Your Resume (India Guide 2026)"
-slug: "how-to-ask-ai-improve-resume-india"
-date: "2026-07-02"
-description: "How to ask AI to improve your resume — prompts, tools, and mistakes Indian freshers make. Google PAA answer for job seekers using ChatGPT vs dedicated roast tools."
-keywords: "how to ask ai to improve resume, ai resume prompts, chatgpt resume help india, improve cv with ai"
+title: How to Ask AI to Improve Your Resume (India Guide 2026)
+slug: how-to-ask-ai-improve-resume-india
+date: '2026-07-02'
+description: >-
+  How to ask AI to improve your resume — prompts, tools, and mistakes Indian
+  freshers make. Google PAA answer for job seekers using ChatGPT vs dedicated
+  roast tools.
+keywords: >-
+  how to ask ai to improve resume, ai resume prompts, chatgpt resume help india,
+  improve cv with ai
 faq:
-  - q: "How do I ask AI to improve my resume?"
-    a: "Upload your full resume text and ask: 'Roast my resume brutally — quote weak bullets, score out of 10, give 5 specific fixes for [target role] in India.' Dedicated tools like MyCVRoast do this automatically."
-  - q: "Can ChatGPT review my resume for free?"
-    a: "Yes, but you must paste text manually and write good prompts. MyCVRoast reads PDF uploads and returns structured roast + fixes in 30 seconds with Hinglish mode."
-  - q: "What should I not ask AI to do on my resume?"
-    a: "Don't ask AI to invent fake experience or metrics. Use AI for rewriting, formatting, and gap analysis — not fabricating internships you never did."
+  - q: How do I ask AI to improve my resume?
+    a: >-
+      Upload your full resume text and ask: 'Roast my resume brutally — quote
+      weak bullets, score out of 10, give 5 specific fixes for [target role] in
+      India.' Dedicated tools like MyCVRoast do this automatically.
+  - q: Can ChatGPT review my resume for free?
+    a: >-
+      Yes, but you must paste text manually and write good prompts. MyCVRoast
+      reads PDF uploads and returns structured roast + fixes in 30 seconds with
+      Hinglish mode.
+  - q: What should I not ask AI to do on my resume?
+    a: >-
+      Don't ask AI to invent fake experience or metrics. Use AI for rewriting,
+      formatting, and gap analysis — not fabricating internships you never did.
+metaTitle: How to Ask AI to Improve Your Resume (India Guide 2026)
 ---
 
 **How to ask AI to improve your resume** is one of Google's top People Also Ask questions for resume searches (live SERP, July 2026). Most freshers paste their CV into ChatGPT with a vague prompt like "make it better" — and get generic fluff back.

@@ -1,19 +1,34 @@
 ---
-title: "CV for Students — How to Create One With Examples 2026"
-metaTitle: "CV for Students — Free Examples & AI Check (India)"
-slug: "cv-for-students-guide"
-date: "2025-12-03"
-description: "Free CV for students guide with examples for internships & first jobs in India. Build yours, then get an instant AI score — 2 free roasts, no signup."
-keywords: "cv for students, create cv for students, cv examples for students, student cv sample, undergraduate student cv"
+title: CV for Students — How to Create One With Examples 2026
+metaTitle: 'CV for Students: Examples & Format'
+slug: cv-for-students-guide
+date: '2025-12-03'
+description: >-
+  Free CV for students guide with examples for internships & first jobs in
+  India. Build yours, then get an instant AI score — 2 free roasts, no signup.
+keywords: >-
+  cv for students, create cv for students, cv examples for students, student cv
+  sample, undergraduate student cv
 faq:
-  - q: "How do I create a CV for students with no experience?"
-    a: "Lead with Education, then Skills, Projects, and Extracurriculars. Use a 2-line summary, quantify achievements, and keep it one page. Build free at mycvroast.in/resume-builder."
-  - q: "What is the difference between a student CV and a fresher resume?"
-    a: "Student CVs can include coursework, club roles, and academic projects. Fresher resumes target job applications and emphasize employable skills and internships."
-  - q: "Can students use a free CV checker?"
-    a: "Yes — upload at mycvroast.in for a free AI roast. Get instant feedback on structure, bullets, and ATS readability."
-  - q: "What sections should a CV for students include?"
-    a: "Contact info, summary, education, skills, projects, internships/volunteering, certifications, achievements. Skip photos for most corporate roles."
+  - q: How do I create a CV for students with no experience?
+    a: >-
+      Lead with Education, then Skills, Projects, and Extracurriculars. Use a
+      2-line summary, quantify achievements, and keep it one page. Build free at
+      mycvroast.in/resume-builder.
+  - q: What is the difference between a student CV and a fresher resume?
+    a: >-
+      Student CVs can include coursework, club roles, and academic projects.
+      Fresher resumes target job applications and emphasize employable skills
+      and internships.
+  - q: Can students use a free CV checker?
+    a: >-
+      Yes — upload at mycvroast.in for a free AI roast. Get instant feedback on
+      structure, bullets, and ATS readability.
+  - q: What sections should a CV for students include?
+    a: >-
+      Contact info, summary, education, skills, projects,
+      internships/volunteering, certifications, achievements. Skip photos for
+      most corporate roles.
 ---
 
 Writing a **cv for students** is uniquely hard, because you are asked to sell experience you have not had yet. Whether you need to **create cv for students** for an internship, scholarship, or first job, this guide shows exactly how to build a strong student CV with examples — even when your experience is thin.

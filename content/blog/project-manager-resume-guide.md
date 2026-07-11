@@ -1,18 +1,34 @@
 ---
-title: "Project Manager Resume Guide 2026 (India): Examples"
-slug: "project-manager-resume-guide"
-date: "2026-06-25"
-description: "Write a project manager resume that wins interviews in 2026. India guide with skills, summary examples, metric-driven bullets, PMP tips, and mistakes to avoid."
-keywords: "project manager resume, project management positions, remote project manager jobs, project manager job, pmp resume"
+title: 'Project Manager Resume Guide 2026 (India): Examples'
+slug: project-manager-resume-guide
+date: '2026-06-25'
+description: >-
+  Write a project manager resume that wins interviews in 2026. India guide with
+  skills, summary examples, metric-driven bullets, PMP tips, and mistakes to
+  avoid.
+keywords: >-
+  project manager resume, project management positions, remote project manager
+  jobs, project manager job, pmp resume
 faq:
-  - q: "What is Project Manager Resume Guide 2026 (India): Examples?"
-    a: "Write a project manager resume that wins interviews in 2026. India guide with skills, summary examples, metric-driven bullets, PMP tips, and mistakes to avoid."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Project Manager Resume Guide 2026 (India): Examples?'
+    a: >-
+      Write a project manager resume that wins interviews in 2026. India guide
+      with skills, summary examples, metric-driven bullets, PMP tips, and
+      mistakes to avoid.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Project Manager Resume Guide 2026 (India): Examples'
 ---
 
 A strong **project manager resume** has to prove you can deliver — on time, on budget, and with people who actually want to work with you again. Unlike technical roles where tools dominate, project management is judged on outcomes and leadership. For project management positions in India, from IT services to construction to product teams, hiring managers want evidence that you ran real projects, managed stakeholders, and hit your numbers. This guide gives you a clear framework, examples, and PMP resume tips whether you are targeting your first project manager job or a senior remote role.

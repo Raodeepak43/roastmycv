@@ -1,18 +1,33 @@
 ---
-title: "Modern Resume Templates: Stylish & ATS-Safe in 2026"
-slug: "modern-resume-templates"
-date: "2026-01-07"
-description: "Modern resume templates that look attractive AND pass ATS in 2026. See modern resume examples, creative resume tips, and how to stay professional in India."
-keywords: "modern resume, modern resume examples, attractive resume, creative resume, modern professional resume"
+title: 'Modern Resume Templates: Stylish & ATS-Safe in 2026'
+slug: modern-resume-templates
+date: '2026-01-07'
+description: >-
+  Modern resume templates that look attractive AND pass ATS in 2026. See modern
+  resume examples, creative resume tips, and how to stay professional in India.
+keywords: >-
+  modern resume, modern resume examples, attractive resume, creative resume,
+  modern professional resume
 faq:
-  - q: "What is Modern Resume Templates: Stylish & ATS-Safe in 2026?"
-    a: "Modern resume templates that look attractive AND pass ATS in 2026. See modern resume examples, creative resume tips, and how to stay professional in India."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Modern Resume Templates: Stylish & ATS-Safe in 2026?'
+    a: >-
+      Modern resume templates that look attractive AND pass ATS in 2026. See
+      modern resume examples, creative resume tips, and how to stay professional
+      in India.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Modern Resume Templates: Stylish & ATS'
 ---
 
 A **modern resume** should look clean and current without sacrificing the one thing that actually matters: getting read by both software and recruiters. In 2026, the trap most Indian job seekers fall into is choosing an attractive resume template loaded with sidebars, icons, color blocks, and two columns — only to discover that Applicant Tracking Systems (ATS) scramble it into unreadable text. This guide shows how to build a modern professional resume that is genuinely stylish *and* machine-readable.

@@ -1,18 +1,34 @@
 ---
-title: "Resume Builder App Guide: Make a CV on Mobile 2026"
-slug: "resume-builder-app-guide"
-date: "2025-09-19"
-description: "A resume builder app lets you make a CV from your phone in minutes. Compare the best resume maker apps, free options, and ATS tips for Indian job seekers in 2026."
-keywords: "resume builder app, resume app, best resume maker app, resume making app, free resume app"
+title: 'Resume Builder App Guide: Make a CV on Mobile 2026'
+slug: resume-builder-app-guide
+date: '2025-09-19'
+description: >-
+  A resume builder app lets you make a CV from your phone in minutes. Compare
+  the best resume maker apps, free options, and ATS tips for Indian job seekers
+  in 2026.
+keywords: >-
+  resume builder app, resume app, best resume maker app, resume making app, free
+  resume app
 faq:
-  - q: "What is Resume Builder App Guide: Make a CV on Mobile 2026?"
-    a: "A resume builder app lets you make a CV from your phone in minutes. Compare the best resume maker apps, free options, and ATS tips for Indian job seekers in 2026."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Resume Builder App Guide: Make a CV on Mobile 2026?'
+    a: >-
+      A resume builder app lets you make a CV from your phone in minutes.
+      Compare the best resume maker apps, free options, and ATS tips for Indian
+      job seekers in 2026.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Resume Builder App Guide: Make a CV on Mobile 2026'
 ---
 
 A **resume builder app** turns your phone into a CV factory — useful when most Indian job seekers do everything from a mobile, from scrolling Naukri to applying on LinkedIn during a commute. Whether you are between lectures, on a train, or fixing your resume the night before a placement drive, a good resume app lets you build, edit, and export a professional CV without ever opening a laptop. This guide covers what makes a resume making app worth installing, the free options, and how to make sure your mobile-built resume still passes ATS.

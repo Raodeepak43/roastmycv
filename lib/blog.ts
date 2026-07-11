@@ -16,6 +16,8 @@ export interface PostMeta {
   title: string
   /** Shorter SERP title (<60 chars) — used in meta title when set */
   metaTitle?: string
+  /** Visible H1 — defaults to title when omitted */
+  h1?: string
   slug: string
   date: string
   description: string
@@ -108,6 +110,7 @@ export function getAllPosts(): PostMeta[] {
       return {
         title: String(data.title ?? slug),
         metaTitle: data.metaTitle ? String(data.metaTitle) : undefined,
+        h1: data.h1 ? String(data.h1) : undefined,
         slug: String(data.slug ?? slug),
         date: String(data.date ?? ''),
         description: String(data.description ?? ''),
@@ -132,6 +135,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   return {
     title: String(data.title ?? slug),
     metaTitle: data.metaTitle ? String(data.metaTitle) : undefined,
+    h1: data.h1 ? String(data.h1) : undefined,
     slug: String(data.slug ?? slug),
     date: String(data.date ?? ''),
     description: String(data.description ?? ''),

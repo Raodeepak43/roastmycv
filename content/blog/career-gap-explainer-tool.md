@@ -1,16 +1,26 @@
 ---
-title: "Career Gap Explainer: How to Address Employment Gaps on Your CV"
-slug: "career-gap-explainer-tool"
-date: "2026-06-02"
-description: "AI career gap explainer for resume gaps — health, layoff, study break, or family. Get honest bullet points recruiters accept in India."
-keywords: "career gap resume, employment gap explanation, resume gap year, career break cv india"
+title: 'Career Gap Explainer: How to Address Employment Gaps on Your CV'
+slug: career-gap-explainer-tool
+date: '2026-06-02'
+description: >-
+  AI career gap explainer for resume gaps — health, layoff, study break, or
+  family. Get honest bullet points recruiters accept in India.
+keywords: >-
+  career gap resume, employment gap explanation, resume gap year, career break
+  cv india
 faq:
-  - q: "Is the Gap Explainer tool free?"
-    a: "Unlimited on free plan."
-  - q: "Who should use Gap Explainer?"
-    a: "Anyone with 3+ months unexplained on their CV — especially post-COVID career breaks and freshers who took time after college."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the Gap Explainer tool free?
+    a: Unlimited on free plan.
+  - q: Who should use Gap Explainer?
+    a: >-
+      Anyone with 3+ months unexplained on their CV — especially post-COVID
+      career breaks and freshers who took time after college.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: Career Gap Explainer — Free Tool Guide
 ---
 
 A six-month gap after graduation. A layoff. Maternity leave. Health issues. Indian recruiters notice gaps in seconds — and most candidates either hide them (which backfires) or write vague excuses. The **Gap Explainer** tool turns your real story into professional, honest CV language that does not sound defensive.

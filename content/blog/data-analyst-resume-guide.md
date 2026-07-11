@@ -1,18 +1,34 @@
 ---
-title: "Data Analyst Resume Guide 2026 (India): Examples + Tips"
-slug: "data-analyst-resume-guide"
-date: "2026-05-13"
-description: "Build a standout data analyst resume in 2026. India-focused guide with skills, summary examples, metric-driven bullets, ATS keywords, and common mistakes to avoid."
-keywords: "data analyst resume, data analyst jobs, data analyst fresher jobs, data analyst career path, data analyst internship"
+title: 'Data Analyst Resume Guide 2026 (India): Examples + Tips'
+slug: data-analyst-resume-guide
+date: '2026-05-13'
+description: >-
+  Build a standout data analyst resume in 2026. India-focused guide with skills,
+  summary examples, metric-driven bullets, ATS keywords, and common mistakes to
+  avoid.
+keywords: >-
+  data analyst resume, data analyst jobs, data analyst fresher jobs, data
+  analyst career path, data analyst internship
 faq:
-  - q: "What is Data Analyst Resume Guide 2026 (India): Examples + Tips?"
-    a: "Build a standout data analyst resume in 2026. India-focused guide with skills, summary examples, metric-driven bullets, ATS keywords, and common mistakes to avoid."
-  - q: "Is this guide free to use?"
-    a: "Yes. MyCVRoast blog guides are free. Many linked tools (resume roast, resume builder) have free tiers with no signup required."
-  - q: "How can I get AI feedback on my resume after reading this?"
-    a: "Upload your CV at mycvroast.in for a free AI resume roast — instant score, Hinglish feedback, and specific fixes in under 30 seconds."
-  - q: "Does this work for fresher resumes in India?"
-    a: "Yes. MyCVRoast and our guides are built for Indian freshers, campus placement, and off-campus job seekers — CGPA, projects, and ATS context included."
+  - q: 'What is Data Analyst Resume Guide 2026 (India): Examples + Tips?'
+    a: >-
+      Build a standout data analyst resume in 2026. India-focused guide with
+      skills, summary examples, metric-driven bullets, ATS keywords, and common
+      mistakes to avoid.
+  - q: Is this guide free to use?
+    a: >-
+      Yes. MyCVRoast blog guides are free. Many linked tools (resume roast,
+      resume builder) have free tiers with no signup required.
+  - q: How can I get AI feedback on my resume after reading this?
+    a: >-
+      Upload your CV at mycvroast.in for a free AI resume roast — instant score,
+      Hinglish feedback, and specific fixes in under 30 seconds.
+  - q: Does this work for fresher resumes in India?
+    a: >-
+      Yes. MyCVRoast and our guides are built for Indian freshers, campus
+      placement, and off-campus job seekers — CGPA, projects, and ATS context
+      included.
+metaTitle: 'Data Analyst Resume Guide 2026 (India): Examples + Tips'
 ---
 
 A strong **data analyst resume** does one thing well: it proves you can turn messy data into decisions a business can act on. Recruiters hiring for data analyst jobs in India are not impressed by a list of tools — they want to see what you measured, what you found, and what changed because of it. Whether you are chasing data analyst fresher jobs or moving up after two years, this guide shows you exactly what to put on the page, with India-specific examples you can adapt today.

@@ -1,16 +1,26 @@
 ---
-title: "AI LinkedIn About Writer: 3 Profile Versions From Your CV"
-slug: "ai-linkedin-about-writer"
-date: "2026-06-03"
-description: "Generate LinkedIn About sections from your resume — storytelling, achievement-led, and keyword-optimised versions for recruiter search in India."
-keywords: "linkedin about section, linkedin profile writer ai, linkedin summary generator, linkedin about me"
+title: 'AI LinkedIn About Writer: 3 Profile Versions From Your CV'
+slug: ai-linkedin-about-writer
+date: '2026-06-03'
+description: >-
+  Generate LinkedIn About sections from your resume — storytelling,
+  achievement-led, and keyword-optimised versions for recruiter search in India.
+keywords: >-
+  linkedin about section, linkedin profile writer ai, linkedin summary
+  generator, linkedin about me
 faq:
-  - q: "Is the LinkedIn Writer tool free?"
-    a: "2 free generations per day."
-  - q: "Who should use LinkedIn Writer?"
-    a: "Students, freshers, and professionals who have a decent CV but a weak LinkedIn presence."
-  - q: "Do I need to upload my full CV?"
-    a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
+  - q: Is the LinkedIn Writer tool free?
+    a: 2 free generations per day.
+  - q: Who should use LinkedIn Writer?
+    a: >-
+      Students, freshers, and professionals who have a decent CV but a weak
+      LinkedIn presence.
+  - q: Do I need to upload my full CV?
+    a: >-
+      Yes — paste or upload CV text so AI can tailor output to your actual
+      experience. MyCVRoast does not sell your data; processing is for your
+      session output.
+metaTitle: 'AI LinkedIn About Writer: 3 Profile Versions From Yo…'
 ---
 
 Your LinkedIn About section is empty or still says "Aspiring professional seeking opportunities." Recruiters search LinkedIn by keywords — a weak About means invisible profile. The **LinkedIn Writer** turns your CV into three distinct About sections you can paste and edit in minutes.
