@@ -124,6 +124,18 @@ Shortlist ke baad hi roast wali galtiyan pakdi jaati hain interview me — isliy
 
 Last tip: apply date track karo. Same company ko revised CV 3 din baad bhejna allowed hai agar genuinely improve kiya ho.
 
+## Related guides
+
+- [10th pass resume kaise banaye](/blog/10th-pass-resume-kaise-banaye)
+- [12th pass BPO resume format](/blog/12th-pass-bpo-resume-format)
+- [ITI & diploma resume format](/blog/iti-diploma-resume-format-india)
+- [Biodata / bio data maker for job](/blog/biodata-maker-for-job-india)
+- [Bio data format for job PDF](/blog/bio-data-format-for-job-pdf-free)
+- [Bina experience ke resume](/blog/bina-experience-ke-resume-kaise-banaye)
+- [ATS friendly resume check](/blog/ats-friendly-resume)
+- [Off-campus placement tips](/blog/off-campus-placement-resume-tips)
+- [Free AI resume review](/ai-resume-review-free)
+
 ## Bonus: walk-in interview ke liye CV print tips
 
 Ek page, black & white print, 80gsm paper — fancy card stock ki zarurat nahi.

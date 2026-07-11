@@ -1,9 +1,9 @@
 ---
-title: "Resignation Letter Generator: Professional Exit in 5 Minutes"
+title: "Resignation Letter Generator Free India — Format & Sample 2026"
 slug: "resignation-letter-generator"
 date: "2026-06-28"
-description: "AI resignation letter — polite, professional, correct notice period format for Indian companies. PDF-ready text."
-keywords: "resignation letter generator, resignation letter format india, how to write resignation, notice period letter"
+description: "Free resignation letter generator for India — 2 weeks notice format, formal & warm samples, counter-offer tips. Generate in 30 seconds."
+keywords: "resignation letter generator, resignation letter generator free, resignation letter format india, how to write resignation, notice period letter"
 faq:
   - q: "Is the Resignation Letter tool free?"
     a: "Unlimited on free plan."

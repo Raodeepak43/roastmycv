@@ -6,6 +6,15 @@ import {
 } from '@/lib/blog/gsc-indexing'
 
 export const GSC_PRIORITY_BLOG_SLUGS = new Set<string>([
+  '12th-pass-resume-kaise-banaye',
+  '10th-pass-resume-kaise-banaye',
+  'iti-diploma-resume-format-india',
+  'biodata-maker-for-job-india',
+  'zety-resume-maker-free-alternative-india',
+  'zety-resume-builder-vs-mycvroast-india',
+  'free-resume-review-online-india-2026',
+  'bio-data-format-for-job-pdf-free',
+  '12th-pass-bpo-resume-format',
   'cv-for-students-guide',
   'work-experience-resume-section',
   'gemini-resume-roast-prompt-india',

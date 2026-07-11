@@ -1,9 +1,9 @@
 ---
 title: "Is My Resume ATS Friendly? Free Check Guide 2026"
-metaTitle: "Is My Resume ATS Friendly? Free Check (India)"
+metaTitle: "Check If Resume Is ATS Friendly — Free Test India"
 slug: "ats-friendly-resume"
 date: "2025-07-19"
-description: "Is my resume ATS friendly? Free instant check for India — upload PDF, get parsing score & fixes in 30 sec. 2 free roasts, no signup required."
+description: "Check if your resume is ATS friendly — free instant test for India. Upload PDF, get parsing score & fixes in 30 sec. 2 free checks, no signup."
 keywords: "is my resume ats friendly, check if resume is ats friendly, ats friendly resume, ats resume checker free, analyse ats friendly cv"
 faq:
   - q: "Is my resume ATS friendly?"

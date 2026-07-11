@@ -20,6 +20,12 @@ faq:
 
 This guide compares **Zety resume builder** vs **MyCVRoast** honestly — free tiers, ATS safety, India-specific features, and when to use each.
 
+## Zety resume maker free alternative for India
+
+If you searched **zety resume maker** (not just "builder"), you likely want a tool that **creates and downloads** a resume without a paywall. Zety lets you build free but often blocks PDF export. **MyCVRoast** is a direct **Zety resume maker free alternative** for India: free PDF from the [resume builder](/resume-builder), plus a [free AI roast](/) no other global maker offers on the free tier.
+
+Dedicated comparison: [Zety resume maker free alternative India 2026](/blog/zety-resume-maker-free-alternative-india).
+
 ## Quick Verdict: Zety vs MyCVRoast
 
 | Feature | Zety | MyCVRoast |
