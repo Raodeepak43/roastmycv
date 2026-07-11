@@ -35,6 +35,14 @@
   color: var(--text-primary) !important;
 }
 
+/* Dark band nested in beige pages — preserve white text (step cards, disclaimer, stats) */
+.elevate-site .elevate-dark .text-white,
+.elevate-site .elevate-dark h1,
+.elevate-site .elevate-dark h2,
+.elevate-site .elevate-dark h3 {
+  color: #ffffff !important;
+}
+
 .elevate-site .bg-page .hover\:text-white:hover,
 .elevate-site .bg-bg-beige .hover\:text-white:hover,
 .elevate-site .elevate-white .hover\:text-white:hover {

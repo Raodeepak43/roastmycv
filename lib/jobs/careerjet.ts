@@ -142,7 +142,7 @@ export async function searchCareerjetJobs(input: CareerjetSearchInput): Promise<
     const message = data.error || 'Careerjet API error'
     if (/unauthorized access from ip/i.test(message)) {
       throw new Error(
-        'Careerjet blocked this server IP. Add your Vercel/server IP in the Careerjet partner dashboard, then redeploy.',
+        'Careerjet blocked this server IP. Register at careerjet.com/partners, whitelist your server outbound IP (run npm run jobs:careerjet-ip locally), then retry.',
       )
     }
     throw new Error(message)
