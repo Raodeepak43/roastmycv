@@ -100,7 +100,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         />
       )}
       <main className="flex-1 max-w-3xl mx-auto px-4 md:px-8 py-10 w-full">
-        <BlogBreadcrumb title={post.title} />
+        <BlogBreadcrumb title={headline} />
         <article>
           <BlogFeaturedBanner
             title={headline}
