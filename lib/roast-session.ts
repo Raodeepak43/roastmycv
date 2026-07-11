@@ -8,7 +8,9 @@ export type StoredRoast = {
   title?: string
   verdict?: string
   fixes?: string[]
+  resumeText?: string
   showTickerNamePrompt?: boolean
+  shareToken?: string
   createdAt: number
 }
 

@@ -2,58 +2,51 @@
 
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import FingerprintJS from '@fingerprintjs/fingerprintjs'
 import { SiteFooter } from '@/components/SiteFooter'
+import { SiteHeader } from '@/components/SiteHeader'
+import { PricingPlans } from '@/components/PricingPlans'
+import { WhatWeOffer } from '@/components/WhatWeOffer'
+import { CareerToolsSection } from '@/components/home/CareerToolsSection'
+import { RazorpayProButton } from '@/components/RazorpayProButton'
 import { HighVoltageBadge, SectionHeading } from '@/components/UiChrome'
 import { AnimatePresence, MotionFadeUp, MotionStagger, MotionStaggerItem, motion } from '@/components/Motion'
 import { NumberTicker } from '@/components/ui/be-ui-number-animation'
-import { RoastIntensityBackground } from '@/components/ui/roast-intensity-background'
 import { buildTickerMessage, mergeTickerItems, PINNED_TICKER_KEY } from '@/lib/ticker'
+import { fetchGuestUsage } from '@/lib/usage/client'
+import { FREE_LIMIT } from '@/lib/usage'
+import { ACCOUNT_DELETED_TOAST_KEY } from '@/lib/dashboard/constants'
+import { homeFaqPageJsonLd } from '@/lib/schema'
 import { createRoastId, saveRoast } from '@/lib/roast-session'
+import { savePublicRoastViaApi } from '@/lib/roast/public-save'
+import { RecentRoastsFeed } from '@/components/home/RecentRoastsFeed'
+import { ElevateMarquee } from '@/components/home/ElevateMarquee'
+import { Reveal } from '@/components/ui/Reveal'
+import { TrustBar } from '@/components/home/TrustBar'
+import { SeoIntroSection } from '@/components/home/SeoIntroSection'
+import { TopicClusterNav } from '@/components/seo/TopicClusterNav'
+import {
+  clearDisplayNameOnSkip,
+  getConsentedDisplayName,
+  setConsentedDisplayName,
+} from '@/lib/client-storage/display-name'
 import { getUi, type IntensityKey, type UiStrings } from './i18n'
 
-const SITE_URL = 'mycvroast.in'
-const SHARE_URL = 'https://mycvroast.in'
-const FREE_LIMIT = 5
-const NAME_KEY = 'rcv_display_name'
+const SITE_URL = 'www.mycvroast.in'
+const SHARE_URL = 'https://www.mycvroast.in'
 const LANGUAGE_KEY = 'rcv_language'
 const ONBOARD_KEY = 'rcv_onboarded'
-const STATS_SEED = 1250
-const STATS_FLOOR_KEY = 'rcv_stats_floor'
-
-function readStatsFloor(): number {
-  try {
-    if (typeof window === 'undefined') return STATS_SEED
-    const raw = localStorage.getItem(STATS_FLOOR_KEY)
-    const n = raw ? parseInt(raw, 10) : NaN
-    return Number.isNaN(n) ? STATS_SEED : Math.max(n, STATS_SEED)
-  } catch {
-    return STATS_SEED
-  }
-}
-
-function writeStatsFloor(n: number) {
-  try {
-    localStorage.setItem(STATS_FLOOR_KEY, String(Math.max(n, STATS_SEED)))
-  } catch {
-    /* ignore quota / private mode */
-  }
-}
+/** @deprecated removed — clear on load */
+const LEGACY_STATS_FLOOR_KEY = 'rcv_stats_floor'
 
 function parseStatCount(v: unknown): number {
-  if (typeof v === 'number' && !Number.isNaN(v)) return v
+  if (typeof v === 'number' && !Number.isNaN(v)) return Math.max(0, v)
   if (typeof v === 'string') {
     const n = parseInt(v, 10)
-    if (!Number.isNaN(n)) return n
+    if (!Number.isNaN(n)) return Math.max(0, n)
   }
-  return STATS_SEED
-}
-
-function mergeStatsCount(prev: number, incoming: unknown): number {
-  const api = parseStatCount(incoming)
-  const next = Math.max(prev, api, readStatsFloor())
-  writeStatsFloor(next)
-  return next
+  return 0
 }
 
 function detectBrowserLanguage(): string {
@@ -77,13 +70,6 @@ function detectBrowserLanguage(): string {
 }
 
 const LOADING_MSGS_FALLBACK = ['📖 ...', '🔍 ...', '💀 ...', '⚡ ...']
-
-const TICKER_ITEMS = [
-  '⚡ WARNING: HIGH VOLTAGE ROASTS',
-  '🔥 ZERO SYMPATHY', '⚡ RECRUITER KI NAZAR', '💀 TERI CV NEXT',
-  '🤖 AI NEVER LIES', '🚑 BURNOL KE LIYE READY', '😤 SAVAGE MODE ON',
-  '🎯 NO SUGARCOATING', '🇮🇳 DESI ROAST',
-]
 
 const INTENSITY_IDS: IntensityKey[] = ['clean', 'gaali_light', 'savage']
 
@@ -159,12 +145,14 @@ interface RoastApiResponse {
   verdict: string
   fixes: string[]
   statsCount?: number
+  usesLeft?: number
 }
 
 async function fetchRoast(resumeText: string, intensity: Intensity, language: string, fp: string, incompleteError: string) {
   const data = await fetchJson<RoastApiResponse>('/api/roast', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
     body: JSON.stringify({ resumeText, intensity, language, fp }),
   }, incompleteError)
   const lines = parseRoastLines(data.roast)
@@ -177,12 +165,13 @@ async function fetchRoast(resumeText: string, intensity: Intensity, language: st
     fixes: data.fixes?.length ? data.fixes : undefined,
     language,
     statsCount: data.statsCount,
+    usesLeft: data.usesLeft,
   }
 }
 
 function UploadIcon() {
   return (
-    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" className="mx-auto mb-3">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f43c00" strokeWidth="1.5" className="mx-auto mb-3">
       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
       <polyline points="17 8 12 3 7 8" />
       <line x1="12" y1="3" x2="12" y2="15" />
@@ -191,9 +180,36 @@ function UploadIcon() {
 }
 
 function LanguagePicker({ language, onSelect, compact, scrollHint }: { language: string; onSelect: (code: string) => void; compact?: boolean; scrollHint?: string }) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [needsScroll, setNeedsScroll] = useState(false)
+
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el || compact) return
+    const mq = window.matchMedia('(max-width: 767px)')
+    const check = () => {
+      if (!mq.matches) {
+        setNeedsScroll(false)
+        return
+      }
+      setNeedsScroll(el.scrollWidth > el.clientWidth + 2)
+    }
+    check()
+    const ro = new ResizeObserver(check)
+    ro.observe(el)
+    mq.addEventListener('change', check)
+    return () => {
+      ro.disconnect()
+      mq.removeEventListener('change', check)
+    }
+  }, [compact])
+
   return (
     <div>
-      <div className={`${compact ? 'flex flex-wrap gap-2 max-h-40 overflow-y-auto pr-1 justify-center' : 'lang-scroll flex gap-2 flex-nowrap md:flex-wrap justify-start md:justify-center pb-1'}`}>
+      <div
+        ref={scrollRef}
+        className={`${compact ? 'flex flex-wrap gap-2 max-h-40 overflow-y-auto pr-1 justify-center' : 'lang-scroll flex gap-2 flex-nowrap md:flex-wrap justify-start md:justify-center pb-1'}`}
+      >
         {LANGUAGES.map((lang) => (
           <button
             key={lang.code}
@@ -204,15 +220,15 @@ function LanguagePicker({ language, onSelect, compact, scrollHint }: { language:
             className={`font-body text-xs py-1.5 px-3 rounded-full border whitespace-nowrap transition-all shrink-0 ${
               language === lang.code
                 ? 'bg-orange border-orange text-black'
-                : 'bg-card border-border text-[#666666]'
+                : 'bg-card border-border text-dim'
             }`}
           >
             {lang.flag} {lang.name}
           </button>
         ))}
       </div>
-      {!compact && scrollHint && (
-        <p className="md:hidden font-body text-[10px] text-[#444444] text-center mt-1.5">{scrollHint}</p>
+      {!compact && scrollHint && needsScroll && (
+        <p className="font-body text-[10px] text-muted text-center mt-1.5">{scrollHint}</p>
       )}
     </div>
   )
@@ -228,12 +244,12 @@ export default function Home() {
   const [error, setError] = useState('')
   const [intensity, setIntensity] = useState<Intensity>('gaali_light')
   const [language, setLanguage] = useState('hinglish')
-  const [roastCount, setRoastCount] = useState(STATS_SEED)
+  const [roastCount, setRoastCount] = useState(0)
   const [statsLoading, setStatsLoading] = useState(true)
   const [usesLeft, setUsesLeft] = useState(FREE_LIMIT)
   const [fp, setFp] = useState('')
   const [showPaywall, setShowPaywall] = useState(false)
-  const [faqOpen, setFaqOpen] = useState<number | null>(null)
+  const [faqOpen, setFaqOpen] = useState<number | null>(0)
   const [uploadHighlight, setUploadHighlight] = useState(false)
   const [showSignup, setShowSignup] = useState(false)
   const [showOnboarding, setShowOnboarding] = useState(false)
@@ -247,6 +263,7 @@ export default function Home() {
   const [captureSuccess, setCaptureSuccess] = useState(false)
   const [tickerNames, setTickerNames] = useState<string[]>([])
   const [pinnedTicker, setPinnedTicker] = useState<string | null>(null)
+  const [accountDeletedToast, setAccountDeletedToast] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   const t = getUi(language)
@@ -259,46 +276,66 @@ export default function Home() {
   }
 
   useEffect(() => {
-    const savedName = localStorage.getItem(NAME_KEY) || ''
+    try {
+      localStorage.removeItem(LEGACY_STATS_FLOOR_KEY)
+    } catch {
+      /* ignore */
+    }
+
+    const savedName = getConsentedDisplayName()
+    const urlLang = new URLSearchParams(window.location.search).get('lang')
     const savedLang = localStorage.getItem(LANGUAGE_KEY)
+    const validUrlLang = urlLang && LANGUAGES.some((l) => l.code === urlLang) ? urlLang : null
     const onboarded = localStorage.getItem(ONBOARD_KEY)
 
     setOnboardName(savedName)
-    setLanguage(savedLang || detectBrowserLanguage())
+    setLanguage(validUrlLang || savedLang || detectBrowserLanguage())
+    if (validUrlLang) localStorage.setItem(LANGUAGE_KEY, validUrlLang)
 
     const savedPinned = sessionStorage.getItem(PINNED_TICKER_KEY)
     if (savedPinned) setPinnedTicker(savedPinned)
 
     if (!onboarded) setShowOnboarding(true)
 
-    const getFingerprint = async () => {
+    if (sessionStorage.getItem(ACCOUNT_DELETED_TOAST_KEY) === '1') {
+      sessionStorage.removeItem(ACCOUNT_DELETED_TOAST_KEY)
+      setAccountDeletedToast(true)
+      window.setTimeout(() => setAccountDeletedToast(false), 5000)
+    }
+
+    const loadUsage = async (visitorId?: string) => {
+      try {
+        const data = await fetchGuestUsage(visitorId)
+        setUsesLeft(data.usesLeft)
+      } catch {
+        setUsesLeft(FREE_LIMIT)
+      }
+    }
+
+    const loadFingerprint = async () => {
       try {
         const fpAgent = await FingerprintJS.load()
         const result = await fpAgent.get()
         const visitorId = result.visitorId
         setFp(visitorId)
-        const res = await fetch(`/api/usage?fp=${encodeURIComponent(visitorId)}`)
-        const data = await res.json()
-        setUsesLeft(data.usesLeft ?? FREE_LIMIT)
+        await loadUsage(visitorId)
       } catch {
-        setUsesLeft(FREE_LIMIT)
+        await loadUsage()
       }
     }
-    getFingerprint()
-
-    setRoastCount((prev) => mergeStatsCount(prev, readStatsFloor()))
+    loadFingerprint()
 
     const fetchStats = () => {
-      fetch('/api/stats', { cache: 'no-store' })
+      fetch('/api/stats', { cache: 'no-store', credentials: 'include' })
         .then((r) => r.json())
         .then((d) => {
-          setRoastCount((prev) => mergeStatsCount(prev, d.count))
+          setRoastCount(parseStatCount(d.count))
         })
         .catch(() => {})
         .finally(() => setStatsLoading(false))
     }
     const fetchTicker = () => {
-      fetch('/api/signups', { cache: 'no-store' })
+      fetch('/api/signups', { cache: 'no-store', credentials: 'include' })
         .then((r) => r.json())
         .then((d) => {
           setTickerNames(d.items ?? [])
@@ -309,7 +346,10 @@ export default function Home() {
     }
     fetchStats()
     fetchTicker()
-    const interval = setInterval(() => { fetchStats(); fetchTicker() }, 15000)
+    const interval = setInterval(() => {
+      fetchStats()
+      fetchTicker()
+    }, 15000)
     return () => clearInterval(interval)
   }, [])
 
@@ -322,6 +362,7 @@ export default function Home() {
     fetch('/api/signups', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify({ name, score, language: roastLang }),
     })
       .then((r) => r.json())
@@ -336,30 +377,50 @@ export default function Home() {
   }, [language])
 
   const resolveDisplayName = useCallback(() => {
-    const fromStorage = localStorage.getItem(NAME_KEY)?.trim() ?? ''
+    const fromStorage = getConsentedDisplayName()
     if (fromStorage.length >= 2) return fromStorage
     const fromOnboard = onboardName.trim()
     if (fromOnboard.length >= 2) return fromOnboard
     return ''
   }, [onboardName])
 
+  const finishOnboarding = useCallback(
+    (name?: string) => {
+      const trimmed = name?.trim() ?? ''
+      localStorage.setItem(LANGUAGE_KEY, language)
+      localStorage.setItem(ONBOARD_KEY, '1')
+      if (trimmed.length >= 2) {
+        setConsentedDisplayName(trimmed)
+        publishRoastToTicker(trimmed, undefined, language)
+      } else {
+        clearDisplayNameOnSkip()
+      }
+      setShowOnboarding(false)
+    },
+    [language, publishRoastToTicker],
+  )
+
   const handleOnboarding = async (e: React.FormEvent) => {
     e.preventDefault()
     const name = onboardName.trim()
-    if (name.length < 2) { setOnboardError(t.onboarding.nameError); return }
+    if (name.length > 0 && name.length < 2) {
+      setOnboardError(t.onboarding.nameError)
+      return
+    }
     setOnboardLoading(true)
     setOnboardError('')
     try {
-      localStorage.setItem(NAME_KEY, name)
-      localStorage.setItem(LANGUAGE_KEY, language)
-      localStorage.setItem(ONBOARD_KEY, '1')
-      publishRoastToTicker(name, undefined, language)
-      setShowOnboarding(false)
+      finishOnboarding(name)
     } catch {
       setOnboardError(t.genericError)
     } finally {
       setOnboardLoading(false)
     }
+  }
+
+  const handleOnboardSkip = () => {
+    setOnboardError('')
+    finishOnboarding()
   }
 
   const handleOnboardNext = () => {
@@ -405,14 +466,30 @@ export default function Home() {
   useEffect(() => {
     if (!loading) return
     const msgs = loadingT.loading.length ? loadingT.loading : LOADING_MSGS_FALLBACK
-    const interval = setInterval(() => setLoadMsgIdx((i) => (i + 1) % msgs.length), 1500)
+    const interval = setInterval(() => {
+      setLoadMsgIdx((i) => (i + 1) % msgs.length)
+    }, 1500)
     return () => clearInterval(interval)
   }, [loading, loadingLang, loadingT.loading])
 
   const handleFile = (f: File) => {
-    if (!f.name.match(/\.(pdf|txt)$/i)) { setError(t.fileTypeError); return }
-    if (f.size > 5 * 1024 * 1024) { setError(t.fileSizeError); return }
-    setFile(f); setError(''); setUploadHighlight(false)
+    if (/\.docx?$/i.test(f.name)) {
+      setError('⚠️ Word .docx not supported — save as PDF first (File → Save as PDF), then upload.')
+      setUploadHighlight(true)
+      setTimeout(() => setUploadHighlight(false), 3000)
+      return
+    }
+    if (!f.name.match(/\.(pdf|txt)$/i)) {
+      setError(t.fileTypeError)
+      return
+    }
+    if (f.size > 5 * 1024 * 1024) {
+      setError(t.fileSizeError)
+      return
+    }
+    setFile(f)
+    setError('')
+    setUploadHighlight(false)
   }
 
   const handleDrop = useCallback((e: React.DragEvent) => {
@@ -428,41 +505,48 @@ export default function Home() {
       setTimeout(() => setUploadHighlight(false), 2000)
       return
     }
-    if (usesLeft <= 0) { setShowPaywall(true); return }
-    if (!fp) { setError(t.genericError); return }
+    if (usesLeft <= 0) {
+      setShowPaywall(true)
+      return
+    }
     setLoadingLang(language)
-    setLoading(true); setLoadMsgIdx(0); setError('')
+    setLoading(true)
+    setLoadMsgIdx(0)
+    setError('')
 
     try {
       const formData = new FormData()
       formData.append('file', file)
       const parseData = await fetchJson<{ text: string }>('/api/parse', { method: 'POST', body: formData }, t.genericError)
-      const roastData = await fetchRoast(parseData.text, intensity, language, fp, t.genericError)
+      const roastData = await fetchRoast(parseData.text, intensity, language, fp || '', t.genericError)
 
-      const usageRes = await fetch('/api/usage', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ fp }),
-      })
-      const usageData = await usageRes.json()
-      if (usageRes.ok) setUsesLeft(usageData.usesLeft ?? 0)
+      if (typeof roastData.usesLeft === 'number') {
+        setUsesLeft(roastData.usesLeft)
+      }
 
-      setRoastCount((prev) => {
-        const server = parseStatCount(roastData.statsCount ?? prev + 1)
-        const next = Math.max(prev + 1, server, readStatsFloor())
-        writeStatsFloor(next)
-        return next
-      })
+      if (typeof roastData.statsCount === 'number') {
+        setRoastCount(parseStatCount(roastData.statsCount))
+      }
 
       const displayName = resolveDisplayName()
       if (displayName) {
-        if (!localStorage.getItem(NAME_KEY)) {
-          localStorage.setItem(NAME_KEY, displayName)
+        if (!getConsentedDisplayName()) {
+          setConsentedDisplayName(displayName)
         }
         publishRoastToTicker(displayName, roastData.score)
       }
 
-      const roastId = createRoastId()
+      const shareToken = await savePublicRoastViaApi({
+        score: roastData.score,
+        intensity,
+        language: roastData.language,
+        lines: roastData.lines,
+        title: roastData.title,
+        verdict: roastData.verdict,
+        fixes: roastData.fixes,
+      })
+
+      const roastId = shareToken ?? createRoastId()
       saveRoast(roastId, {
         lines: roastData.lines,
         score: roastData.score,
@@ -471,7 +555,9 @@ export default function Home() {
         title: roastData.title,
         verdict: roastData.verdict,
         fixes: roastData.fixes,
+        resumeText: parseData.text,
         showTickerNamePrompt: !displayName,
+        shareToken: shareToken ?? undefined,
       })
       router.push(`/roast/${roastId}`)
     } catch (err: unknown) {
@@ -490,143 +576,97 @@ export default function Home() {
   const activeDesc = t.intensity[intensity]?.desc ?? ''
 
   const userTicker = mergeTickerItems(pinnedTicker, tickerNames.slice(0, 4))
-  const tickerItems = userTicker.length > 0 ? userTicker : TICKER_ITEMS
+  const tickerItems = userTicker
   const loadingMsgs = loadingT.loading.length ? loadingT.loading : LOADING_MSGS_FALLBACK
 
   return (
     <main
-      className="min-h-screen flex flex-col w-full relative overflow-x-hidden"
+      className="min-h-screen flex flex-col w-full relative overflow-x-hidden bg-bg-beige"
       dir={isRtl ? 'rtl' : 'ltr'}
       lang={language}
     >
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <RoastIntensityBackground intensity={intensity} className="absolute inset-0" />
-      </div>
-
       <div className="relative z-10 flex flex-col flex-1 min-h-screen">
-      {/* Header — full width */}
-      <header className="w-full border-b border-border bg-black/50 backdrop-blur-md">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-3 md:py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2 md:gap-3 min-w-0 flex-1 mr-2">
-            <a
-              href="/"
-              className="font-display text-lg md:text-xl text-white hover:text-orange transition-colors shrink-0"
-              aria-label="MyCVRoast home"
-            >
-              🔥 MyCVRoast
-            </a>
-            {process.env.NEXT_PUBLIC_BUILD_ID && (
-              <span className="font-body text-[9px] text-[#333] hidden sm:inline" title="Build ID">
-                ·{process.env.NEXT_PUBLIC_BUILD_ID}
-              </span>
-            )}
-            <span
-              className="font-body text-[10px] md:text-[11px] text-[#888888] truncate"
-              aria-live="polite"
-            >
-              {statsLoading ? (
-                <span className="skeleton inline-block h-3 w-24 md:w-32 align-middle" />
-              ) : (
-                <>
-                  <span className="text-orange font-medium inline-flex items-center gap-0.5">
-                    🔥{' '}
-                    <NumberTicker
-                      value={roastCount}
-                      startOnView={false}
-                      duration={0.6}
-                      format={(n) => n.toLocaleString('en-US')}
-                      className="text-orange font-medium"
-                    />
-                  </span>
-                  <span className="hidden sm:inline"> {t.destroyed}</span>
-                </>
-              )}
-            </span>
-          </div>
-          <div className="flex items-center gap-2 md:gap-3">
-            <a href="/blog" className="font-body text-[11px] text-[#888888] hover:text-orange transition-colors hidden sm:inline">
-              Blog
-            </a>
-            <a href="/resume-builder" className="font-body text-[11px] text-[#888888] hover:text-orange transition-colors hidden sm:inline">
-              📄 Resume Builder
-            </a>
-            <button
-              type="button"
-              onClick={openEmailCapture}
-              className="font-body text-[11px] text-white border border-border px-2.5 py-1 rounded-full hover:border-orange hover:text-orange transition-colors"
-              aria-label="Join newsletter"
-            >
-              {t.join}
-            </button>
-            <span
-              className="font-body text-xs text-orange border border-orange px-3 py-1 rounded-full cursor-default"
-              title={`${usesLeft} ${t.roastsFree}`}
-              aria-label={`${usesLeft} ${t.roastsFree}`}
-            >
-              {usesLeft} {t.roastsFree}
-            </span>
-          </div>
+      {accountDeletedToast && (
+        <div
+          className="fixed left-1/2 top-4 z-[70] w-[min(92vw,28rem)] -translate-x-1/2 rounded-xl border border-emerald-500/40 bg-[#0f1f17] px-4 py-3 text-center font-body text-sm text-emerald-300 shadow-lg"
+          role="status"
+        >
+          Your account has been deleted
         </div>
-        <div className="w-full bg-card/80 backdrop-blur-sm border-t border-border overflow-hidden py-2">
-          <div className="ticker-track font-body text-[11px] whitespace-nowrap">
-            {[...tickerItems, ...tickerItems].map((item, i) => {
-              const isYou = pinnedTicker != null && item === pinnedTicker
-              return (
-                <span
-                  key={`${item}-${i}`}
-                  className={`mx-5 inline-flex items-center ${isYou ? 'text-orange font-semibold' : 'text-white'}`}
-                >
-                  <span className="text-orange mr-1.5">·</span>
-                  {item}
-                </span>
-              )
-            })}
-          </div>
-        </div>
-      </header>
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqPageJsonLd()) }}
+      />
+      <SiteHeader
+        variant="home"
+        activePath="home"
+        roastCount={roastCount}
+        statsLoading={statsLoading}
+        statsSuffix={t.destroyed}
+        statsShortSuffix={t.headerStat ?? 'CVs roasted'}
+        usesLeft={usesLeft}
+        roastsFreeLabel={t.roastsFree}
+        joinLabel={t.join}
+        onJoinClick={openEmailCapture}
+        tickerItems={tickerItems}
+        pinnedTicker={pinnedTicker}
+      />
 
-      <div className="flex-1 w-full max-w-6xl mx-auto px-4 md:px-8 py-6 md:py-10">
-        <div className="max-w-xl mx-auto w-full">
-              {/* Hero */}
-              <MotionFadeUp inView={false} className="text-center mb-8">
-                <HighVoltageBadge text={t.warningBadge} className="mx-auto mb-4" />
-                <p className="font-body text-[11px] text-muted tracking-[0.1em] mb-4">
-                  {t.tagline}
-                </p>
-                <h1 className="font-display leading-[1.05] mb-4 text-center w-full px-1">
-                  <span className="block text-[clamp(2rem,7vw,3.75rem)] text-white">
+      <div className="flex-1 w-full max-w-[90rem] mx-auto px-4 md:px-8 py-6 md:py-10">
+        <section className="flex flex-col relative">
+          <div className="lg:sticky lg:top-28 z-[1] min-h-[50vh] flex flex-col justify-center py-12 lg:py-20">
+            <Reveal direction="left" className="elevate-light-panel p-8 md:p-12 mb-8">
+              <div className="flex flex-col lg:flex-row justify-between items-end gap-10">
+                <div className="flex flex-col gap-6 lg:w-2/5">
+                  <HighVoltageBadge text={t.warningBadge} className="w-fit" />
+                  <p className="font-body text-[11px] text-muted tracking-[0.1em] uppercase">{t.tagline}</p>
+                  <p className="text-lg md:text-xl leading-relaxed text-text-dark/80 max-w-sm">{t.hero.sub}</p>
+                  <p className="font-body text-[13px] text-text-dark hidden lg:block">
+                    {statsLoading ? (
+                      <span className="inline-flex items-center gap-2">
+                        🔥 <span className="skeleton inline-block h-4 w-14" /> <span className="skeleton inline-block h-4 w-36" />
+                      </span>
+                    ) : (
+                      <>🔥{' '}
+                        <NumberTicker
+                          value={roastCount}
+                          startOnView={false}
+                          blur
+                          duration={0.85}
+                          format={(n) => n.toLocaleString('en-US')}
+                          className="font-semibold text-brand-orange"
+                        />{' '}
+                        {t.destroyed}
+                      </>
+                    )}
+                  </p>
+                </div>
+                <div className="lg:w-3/5 flex justify-end">
+                  <h1 className="elevate-display-hero text-right text-text-dark">
                     {t.hero.line1}
-                  </span>
-                  <span className="block text-[clamp(2rem,7vw,3.75rem)] text-orange mt-1 md:mt-2">
-                    {t.hero.line2}
-                  </span>
-                </h1>
-                <h2 className="font-body text-sm text-muted">
-                  {t.hero.sub}
-                </h2>
-                <p className="font-body text-[13px] text-white mt-4">
-                  {statsLoading ? (
-                    <span className="inline-flex items-center gap-2 justify-center">
-                      🔥 <span className="skeleton inline-block h-4 w-14" /> <span className="skeleton inline-block h-4 w-36" />
-                    </span>
-                  ) : (
-                    <>🔥{' '}
-                      <NumberTicker
-                        value={roastCount}
-                        startOnView
-                        blur
-                        duration={0.85}
-                        format={(n) => n.toLocaleString('en-US')}
-                        className="text-white font-medium"
-                      />{' '}
-                      {t.destroyed}
-                    </>
-                  )}
-                </p>
-              </MotionFadeUp>
+                    <span className="text-brand-orange"> {t.hero.line2}</span>
+                  </h1>
+                </div>
+              </div>
+            </Reveal>
+            <TrustBar roastCount={roastCount} statsLoading={statsLoading} roastLabel={t.destroyed} />
+          </div>
 
-              {/* Upload + controls */}
-              <section>
+          <div className="lg:sticky lg:top-28 z-[2] pb-12 lg:pb-24">
+            <Reveal direction="up" className="max-w-xl mx-auto w-full">
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault()
+                    void handleRoast()
+                  }}
+                >
+                <p
+                  className="mb-3 rounded-lg border border-orange/30 bg-orange/[0.06] px-3 py-2 text-center font-body text-[12px] text-orange"
+                  role="note"
+                >
+                  ⚠️ Word (.docx) not supported — export as PDF first (File → Save as PDF)
+                </p>
                 <div
                   className={`upload-card p-5 md:p-8 text-center cursor-pointer mb-4 ${dragging ? 'dragover' : ''} ${uploadHighlight ? 'upload-error' : ''}`}
                   onClick={() => fileInputRef.current?.click()}
@@ -636,14 +676,18 @@ export default function Home() {
                   role="button"
                   tabIndex={0}
                   aria-label="Upload your resume — PDF or TXT, max 5MB"
-                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') fileInputRef.current?.click() }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      fileInputRef.current?.click()
+                    }
+                  }}
                 >
                   <input
                     ref={fileInputRef}
                     id="resume-upload"
                     name="resume"
                     type="file"
-                    accept=".pdf,.txt"
+                    accept=".pdf,.txt,application/pdf,text/plain"
                     className="hidden"
                     aria-label="Choose resume file"
                     onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
@@ -657,15 +701,11 @@ export default function Home() {
                   ) : (
                     <>
                       <UploadIcon />
-                      <p className="font-display text-xl md:text-2xl text-white mb-1">{t.dropResume}</p>
+                      <p className="font-display text-xl md:text-2xl text-text-dark mb-1">{t.dropResume}</p>
                       <p className="font-body text-[13px] text-muted">{t.clickUpload}</p>
-                      <p className="font-body text-[11px] text-[#333333] mt-1">{t.fileLimit}</p>
+                      <p className="font-body text-[11px] text-subtle mt-1">{t.fileLimit}</p>
                     </>
                   )}
-                </div>
-
-                <div className="mb-3 flex justify-center">
-                  <HighVoltageBadge text={t.warningBadge} />
                 </div>
 
                 <div className="flex gap-2 mb-2 max-[380px]:flex-col min-[381px]:overflow-x-auto min-[381px]:flex-nowrap lang-scroll pb-1">
@@ -676,7 +716,7 @@ export default function Home() {
                       onClick={() => setIntensity(id)}
                       aria-label={`${t.intensity[id].label} roast mode`}
                       aria-pressed={intensity === id}
-                      className="intensity-btn max-[380px]:w-full min-[381px]:flex-shrink-0 rounded-none"
+                      className="intensity-btn max-[380px]:w-full min-[381px]:flex-shrink-0"
                     >
                       {t.intensity[id].label}
                     </button>
@@ -684,9 +724,9 @@ export default function Home() {
                 </div>
                 <p className="font-body text-xs text-muted text-center mb-3">{activeDesc}</p>
 
-                <p className="font-body text-[11px] text-[#444444] uppercase tracking-[0.1em] mb-2 text-center">{t.chooseLang}</p>
+                <p className="font-body text-[11px] text-muted uppercase tracking-[0.1em] mb-2 text-center">{t.chooseLang}</p>
                 <LanguagePicker language={language} onSelect={selectLanguage} scrollHint={t.scrollHint} />
-                <p className="font-body text-[10px] text-[#333333] text-center mt-1 mb-4 hidden md:block">{t.langHint}</p>
+                <p className="font-body text-[10px] text-subtle text-center mt-1 mb-4 hidden md:block">{t.langHint}</p>
 
                 {error && (
                   <div className="card-ui p-3 mb-3 font-body text-sm text-red-400 border-red-500/30">{error}</div>
@@ -695,28 +735,33 @@ export default function Home() {
                 {loading ? (
                   <div className="btn-roast w-full py-3.5 md:py-4 flex flex-col items-center justify-center gap-1.5 opacity-90">
                     <div className="flex items-center justify-center gap-3">
-                      <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full spinner shrink-0" />
-                      <span className="font-display text-base md:text-lg text-black">{loadingT.roastingBtn}</span>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full spinner shrink-0" />
+                      <span className="font-display text-base md:text-lg text-white">{loadingT.roastingBtn}</span>
                     </div>
-                    <span className="font-body text-xs text-black/70">{loadingMsgs[loadMsgIdx % loadingMsgs.length]}</span>
+                    <span className="font-body text-xs text-white/80">{loadingMsgs[loadMsgIdx % loadingMsgs.length]}</span>
                   </div>
                 ) : (
                   <button
-                    onClick={handleRoast}
+                    type="submit"
                     aria-label={t.roastBtn}
                     className="btn-roast w-full py-3.5 md:py-4 text-base md:text-lg">
                     {t.roastBtn}
                   </button>
                 )}
-              </section>
-        </div>
+                </form>
+            </Reveal>
+          </div>
+        </section>
 
-        <div className="section-stack space-y-10 md:space-y-14 mt-8 md:mt-10 px-0.5">
+        <ElevateMarquee />
+
+        <div className="elevate-dark px-4 md:px-8 py-12 md:py-16 -mx-4 md:-mx-8 mt-4">
+        <div className="section-stack space-y-10 md:space-y-14 max-w-6xl mx-auto">
             <MotionFadeUp className="stats-panel">
               <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-border">
                 {[
                   { val: roastCount, color: 'text-orange', label: t.stats.roasted, skeleton: statsLoading, animate: true },
-                  { val: String(INTENSITY_IDS.length), color: 'text-purple', label: t.stats.modes },
+                  { val: String(INTENSITY_IDS.length), color: 'stats-panel__accent', label: t.stats.modes },
                   { val: '0', color: 'text-white', label: t.stats.mercy },
                   { val: '∞', color: 'text-gold', label: t.stats.dmg },
                 ].map((s) => (
@@ -764,12 +809,9 @@ export default function Home() {
             </section>
 
             <section aria-label={t.disclaimer.title}>
-              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-3">
-                <p className="section-label mb-0">
-                  <span aria-hidden>⚠</span> {t.disclaimer.title}
-                </p>
-                <HighVoltageBadge text={t.warningBadge} className="sm:mb-0 self-start sm:self-auto" />
-              </div>
+              <p className="section-label mb-3">
+                <span aria-hidden>🔥</span> {t.disclaimer.title}
+              </p>
               <MotionFadeUp delay={0.08} className="disclaimer-box">
                 <p className="font-body text-[13px] md:text-sm text-white leading-relaxed mb-5">
                   {t.disclaimer.body}
@@ -781,6 +823,21 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
+              </MotionFadeUp>
+            </section>
+
+            <section id="plans" aria-label="Plans">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
+                <SectionHeading title="PLANS" />
+                <Link
+                  href="/plans"
+                  className="font-body text-[12px] text-orange hover:text-white transition-colors uppercase tracking-wider shrink-0"
+                >
+                  Full plans &amp; features →
+                </Link>
+              </div>
+              <MotionFadeUp delay={0.08}>
+                <PricingPlans />
               </MotionFadeUp>
             </section>
 
@@ -817,21 +874,36 @@ export default function Home() {
               </MotionFadeUp>
             </section>
         </div>
+        </div>
+
+        <div className="elevate-white px-4 md:px-8 py-12 md:py-16 pb-16 md:pb-20 -mx-4 md:-mx-8">
+          <div className="section-stack space-y-10 md:space-y-14 max-w-6xl mx-auto">
+            <RecentRoastsFeed />
+
+            <WhatWeOffer variant="compact" />
+
+            <CareerToolsSection />
+
+            <SeoIntroSection />
+
+            <TopicClusterNav className="mt-8 md:mt-10 rounded-[2rem] border border-border bg-bg-beige/50 p-5 md:p-6" />
+          </div>
+        </div>
       </div>
 
-      <SiteFooter tagline={t.footer} support={t.support} />
+      <SiteFooter tagline={t.footer} />
 
       {/* First-time onboarding */}
       {showOnboarding && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center px-4" style={{ background: 'rgba(0,0,0,0.95)' }}>
-          <div className="neo-frame neo-frame--orange p-6 max-w-md w-full max-h-[90vh] overflow-y-auto" dir={isRtl ? 'rtl' : 'ltr'}>
-            <p className="font-display text-2xl text-white mb-1 text-center">{t.onboarding.welcome}</p>
+          <div className="card-ui p-6 max-w-md w-full max-h-[90vh] overflow-y-auto rounded-[2rem]" dir={isRtl ? 'rtl' : 'ltr'}>
+            <p className="font-display text-2xl text-text-dark mb-1 text-center">{t.onboarding.welcome}</p>
             {onboardStep === 1 ? (
               <>
                 <p className="font-body text-[13px] text-muted mb-5 text-center">
                   {t.onboarding.pickLangSub}
                 </p>
-                <p className="font-body text-[11px] text-[#444444] uppercase tracking-[0.1em] mb-3 text-center">{t.onboarding.pickLang}</p>
+                <p className="font-body text-[11px] text-muted uppercase tracking-[0.1em] mb-3 text-center">{t.onboarding.pickLang}</p>
                 <LanguagePicker language={language} onSelect={selectLanguage} compact />
                 <button
                   type="button"
@@ -851,12 +923,22 @@ export default function Home() {
                   placeholder={t.onboarding.namePlaceholder}
                   maxLength={30}
                   autoFocus
-                  className="w-full bg-page border border-border rounded-xl px-4 py-3 font-body text-sm text-white placeholder:text-[#444444] focus:border-orange outline-none"
+                  autoComplete="off"
+                  name="mcr-onboard-display-name"
+                  className="w-full bg-white border border-border rounded-xl px-4 py-3 font-body text-sm text-text-dark placeholder:text-muted focus:border-orange outline-none"
                   aria-label={t.onboarding.yourName}
                 />
                 {onboardError && <p className="font-body text-xs text-red-400">{onboardError}</p>}
                 <button type="submit" disabled={onboardLoading} className="btn-roast w-full py-3 text-base">
                   {onboardLoading ? t.onboarding.loading : t.onboarding.start}
+                </button>
+                <button
+                  type="button"
+                  onClick={handleOnboardSkip}
+                  disabled={onboardLoading}
+                  className="w-full py-2 font-body text-sm text-muted hover:text-white transition-colors"
+                >
+                  {t.onboarding.skip}
                 </button>
               </form>
             )}
@@ -869,7 +951,7 @@ export default function Home() {
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4" style={{ background: 'rgba(0,0,0,0.9)' }}>
           <div className="card-ui p-6 max-w-sm w-full rounded-[20px]" dir={isRtl ? 'rtl' : 'ltr'}>
             {captureSuccess ? (
-              <p className="font-display text-xl text-white text-center py-4">{t.emailCapture.success}</p>
+              <p className="font-display text-xl text-text-dark text-center py-4">{t.emailCapture.success}</p>
             ) : (
               <form onSubmit={handleEmailCapture} className="space-y-3">
                 <input
@@ -879,17 +961,17 @@ export default function Home() {
                   placeholder={t.emailCapture.emailPh}
                   autoFocus
                   required
-                  className="w-full bg-page border border-border rounded-xl px-4 py-3 font-body text-sm text-white placeholder:text-[#444444] focus:border-orange outline-none"
+                  className="w-full bg-white border border-border rounded-xl px-4 py-3 font-body text-sm text-text-dark placeholder:text-muted focus:border-orange outline-none"
                   aria-label={t.emailCapture.emailPh}
                 />
-                <p className="font-body text-[11px] text-[#444444]">{t.emailCapture.noSpam}</p>
+                <p className="font-body text-[11px] text-muted">{t.emailCapture.noSpam}</p>
                 {captureError && <p className="font-body text-xs text-red-400">{captureError}</p>}
                 <button type="submit" disabled={captureLoading} className="btn-roast w-full py-3 text-base">
                   {captureLoading ? t.onboarding.loading : t.emailCapture.submit}
                 </button>
               </form>
             )}
-            <button type="button" onClick={() => setShowSignup(false)} className="w-full font-body text-[13px] text-[#333333] hover:text-muted py-1 mt-2">
+            <button type="button" onClick={() => setShowSignup(false)} className="w-full font-body text-[13px] text-subtle hover:text-muted py-1 mt-2">
               {t.signup.later}
             </button>
           </div>
@@ -899,15 +981,30 @@ export default function Home() {
       {/* Paywall */}
       {showPaywall && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4" style={{ background: 'rgba(0,0,0,0.9)' }}>
-          <div className="neo-frame neo-frame--orange p-8 max-w-sm w-full text-center" dir={isRtl ? 'rtl' : 'ltr'}>
+          <div className="card-ui p-8 max-w-sm w-full text-center rounded-[2rem]" dir={isRtl ? 'rtl' : 'ltr'}>
             <p className="text-[48px] mb-4">😅</p>
-            <h3 className="font-display text-[28px] text-white mb-2">{t.paywall.title}</h3>
+            <h3 className="font-display text-[28px] text-text-dark mb-2">{t.paywall.title}</h3>
             <p className="font-body text-sm text-muted mb-6">{t.paywall.sub}</p>
             <span className="inline-block bg-orange text-black font-body text-[13px] px-4 py-1.5 rounded-full mb-6">
               {t.paywall.price}
             </span>
-            <button className="btn-roast w-full py-3 text-base mb-3 block">{t.paywall.unlock}</button>
-            <button onClick={() => setShowPaywall(false)} className="font-body text-[13px] text-[#333333] hover:text-muted">
+            {process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID ? (
+              <RazorpayProButton
+                fp={fp}
+                className="btn-roast w-full py-3 text-base mb-3"
+                onSuccess={() => {
+                  setUsesLeft(999)
+                  setShowPaywall(false)
+                }}
+              >
+                {t.paywall.unlock}
+              </RazorpayProButton>
+            ) : (
+              <Link href="/plans" className="btn-roast w-full py-3 text-base mb-3 block">
+                {t.paywall.unlock}
+              </Link>
+            )}
+            <button type="button" onClick={() => setShowPaywall(false)} className="font-body text-[13px] text-subtle hover:text-muted">
               {t.paywall.later}
             </button>
           </div>

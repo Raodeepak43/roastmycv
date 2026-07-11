@@ -1,15 +1,17 @@
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
+import { resolvePostAuthRedirect } from '@/lib/dashboard/paths'
+import { touchIdleSessionCookie } from '@/lib/auth/idle-session'
+import { getSiteOrigin, safeRedirectPath } from '@/lib/auth/redirects'
+import { mergeAuthCookieOptions } from '@/lib/supabase/cookie-options'
 import { getSupabaseAnonKey, getSupabaseUrl } from '@/lib/supabase/env'
 
 export async function GET(request: Request) {
-  const { searchParams, origin } = new URL(request.url)
+  const { searchParams } = new URL(request.url)
   const code = searchParams.get('code')
-  let next = searchParams.get('next') ?? '/dashboard'
-  if (!next.startsWith('/')) {
-    next = '/dashboard'
-  }
+  const next = safeRedirectPath(searchParams.get('next'), '/dashboard')
+  const origin = getSiteOrigin(request)
 
   const url = getSupabaseUrl()
   const key = getSupabaseAnonKey()
@@ -26,7 +28,7 @@ export async function GET(request: Request) {
       },
       setAll(cookiesToSet) {
         cookiesToSet.forEach(({ name, value, options }) =>
-          cookieStore.set(name, value, options),
+          cookieStore.set(name, value, mergeAuthCookieOptions(options)),
         )
       },
     },
@@ -35,17 +37,12 @@ export async function GET(request: Request) {
   const { error } = await supabase.auth.exchangeCodeForSession(code)
   if (error) {
     console.error('[auth/callback]', error.message)
-    return NextResponse.redirect(`${origin}/login?error=auth`)
+    const isRecovery = safeRedirectPath(searchParams.get('next'), '/dashboard') === '/login/update-password'
+    const loginError = isRecovery ? 'reset_expired' : 'auth'
+    return NextResponse.redirect(`${origin}/login/forgot-password?error=${loginError}`)
   }
 
-  const forwardedHost = request.headers.get('x-forwarded-host')
-  const isLocalEnv = process.env.NODE_ENV === 'development'
-
-  if (isLocalEnv) {
-    return NextResponse.redirect(`${origin}${next}`)
-  }
-  if (forwardedHost) {
-    return NextResponse.redirect(`https://${forwardedHost}${next}`)
-  }
-  return NextResponse.redirect(`${origin}${next}`)
+  const redirect = NextResponse.redirect(resolvePostAuthRedirect(next, request))
+  touchIdleSessionCookie(redirect)
+  return redirect
 }

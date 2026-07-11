@@ -1,12 +1,22 @@
 ---
-title: "Fresher Resume Format with Examples 2026 (India)"
+title: "Fresher Resume Format India — Examples & About Me 2026"
+metaTitle: "Fresher Resume Format India — Free Examples 2026"
 slug: "fresher-resume-format"
 date: "2025-09-03"
-description: "Perfect fresher resume format for Indian job seekers. Examples, templates, and tips for your first job."
-keywords: "fresher resume format, resume for freshers, no experience resume, fresher resume tips"
+description: "Indian fresher resume format with about-me examples. One-page template + free AI roast — instant campus-ready score, no signup."
+keywords: "fresher resume format, indian fresher cv, fresher resume about me, resume for freshers, no experience resume"
+faq:
+  - q: "What is the best fresher resume format in India?"
+    a: "One page: Header, 2-line professional summary (about me), Education, Skills, Projects, Internships, Certifications. Skip photos and objective statements for IT/MNC roles."
+  - q: "What should I write in fresher resume about me section?"
+    a: "2–3 lines targeting the role: degree, core skills, one proof point (project, internship, or achievement). Example: 'B.Tech CSE fresher with Python & React projects. Built a hostel management app used by 200+ students.'"
+  - q: "How is an Indian fresher CV different from a US resume?"
+    a: "Indian CVs often include CGPA, 10th/12th marks, and city. Skip marital status and photos for most IT companies. Keep one page for 0–2 years experience."
+  - q: "Can I get AI feedback on my fresher resume?"
+    a: "Yes — upload at mycvroast.in for a free roast. Instant score, Hinglish feedback, and fixes tailored for campus placement and off-campus hunts."
 ---
 
-Landing your first job in India with no full-time experience feels impossible until you realize recruiters are not looking for ten years of work history — they are looking for potential, clarity, and proof you can deliver. The right **fresher resume format** makes that visible in six seconds. This guide covers structure, real examples, common mistakes, and how to build a **resume for freshers** that passes ATS filters and earns interview calls in 2026.
+Landing your first job in India with no full-time experience feels impossible until you realize recruiters are not looking for ten years of work history — they are looking for potential, clarity, and proof you can deliver. The right **fresher resume format** and a sharp **fresher resume about me** (professional summary) make that visible in six seconds. This guide covers structure, real **Indian fresher CV** examples, common mistakes, and how to build a **resume for freshers** that passes ATS filters and earns interview calls in 2026.
 
 ## The Ideal Fresher Resume Structure
 

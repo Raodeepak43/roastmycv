@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server'
 import { isSupabaseAuthConfigured } from '@/lib/supabase/env'
 import { createRouteHandlerClient } from '@/lib/supabase/route-handler'
+import { getAuthCallbackUrl, safeRedirectPath } from '@/lib/auth/redirects'
+
+export const dynamic = 'force-dynamic'
 
 export async function GET(request: Request) {
   if (!isSupabaseAuthConfigured()) {
@@ -8,12 +11,13 @@ export async function GET(request: Request) {
   }
 
   try {
-    const origin = new URL(request.url).origin
+    const { searchParams } = new URL(request.url)
+    const next = safeRedirectPath(searchParams.get('next'))
     const supabase = createRouteHandlerClient()
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${origin}/auth/callback?next=/dashboard`,
+        redirectTo: getAuthCallbackUrl(request, next),
         queryParams: { access_type: 'offline', prompt: 'consent' },
       },
     })

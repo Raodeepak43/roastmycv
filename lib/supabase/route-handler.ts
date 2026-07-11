@@ -1,9 +1,11 @@
+import { NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
+import { mergeAuthCookieOptions } from '@/lib/supabase/cookie-options'
 import { getSupabaseAnonKey, getSupabaseUrl } from '@/lib/supabase/env'
 
 /** Supabase client for Route Handlers — reads SUPABASE_ANON_KEY from server env. */
-export function createRouteHandlerClient() {
+export function createRouteHandlerClient(response?: NextResponse) {
   const url = getSupabaseUrl()
   const key = getSupabaseAnonKey()
   if (!url || !key) {
@@ -18,9 +20,11 @@ export function createRouteHandlerClient() {
         return cookieStore.getAll()
       },
       setAll(cookiesToSet) {
-        cookiesToSet.forEach(({ name, value, options }) =>
-          cookieStore.set(name, value, options),
-        )
+        cookiesToSet.forEach(({ name, value, options }) => {
+          const merged = mergeAuthCookieOptions(options)
+          cookieStore.set(name, value, merged)
+          response?.cookies.set(name, value, merged)
+        })
       },
     },
   })

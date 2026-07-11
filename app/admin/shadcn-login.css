@@ -20,7 +20,7 @@
   --cn-border: 240 5.9% 90%;
   --cn-input: 240 5.9% 90%;
   --cn-ring: 16 100% 50%;
-  font-family: Inter, system-ui, sans-serif;
+  font-family: var(--font-syne), Syne;
   color: hsl(var(--cn-foreground));
   background-color: hsl(var(--cn-background));
 }

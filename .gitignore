@@ -6,3 +6,11 @@ node_modules
 .DS_Store
 .vercel
 emails.csv
+
+testsprite_tests/tmp/config.json
+.cursor/
+.claude/
+tsconfig.tsbuildinfo
+*.xlsx
+brain.md
+generated-urls.txt

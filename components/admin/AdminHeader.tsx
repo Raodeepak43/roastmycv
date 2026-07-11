@@ -8,7 +8,7 @@ export function AdminHeader({ title, description }: { title: string; description
 
   const logout = async () => {
     await fetch('/api/admin/auth', { method: 'DELETE' })
-    router.push('/admin/login')
+    router.push('/')
     router.refresh()
   }
 

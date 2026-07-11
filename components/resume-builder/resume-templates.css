@@ -1,0 +1,228 @@
+/* ATS-safe resume templates — single column, no tables */
+
+.rb-resume {
+  font-family: var(--font-syne), Syne, system-ui, sans-serif;
+  font-size: 11px;
+  color: #1a1a1a;
+  line-height: 1.5;
+  padding: 32px 36px;
+  max-width: 780px;
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.rb-resume__header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1.5px solid var(--rb-rule, #e5e7eb);
+}
+
+.rb-resume__name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 3px;
+}
+
+.rb-resume__title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--rb-accent, #ff4500);
+  margin-bottom: 5px;
+}
+
+.rb-resume__contact {
+  font-size: 10px;
+  color: #555;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.rb-resume__section {
+  margin-bottom: 14px;
+}
+
+.rb-resume__section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--rb-accent, #ff4500);
+  border-bottom: 1px solid var(--rb-section-rule, #ffe8dc);
+  padding-bottom: 3px;
+  margin-bottom: 6px;
+}
+
+.rb-resume__section-title--spaced {
+  margin-bottom: 8px;
+}
+
+.rb-resume__body {
+  font-size: 10.5px;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.rb-resume__job {
+  margin-bottom: 10px;
+}
+
+.rb-resume__job-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.rb-resume__company {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.rb-resume__dates {
+  font-size: 10px;
+  color: #666;
+}
+
+.rb-resume__role {
+  font-size: 11px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 5px;
+}
+
+.rb-resume__list {
+  margin: 0;
+  padding-left: 14px;
+  list-style: disc;
+}
+
+.rb-resume__list li {
+  font-size: 10.5px;
+  color: #333;
+  margin-bottom: 3px;
+  line-height: 1.5;
+}
+
+.rb-resume__project-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.rb-resume__project-tech {
+  font-size: 10px;
+  color: var(--rb-accent, #ff4500);
+  font-weight: 400;
+}
+
+.rb-resume__skills-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 4px;
+}
+
+.rb-resume__skill-label {
+  font-size: 10px;
+  color: #666;
+  font-weight: 600;
+}
+
+.rb-resume__skill-value {
+  font-size: 10px;
+  color: #333;
+}
+
+.rb-resume__edu-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rb-resume__degree {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.rb-resume__school {
+  font-size: 10px;
+  color: #555;
+}
+
+/* Classic — orange left accent */
+.rb-resume--classic {
+  --rb-accent: #ff4500;
+  --rb-rule: #e5e7eb;
+  --rb-section-rule: #ffe8dc;
+  border-left: 4px solid var(--rb-accent);
+}
+
+/* Modern — centered header, blue accent */
+.rb-resume--modern {
+  --rb-accent: #2563eb;
+  --rb-rule: #dbeafe;
+  --rb-section-rule: #dbeafe;
+}
+
+.rb-resume--modern .rb-resume__header {
+  text-align: center;
+  border-bottom: 2px solid var(--rb-accent);
+}
+
+.rb-resume--modern .rb-resume__contact {
+  justify-content: center;
+}
+
+.rb-resume--modern .rb-resume__section-title {
+  color: #1e40af;
+  border-bottom-color: #bfdbfe;
+}
+
+/* Minimal — monochrome */
+.rb-resume--minimal {
+  --rb-accent: #111827;
+  --rb-rule: #d1d5db;
+  --rb-section-rule: #e5e7eb;
+  padding: 36px 40px;
+}
+
+.rb-resume--minimal .rb-resume__title {
+  color: #374151;
+  font-weight: 500;
+}
+
+.rb-resume--minimal .rb-resume__section-title {
+  color: #111827;
+  letter-spacing: 0.12em;
+  border-bottom: 1px solid #111827;
+}
+
+/* Professional — navy, structured */
+.rb-resume--professional {
+  --rb-accent: #1e3a5f;
+  --rb-rule: #cbd5e1;
+  --rb-section-rule: #e2e8f0;
+  border-top: 3px solid var(--rb-accent);
+}
+
+.rb-resume--professional .rb-resume__name {
+  color: var(--rb-accent);
+}
+
+.rb-resume--professional .rb-resume__section-title {
+  background: #f8fafc;
+  padding: 4px 8px;
+  border-bottom: none;
+  margin-bottom: 8px;
+}
+
+.rb-resume__header.rb-resume__section--active,
+.rb-resume__section.rb-resume__section--active {
+  outline: 2px solid rgba(255, 69, 0, 0.55);
+  outline-offset: 4px;
+  border-radius: 4px;
+  background: rgba(255, 247, 237, 0.65);
+}

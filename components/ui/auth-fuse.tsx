@@ -1,8 +1,27 @@
 'use client'
 
 import { useState, useId, useEffect } from 'react'
+import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Eye, EyeOff } from 'lucide-react'
+import { GoogleSignInButton } from '@/components/auth/GoogleSignInButton'
+import { AuthAnimatedCharacters } from '@/components/auth/AuthAnimatedCharacters'
+import { Logo } from '@/components/Logo'
+import { navigateAfterAuth } from '@/lib/dashboard/paths'
+import { safeRedirectPath } from '@/lib/auth/redirects'
+import {
+  AUTH_SERVER_ERROR,
+  AUTH_SIGNIN_INVALID,
+  AUTH_SIGNUP_INVALID,
+  AUTH_SIGNUP_SUCCESS,
+  AUTH_RESET_EXPIRED,
+} from '@/lib/auth/messages'
+
+export interface PasswordInteraction {
+  isTyping: boolean
+  passwordLength: number
+  showPassword: boolean
+}
 
 export interface TypewriterProps {
   text: string | string[]
@@ -17,7 +36,7 @@ export interface TypewriterProps {
 export function Typewriter({
   text,
   speed = 100,
-  cursor = '|',
+  cursor = '',
   loop = false,
   deleteSpeed = 50,
   delay = 1500,
@@ -28,6 +47,7 @@ export function Typewriter({
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
   const [textArrayIndex, setTextArrayIndex] = useState(0)
+  const [isComplete, setIsComplete] = useState(false)
 
   const textArray = Array.isArray(text) ? text : [text]
   const currentText = textArray[textArrayIndex] || ''
@@ -35,6 +55,14 @@ export function Typewriter({
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  useEffect(() => {
+    setDisplayText('')
+    setCurrentIndex(0)
+    setIsDeleting(false)
+    setTextArrayIndex(0)
+    setIsComplete(false)
+  }, [text])
 
   useEffect(() => {
     if (!mounted || !currentText) return
@@ -47,9 +75,12 @@ export function Typewriter({
             setCurrentIndex((prev) => prev + 1)
           } else if (loop) {
             setTimeout(() => setIsDeleting(true), delay)
+          } else {
+            setIsComplete(true)
           }
         } else if (displayText.length > 0) {
           setDisplayText((prev) => prev.slice(0, -1))
+          setIsComplete(false)
         } else {
           setIsDeleting(false)
           setCurrentIndex(0)
@@ -74,25 +105,56 @@ export function Typewriter({
   ])
 
   if (!mounted) {
-    return <span className={className} aria-hidden />
+    return <span className={className}>{Array.isArray(text) ? text[0] : text}</span>
   }
+
+  const showCursor = !isComplete || loop
 
   return (
     <span className={className}>
       {displayText}
-      <span className="animate-pulse">{cursor}</span>
+      {showCursor ? (
+        cursor ? (
+          <span className="auth-typewriter-cursor-char">{cursor}</span>
+        ) : (
+          <span className="auth-typewriter-cursor" aria-hidden="true" />
+        )
+      ) : null}
     </span>
   )
 }
 
 interface PasswordInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string
+  onInteractionChange?: (state: PasswordInteraction) => void
 }
 
-function PasswordInput({ className, label, id: idProp, ...props }: PasswordInputProps) {
+function PasswordInput({
+  className,
+  label,
+  id: idProp,
+  onInteractionChange,
+  onFocus,
+  onBlur,
+  onChange,
+  ...props
+}: PasswordInputProps) {
   const generatedId = useId()
   const id = idProp ?? generatedId
   const [showPassword, setShowPassword] = useState(false)
+  const [isFocused, setIsFocused] = useState(false)
+  const [length, setLength] = useState(0)
+
+  const emit = (next: Partial<{ isFocused: boolean; length: number; show: boolean }>) => {
+    const focused = next.isFocused ?? isFocused
+    const len = next.length ?? length
+    const show = next.show ?? showPassword
+    onInteractionChange?.({
+      isTyping: focused,
+      passwordLength: len,
+      showPassword: show,
+    })
+  }
 
   return (
     <div className="auth-fuse-field">
@@ -106,11 +168,33 @@ function PasswordInput({ className, label, id: idProp, ...props }: PasswordInput
           id={id}
           type={showPassword ? 'text' : 'password'}
           className={`auth-fuse-input ${className ?? ''}`}
+          onFocus={(e) => {
+            setIsFocused(true)
+            emit({ isFocused: true })
+            onFocus?.(e)
+          }}
+          onBlur={(e) => {
+            setIsFocused(false)
+            emit({ isFocused: false })
+            onBlur?.(e)
+          }}
+          onChange={(e) => {
+            const len = e.target.value.length
+            setLength(len)
+            emit({ length: len })
+            onChange?.(e)
+          }}
           {...props}
         />
         <button
           type="button"
-          onClick={() => setShowPassword((prev) => !prev)}
+          onClick={() => {
+            setShowPassword((prev) => {
+              const next = !prev
+              emit({ show: next })
+              return next
+            })
+          }}
           className="auth-fuse-eye-btn"
           aria-label={showPassword ? 'Hide password' : 'Show password'}
         >
@@ -121,30 +205,13 @@ function PasswordInput({ className, label, id: idProp, ...props }: PasswordInput
   )
 }
 
-function GoogleIcon() {
-  return (
-    <svg className="auth-fuse-google-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        fill="#4285F4"
-        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-      />
-      <path
-        fill="#34A853"
-        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-      />
-      <path
-        fill="#FBBC05"
-        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-      />
-      <path
-        fill="#EA4335"
-        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-      />
-    </svg>
-  )
-}
-
-function SignInForm({ authConfigured }: { authConfigured: boolean }) {
+function SignInForm({
+  authConfigured,
+  onPasswordInteraction,
+}: {
+  authConfigured: boolean
+  onPasswordInteraction?: (state: PasswordInteraction) => void
+}) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [loading, setLoading] = useState(false)
@@ -172,13 +239,12 @@ function SignInForm({ authConfigured }: { authConfigured: boolean }) {
       })
       const data = await res.json()
       if (!res.ok) {
-        setError(data.error ?? 'Sign in failed')
+        setError(data.error ?? AUTH_SIGNIN_INVALID)
         return
       }
-      router.push(searchParams.get('next') || '/dashboard')
-      router.refresh()
+      navigateAfterAuth(searchParams.get('next'), router.push, router.refresh)
     } catch {
-      setError('Something went wrong. Try again.')
+      setError(AUTH_SERVER_ERROR)
     } finally {
       setLoading(false)
     }
@@ -199,7 +265,7 @@ function SignInForm({ authConfigured }: { authConfigured: boolean }) {
             id="signin-email"
             name="email"
             type="email"
-            placeholder="m@example.com"
+            placeholder="you@example.com"
             required
             autoComplete="email"
             className="auth-fuse-input"
@@ -212,7 +278,13 @@ function SignInForm({ authConfigured }: { authConfigured: boolean }) {
           required
           autoComplete="current-password"
           placeholder="Password"
+          onInteractionChange={onPasswordInteraction}
         />
+        <p className="auth-fuse-forgot-row">
+          <Link href="/login/forgot-password" className="text-orange hover:text-white text-sm">
+            Forgot password?
+          </Link>
+        </p>
         {error && <p className="auth-fuse-alert auth-fuse-alert-error">{error}</p>}
         <button type="submit" className="auth-fuse-btn" disabled={loading}>
           {loading ? 'Signing in…' : 'Sign In'}
@@ -222,8 +294,15 @@ function SignInForm({ authConfigured }: { authConfigured: boolean }) {
   )
 }
 
-function SignUpForm({ authConfigured }: { authConfigured: boolean }) {
+function SignUpForm({
+  authConfigured,
+  onPasswordInteraction,
+}: {
+  authConfigured: boolean
+  onPasswordInteraction?: (state: PasswordInteraction) => void
+}) {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [message, setMessage] = useState('')
@@ -252,17 +331,16 @@ function SignUpForm({ authConfigured }: { authConfigured: boolean }) {
       })
       const data = await res.json()
       if (!res.ok) {
-        setError(data.error ?? 'Sign up failed')
+        setError(data.error ?? AUTH_SIGNUP_INVALID)
         return
       }
       if (!data.needsEmailConfirm) {
-        router.push('/dashboard')
-        router.refresh()
+        navigateAfterAuth(searchParams.get('next'), router.push, router.refresh)
         return
       }
-      setMessage('Check your email to confirm your account.')
+      setMessage(data.message ?? AUTH_SIGNUP_SUCCESS)
     } catch {
-      setError('Something went wrong. Try again.')
+      setError(AUTH_SERVER_ERROR)
     } finally {
       setLoading(false)
     }
@@ -297,7 +375,7 @@ function SignUpForm({ authConfigured }: { authConfigured: boolean }) {
             id="signup-email"
             name="email"
             type="email"
-            placeholder="m@example.com"
+            placeholder="you@example.com"
             required
             autoComplete="email"
             className="auth-fuse-input"
@@ -311,6 +389,7 @@ function SignUpForm({ authConfigured }: { authConfigured: boolean }) {
           autoComplete="new-password"
           placeholder="Password"
           minLength={6}
+          onInteractionChange={onPasswordInteraction}
         />
         {error && <p className="auth-fuse-alert auth-fuse-alert-error">{error}</p>}
         {message && <p className="auth-fuse-alert auth-fuse-alert-success">{message}</p>}
@@ -326,22 +405,19 @@ function AuthFormContainer({
   isSignIn,
   onToggle,
   authConfigured,
+  onPasswordInteraction,
 }: {
   isSignIn: boolean
   onToggle: () => void
   authConfigured: boolean
+  onPasswordInteraction?: (state: PasswordInteraction) => void
 }) {
-  const handleGoogle = () => {
-    if (!authConfigured) return
-    window.location.href = '/api/auth/google'
-  }
-
   return (
     <>
       {isSignIn ? (
-        <SignInForm authConfigured={authConfigured} />
+        <SignInForm authConfigured={authConfigured} onPasswordInteraction={onPasswordInteraction} />
       ) : (
-        <SignUpForm authConfigured={authConfigured} />
+        <SignUpForm authConfigured={authConfigured} onPasswordInteraction={onPasswordInteraction} />
       )}
       <p className="auth-fuse-toggle-row">
         {isSignIn ? "Don't have an account?" : 'Already have an account?'}{' '}
@@ -352,21 +428,15 @@ function AuthFormContainer({
       <div className="auth-fuse-divider">
         <span>Or continue with</span>
       </div>
-      <button
-        type="button"
-        className="auth-fuse-btn"
-        onClick={handleGoogle}
-        disabled={!authConfigured}
-      >
-        <GoogleIcon />
-        Continue with Google
-      </button>
+      <GoogleSignInButton authConfigured={authConfigured} />
+      <p className="auth-fuse-plans-link">
+        <Link href="/plans">View plans &amp; what we offer →</Link>
+      </p>
     </>
   )
 }
 
 interface AuthContentProps {
-  image?: { src: string; alt: string }
   quote?: { text: string; author: string }
 }
 
@@ -377,10 +447,6 @@ interface AuthUIProps {
 }
 
 const defaultSignInContent = {
-  image: {
-    src: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80',
-    alt: 'Modern workspace with natural light',
-  },
   quote: {
     text: 'Welcome back! Ready to fix that resume?',
     author: 'MyCVRoast',
@@ -388,10 +454,6 @@ const defaultSignInContent = {
 }
 
 const defaultSignUpContent = {
-  image: {
-    src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
-    alt: 'Team collaborating in a bright office',
-  },
   quote: {
     text: 'Create an account. Your next roast awaits.',
     author: 'MyCVRoast',
@@ -405,28 +467,41 @@ export function AuthUI({
 }: AuthUIProps) {
   const searchParams = useSearchParams()
   const [isSignIn, setIsSignIn] = useState(true)
+  const [passwordInteraction, setPasswordInteraction] = useState<PasswordInteraction>({
+    isTyping: false,
+    passwordLength: 0,
+    showPassword: false,
+  })
 
   useEffect(() => {
     if (searchParams.get('mode') === 'signup') setIsSignIn(false)
   }, [searchParams])
 
+  const handleToggleMode = () => {
+    setIsSignIn((p) => !p)
+    setPasswordInteraction({ isTyping: false, passwordLength: 0, showPassword: false })
+  }
+
   const finalSignInContent = {
-    image: { ...defaultSignInContent.image, ...signInContent.image },
     quote: { ...defaultSignInContent.quote, ...signInContent.quote },
   }
   const finalSignUpContent = {
-    image: { ...defaultSignUpContent.image, ...signUpContent.image },
     quote: { ...defaultSignUpContent.quote, ...signUpContent.quote },
   }
 
   const currentContent = isSignIn ? finalSignInContent : finalSignUpContent
   const configError = searchParams.get('error') === 'auth'
+  const resetExpired = searchParams.get('error') === 'reset_expired'
+  const sessionExpired = searchParams.get('reason') === 'session_expired'
   const envError = searchParams.get('error') === 'config' || !authConfigured
 
   return (
     <div className="auth-fuse-theme">
       <div className="auth-fuse-form-panel">
         <div className="auth-fuse-form-inner">
+          <div className="auth-fuse-mobile-brand md:hidden">
+            <Logo variant="light" href="/" className="auth-fuse-brand-logo" />
+          </div>
           {envError && (
             <div className="auth-fuse-alert auth-fuse-alert-warn">
               <strong>Missing anon key.</strong> Open{' '}
@@ -446,27 +521,61 @@ export function AuthUI({
               Then restart: <code>rm -rf .next && npm run dev</code>
             </div>
           )}
+          {sessionExpired && (
+            <p className="auth-fuse-alert auth-fuse-alert-warn">
+              Your session expired after 30 minutes of inactivity. Please sign in again.
+            </p>
+          )}
+          {resetExpired && (
+            <p className="auth-fuse-alert auth-fuse-alert-error">
+              {AUTH_RESET_EXPIRED}{' '}
+              <Link href="/login/forgot-password" className="text-orange underline">
+                Request a new link
+              </Link>
+            </p>
+          )}
           {configError && (
             <p className="auth-fuse-alert auth-fuse-alert-error">
-              Sign-in failed. Check Google redirect URLs include{' '}
-              <code>/auth/callback</code> in Supabase.
+              Google sign-in failed. In Google Cloud Console, add this redirect URI exactly:
+              <code style={{ display: 'block', marginTop: '0.5rem', wordBreak: 'break-all' }}>
+                https://rrtokbvxauxsgtjmuqof.supabase.co/auth/v1/callback
+              </code>
             </p>
           )}
           <AuthFormContainer
             isSignIn={isSignIn}
-            onToggle={() => setIsSignIn((p) => !p)}
+            onToggle={handleToggleMode}
             authConfigured={authConfigured}
+            onPasswordInteraction={setPasswordInteraction}
           />
         </div>
       </div>
 
-      <div
-        className="auth-fuse-image-panel"
-        style={{ backgroundImage: `url(${currentContent.image.src})` }}
-        role="img"
-        aria-label={currentContent.image.alt}
-      >
-        <div className="auth-fuse-image-gradient" />
+      <div className="auth-fuse-brand-panel" aria-hidden="false">
+        <div className="auth-fuse-brand-bg" aria-hidden="true">
+          <div className="auth-fuse-brand-glow" />
+          <div className="auth-fuse-brand-grid" />
+          <div className="auth-fuse-brand-vignette" />
+        </div>
+
+        <div className="auth-fuse-brand-top">
+          <Logo variant="dark" href="/" className="auth-fuse-brand-logo" />
+          <p className="auth-fuse-brand-tagline">AI-POWERED · INSTANT · FREE</p>
+          <div className="auth-fuse-brand-badges">
+            <span>📄 ATS Resume</span>
+            <span>🔥 CV Roast</span>
+            <span>⚡ Live Score</span>
+          </div>
+        </div>
+
+        <div className="auth-fuse-brand-center">
+          <AuthAnimatedCharacters
+            isTyping={passwordInteraction.isTyping}
+            passwordLength={passwordInteraction.passwordLength}
+            showPassword={passwordInteraction.showPassword}
+          />
+        </div>
+
         <div className="auth-fuse-quote-wrap">
           <blockquote className="auth-fuse-quote">
             <p>

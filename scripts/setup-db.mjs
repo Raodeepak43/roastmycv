@@ -42,7 +42,7 @@ const client = new pg.Client({ connectionString: url, ssl: { rejectUnauthorized:
 try {
   await client.connect()
   await client.query(sql)
-  console.log('✅ MyCVRoast schema applied — app_stats, usage_limits, email_signups, roast_signups')
+  console.log('✅ MyCVRoast schema applied — app_stats, usage_limits, user_usage, user_roasts, email_signups, roast_signups')
 } catch (err) {
   console.error('❌ Schema failed:', err.message)
   process.exit(1)

@@ -38,7 +38,11 @@ export interface ResumePersonal {
   linkedin: string
 }
 
+import type { ResumeTemplateId } from '@/lib/resume-builder/templates'
+import { DEFAULT_TEMPLATE_ID } from '@/lib/resume-builder/templates'
+
 export interface ResumeData {
+  templateId?: ResumeTemplateId
   personal: ResumePersonal
   summary: string
   experience: ResumeExperience[]
@@ -70,6 +74,7 @@ export function createProject(): ResumeProject {
 
 export function defaultResumeData(): ResumeData {
   return {
+    templateId: DEFAULT_TEMPLATE_ID,
     personal: {
       fullName: '',
       jobTitle: '',

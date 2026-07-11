@@ -1,15 +1,17 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { NOINDEX_ROBOTS } from '@/lib/seo'
 import './admin.css'
 import './shadcn-login.css'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-
 export const metadata: Metadata = {
-  title: 'Admin | MyCVRoast',
-  robots: { index: false, follow: false },
+  title: 'Sign in',
+  robots: {
+    ...NOINDEX_ROBOTS,
+    nocache: true,
+    googleBot: { index: false, follow: false, noimageindex: true },
+  },
 }
 
 export default function AdminRootLayout({ children }: { children: React.ReactNode }) {
-  return <div className={inter.className}>{children}</div>
+  return <>{children}</>
 }

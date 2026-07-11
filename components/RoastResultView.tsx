@@ -2,14 +2,16 @@
 
 import { useCallback, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { SupportChaiBlock } from '@/components/SupportChai'
+import { RoastFixChecklist } from '@/components/RoastFixChecklist'
 import { NumberTicker } from '@/components/ui/be-ui-number-animation'
+import { RoastShareBar } from '@/components/roast/RoastShareBar'
+import { Logo } from '@/components/Logo'
 import { cn } from '@/lib/utils'
 import type { IntensityKey, UiStrings } from '@/app/i18n'
 import { getScoreLabelKey } from '@/app/i18n'
 
-const SHARE_URL = 'https://mycvroast.in'
-const SITE_URL = 'mycvroast.in'
+const SHARE_URL = 'https://www.mycvroast.in'
+const SITE_URL = 'www.mycvroast.in'
 
 export interface RoastResultData {
   lines: string[]
@@ -114,6 +116,8 @@ function ShareButtons({
 }
 
 export interface RoastResultViewProps {
+  roastId?: string
+  shareToken?: string
   result: RoastResultData
   t: UiStrings
   copied: boolean
@@ -126,6 +130,8 @@ export interface RoastResultViewProps {
 }
 
 export function RoastResultView({
+  roastId,
+  shareToken,
   result,
   t,
   copied,
@@ -210,6 +216,11 @@ export function RoastResultView({
           <p className="font-display text-[1.15rem] md:text-xl text-white leading-snug">
             &ldquo;{title}&rdquo;
           </p>
+          {result.verdict && result.verdict !== title ? (
+            <p className="font-body text-[13px] text-white/70 mt-2 leading-relaxed">
+              {result.verdict}
+            </p>
+          ) : null}
         </div>
 
         <section className="px-5 py-4 border-b border-white/10">
@@ -252,10 +263,43 @@ export function RoastResultView({
         </section>
 
         <div className="px-5 py-3 bg-black flex items-center justify-between gap-3 border-t border-white/5">
-          <span className="font-display text-sm text-white tracking-tight">🔥 MyCVRoast</span>
+          <span className="font-display text-sm text-white tracking-tight inline-flex items-center">
+            <Logo variant="dark" href={false} imageClassName="h-5 w-auto max-w-[100px]" />
+          </span>
           <span className="font-body text-[10px] text-dim uppercase tracking-[0.12em]">{SITE_URL}</span>
         </div>
       </article>
+
+      {shareToken && (
+        <div className="mt-5">
+          <RoastShareBar
+            shareToken={shareToken}
+            score={result.score}
+            language={result.language}
+            intensity={result.intensity}
+            lines={result.lines}
+            title={result.title}
+            verdict={result.verdict}
+            fixes={result.fixes}
+          />
+        </div>
+      )}
+
+      {roastId && fixes.length > 0 && (
+        <div className="mt-5">
+          <RoastFixChecklist
+            roastId={roastId}
+            fixes={fixes}
+            variant="dark"
+            title="Mark fixes as you go"
+                  resumeBuilderHref={`/resume-builder?fromRoast=${encodeURIComponent(roastId)}`}
+            roastAgainHref="/"
+            resumeBuilderLabel="Fix in Resume Builder"
+            roastAgainLabel="Roast updated resume"
+            allDoneLabel="Sab fix ho gaya? Updated resume upload karke dubara roast karo."
+          />
+        </div>
+      )}
 
       {/* Actions — outside the share card */}
       <div className="mt-5 space-y-4">
@@ -274,7 +318,7 @@ export function RoastResultView({
                   onChange={(e) => onResultNameInput(e.target.value)}
                   placeholder={t.onboarding.namePlaceholder}
                   maxLength={30}
-                  className="flex-1 bg-black/60 border border-border rounded-xl px-3 py-2.5 font-body text-sm text-white placeholder:text-[#555] focus:border-orange outline-none"
+                  className="flex-1 bg-black/60 border border-border rounded-xl px-3 py-2.5 font-body text-sm text-white placeholder:text-dim focus:border-orange outline-none"
                   aria-label={t.onboarding.yourName}
                 />
                 <button
@@ -307,11 +351,10 @@ export function RoastResultView({
             saveCardLabel={saveCardLabel}
             saveCardDoneLabel={saveCardDoneLabel}
           />
-          <SupportChaiBlock strings={t.support} className="!py-3 !text-base" />
           <button
             type="button"
             onClick={onReset}
-            className="w-full font-body text-[13px] text-[#555] hover:text-white py-2 transition-colors"
+            className="w-full font-body text-[13px] text-dim hover:text-white py-2 transition-colors"
           >
             ↩ {t.tryAgain}
           </button>

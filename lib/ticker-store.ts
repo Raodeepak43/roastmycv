@@ -20,18 +20,23 @@ const STORAGE_FILE = 'ticker_recent.json'
 const MAX_STORED = 50
 export const TICKER_DISPLAY_COUNT = 4
 
-const SEED: TickerEntry[] = [
-  { name: 'Arjun', score: 3, language: 'hinglish', at: '2026-01-01T00:00:00.000Z' },
-  { name: 'Neha', score: 7, language: 'english', at: '2026-01-01T00:01:00.000Z' },
-  { name: 'Rohan', score: 2, language: 'hinglish', at: '2026-01-01T00:02:00.000Z' },
-  { name: 'Priya', score: 5, language: 'english', at: '2026-01-01T00:03:00.000Z' },
-]
-
 function memoryEntries(): TickerEntry[] {
-  if (!global.roastTickerMem?.length) {
-    global.roastTickerMem = [...SEED]
+  return global.roastTickerMem ?? []
+}
+
+/** Keep only the latest entry per name (fixes duplicate lala/ravi rows). */
+export function dedupeTickerEntries(entries: TickerEntry[]): TickerEntry[] {
+  const latestByName = new Map<string, TickerEntry>()
+  for (const entry of entries) {
+    const key = entry.name.trim().toLowerCase()
+    const existing = latestByName.get(key)
+    if (!existing || new Date(entry.at).getTime() > new Date(existing.at).getTime()) {
+      latestByName.set(key, entry)
+    }
   }
-  return global.roastTickerMem
+  return Array.from(latestByName.values()).sort(
+    (a, b) => new Date(b.at).getTime() - new Date(a.at).getTime(),
+  )
 }
 
 async function ensureStorageBucket(): Promise<boolean> {
@@ -70,7 +75,7 @@ async function storageRead(): Promise<TickerEntry[] | null> {
     }
     const parsed = JSON.parse(await data.text())
     if (!Array.isArray(parsed?.entries)) return null
-    return parsed.entries as TickerEntry[]
+    return dedupeTickerEntries(parsed.entries as TickerEntry[])
   } catch (e) {
     console.error('ticker storage read exception:', e)
     return null
@@ -82,9 +87,10 @@ async function storageWrite(entries: TickerEntry[]): Promise<boolean> {
   if (!(await ensureStorageBucket())) return false
   try {
     const supabase = getSupabaseAdmin()
+    const deduped = dedupeTickerEntries(entries).slice(0, MAX_STORED)
     const { error } = await supabase.storage
       .from(STORAGE_BUCKET)
-      .upload(STORAGE_FILE, JSON.stringify({ entries: entries.slice(0, MAX_STORED) }), {
+      .upload(STORAGE_FILE, JSON.stringify({ entries: deduped }), {
         upsert: true,
         contentType: 'application/json',
       })
@@ -116,32 +122,25 @@ async function tableRead(): Promise<TickerEntry[] | null> {
       return null
     }
     if (!data?.length) return []
-    return data.map((row) => ({
-      name: row.name,
-      score: row.score ?? undefined,
-      language: row.language ?? undefined,
-      at: row.created_at ?? new Date().toISOString(),
-    }))
+    return dedupeTickerEntries(
+      data.map((row) => ({
+        name: row.name,
+        score: row.score ?? undefined,
+        language: row.language ?? undefined,
+        at: row.created_at ?? new Date().toISOString(),
+      })),
+    )
   } catch {
     return null
   }
 }
 
 function mergeEntryLists(...lists: (TickerEntry[] | null | undefined)[]): TickerEntry[] {
-  const seen = new Set<string>()
-  const out: TickerEntry[] = []
+  const combined: TickerEntry[] = []
   for (const list of lists) {
-    if (!list?.length) continue
-    for (const entry of list) {
-      const key = `${entry.name.toLowerCase()}|${entry.at}`
-      if (seen.has(key)) continue
-      seen.add(key)
-      out.push(entry)
-    }
+    if (list?.length) combined.push(...list)
   }
-  return out
-    .sort((a, b) => new Date(b.at).getTime() - new Date(a.at).getTime())
-    .slice(0, MAX_STORED)
+  return dedupeTickerEntries(combined).slice(0, MAX_STORED)
 }
 
 export async function getTickerEntries(): Promise<TickerEntry[]> {
@@ -150,16 +149,14 @@ export async function getTickerEntries(): Promise<TickerEntry[]> {
   const fromMemory = memoryEntries()
 
   const merged = mergeEntryLists(fromStorage, fromTable, fromMemory)
-  if (merged.length > 0) {
-    global.roastTickerMem = merged
-    return merged
-  }
-  global.roastTickerMem = [...SEED]
-  return global.roastTickerMem
+  global.roastTickerMem = merged
+  return merged
 }
 
 export function entriesToMessages(entries: TickerEntry[], limit = TICKER_DISPLAY_COUNT): string[] {
-  return entries.slice(0, limit).map((e) => buildTickerMessage(e.name, e.score, e.language))
+  return dedupeTickerEntries(entries)
+    .slice(0, limit)
+    .map((e) => buildTickerMessage(e.name, e.score, e.language))
 }
 
 export async function appendTickerEntry(entry: Omit<TickerEntry, 'at'> & { at?: string }): Promise<TickerEntry[]> {
@@ -171,7 +168,7 @@ export async function appendTickerEntry(entry: Omit<TickerEntry, 'at'> & { at?: 
   }
 
   const current = await getTickerEntries()
-  const next = mergeEntryLists([full], current)
+  const next = dedupeTickerEntries(mergeEntryLists([full], current))
   global.roastTickerMem = next
   await storageWrite(next)
 

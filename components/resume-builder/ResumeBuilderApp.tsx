@@ -2,34 +2,104 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
-import { SiteFooter } from '@/components/SiteFooter'
-import { AtsScorePanel } from '@/components/resume-builder/AtsScorePanel'
-import { ResumeEditorForm } from '@/components/resume-builder/ResumeEditorForm'
-import { ResumePreview } from '@/components/resume-builder/ResumePreview'
+import { Download } from 'lucide-react'
+import { AutosaveIndicator } from '@/components/resume-builder/AutosaveIndicator'
+import { ResumeBuilderUsageBadge } from '@/components/resume-builder/ResumeBuilderUsageBadge'
 import { UpgradeModal } from '@/components/resume-builder/UpgradeModal'
-import { calculateATS } from '@/lib/resume-builder/ats-score'
+import { ResumeBuilderWizard } from '@/components/resume-builder/wizard/ResumeBuilderWizard'
+import { useResumeAutosave } from '@/components/resume-builder/useResumeAutosave'
+import { useRoastPrefill } from '@/components/resume-builder/useRoastPrefill'
+import { useDashboardUser } from '@/components/dashboard/DashboardUserContext'
+import { markPageVisited } from '@/lib/dashboard/onboarding'
+import { loadResumeDraftPayload, resumeDraftStorageKey } from '@/lib/resume-builder/draft-storage'
+import { resolveTemplateId, type ResumeTemplateId } from '@/lib/resume-builder/templates'
 import { defaultResumeData, type ResumeData } from '@/lib/resume-builder/types'
 import {
-  aiUsesLeft,
   canDownloadPdf,
   incrementPdfDownloads,
-  pdfDownloadsLeft,
 } from '@/lib/resume-builder/usage'
 
-export function ResumeBuilderApp() {
+interface AccountUsage {
+  resumeAiLeft: number
+  resumePdfLeft: number
+  plan: string
+}
+
+export function ResumeBuilderApp({ embedded = false }: { embedded?: boolean }) {
+  const { userId, name: profileName } = useDashboardUser()
+  const draftKey = resumeDraftStorageKey(embedded && userId ? userId : 'public')
   const [data, setData] = useState<ResumeData>(defaultResumeData)
+  const [screenIndex, setScreenIndex] = useState(0)
+  const [draftLoaded, setDraftLoaded] = useState(false)
+  const { status: prefillStatus, filledCount: prefillFilledCount } = useRoastPrefill(setData)
   const [upgradeOpen, setUpgradeOpen] = useState(false)
+  const [upgradeMode, setUpgradeMode] = useState<'paywall' | 'login'>('paywall')
   const [downloading, setDownloading] = useState(false)
   const [usageTick, setUsageTick] = useState(0)
+  const [accountUsage, setAccountUsage] = useState<AccountUsage | null>(null)
 
-  const ats = useMemo(() => calculateATS(data), [data])
+  const templateId = resolveTemplateId(data.templateId)
+  const saveStatus = useResumeAutosave(data, draftKey, draftLoaded, screenIndex)
+
+  useEffect(() => {
+    const fromRoast = new URLSearchParams(window.location.search).get('fromRoast')
+    if (!fromRoast) {
+      const payload = loadResumeDraftPayload(draftKey)
+      if (payload?.data) {
+        setData(payload.data)
+        if (typeof payload.wizardStep === 'number') setScreenIndex(payload.wizardStep)
+      } else if (embedded && profileName.trim()) {
+        setData((prev) =>
+          prev.personal.fullName ? prev : { ...prev, personal: { ...prev.personal, fullName: profileName.trim() } },
+        )
+      }
+    }
+    setDraftLoaded(true)
+  }, [draftKey, embedded, profileName])
 
   const refreshUsage = () => setUsageTick((n) => n + 1)
 
-  const handleUpgrade = useCallback(() => setUpgradeOpen(true), [])
+  const loadAccountUsage = useCallback(async () => {
+    try {
+      const res = await fetch('/api/dashboard/resume-usage')
+      if (!res.ok) return
+      const json = await res.json()
+      setAccountUsage({
+        resumeAiLeft: json.usage?.resumeAiLeft ?? 0,
+        resumePdfLeft: json.usage?.resumePdfLeft ?? 0,
+        plan: json.usage?.plan ?? 'free',
+      })
+    } catch {
+      /* ignore */
+    }
+  }, [])
+
+  useEffect(() => {
+    if (embedded && userId) markPageVisited(userId, 'resume-builder')
+  }, [embedded, userId])
+
+  useEffect(() => {
+    if (embedded) loadAccountUsage()
+  }, [embedded, loadAccountUsage, usageTick])
+
+  const handlePaywall = useCallback(() => {
+    setUpgradeMode('paywall')
+    setUpgradeOpen(true)
+  }, [])
+
+  const setTemplate = useCallback((id: ResumeTemplateId) => {
+    setData((prev) => ({ ...prev, templateId: id }))
+  }, [])
 
   const downloadPdf = useCallback(async () => {
-    if (!canDownloadPdf()) {
+    if (embedded) {
+      if (!accountUsage) return
+      if (accountUsage.plan !== 'pro' && accountUsage.resumePdfLeft <= 0) {
+        handlePaywall()
+        return
+      }
+    } else if (!canDownloadPdf()) {
+      setUpgradeMode('login')
       setUpgradeOpen(true)
       return
     }
@@ -52,120 +122,92 @@ export function ResumeBuilderApp() {
         .from(element)
         .save()
 
-      incrementPdfDownloads()
-      refreshUsage()
-
-      if (!canDownloadPdf()) {
-        setUpgradeOpen(true)
+      if (embedded) {
+        await fetch('/api/dashboard/resume-usage', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ kind: 'pdf' }),
+        })
+        refreshUsage()
+        await loadAccountUsage()
+      } else {
+        incrementPdfDownloads()
+        refreshUsage()
       }
     } catch {
       /* ignore */
     } finally {
       setDownloading(false)
     }
-  }, [data.personal.fullName])
+  }, [accountUsage, data.personal.fullName, embedded, handlePaywall, loadAccountUsage])
 
-  const [usageLabel, setUsageLabel] = useState<string | null>(null)
+  const consumeAccountAi = useCallback(async () => {
+    await fetch('/api/dashboard/resume-usage', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ kind: 'ai' }),
+    })
+    refreshUsage()
+    loadAccountUsage()
+  }, [loadAccountUsage])
 
-  useEffect(() => {
-    const ai = aiUsesLeft()
-    const pdf = pdfDownloadsLeft()
-    const aiText = ai === Infinity ? '∞' : String(ai)
-    const pdfText = pdf === Infinity ? '∞' : String(pdf)
-    setUsageLabel(`AI: ${aiText} · PDF: ${pdfText}`)
-  }, [usageTick])
+  const checkAccountAi = useCallback(() => {
+    if (!accountUsage) return false
+    return accountUsage.plan === 'pro' || accountUsage.resumeAiLeft > 0
+  }, [accountUsage])
+
+  const stepFormProps = useMemo(
+    () => ({
+      onUpgrade: handlePaywall,
+      onAiUsed: refreshUsage,
+      checkCanUseAi: embedded ? checkAccountAi : undefined,
+      onAiConsumed: embedded ? consumeAccountAi : undefined,
+      aiUpgradeHref: '/dashboard/plans',
+    }),
+    [embedded, handlePaywall, checkAccountAi, consumeAccountAi],
+  )
+
+  const toolbar = (
+    <>
+      <span className="rb-wizard__toolbar-meta">Step {screenIndex + 1}</span>
+      <AutosaveIndicator status={saveStatus} theme="light" />
+      {accountUsage && (
+        <ResumeBuilderUsageBadge
+          aiLeft={accountUsage.plan === 'pro' ? Infinity : accountUsage.resumeAiLeft}
+          pdfLeft={accountUsage.plan === 'pro' ? Infinity : accountUsage.resumePdfLeft}
+          isPro={accountUsage.plan === 'pro'}
+          variant="light"
+          upgradeHref="/dashboard/plans"
+        />
+      )}
+      <button type="button" className="rb-wizard__toolbar-download" onClick={downloadPdf} disabled={downloading}>
+        <Download size={15} strokeWidth={2} aria-hidden />
+        {downloading ? 'Generating…' : 'Download PDF'}
+      </button>
+    </>
+  )
+
+  if (!embedded) {
+    return null
+  }
 
   return (
-    <main className="min-h-screen flex flex-col bg-page">
-      <header className="w-full border-b border-border bg-black/80 backdrop-blur-md sticky top-0 z-20">
-        <div className="max-w-[1600px] mx-auto px-4 md:px-6 py-3 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-4 min-w-0">
-            <Link
-              href="/"
-              className="font-display text-lg text-white hover:text-orange transition-colors shrink-0"
-            >
-              🔥 MyCVRoast
-            </Link>
-            <span className="font-body text-[11px] text-dim hidden sm:inline">/</span>
-            <span className="font-body text-[11px] text-orange truncate">Resume Builder</span>
-          </div>
-          <nav className="flex items-center gap-3 shrink-0">
-            <Link
-              href="/"
-              className="font-body text-[11px] text-dim hover:text-orange transition-colors hidden sm:inline"
-            >
-              Roast CV
-            </Link>
-            <Link
-              href="/blog"
-              className="font-body text-[11px] text-dim hover:text-orange transition-colors hidden sm:inline"
-            >
-              Blog
-            </Link>
-            {usageLabel && (
-              <span className="font-body text-[10px] text-[#555] hidden md:inline">
-                {usageLabel}
-              </span>
-            )}
-          </nav>
-        </div>
-      </header>
-
-      <div className="flex-1 grid lg:grid-cols-2 min-h-0">
-        {/* Editor */}
-        <div className="border-r border-border overflow-y-auto max-h-[calc(100vh-57px)] lg:max-h-[calc(100vh-57px)]">
-          <div className="p-4 md:p-6 max-w-xl lg:max-w-none mx-auto">
-            <div className="mb-6">
-              <h1 className="font-display text-2xl md:text-3xl text-white mb-1">
-                ATS Resume Builder
-              </h1>
-              <p className="font-body text-[13px] text-dim">
-                Amazon 10/10 clean template · single column · ATS safe
-              </p>
-            </div>
-
-            <AtsScorePanel ats={ats} />
-
-            <button
-              type="button"
-              onClick={downloadPdf}
-              disabled={downloading}
-              className="btn-roast w-full py-3.5 text-base mb-6 disabled:opacity-60"
-            >
-              {downloading ? '⏳ Generating PDF…' : '⬇ Download PDF — ATS Ready'}
-            </button>
-
-            <ResumeEditorForm
-              data={data}
-              onChange={setData}
-              onUpgrade={handleUpgrade}
-              onAiUsed={refreshUsage}
-            />
-          </div>
-        </div>
-
-        {/* Preview */}
-        <div className="bg-[#e5e7eb] overflow-y-auto max-h-[calc(100vh-57px)] p-4 md:p-8">
-          <div className="sticky top-0 z-10 mb-4 flex items-center justify-between gap-2 lg:hidden">
-            <span className="font-body text-[11px] text-[#666] uppercase tracking-wider">Live Preview</span>
-            <span
-              className="font-body text-[11px] font-medium px-2 py-1 rounded"
-              style={{ color: ats.color, backgroundColor: `${ats.color}18` }}
-            >
-              ATS {ats.score}/100
-            </span>
-          </div>
-          <div className="mx-auto shadow-lg">
-            <ResumePreview data={data} />
-          </div>
-          <p className="font-body text-[10px] text-[#888] text-center mt-4 max-w-[780px] mx-auto">
-            Preview matches PDF output exactly · Arial · single column · no tables
-          </p>
-        </div>
-      </div>
-
-      <SiteFooter support={undefined} />
-      <UpgradeModal open={upgradeOpen} onClose={() => setUpgradeOpen(false)} />
+    <main className="dash-rb dash-rb--wizard">
+      <ResumeBuilderWizard
+        mode="dashboard"
+        data={data}
+        onChange={setData}
+        screenIndex={screenIndex}
+        onScreenIndexChange={setScreenIndex}
+        templateId={templateId}
+        onTemplateChange={setTemplate}
+        onDownload={downloadPdf}
+        downloading={downloading}
+        toolbar={toolbar}
+        prefillBanner={{ status: prefillStatus, filledCount: prefillFilledCount }}
+        stepFormProps={stepFormProps}
+      />
+      <UpgradeModal open={upgradeOpen} onClose={() => setUpgradeOpen(false)} mode={upgradeMode} loginNext="/dashboard/resume-builder" />
     </main>
   )
 }

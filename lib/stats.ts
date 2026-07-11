@@ -7,7 +7,8 @@ declare global {
   var statsBucketReady: boolean | undefined
 }
 
-export const STATS_SEED = 1250
+/** Legacy fake floor baked into early deployments — subtract when reading stored counts. */
+export const LEGACY_STATS_INFLATION = 1250
 
 const STORAGE_BUCKET = 'mycvroast-data'
 const STORAGE_FILE = 'roast_count.json'
@@ -18,15 +19,20 @@ function parseCount(val: unknown): number | null {
   return Number.isNaN(n) ? null : n
 }
 
+/** Convert stored counter to honest public count (strips legacy seed inflation). */
+export function honestStatsCount(stored: number): number {
+  if (stored >= LEGACY_STATS_INFLATION) {
+    return Math.max(0, stored - LEGACY_STATS_INFLATION)
+  }
+  return Math.max(0, stored)
+}
+
 function isMissingTableError(message?: string): boolean {
   return Boolean(message?.includes('Could not find the table') || message?.includes('PGRST205'))
 }
 
 function memoryCount(): number {
-  if (global.roastCount === undefined || global.roastCount < STATS_SEED) {
-    global.roastCount = STATS_SEED
-  }
-  return global.roastCount
+  return global.roastCount ?? 0
 }
 
 async function kvAvailable(): Promise<boolean> {
@@ -73,13 +79,13 @@ async function storageGet(): Promise<number | null> {
     const { data, error } = await supabase.storage.from(STORAGE_BUCKET).download(STORAGE_FILE)
     if (error) {
       if (error.message.includes('not found') || error.message.includes('Object not found')) {
-        return STATS_SEED
+        return 0
       }
       console.error('stats storage read:', error.message)
       return null
     }
     const parsed = parseCount(JSON.parse(await data.text())?.count)
-    return parsed ?? STATS_SEED
+    return parsed ?? 0
   } catch (e) {
     console.error('stats storage read exception:', e)
     return null
@@ -90,8 +96,8 @@ async function storageIncrement(): Promise<number | null> {
   if (!isSupabaseConfigured()) return null
   if (!(await ensureStorageBucket())) return null
   try {
-    const current = (await storageGet()) ?? STATS_SEED
-    const next = Math.max(current, STATS_SEED) + 1
+    const current = (await storageGet()) ?? 0
+    const next = current + 1
     const supabase = getSupabaseAdmin()
     const { error } = await supabase.storage
       .from(STORAGE_BUCKET)
@@ -125,7 +131,7 @@ async function supabaseTableGet(): Promise<number | null> {
       return null
     }
     const parsed = parseCount(data?.value)
-    return parsed ?? STATS_SEED
+    return parsed ?? 0
   } catch (e) {
     console.error('supabase stats read exception:', e)
     return null
@@ -140,8 +146,12 @@ async function supabaseTableIncrement(): Promise<number | null> {
     const { data: rpcData, error: rpcError } = await supabase.rpc('increment_roast_count')
     if (!rpcError && rpcData != null) {
       const count = parseCount(rpcData)
-      if (count !== null) return Math.max(count, STATS_SEED)
-    } else if (rpcError && !isMissingTableError(rpcError.message) && !rpcError.message.includes('Could not find the function')) {
+      if (count !== null) return count
+    } else if (
+      rpcError &&
+      !isMissingTableError(rpcError.message) &&
+      !rpcError.message.includes('Could not find the function')
+    ) {
       console.error('supabase stats rpc:', rpcError.message)
     }
 
@@ -157,8 +167,8 @@ async function supabaseTableIncrement(): Promise<number | null> {
       return null
     }
 
-    const current = parseCount(row?.value) ?? STATS_SEED
-    const next = Math.max(current, STATS_SEED) + 1
+    const current = parseCount(row?.value) ?? 0
+    const next = current + 1
 
     const { data, error } = await supabase
       .from('app_stats')
@@ -173,7 +183,7 @@ async function supabaseTableIncrement(): Promise<number | null> {
 
     const count = parseCount(data?.value)
     if (count === null) return null
-    return Math.max(count, STATS_SEED)
+    return count
   } catch (e) {
     console.error('supabase stats increment exception:', e)
     return null
@@ -183,39 +193,36 @@ async function supabaseTableIncrement(): Promise<number | null> {
 export async function getStatsCount(): Promise<number> {
   const fromTable = await supabaseTableGet()
   if (fromTable !== null) {
-    const count = Math.max(fromTable, STATS_SEED)
-    global.roastCount = count
-    return count
+    global.roastCount = fromTable
+    return honestStatsCount(fromTable)
   }
 
   const fromStorage = await storageGet()
   if (fromStorage !== null) {
-    const count = Math.max(fromStorage, STATS_SEED)
-    global.roastCount = count
-    return count
+    global.roastCount = fromStorage
+    return honestStatsCount(fromStorage)
   }
 
   const fromKv = await kvGet()
   if (fromKv !== null) {
-    const count = Math.max(fromKv, STATS_SEED)
-    global.roastCount = count
-    return count
+    global.roastCount = fromKv
+    return honestStatsCount(fromKv)
   }
 
-  return memoryCount()
+  return honestStatsCount(memoryCount())
 }
 
 export async function incrementStatsCount(): Promise<number> {
   const fromTable = await supabaseTableIncrement()
   if (fromTable !== null) {
     global.roastCount = fromTable
-    return fromTable
+    return honestStatsCount(fromTable)
   }
 
   const fromStorage = await storageIncrement()
   if (fromStorage !== null) {
     global.roastCount = fromStorage
-    return fromStorage
+    return honestStatsCount(fromStorage)
   }
 
   if (await kvAvailable()) {
@@ -223,19 +230,18 @@ export async function incrementStatsCount(): Promise<number> {
       const { kv } = await import('@vercel/kv')
       const existing = await kv.get<number>('mycvroast:roast_count')
       if (existing === null) {
-        const initial = STATS_SEED + 1
-        await kv.set('mycvroast:roast_count', initial)
-        global.roastCount = initial
-        return initial
+        await kv.set('mycvroast:roast_count', 1)
+        global.roastCount = 1
+        return 1
       }
       const next = await kv.incr('mycvroast:roast_count')
-      global.roastCount = Math.max(parseCount(next) ?? STATS_SEED, STATS_SEED)
-      return global.roastCount
+      global.roastCount = parseCount(next) ?? global.roastCount ?? 0
+      return honestStatsCount(global.roastCount)
     } catch {
       /* fall through to memory */
     }
   }
 
   global.roastCount = memoryCount() + 1
-  return global.roastCount
+  return honestStatsCount(global.roastCount)
 }

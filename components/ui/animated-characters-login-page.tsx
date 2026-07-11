@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Eye, EyeOff, Flame } from "lucide-react";
+import { Logo } from "@/components/Logo";
 
 interface PupilProps {
   size?: number;
@@ -300,7 +301,7 @@ function LoginPage() {
       });
       const data = await res.json();
       if (!res.ok) {
-        setError(data.error ?? "Invalid password. Please try again.");
+        setError(data.error ?? 'Incorrect email or password');
         return;
       }
       router.push("/admin");
@@ -316,12 +317,7 @@ function LoginPage() {
     <div className="shadcn-login-theme min-h-screen grid lg:grid-cols-2">
       <div className="relative hidden lg:flex flex-col justify-between bg-gradient-to-br from-cn-primary/90 via-cn-primary to-cn-primary/80 p-12 text-cn-primary-foreground">
         <div className="relative z-20">
-          <div className="flex items-center gap-2 text-lg font-semibold">
-            <div className="size-8 rounded-lg bg-cn-primary-foreground/10 backdrop-blur-sm flex items-center justify-center">
-              <Flame className="size-4" />
-            </div>
-            <span>MyCVRoast</span>
-          </div>
+          <Logo variant="dark" href="/" imageClassName="h-8 w-auto max-w-[160px]" />
         </div>
 
         <div className="relative z-20 flex items-end justify-center h-[500px]">
@@ -627,11 +623,8 @@ function LoginPage() {
 
       <div className="flex items-center justify-center p-8 bg-cn-background">
         <div className="w-full max-w-[420px]">
-          <div className="lg:hidden flex items-center justify-center gap-2 text-lg font-semibold mb-12">
-            <div className="size-8 rounded-lg bg-cn-primary/10 flex items-center justify-center">
-              <Flame className="size-4 text-cn-primary" />
-            </div>
-            <span>MyCVRoast</span>
+          <div className="lg:hidden flex items-center justify-center mb-12">
+            <Logo variant="light" href="/" />
           </div>
 
           <div className="text-center mb-10">

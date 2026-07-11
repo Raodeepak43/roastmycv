@@ -1,9 +1,14 @@
+/** Public (anonymous) resume builder limits — 1 free PDF, AI requires sign-in */
+export const PUBLIC_FREE_PDF_LIMIT = 1
+export const PUBLIC_FREE_AI_LIMIT = 0
+
+/** Dashboard embedded builder uses separate limits via API */
+export const DASHBOARD_FREE_AI_LIMIT = 5
+export const DASHBOARD_FREE_PDF_LIMIT = 3
+
 const AI_KEY = 'rb_ai_uses'
 const PDF_KEY = 'rb_pdf_downloads'
 const PAID_KEY = 'rb_paid'
-
-export const FREE_AI_LIMIT = 3
-export const FREE_PDF_LIMIT = 1
 
 export function isBuilderPaid(): boolean {
   if (typeof window === 'undefined') return false
@@ -32,20 +37,40 @@ export function incrementPdfDownloads(): number {
   return next
 }
 
+/** Anonymous public page — no free AI; sign in for AI improvements */
+export function canUsePublicAi(): boolean {
+  return false
+}
+
+export function canDownloadPublicPdf(): boolean {
+  return isBuilderPaid() || getPdfDownloads() < PUBLIC_FREE_PDF_LIMIT
+}
+
+export function publicPdfDownloadsLeft(): number {
+  if (isBuilderPaid()) return Infinity
+  return Math.max(0, PUBLIC_FREE_PDF_LIMIT - getPdfDownloads())
+}
+
+export function hasUsedFreePublicPdf(): boolean {
+  return getPdfDownloads() >= PUBLIC_FREE_PDF_LIMIT && !isBuilderPaid()
+}
+
+/** @deprecated use public helpers on /resume-builder */
+export const FREE_AI_LIMIT = PUBLIC_FREE_AI_LIMIT
+export const FREE_PDF_LIMIT = PUBLIC_FREE_PDF_LIMIT
+
 export function canUseAi(): boolean {
-  return isBuilderPaid() || getAiUses() < FREE_AI_LIMIT
+  return canUsePublicAi()
 }
 
 export function canDownloadPdf(): boolean {
-  return isBuilderPaid() || getPdfDownloads() < FREE_PDF_LIMIT
+  return canDownloadPublicPdf()
 }
 
 export function aiUsesLeft(): number {
-  if (isBuilderPaid()) return Infinity
-  return Math.max(0, FREE_AI_LIMIT - getAiUses())
+  return 0
 }
 
 export function pdfDownloadsLeft(): number {
-  if (isBuilderPaid()) return Infinity
-  return Math.max(0, FREE_PDF_LIMIT - getPdfDownloads())
+  return publicPdfDownloadsLeft()
 }

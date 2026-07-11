@@ -1,0 +1,23 @@
+/** Single-segment paths that must never be SEO tool landings. */
+export const RESERVED_SLUGS = new Set([
+  'admin',
+  'ads.txt',
+  'api',
+  'auth',
+  'blog',
+  'contact',
+  'dashboard',
+  'favicon.ico',
+  'icon',
+  'linkedin-roast',
+  'login',
+  'og',
+  'plans',
+  'privacy',
+  'resume-builder',
+  'resume-checker',
+  'roast',
+  'robots.txt',
+  'sitemap.xml',
+  'terms',
+])

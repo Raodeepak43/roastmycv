@@ -1,0 +1,542 @@
+[
+  {
+    "slug": "b-arch",
+    "keyword": "b.arch fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/b-arch",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "b-com",
+    "keyword": "b.com fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/b-com",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "b-pharma",
+    "keyword": "b.pharma fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/b-pharma",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "b-sc",
+    "keyword": "b.sc fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/b-sc",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "b-tech",
+    "keyword": "b.tech fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/b-tech",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "ba",
+    "keyword": "ba fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/ba",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "bba",
+    "keyword": "bba fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/bba",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "bca",
+    "keyword": "bca fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/bca",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "bds",
+    "keyword": "bds fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/bds",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "be",
+    "keyword": "be fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/be",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "diploma",
+    "keyword": "diploma fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/diploma",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "iti",
+    "keyword": "iti fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/iti",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "llb",
+    "keyword": "llb fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/llb",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "m-com",
+    "keyword": "m.com fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/m-com",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "m-sc",
+    "keyword": "m.sc fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/m-sc",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "ma",
+    "keyword": "ma fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/ma",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "mba",
+    "keyword": "mba fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/mba",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "mbbs-nursing",
+    "keyword": "mbbs nursing fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/mbbs-nursing",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "mca",
+    "keyword": "mca fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/mca",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "polytechnic",
+    "keyword": "polytechnic fresher resume",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/polytechnic",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-b-arch-freshers",
+    "keyword": "resume format for b.arch freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-b-arch-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-b-com-freshers",
+    "keyword": "resume format for b.com freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-b-com-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-b-pharma-freshers",
+    "keyword": "resume format for b.pharma freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-b-pharma-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-b-sc-freshers",
+    "keyword": "resume format for b.sc freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-b-sc-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-b-tech-freshers",
+    "keyword": "resume format for b.tech freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-b-tech-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-ba-freshers",
+    "keyword": "resume format for ba freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-ba-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-bba-freshers",
+    "keyword": "resume format for bba freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-bba-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-bca-freshers",
+    "keyword": "resume format for bca freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-bca-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-bds-freshers",
+    "keyword": "resume format for bds freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-bds-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-be-freshers",
+    "keyword": "resume format for be freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-be-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-diploma-freshers",
+    "keyword": "resume format for diploma freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-diploma-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-iti-freshers",
+    "keyword": "resume format for iti freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-iti-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-llb-freshers",
+    "keyword": "resume format for llb freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-llb-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-m-com-freshers",
+    "keyword": "resume format for m.com freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-m-com-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-m-sc-freshers",
+    "keyword": "resume format for m.sc freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-m-sc-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-ma-freshers",
+    "keyword": "resume format for ma freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-ma-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-mba-freshers",
+    "keyword": "resume format for mba freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-mba-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-mbbs-nursing-freshers",
+    "keyword": "resume format for mbbs nursing freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-mbbs-nursing-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-mca-freshers",
+    "keyword": "resume format for mca freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-mca-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "resume-format-for-polytechnic-freshers",
+    "keyword": "resume format for polytechnic freshers",
+    "cluster": "Fresher x Degree",
+    "priority": "P1",
+    "status": "pending-p1",
+    "route": "/fresher-resume/resume-format-for-polytechnic-freshers",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "b-arch-resume-sample",
+    "keyword": "b.arch resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/b-arch-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "b-com-resume-sample",
+    "keyword": "b.com resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/b-com-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "b-pharma-resume-sample",
+    "keyword": "b.pharma resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/b-pharma-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "b-sc-resume-sample",
+    "keyword": "b.sc resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/b-sc-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "b-tech-resume-sample",
+    "keyword": "b.tech resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/b-tech-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "ba-resume-sample",
+    "keyword": "ba resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/ba-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "bba-resume-sample",
+    "keyword": "bba resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/bba-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "bca-resume-sample",
+    "keyword": "bca resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/bca-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "bds-resume-sample",
+    "keyword": "bds resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/bds-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "be-resume-sample",
+    "keyword": "be resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/be-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "diploma-resume-sample",
+    "keyword": "diploma resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/diploma-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "iti-resume-sample",
+    "keyword": "iti resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/iti-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "llb-resume-sample",
+    "keyword": "llb resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/llb-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "m-com-resume-sample",
+    "keyword": "m.com resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/m-com-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "m-sc-resume-sample",
+    "keyword": "m.sc resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/m-sc-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "ma-resume-sample",
+    "keyword": "ma resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/ma-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "mba-resume-sample",
+    "keyword": "mba resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/mba-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "mbbs-nursing-resume-sample",
+    "keyword": "mbbs nursing resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/mbbs-nursing-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "mca-resume-sample",
+    "keyword": "mca resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/mca-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  },
+  {
+    "slug": "polytechnic-resume-sample",
+    "keyword": "polytechnic resume sample",
+    "cluster": "Fresher x Degree",
+    "priority": "P2",
+    "status": "pending-p1",
+    "route": "/fresher-resume/polytechnic-resume-sample",
+    "pageType": "Programmatic Page (override)"
+  }
+]

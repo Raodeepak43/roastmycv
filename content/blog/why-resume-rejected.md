@@ -1,9 +1,18 @@
 ---
-title: "7 Reasons Recruiters Reject Your Resume in 10 Seconds"
+title: "Why Is My Resume Rejected? 7 Reasons Recruiters Skip Your CV"
 slug: "why-resume-rejected"
 date: "2025-11-21"
-description: "Find out exactly why your resume gets rejected and how to fix it fast. Real reasons recruiters skip your CV."
-keywords: "why is my resume rejected, resume red flags, common resume mistakes, why no interview calls"
+description: "Why is my resume rejected with no interview calls? 7 real reasons recruiters skip your CV in 10 seconds — and how to fix each one fast."
+keywords: "why is my resume rejected, resume rejected no interview, resume red flags, why no interview calls"
+faq:
+  - q: "Why is my resume rejected with no response?"
+    a: "Usually ATS parsing failure, weak bullets, missing keywords, or generic formatting. Run a free check at mycvroast.in/best-resume-checker-india to see your score and specific fixes."
+  - q: "How fast do recruiters reject a resume?"
+    a: "6–10 seconds on first scan. They look for clarity, relevant skills, and proof of impact — not duty lists."
+  - q: "Can ATS reject my resume before a human sees it?"
+    a: "Yes — over 90% of large employers use ATS. Two-column Canva layouts and image PDFs often fail parsing entirely."
+  - q: "How do I fix a rejected fresher resume in India?"
+    a: "One page, CGPA visible, project tech stack listed, tailored keywords from the JD. See our fresher resume format guide and free roast tool."
 ---
 
 If you have ever wondered **why is my resume rejected** after sending dozens of applications, you are not alone. Recruiters spend an average of six to ten seconds on each resume before moving on. That is not enough time to discover your potential — only enough time to spot red flags. Understanding these rejection triggers is the fastest way to turn silence into interview calls. This guide breaks down the seven most common reasons recruiters skip your CV and exactly how to fix each one.

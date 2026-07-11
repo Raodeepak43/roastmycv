@@ -79,14 +79,18 @@ export function calculateATS(data: ResumeData): AtsResult {
 
   const finalScore = Math.min(100, score)
 
+  let color = '#e24b4a'
+  if (finalScore >= 70) color = '#0ca30c'
+  else if (finalScore >= 40) color = '#eda100'
+
   if (finalScore >= 90) {
-    return { score: finalScore, label: 'Excellent — Will pass ATS', color: '#22C55E', missing }
+    return { score: finalScore, label: 'Excellent — Will pass ATS', color, missing }
   }
   if (finalScore >= 75) {
-    return { score: finalScore, label: 'Good — Likely to pass', color: '#2563EB', missing }
+    return { score: finalScore, label: 'Good — Likely to pass', color, missing }
   }
   if (finalScore >= 60) {
-    return { score: finalScore, label: 'Average — Needs work', color: '#F5C542', missing }
+    return { score: finalScore, label: 'Average — Needs work', color, missing }
   }
-  return { score: finalScore, label: 'Poor — Will be rejected', color: '#EF4444', missing }
+  return { score: finalScore, label: 'Poor — Will be rejected', color, missing }
 }

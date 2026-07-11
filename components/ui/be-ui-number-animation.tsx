@@ -126,30 +126,34 @@ export function NumberTicker({
       <span aria-hidden="true" className="inline-flex items-center">
         {prefix ? <span>{prefix}</span> : null}
 
-        {glyphs.map(({ char, id }, i) => {
-          const isDigit = /\d/.test(char);
+        {!armed ? (
+          <span>{text}</span>
+        ) : (
+          glyphs.map(({ char, id }, i) => {
+            const isDigit = /\d/.test(char);
 
-          if (!isDigit) {
+            if (!isDigit) {
+              return (
+                <span key={id} className="inline-block">
+                  {char}
+                </span>
+              );
+            }
+
+            const digit = Number(char);
+
             return (
-              <span key={id} className="inline-block">
-                {char}
-              </span>
+              <Digit
+                key={id}
+                digit={digit}
+                delay={entered ? 0 : i * stagger}
+                duration={duration}
+                blur={blur}
+                className={digitClassName}
+              />
             );
-          }
-
-          const digit = Number(char);
-
-          return (
-            <Digit
-              key={id}
-              digit={armed ? digit : 0}
-              delay={entered ? 0 : i * stagger}
-              duration={duration}
-              blur={blur}
-              className={digitClassName}
-            />
-          );
-        })}
+          })
+        )}
 
         {suffix ? <span>{suffix}</span> : null}
       </span>

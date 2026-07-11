@@ -1,34 +1,44 @@
+import type { ReactNode } from 'react'
 import type { ResumeData } from '@/lib/resume-builder/types'
+import { resolveTemplateId } from '@/lib/resume-builder/templates'
+import type { PreviewSection } from '@/lib/resume-builder/wizard-steps'
+import './resume-templates.css'
 
-export function ResumePreview({ data }: { data: ResumeData }) {
+export type HighlightSection = PreviewSection
+
+function sectionClass(active: boolean) {
+  return active ? ' rb-resume__section--active' : ''
+}
+
+interface Props {
+  data: ResumeData
+  templateId?: string
+  highlightSection?: HighlightSection
+}
+
+function SectionTitle({ children, spaced }: { children: ReactNode; spaced?: boolean }) {
+  return (
+    <div className={`rb-resume__section-title${spaced ? ' rb-resume__section-title--spaced' : ''}`}>
+      {children}
+    </div>
+  )
+}
+
+export function ResumePreview({ data, templateId, highlightSection }: Props) {
+  const tpl = resolveTemplateId(templateId ?? data.templateId)
   const { personal, summary, experience, projects, skills, education, achievements } = data
-  const contact = [personal.email, personal.phone, personal.location, personal.linkedin].filter(Boolean)
+  const hi = highlightSection
 
   return (
-    <div
-      id="resume"
-      style={{
-        fontFamily: 'Arial, Helvetica, sans-serif',
-        fontSize: '11px',
-        color: '#1a1a1a',
-        lineHeight: 1.5,
-        padding: '32px 36px',
-        maxWidth: '780px',
-        background: 'white',
-        borderLeft: '4px solid #2563EB',
-      }}
-    >
-      <div style={{ marginBottom: 16, paddingBottom: 12, borderBottom: '1.5px solid #e5e7eb' }}>
-        <h1 style={{ fontSize: 22, fontWeight: 700, color: '#1a1a1a', margin: '0 0 3px 0' }}>
-          {personal.fullName || 'Your Name'}
-        </h1>
-        {personal.jobTitle && (
-          <div style={{ fontSize: 12, fontWeight: 600, color: '#2563EB', marginBottom: 5 }}>
-            {personal.jobTitle}
-          </div>
-        )}
-        {contact.length > 0 && (
-          <div style={{ fontSize: 10, color: '#555', display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+    <div id="resume" className={`rb-resume rb-resume--${tpl}`}>
+      <div
+        data-rb-section="header"
+        className={`rb-resume__header${sectionClass(hi === 'header')}`}
+      >
+        <h1 className="rb-resume__name">{personal.fullName || 'Your Name'}</h1>
+        {personal.jobTitle && <div className="rb-resume__title">{personal.jobTitle}</div>}
+        {(personal.email || personal.phone || personal.location || personal.linkedin) && (
+          <div className="rb-resume__contact">
             {personal.email && <span>{personal.email}</span>}
             {personal.phone && <span>{personal.phone}</span>}
             {personal.location && <span>{personal.location}</span>}
@@ -37,217 +47,159 @@ export function ResumePreview({ data }: { data: ResumeData }) {
         )}
       </div>
 
-      {summary && (
-        <div style={{ marginBottom: 14 }}>
-          <div
-            style={{
-              fontSize: 11,
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              color: '#2563EB',
-              borderBottom: '1px solid #DBEAFE',
-              paddingBottom: 3,
-              marginBottom: 6,
-            }}
-          >
-            Professional Summary
-          </div>
-          <p style={{ fontSize: 10.5, color: '#333', lineHeight: 1.6, margin: 0 }}>{summary}</p>
-        </div>
-      )}
+      <div
+        data-rb-section="summary"
+        className={`rb-resume__section${sectionClass(hi === 'summary')}`}
+      >
+        <SectionTitle>Professional Summary</SectionTitle>
+        <p className="rb-resume__body">{summary || 'Your summary will appear here.'}</p>
+      </div>
 
-      {experience.some((e) => e.company || e.jobTitle) && (
-        <div style={{ marginBottom: 14 }}>
-          <div
-            style={{
-              fontSize: 11,
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              color: '#2563EB',
-              borderBottom: '1px solid #DBEAFE',
-              paddingBottom: 3,
-              marginBottom: 8,
-            }}
-          >
-            Professional Experience
-          </div>
-          {experience.map((job) => {
+      <div
+        data-rb-section="experience"
+        className={`rb-resume__section${sectionClass(hi === 'experience')}`}
+      >
+        <SectionTitle spaced>Professional Experience</SectionTitle>
+        {experience.some((e) => e.company || e.jobTitle) ? (
+          experience.map((job) => {
             if (!job.company && !job.jobTitle) return null
             const bullets = job.bullets.filter((b) => b.trim())
             return (
-              <div key={job.id} style={{ marginBottom: 10 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                  <span style={{ fontSize: 12, fontWeight: 700, color: '#1a1a1a' }}>
-                    {job.company || 'Company'}
-                  </span>
+              <div key={job.id} className="rb-resume__job">
+                <div className="rb-resume__job-row">
+                  <span className="rb-resume__company">{job.company || 'Company'}</span>
                   {(job.startDate || job.endDate) && (
-                    <span style={{ fontSize: 10, color: '#666' }}>
+                    <span className="rb-resume__dates">
                       {job.startDate} – {job.endDate || 'Present'}
                     </span>
                   )}
                 </div>
-                <div style={{ fontSize: 11, fontWeight: 600, color: '#374151', marginBottom: 5 }}>
+                <div className="rb-resume__role">
                   {[job.jobTitle, job.location].filter(Boolean).join(' · ')}
                 </div>
                 {bullets.length > 0 && (
-                  <ul style={{ margin: 0, paddingLeft: 14, listStyle: 'disc' }}>
+                  <ul className="rb-resume__list">
                     {bullets.map((b, i) => (
-                      <li
-                        key={i}
-                        style={{ fontSize: 10.5, color: '#333', marginBottom: 3, lineHeight: 1.5 }}
-                      >
-                        {b}
-                      </li>
+                      <li key={i}>{b}</li>
                     ))}
                   </ul>
                 )}
               </div>
             )
-          })}
-        </div>
-      )}
+          })
+        ) : (
+          <p className="rb-resume__body" style={{ color: '#94a3b8' }}>
+            Experience entries will appear here.
+          </p>
+        )}
+      </div>
 
-      {projects.some((p) => p.name) && (
-        <div style={{ marginBottom: 14 }}>
-          <div
-            style={{
-              fontSize: 11,
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              color: '#2563EB',
-              borderBottom: '1px solid #DBEAFE',
-              paddingBottom: 3,
-              marginBottom: 8,
-            }}
-          >
-            Key Projects
-          </div>
-          {projects.map((p) => {
-            if (!p.name) return null
-            return (
-              <div key={p.id} style={{ marginBottom: 8 }}>
-                <div style={{ fontSize: 11, fontWeight: 600, color: '#1a1a1a' }}>
-                  {p.name}
-                  {p.techStack && (
-                    <span style={{ fontSize: 10, color: '#2563EB', fontWeight: 400 }}>
-                      {' '}
-                      · {p.techStack}
-                    </span>
+      {(projects.some((p) => p.name) || hi === 'additional') && (
+        <div
+          data-rb-section="additional"
+          className={`rb-resume__section${sectionClass(hi === 'additional')}`}
+        >
+          <SectionTitle spaced>Key Projects</SectionTitle>
+          {projects.some((p) => p.name) ? (
+            projects.map((p) => {
+              if (!p.name) return null
+              return (
+                <div key={p.id} className="rb-resume__job">
+                  <div className="rb-resume__project-name">
+                    {p.name}
+                    {p.techStack && (
+                      <span className="rb-resume__project-tech"> · {p.techStack}</span>
+                    )}
+                  </div>
+                  {p.description && (
+                    <div className="rb-resume__body" style={{ marginTop: 2 }}>
+                      {p.description}
+                    </div>
                   )}
                 </div>
-                {p.description && (
-                  <div style={{ fontSize: 10.5, color: '#333', lineHeight: 1.5, marginTop: 2 }}>
-                    {p.description}
-                  </div>
-                )}
-              </div>
-            )
-          })}
+              )
+            })
+          ) : (
+            <p className="rb-resume__body" style={{ color: '#94a3b8' }}>
+              Optional projects and awards.
+            </p>
+          )}
         </div>
       )}
 
-      {Object.values(skills).some((s) => s.trim()) && (
-        <div style={{ marginBottom: 14 }}>
-          <div
-            style={{
-              fontSize: 11,
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              color: '#2563EB',
-              borderBottom: '1px solid #DBEAFE',
-              paddingBottom: 3,
-              marginBottom: 6,
-            }}
-          >
-            Technical Skills
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: 4 }}>
+      <div
+        data-rb-section="skills"
+        className={`rb-resume__section${sectionClass(hi === 'skills')}`}
+      >
+        <SectionTitle>Technical Skills</SectionTitle>
+        {Object.values(skills).some((s) => s.trim()) ? (
+          <div className="rb-resume__skills-grid">
             {skills.languages && (
               <>
-                <span style={{ fontSize: 10, color: '#666', fontWeight: 600 }}>Languages:</span>
-                <span style={{ fontSize: 10, color: '#333' }}>{skills.languages}</span>
+                <span className="rb-resume__skill-label">Languages:</span>
+                <span className="rb-resume__skill-value">{skills.languages}</span>
               </>
             )}
             {skills.frameworks && (
               <>
-                <span style={{ fontSize: 10, color: '#666', fontWeight: 600 }}>Frameworks:</span>
-                <span style={{ fontSize: 10, color: '#333' }}>{skills.frameworks}</span>
+                <span className="rb-resume__skill-label">Frameworks:</span>
+                <span className="rb-resume__skill-value">{skills.frameworks}</span>
               </>
             )}
             {skills.tools && (
               <>
-                <span style={{ fontSize: 10, color: '#666', fontWeight: 600 }}>Tools/Cloud:</span>
-                <span style={{ fontSize: 10, color: '#333' }}>{skills.tools}</span>
+                <span className="rb-resume__skill-label">Tools/Cloud:</span>
+                <span className="rb-resume__skill-value">{skills.tools}</span>
               </>
             )}
             {skills.databases && (
               <>
-                <span style={{ fontSize: 10, color: '#666', fontWeight: 600 }}>Databases:</span>
-                <span style={{ fontSize: 10, color: '#333' }}>{skills.databases}</span>
+                <span className="rb-resume__skill-label">Databases:</span>
+                <span className="rb-resume__skill-value">{skills.databases}</span>
               </>
             )}
           </div>
-        </div>
-      )}
+        ) : (
+          <p className="rb-resume__body" style={{ color: '#94a3b8' }}>
+            Skills will appear here.
+          </p>
+        )}
+      </div>
 
-      {(education.degree || education.university) && (
-        <div style={{ marginBottom: 14 }}>
-          <div
-            style={{
-              fontSize: 11,
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              color: '#2563EB',
-              borderBottom: '1px solid #DBEAFE',
-              paddingBottom: 3,
-              marginBottom: 6,
-            }}
-          >
-            Education
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div
+        data-rb-section="education"
+        className={`rb-resume__section${sectionClass(hi === 'education')}`}
+      >
+        <SectionTitle>Education</SectionTitle>
+        {education.degree || education.university ? (
+          <div className="rb-resume__edu-row">
             <div>
-              <div style={{ fontSize: 11, fontWeight: 700, color: '#1a1a1a' }}>
-                {education.degree}
-              </div>
-              <div style={{ fontSize: 10, color: '#555' }}>
+              <div className="rb-resume__degree">{education.degree || 'Degree'}</div>
+              <div className="rb-resume__school">
                 {education.university}
                 {education.gpa ? ` · GPA: ${education.gpa}` : ''}
               </div>
             </div>
             {education.gradYear && (
-              <div style={{ fontSize: 10, color: '#666' }}>{education.gradYear}</div>
+              <div className="rb-resume__dates">{education.gradYear}</div>
             )}
           </div>
-        </div>
-      )}
+        ) : (
+          <p className="rb-resume__body" style={{ color: '#94a3b8' }}>
+            Education details will appear here.
+          </p>
+        )}
+      </div>
 
       {achievements.some((a) => a.trim()) && (
-        <div>
-          <div
-            style={{
-              fontSize: 11,
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              color: '#2563EB',
-              borderBottom: '1px solid #DBEAFE',
-              paddingBottom: 3,
-              marginBottom: 6,
-            }}
-          >
-            Achievements &amp; Awards
-          </div>
-          <ul style={{ margin: 0, paddingLeft: 14, listStyle: 'disc' }}>
+        <div
+          data-rb-section="additional"
+          className={`rb-resume__section${sectionClass(hi === 'additional')}`}
+        >
+          <SectionTitle>Achievements &amp; Awards</SectionTitle>
+          <ul className="rb-resume__list">
             {achievements.filter((a) => a.trim()).map((a, i) => (
-              <li key={i} style={{ fontSize: 10.5, color: '#333', marginBottom: 3 }}>
-                {a}
-              </li>
+              <li key={i}>{a}</li>
             ))}
           </ul>
         </div>

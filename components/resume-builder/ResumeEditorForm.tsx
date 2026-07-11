@@ -1,15 +1,34 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import type { ResumeData } from '@/lib/resume-builder/types'
 import { createExperience, createProject } from '@/lib/resume-builder/types'
 import { canUseAi, incrementAiUses } from '@/lib/resume-builder/usage'
 
-const inputCls =
-  'w-full bg-black border border-border px-3 py-2.5 font-body text-sm text-white placeholder:text-[#555] focus:border-orange outline-none'
-const labelCls = 'font-body text-[11px] text-dim uppercase tracking-[0.1em] mb-1.5 block'
-const sectionCls = 'border border-border bg-[#0a0a0a] p-4 mb-4'
-const sectionTitleCls = 'font-body text-[11px] text-orange uppercase tracking-[0.12em] mb-4'
+const THEMES = {
+  dark: {
+    input: 'rb-form-input',
+    label: 'rb-form-label',
+    section: 'rb-form-section',
+    sectionTitle: 'rb-form-section-title',
+    aiBtn: 'rb-form-ai disabled:opacity-50',
+    divider: 'mb-6 pb-6 border-b border-[#1a1a1a] last:border-0 last:mb-0 last:pb-0',
+    addBullet: 'font-body text-[11px] text-dim hover:text-orange transition-colors',
+    addBtn: 'rb-form-add',
+  },
+  light: {
+    input: 'rb-input',
+    label: 'rb-label',
+    section: 'rb-section',
+    sectionTitle: 'rb-section-title',
+    aiBtn: 'rb-ai-btn disabled:opacity-50',
+    divider: 'mb-6 pb-6 border-b border-gray-200 last:border-0 last:mb-0 last:pb-0',
+    addBullet: 'font-body text-[11px] font-medium text-gray-500 hover:text-orange transition-colors',
+    addBtn:
+      'font-body text-[12px] font-semibold text-orange border border-orange/40 bg-white px-3 py-2 rounded-md hover:bg-orange/5 transition-colors',
+  },
+} as const
 
 type StrengthenType = 'bullet' | 'summary' | 'project'
 
@@ -18,6 +37,15 @@ interface EditorProps {
   onChange: (data: ResumeData) => void
   onUpgrade: () => void
   onAiUsed?: () => void
+  theme?: keyof typeof THEMES
+  /** When set, overrides localStorage usage (dashboard account mode) */
+  checkCanUseAi?: () => boolean
+  onAiConsumed?: () => void
+  /** Label when AI requires login (public builder) */
+  aiLockedLabel?: string
+  aiUpgradeHref?: string
+  /** Highlight a form section during guided tour */
+  activeSection?: string | null
 }
 
 async function strengthen(text: string, type: StrengthenType): Promise<string> {
@@ -35,38 +63,87 @@ function AiButton({
   onClick,
   loading,
   label = '✨ AI improve karo',
+  className,
+  disabled,
+  upgradeHref,
 }: {
-  onClick: () => void
+  onClick?: () => void
   loading: boolean
   label?: string
+  className?: string
+  disabled?: boolean
+  upgradeHref?: string
 }) {
+  if (disabled && upgradeHref) {
+    return (
+      <Link href={upgradeHref} className={className ?? 'font-body text-[11px] text-[#ff4500] hover:underline mt-1.5 inline-block'}>
+        Upgrade for more
+      </Link>
+    )
+  }
+
   return (
     <button
       type="button"
       onClick={onClick}
-      disabled={loading}
-      className="font-body text-[11px] text-orange hover:text-white transition-colors mt-1.5 disabled:opacity-50"
+      disabled={loading || disabled}
+      className={className ?? 'font-body text-[11px] text-orange hover:text-white transition-colors mt-1.5 disabled:opacity-50'}
     >
       {loading ? '⏳ Working…' : label}
     </button>
   )
 }
 
-export function ResumeEditorForm({ data, onChange, onUpgrade, onAiUsed }: EditorProps) {
+export function ResumeEditorForm({
+  data,
+  onChange,
+  onUpgrade,
+  onAiUsed,
+  theme = 'dark',
+  checkCanUseAi,
+  onAiConsumed,
+  aiLockedLabel = '✨ AI improve karo',
+  aiUpgradeHref = '/dashboard/plans',
+  activeSection = null,
+}: EditorProps) {
   const [loadingKey, setLoadingKey] = useState<string | null>(null)
+  const cls = THEMES[theme]
+  const inputCls = cls.input
+  const labelCls = cls.label
+  const sectionCls = cls.section
+  const sectionTitleCls = cls.sectionTitle
+  const dividerCls = cls.divider
+  const addBulletCls = cls.addBullet
+  const addBtnCls = cls.addBtn
+
+  const sectionHighlight = (id: string) =>
+    activeSection === id ? `${sectionCls} rb-section-active` : sectionCls
 
   const patch = (partial: Partial<ResumeData>) => onChange({ ...data, ...partial })
 
+  const aiLabel = (fallback?: string) => (checkCanUseAi ? aiLockedLabel : fallback)
+
+  const aiDepleted = Boolean(checkCanUseAi && !checkCanUseAi())
+  const aiBtnExtra = {
+    disabled: aiDepleted,
+    upgradeHref: checkCanUseAi ? aiUpgradeHref : undefined,
+  }
+
   const runAi = async (key: string, text: string, type: StrengthenType, apply: (result: string) => void) => {
     if (!text.trim()) return
-    if (!canUseAi()) {
+    const allowed = checkCanUseAi ? checkCanUseAi() : canUseAi()
+    if (!allowed) {
       onUpgrade()
       return
     }
     setLoadingKey(key)
     try {
       const result = await strengthen(text, type)
-      incrementAiUses()
+      if (onAiConsumed) {
+        onAiConsumed()
+      } else {
+        incrementAiUses()
+      }
       onAiUsed?.()
       apply(result)
     } catch {
@@ -79,7 +156,7 @@ export function ResumeEditorForm({ data, onChange, onUpgrade, onAiUsed }: Editor
   return (
     <div>
       {/* Personal */}
-      <div className={sectionCls}>
+      <div id="rb-section-personal" className={sectionHighlight('personal')}>
         <h3 className={sectionTitleCls}>Personal Info</h3>
         <div className="grid gap-3 sm:grid-cols-2">
           <div className="sm:col-span-2">
@@ -139,7 +216,7 @@ export function ResumeEditorForm({ data, onChange, onUpgrade, onAiUsed }: Editor
       </div>
 
       {/* Summary */}
-      <div className={sectionCls}>
+      <div id="rb-section-summary" className={sectionHighlight('summary')}>
         <h3 className={sectionTitleCls}>Professional Summary</h3>
         <textarea
           className={`${inputCls} resize-y min-h-[96px]`}
@@ -149,7 +226,10 @@ export function ResumeEditorForm({ data, onChange, onUpgrade, onAiUsed }: Editor
           placeholder="2-3 sentences about your experience and impact…"
         />
         <AiButton
+          className={cls.aiBtn}
+          label={aiLabel()}
           loading={loadingKey === 'summary'}
+          {...aiBtnExtra}
           onClick={() =>
             runAi('summary', data.summary, 'summary', (r) => patch({ summary: r }))
           }
@@ -157,10 +237,10 @@ export function ResumeEditorForm({ data, onChange, onUpgrade, onAiUsed }: Editor
       </div>
 
       {/* Experience */}
-      <div className={sectionCls}>
+      <div id="rb-section-experience" className={sectionHighlight('experience')}>
         <h3 className={sectionTitleCls}>Experience</h3>
         {data.experience.map((job, jobIdx) => (
-          <div key={job.id} className="mb-6 pb-6 border-b border-border last:border-0 last:mb-0 last:pb-0">
+          <div key={job.id} className={dividerCls}>
             <div className="grid gap-3 sm:grid-cols-2 mb-3">
               <div>
                 <label className={labelCls}>Company</label>
@@ -243,8 +323,10 @@ export function ResumeEditorForm({ data, onChange, onUpgrade, onAiUsed }: Editor
                   }}
                 />
                 <AiButton
-                  label="✨ Strengthen"
+                  className={cls.aiBtn}
+                  label={aiLabel('✨ Strengthen')}
                   loading={loadingKey === `b-${jobIdx}-${bIdx}`}
+                  {...aiBtnExtra}
                   onClick={() =>
                     runAi(`b-${jobIdx}-${bIdx}`, bullet, 'bullet', (r) => {
                       const experience = [...data.experience]
@@ -260,7 +342,7 @@ export function ResumeEditorForm({ data, onChange, onUpgrade, onAiUsed }: Editor
             {job.bullets.length < 5 && (
               <button
                 type="button"
-                className="font-body text-[11px] text-dim hover:text-orange"
+                className={addBulletCls}
                 onClick={() => {
                   const experience = [...data.experience]
                   experience[jobIdx] = { ...job, bullets: [...job.bullets, ''] }
@@ -274,7 +356,7 @@ export function ResumeEditorForm({ data, onChange, onUpgrade, onAiUsed }: Editor
         ))}
         <button
           type="button"
-          className="font-body text-[12px] text-orange border border-orange/40 px-3 py-2 hover:bg-orange/10 transition-colors"
+          className={addBtnCls}
           onClick={() => patch({ experience: [...data.experience, createExperience()] })}
         >
           + Add Another Job
@@ -285,7 +367,7 @@ export function ResumeEditorForm({ data, onChange, onUpgrade, onAiUsed }: Editor
       <div className={sectionCls}>
         <h3 className={sectionTitleCls}>Projects</h3>
         {data.projects.map((proj, pIdx) => (
-          <div key={proj.id} className="mb-4 pb-4 border-b border-border last:border-0">
+          <div key={proj.id} className={`${dividerCls} mb-4 pb-4`}>
             <div className="grid gap-3 mb-2">
               <div>
                 <label className={labelCls}>Project Name</label>
@@ -325,8 +407,10 @@ export function ResumeEditorForm({ data, onChange, onUpgrade, onAiUsed }: Editor
                   }}
                 />
                 <AiButton
-                  label="✨ AI enhance"
+                  className={cls.aiBtn}
+                  label={aiLabel('✨ AI enhance')}
                   loading={loadingKey === `p-${pIdx}`}
+                  {...aiBtnExtra}
                   onClick={() =>
                     runAi(`p-${pIdx}`, proj.description, 'project', (r) => {
                       const projects = [...data.projects]
@@ -341,7 +425,7 @@ export function ResumeEditorForm({ data, onChange, onUpgrade, onAiUsed }: Editor
         ))}
         <button
           type="button"
-          className="font-body text-[12px] text-orange border border-orange/40 px-3 py-2 hover:bg-orange/10 transition-colors"
+          className={addBtnCls}
           onClick={() => patch({ projects: [...data.projects, createProject()] })}
         >
           + Add Project
@@ -349,7 +433,7 @@ export function ResumeEditorForm({ data, onChange, onUpgrade, onAiUsed }: Editor
       </div>
 
       {/* Skills */}
-      <div className={sectionCls}>
+      <div id="rb-section-skills" className={sectionHighlight('skills')}>
         <h3 className={sectionTitleCls}>Skills</h3>
         <div className="grid gap-3">
           {(
@@ -376,7 +460,7 @@ export function ResumeEditorForm({ data, onChange, onUpgrade, onAiUsed }: Editor
       </div>
 
       {/* Education */}
-      <div className={sectionCls}>
+      <div id="rb-section-education" className={sectionHighlight('education')}>
         <h3 className={sectionTitleCls}>Education</h3>
         <div className="grid gap-3 sm:grid-cols-2">
           <div className="sm:col-span-2">
@@ -441,7 +525,7 @@ export function ResumeEditorForm({ data, onChange, onUpgrade, onAiUsed }: Editor
         ))}
         <button
           type="button"
-          className="font-body text-[12px] text-orange border border-orange/40 px-3 py-2 hover:bg-orange/10 transition-colors"
+          className={addBtnCls}
           onClick={() => patch({ achievements: [...data.achievements, ''] })}
         >
           + Add More

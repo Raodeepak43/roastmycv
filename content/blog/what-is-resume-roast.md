@@ -1,9 +1,18 @@
 ---
-title: "Resume Roast Kya Hota Hai? Complete Guide 2026"
+title: "What Is a Resume Roast? Roast My Resume Free Guide 2026"
 slug: "what-is-resume-roast"
 date: "2025-03-12"
-description: "Resume roast se apni CV improve karo. AI se brutally honest feedback pao free mein. Complete Hinglish guide."
+description: "Resume roast explained — roast my resume free with AI. Brutally honest CV feedback in Hinglish & English. Complete guide for Indian job seekers."
 keywords: "resume roast, roast my resume, ai resume roast, cv roast, hinglish resume roast"
+faq:
+  - q: "What does roast my resume mean?"
+    a: "It means getting brutally honest feedback on your CV — quoting weak bullets, flagging ATS issues, and telling you what recruiters skip in 6 seconds. MyCVRoast does this free at mycvroast.in."
+  - q: "Is resume roast free in India?"
+    a: "Yes on MyCVRoast — 2 free roasts per device, no signup. Upload PDF or TXT, pick Hinglish or English, get score and fixes in 30 seconds."
+  - q: "Resume roast vs resume review — what's the difference?"
+    a: "Review gives polite generic tips. Roast quotes your actual lines and tells you the harsh truth — faster improvement for job hunters."
+  - q: "Can AI roast my resume in Hinglish?"
+    a: "Yes. MyCVRoast supports Hinglish roast mode — natural Hindi-English feedback that Indian freshers actually understand."
 ---
 
 **Resume roast** matlab hai apni CV ko intentionally harsh, honest feedback ke liye expose karna — taaki tumhe woh sach sunne ko mile jo recruiter kabhi directly nahi bolega. Agar tum job hunt kar rahe ho aur soch rahe ho "mera resume theek hai ya nahi," toh resume roast ek fast, practical way hai apni blind spots pakadne ka. Yeh guide 2026 ke liye complete hai: kya hota hai, kaise kaam karta hai, aur tum ise kaise use kar sakte ho apni next interview call ke liye.

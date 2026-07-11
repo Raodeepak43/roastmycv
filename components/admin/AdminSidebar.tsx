@@ -11,14 +11,18 @@ import {
   ExternalLink,
   ChevronLeft,
   ChevronRight,
+  IndianRupee,
 } from 'lucide-react'
 import { useState } from 'react'
+import { Logo } from '@/components/Logo'
 
 const NAV = [
   { href: '/admin', label: 'Dashboard', icon: LayoutDashboard, exact: true },
-  { href: '/admin/signups', label: 'Ticker Signups', icon: Users },
+  { href: '/admin/users', label: 'Users', icon: Users },
+  { href: '/admin/payments', label: 'Payments', icon: IndianRupee },
+  { href: '/admin/signups', label: 'Ticker Signups', icon: Flame },
   { href: '/admin/emails', label: 'Email List', icon: Mail },
-  { href: '/admin/usage', label: 'Usage Limits', icon: Gauge },
+  { href: '/admin/usage', label: 'Guest Usage', icon: Gauge },
 ]
 
 export function AdminSidebar() {
@@ -29,11 +33,10 @@ export function AdminSidebar() {
     <aside className={`admin-sidebar${collapsed ? ' collapsed' : ''}`}>
       <div className="admin-sidebar-brand">
         <div className="admin-sidebar-logo">
-          <Flame size={16} aria-hidden />
+          <Logo variant="mark" href="/admin" imageClassName="h-8 w-8" />
         </div>
         {!collapsed && (
           <div className="admin-sidebar-brand-text">
-            <strong>MyCVRoast</strong>
             <span>Admin</span>
           </div>
         )}

@@ -1,9 +1,16 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+import { NOINDEX_ROBOTS } from '@/lib/seo'
+
+export const metadata: Metadata = {
+  title: 'Page Not Found | MyCVRoast',
+  robots: NOINDEX_ROBOTS,
+}
 
 export default function NotFound() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-4 bg-page text-center">
-      <p className="font-display text-6xl md:text-8xl text-orange mb-4">404</p>
+      <p className="font-display text-6xl md:text-8xl text-ember mb-4">404</p>
       <h1 className="font-display text-2xl md:text-3xl text-white mb-3">
         Ye page toh roast ho gaya 💀
       </h1>

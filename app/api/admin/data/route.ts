@@ -6,6 +6,7 @@ import {
   getAllTickerSignups,
   getAllUsage,
 } from '@/lib/admin/data'
+import { getAdminUsers, getAdminPayments } from '@/lib/admin/users'
 
 function unauthorized() {
   return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
@@ -29,6 +30,12 @@ export async function GET(req: NextRequest) {
   }
   if (view === 'usage') {
     return NextResponse.json({ rows: await getAllUsage() })
+  }
+  if (view === 'users') {
+    return NextResponse.json({ rows: await getAdminUsers() })
+  }
+  if (view === 'payments') {
+    return NextResponse.json({ rows: await getAdminPayments() })
   }
 
   return NextResponse.json(await getAdminOverview())

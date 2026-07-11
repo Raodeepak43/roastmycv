@@ -1,11 +1,11 @@
-import { Inter } from 'next/font/google'
+import type { Metadata } from 'next'
+import { NOINDEX_ROBOTS } from '@/lib/seo'
 
-const inter = Inter({ subsets: ['latin'] })
+export const metadata: Metadata = {
+  title: 'Sign In | MyCVRoast',
+  robots: NOINDEX_ROBOTS,
+}
 
 export default function LoginLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <div className={inter.className} style={{ minHeight: '100vh' }}>
-      {children}
-    </div>
-  )
+  return children
 }

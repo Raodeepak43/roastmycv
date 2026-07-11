@@ -1,3 +1,5 @@
+import { FREE_LIMIT } from '@/lib/usage'
+
 export type IntensityKey = 'clean' | 'gaali_light' | 'savage'
 
 export interface UiStrings {
@@ -5,6 +7,7 @@ export interface UiStrings {
   warningBadge?: string
   tagline: string
   destroyed: string
+  headerStat?: string
   dropResume: string
   clickUpload: string
   fileLimit: string
@@ -47,42 +50,48 @@ export interface UiStrings {
     namePlaceholder: string
     next: string
     start: string
+    skip?: string
     loading: string
     nameError: string
+  }
+  resumeBuilderOnboarding?: {
+    welcome: string
+    subtitle: string
+    guideSteps: { id: string; title: string; desc: string }[]
+    next: string
+    back: string
+    skip: string
+    finish: string
+    downloadNow: string
+    yourName: string
+    namePlaceholder: string
+    nameError: string
+    stepOf: string
   }
   signup: { title: string; sub: string; emailPh: string; submit: string; later: string }
   emailCapture?: { emailPh: string; submit: string; noSpam: string; success: string }
   scrollHint?: string
   paywall: { title: string; sub: string; price: string; unlock: string; later: string }
-  support?: SupportCopy
   footer: string
-}
-
-export interface SupportCopy {
-  tag: string
-  title: string
-  desc: string
-  upiLabel: string
-  scanHint: string
-  copy: string
-  copied: string
-  trigger: string
-  noUpi: string
 }
 
 const base = {
   intensity: {
     clean: { label: '😇 Clean', desc: 'Professional roast. No swearing. Sharp and fair.' },
-    gaali_light: { label: '😤 Mild', desc: 'Friend-level roast. Mild heat.' },
+    gaali_light: { label: '😏 Mild', desc: 'Friend-level roast. Mild heat.' },
     savage: { label: '💀 Savage', desc: 'No mercy. Brutally direct.' },
   },
   loading: ['📖 Reading your CV...', '🔍 Recruiter mode on...', '💀 Roast loading...', '⚡ Almost done...'],
   faq: [
     { q: 'What is a resume roast?', a: 'AI reads your resume and gives brutally honest feedback.' },
-    { q: 'Is it free?', a: 'Yes — 5 free roasts. Then ₹49 for unlimited.' },
+    { q: 'Is it free?', a: `Yes — ${FREE_LIMIT} free roasts. Then ₹149 for unlimited.` },
     { q: 'Is my resume safe?', a: 'Yes. We save nothing. Deleted after processing.' },
     { q: 'How many languages are supported?', a: '15 languages — Hinglish, English, Spanish, French, German, Arabic, Japanese, Korean, Russian, Chinese, Portuguese, Turkish, Indonesian, Italian, Dutch.' },
     { q: 'What is the difference between a resume roast and a resume review?', a: 'Review gives generic tips. Roast reads YOUR specific resume and tells you exactly what is wrong.' },
+    { q: 'Is there a free AI resume review for India?', a: `Yes — MyCVRoast gives ${FREE_LIMIT} free AI resume reviews per device, no signup. Includes Hinglish mode for Indian job seekers.` },
+    { q: 'What is a Hinglish resume roast?', a: 'Honest CV feedback in natural Hindi-English — built for Indian freshers and campus placement, not generic corporate tips.' },
+    { q: 'Is there an AI that can review my resume for free?', a: `Yes — ${FREE_LIMIT} free roasts per device at MyCVRoast. No email gate before you see your score and fixes.` },
+    { q: 'What is the best free AI resume review for India?', a: 'For brutally honest, resume-specific feedback in Hinglish, MyCVRoast is built for Indian freshers. Pair with our free ATS resume builder before you apply.' },
   ],
   scrollHint: 'scroll for more →',
   emailCapture: {
@@ -94,6 +103,7 @@ const base = {
   fixes: ['Fix formatting for ATS', 'Add numbers and metrics', 'Write original content'],
   scoreLabels: { low: 'Go home 💀', mid: 'Average CV 😬', ok: 'Could be better 😐', good: 'Solid CV 😎', great: 'You are set 🏆' },
   stats: { roasted: '🔥 ROASTED', modes: '🎚️ INTENSITY LEVELS', mercy: '😇 MERCY', dmg: '⚡ EMOTIONAL DMG' },
+  headerStat: 'CVs roasted',
   howItWorks: {
     title: 'HOW IT WORKS',
     steps: [
@@ -109,17 +119,29 @@ const base = {
   },
   result: { verdict: '🎯 AI VERDICT', roast: '🔥 THE ROAST', fixesTitle: '✅ WHAT TO FIX', share: '📤 SHARE THE PAIN', expand: 'See full roast 👇', copied: '✅ Copied', copy: '📋 Copy', saveCard: '📸 Save card', saveCardDone: '✅ Saved' },
   signup: { title: '📬 Join the Roast List', sub: 'Your name shows on the ticker when you get roasted 🔥', emailPh: 'Email (optional)', submit: '🔥 Join', later: 'Later' },
-  paywall: { title: 'Free Limit Reached', sub: '5 free roasts used up', price: '₹49 · Lifetime Unlimited', unlock: '🔥 Unlock with Razorpay', later: 'Maybe later' },
-  support: {
-    tag: '[ SUPPORT_DEV ]',
-    title: 'BUY ME CHAI.',
-    desc: 'MyCVRoast is free and will stay free. If you enjoyed the roast, buy the dev a chai below.',
-    upiLabel: 'UPI · INDIA · FASTEST',
-    scanHint: 'SCAN FROM ANY UPI APP',
-    copy: 'COPY',
-    copied: 'COPIED',
-    trigger: '☕ Support',
-    noUpi: 'UPI details coming soon — follow @mycvroast for updates.',
+    paywall: { title: 'Free Limit Reached', sub: `${FREE_LIMIT} free roasts used up`, price: '₹149 (approx. $1.80 USD) · Pro unlimited', unlock: 'View plans', later: 'Maybe later' },
+  resumeBuilderOnboarding: {
+    welcome: '📄 Welcome to Resume Builder',
+    subtitle: 'We will walk you through each section — then preview and download.',
+    guideSteps: [
+      { id: 'welcome', title: "Let's build your resume", desc: 'Enter your name below — we will guide you section by section.' },
+      { id: 'personal', title: 'Step 1 · Personal info', desc: 'Fill your name, email, phone, location, and LinkedIn URL.' },
+      { id: 'summary', title: 'Step 2 · Professional summary', desc: 'Write 2–3 sentences about your experience and what you bring.' },
+      { id: 'experience', title: 'Step 3 · Work experience', desc: 'Add company, role, dates, and bullet points — include numbers where you can.' },
+      { id: 'skills', title: 'Step 4 · Skills', desc: 'List languages, frameworks, tools, and databases. Projects below are optional.' },
+      { id: 'education', title: 'Step 5 · Education', desc: 'Add degree and university. Achievements at the bottom are optional.' },
+      { id: 'preview', title: 'Step 6 · Check preview', desc: 'Does everything look good? This matches your final PDF exactly.' },
+      { id: 'download', title: 'Step 7 · Download PDF', desc: 'All done! Download your ATS-ready resume — 1 free export, no signup.' },
+    ],
+    next: 'Next →',
+    back: '← Back',
+    skip: 'Skip guide',
+    finish: 'Done',
+    downloadNow: '⬇ Download PDF',
+    yourName: 'Your full name',
+    namePlaceholder: 'e.g. Deepak Yadav',
+    nameError: 'Please enter your name',
+    stepOf: 'Step {n} of {total}',
   },
 }
 
@@ -129,13 +151,14 @@ export const UI: Record<string, UiStrings> = {
     warningBadge: 'WARNING: HIGH VOLTAGE ROASTS',
     tagline: '🤖 AI-POWERED · ⚡ INSTANT · 🆓 FREE',
     destroyed: 'resumes already destroyed',
+    headerStat: 'CVs roasted',
     dropResume: 'Drop your resume here',
     clickUpload: 'or click to upload',
     fileLimit: 'PDF or TXT · Max 5MB',
     readyRoast: 'Ready to roast 🔥',
     intensity: {
       clean: { label: '😇 Clean', desc: 'Professional roast. No gaali. Sharp aur fair.' },
-      gaali_light: { label: '😤 Gaali Light', desc: 'Thodi garam. Dost wali roast. Mild gaali.' },
+      gaali_light: { label: '😏 Gaali Light', desc: 'Thodi garam. Dost wali roast. Mild gaali.' },
       savage: { label: '💀 Savage', desc: 'Koi mercy nahi. Bilkul seedha.' },
     },
     chooseLang: '🌍 CHOOSE LANGUAGE',
@@ -166,10 +189,14 @@ export const UI: Record<string, UiStrings> = {
     },
     faq: [
       { q: 'Resume roast kya hota hai?', a: 'AI tumhara resume padh ke brutally honest feedback deta hai.' },
-      { q: 'Kya ye free hai?', a: 'Haan, 5 roasts free hain. Uske baad ₹49 mein unlimited.' },
+      { q: 'Kya ye free hai?', a: `Haan, ${FREE_LIMIT} roasts free hain. Uske baad ₹149 mein unlimited.` },
       { q: 'Mera resume safe hai?', a: 'Haan, hum kuch save nahi karte. Process ke baad delete.' },
       { q: 'Kitni languages supported hain?', a: '15 languages — Hinglish, English, Spanish, French, German, Arabic, Japanese, Korean, Russian, Chinese, Portuguese, Turkish, Indonesian, Italian, Dutch.' },
       { q: 'Resume roast aur resume review mein kya fark hai?', a: 'Review generic tips deta hai. Roast TERA specific resume padhke batata hai exactly kya galat hai.' },
+      { q: 'India ke liye free AI resume review hai kya?', a: `Haan — MyCVRoast pe ${FREE_LIMIT} free roasts, bina signup. Hinglish mode bhi hai freshers ke liye.` },
+      { q: 'Hinglish resume roast kya hota hai?', a: 'Natural Hindi-English mix mein brutal honest CV feedback — jaise dost ya senior recruiter bolta hai, template tips nahi.' },
+      { q: 'Koi free AI hai jo resume review kare?', a: `Haan — MyCVRoast pe ${FREE_LIMIT} free roasts, score aur fixes bina email ke.` },
+      { q: 'India ke liye best free AI resume review kaun sa hai?', a: 'Honest, resume-specific Hinglish feedback ke liye MyCVRoast freshers ke liye best hai. Apply se pehle free ATS resume builder bhi use karo.' },
     ],
     emailCapture: {
       emailPh: 'Email address',
@@ -184,26 +211,39 @@ export const UI: Record<string, UiStrings> = {
       welcome: '🔥 MyCVRoast mein swagat hai',
       pickLang: 'Pehle apni language choose karo',
       pickLangSub: 'Poori site isi language mein khulegi',
-      yourName: 'Ab apna naam batao',
+      yourName: 'Apna naam batao (optional)',
       namePlaceholder: 'Tera naam',
-      next: 'Aage badho →',
-      start: '🔥 Chalo Roast Karein',
+      next: 'Continue →',
+      start: '🔥 Chalo aage badho',
+      skip: 'Naam skip karo',
       loading: 'Ho raha hai...',
+      nameError: 'Kam se kam 2 letters daal',
+    },
+    resumeBuilderOnboarding: {
+      welcome: '📄 Resume Builder mein swagat hai',
+      subtitle: 'Har section step-by-step — phir preview aur download.',
+      guideSteps: [
+        { id: 'welcome', title: 'Chalo resume banate hain', desc: 'Neeche apna naam daalo — phir har section guide karenge.' },
+        { id: 'personal', title: 'Step 1 · Personal info', desc: 'Naam, email, phone, location aur LinkedIn bharo.' },
+        { id: 'summary', title: 'Step 2 · Professional summary', desc: '2–3 lines mein apna experience aur strengths likho.' },
+        { id: 'experience', title: 'Step 3 · Work experience', desc: 'Company, role, dates aur bullets — numbers/metrics daalna mat bhoolna.' },
+        { id: 'skills', title: 'Step 4 · Skills', desc: 'Languages, frameworks, tools, databases. Neeche Projects optional hai.' },
+        { id: 'education', title: 'Step 5 · Education', desc: 'Degree aur university. Achievements optional hai.' },
+        { id: 'preview', title: 'Step 6 · Preview check karo', desc: 'Sab sahi dikh raha hai? Yehi final PDF jaisa dikhega.' },
+        { id: 'download', title: 'Step 7 · PDF download', desc: 'Ho gaya! ATS-ready resume download karo — 1 free, bina signup.' },
+      ],
+      next: 'Aage badho →',
+      back: '← Peeche',
+      skip: 'Guide skip karo',
+      finish: 'Done',
+      downloadNow: '⬇ PDF Download',
+      yourName: 'Poora naam',
+      namePlaceholder: 'jaise Deepak Yadav',
       nameError: 'Apna naam daal yaar',
+      stepOf: 'Step {n} / {total}',
     },
     signup: { title: '📬 Join the Roast List', sub: 'Naam daal — ticker pe dikhega jab roast hogi 🔥', emailPh: 'Email (optional)', submit: '🔥 Join Kar', later: 'baad mein' },
-    paywall: { title: 'Free Limit Khatam Bhai', sub: '5 free roasts use ho gaye', price: '₹49 · Lifetime Unlimited', unlock: '🔥 Razorpay se Unlock Kar', later: 'baad mein karta hoon' },
-    support: {
-      tag: '[ SUPPORT_DEV ]',
-      title: 'BUY ME CHAI.',
-      desc: 'MyCVRoast free hai aur free hi rahega. Agar maza aaya toh neeche se thoda support kar do.',
-      upiLabel: 'UPI · INDIA · FASTEST',
-      scanHint: 'SCAN FROM ANY UPI APP',
-      copy: 'COPY',
-      copied: 'COPIED',
-      trigger: '☕ Chai Pilao',
-      noUpi: 'UPI jald aa raha hai — @mycvroast follow karo.',
-    },
+    paywall: { title: 'Free Limit Khatam Bhai', sub: `${FREE_LIMIT} free roasts use ho gaye`, price: '₹149 · Lifetime Unlimited', unlock: '🔥 Razorpay se Unlock Kar', later: 'baad mein karta hoon' },
     footer: 'No account needed · Made with ❤️ by an Indian',
   },
   english: {
@@ -211,6 +251,7 @@ export const UI: Record<string, UiStrings> = {
     warningBadge: 'WARNING: HIGH VOLTAGE ROASTS',
     tagline: '🤖 AI-POWERED · ⚡ INSTANT · 🆓 FREE',
     destroyed: 'resumes already destroyed',
+    headerStat: 'CVs roasted',
     dropResume: 'Drop your resume here',
     clickUpload: 'or click to upload',
     fileLimit: 'PDF or TXT · Max 5MB',
@@ -239,17 +280,18 @@ export const UI: Record<string, UiStrings> = {
       welcome: '🔥 Welcome to MyCVRoast',
       pickLang: 'First, pick your language',
       pickLangSub: 'The whole site opens in this language',
-      yourName: 'Now tell us your name',
+      yourName: 'Your name (optional)',
       namePlaceholder: 'Your name',
       next: 'Continue →',
-      start: '🔥 Start Roasting',
+      start: '🔥 Get started',
+      skip: 'Skip name',
       loading: 'Loading...',
-      nameError: 'Please enter your name',
+      nameError: 'Use at least 2 characters',
     },
+    resumeBuilderOnboarding: base.resumeBuilderOnboarding,
     signup: base.signup,
     emailCapture: base.emailCapture,
     paywall: base.paywall,
-    support: base.support,
     footer: 'No account needed · Made with ❤️ by an Indian',
   },
   spanish: {
@@ -260,7 +302,7 @@ export const UI: Record<string, UiStrings> = {
     clickUpload: 'o haz clic para subir',
     fileLimit: 'PDF o TXT · Máx 5MB',
     readyRoast: 'Listo para el roast 🔥',
-    intensity: { clean: { label: '😇 Limpio', desc: 'Roast profesional. Sin groserías.' }, gaali_light: { label: '😤 Suave', desc: 'Roast de amigo. Calor moderado.' }, savage: { label: '💀 Salvaje', desc: 'Sin piedad. Directo al hueso.' } },
+    intensity: { clean: { label: '😇 Limpio', desc: 'Roast profesional. Sin groserías.' }, gaali_light: { label: '😏 Suave', desc: 'Roast de amigo. Calor moderado.' }, savage: { label: '💀 Salvaje', desc: 'Sin piedad. Directo al hueso.' } },
     chooseLang: '🌍 ELIGE IDIOMA',
     langHint: '15 idiomas · toca para cambiar',
     roastBtn: '🔥 Roastea Mi CV',
@@ -274,13 +316,13 @@ export const UI: Record<string, UiStrings> = {
     join: '📬 Unirse',
     roastsFree: 'roasts gratis',
     stats: { roasted: '🔥 ROASTED', modes: '🎚️ MODOS', mercy: '😇 PIEDAD', dmg: '⚡ DAÑO EMOCIONAL' },
-    faq: [{ q: '¿Qué es un roast de CV?', a: 'La IA lee tu CV y da feedback brutalmente honesto.' }, { q: '¿Es gratis?', a: 'Sí — 5 roasts gratis. Luego ₹49 ilimitado.' }, { q: '¿Mi CV está seguro?', a: 'Sí. No guardamos nada.' }],
+    faq: [{ q: '¿Qué es un roast de CV?', a: 'La IA lee tu CV y da feedback brutalmente honesto.' }, { q: '¿Es gratis?', a: 'Sí — 2 roasts gratis. Luego ₹149 ilimitado.' }, { q: '¿Mi CV está seguro?', a: 'Sí. No guardamos nada.' }],
     fixes: ['Arregla el formato para ATS', 'Añade números y métricas', 'Escribe contenido original'],
     scoreLabels: { low: 'Ve a casa 💀', mid: 'CV mediocre 😬', ok: 'Puede mejorar 😐', good: 'CV sólido 😎', great: 'Estás listo 🏆' },
     result: { verdict: '🎯 VEREDICTO IA', roast: '🔥 EL ROAST', fixesTitle: '✅ QUÉ HACER', share: '📤 COMPARTIR', expand: 'Ver roast completo 👇', copied: '✅ Copiado', copy: '📋 Copiar' },
     onboarding: { welcome: '🔥 Bienvenido a MyCVRoast', pickLang: 'Primero elige tu idioma', pickLangSub: 'Todo el sitio se abrirá en este idioma', yourName: 'Ahora tu nombre', namePlaceholder: 'Tu nombre', next: 'Continuar →', start: '🔥 Empezar', loading: 'Cargando...', nameError: 'Ingresa tu nombre' },
     signup: { title: '📬 Únete a la lista', sub: 'Tu nombre aparece en el ticker 🔥', emailPh: 'Email (opcional)', submit: '🔥 Unirse', later: 'Después' },
-    paywall: { title: 'Límite gratis agotado', sub: '5 roasts usados', price: '₹49 · Ilimitado', unlock: '🔥 Desbloquear', later: 'Después' },
+    paywall: { title: 'Límite gratis agotado', sub: '2 roasts usados', price: '₹49 · Ilimitado', unlock: '🔥 Desbloquear', later: 'Después' },
     footer: 'Sin cuenta · Hecho con ❤️ por un indio',
   },
   portuguese: {
@@ -291,7 +333,7 @@ export const UI: Record<string, UiStrings> = {
     clickUpload: 'ou clique para enviar',
     fileLimit: 'PDF ou TXT · Máx 5MB',
     readyRoast: 'Pronto para roast 🔥',
-    intensity: { clean: { label: '😇 Limpo', desc: 'Roast profissional. Sem palavrão.' }, gaali_light: { label: '😤 Leve', desc: 'Roast de amigo. Calor moderado.' }, savage: { label: '💀 Savage', desc: 'Sem piedade. Direto ao ponto.' } },
+    intensity: { clean: { label: '😇 Limpo', desc: 'Roast profissional. Sem palavrão.' }, gaali_light: { label: '😏 Leve', desc: 'Roast de amigo. Calor moderado.' }, savage: { label: '💀 Savage', desc: 'Sem piedade. Direto ao ponto.' } },
     chooseLang: '🌍 ESCOLHA O IDIOMA',
     langHint: '15 idiomas · toque para trocar',
     roastBtn: '🔥 Roast Meu Currículo',
@@ -305,13 +347,13 @@ export const UI: Record<string, UiStrings> = {
     join: '📬 Entrar',
     roastsFree: 'roasts grátis',
     stats: { roasted: '🔥 ROASTED', modes: '🎚️ MODOS', mercy: '😇 PIEDADE', dmg: '⚡ DANO EMOCIONAL' },
-    faq: [{ q: 'O que é roast de CV?', a: 'A IA lê seu CV e dá feedback brutalmente honesto.' }, { q: 'É grátis?', a: 'Sim — 5 roasts grátis. Depois ₹49 ilimitado.' }, { q: 'Meu CV é seguro?', a: 'Sim. Não salvamos nada.' }],
+    faq: [{ q: 'O que é roast de CV?', a: 'A IA lê seu CV e dá feedback brutalmente honesto.' }, { q: 'É grátis?', a: 'Sim — 2 roasts grátis. Depois ₹149 ilimitado.' }, { q: 'Meu CV é seguro?', a: 'Sim. Não salvamos nada.' }],
     fixes: ['Corrija formatação para ATS', 'Adicione números e métricas', 'Escreva conteúdo original'],
     scoreLabels: { low: 'Vai pra casa 💀', mid: 'CV mediano 😬', ok: 'Pode melhorar 😐', good: 'CV sólido 😎', great: 'Você tá pronto 🏆' },
     result: { verdict: '🎯 VEREDITO IA', roast: '🔥 O ROAST', fixesTitle: '✅ O QUE FAZER', share: '📤 COMPARTILHAR', expand: 'Ver roast completo 👇', copied: '✅ Copiado', copy: '📋 Copiar' },
     onboarding: { welcome: '🔥 Bem-vindo ao MyCVRoast', pickLang: 'Primeiro escolha o idioma', pickLangSub: 'O site inteiro abrirá neste idioma', yourName: 'Agora seu nome', namePlaceholder: 'Seu nome', next: 'Continuar →', start: '🔥 Começar', loading: 'Carregando...', nameError: 'Digite seu nome' },
     signup: { title: '📬 Entrar na lista', sub: 'Seu nome aparece no ticker 🔥', emailPh: 'Email (opcional)', submit: '🔥 Entrar', later: 'Depois' },
-    paywall: { title: 'Limite grátis acabou', sub: '5 roasts usados', price: '₹49 · Ilimitado', unlock: '🔥 Desbloquear', later: 'Depois' },
+    paywall: { title: 'Limite grátis acabou', sub: '2 roasts usados', price: '₹49 · Ilimitado', unlock: '🔥 Desbloquear', later: 'Depois' },
     footer: 'Sem conta · Feito com ❤️ por um indiano',
   },
   french: {
@@ -322,7 +364,7 @@ export const UI: Record<string, UiStrings> = {
     clickUpload: 'ou cliquez pour télécharger',
     fileLimit: 'PDF ou TXT · Max 5 Mo',
     readyRoast: 'Prêt pour le roast 🔥',
-    intensity: { clean: { label: '😇 Clean', desc: 'Roast pro. Pas de gros mots.' }, gaali_light: { label: '😤 Doux', desc: 'Roast entre amis. Chaleur modérée.' }, savage: { label: '💀 Savage', desc: 'Aucune pitié. Direct.' } },
+    intensity: { clean: { label: '😇 Clean', desc: 'Roast pro. Pas de gros mots.' }, gaali_light: { label: '😏 Doux', desc: 'Roast entre amis. Chaleur modérée.' }, savage: { label: '💀 Savage', desc: 'Aucune pitié. Direct.' } },
     chooseLang: '🌍 CHOISIR LA LANGUE',
     langHint: '15 langues · touchez pour changer',
     roastBtn: '🔥 Roaster Mon CV',
@@ -336,13 +378,13 @@ export const UI: Record<string, UiStrings> = {
     join: '📬 Rejoindre',
     roastsFree: 'roasts gratuits',
     stats: { roasted: '🔥 ROASTED', modes: '🎚️ MODES', mercy: '😇 PITIÉ', dmg: '⚡ DÉGÂTS' },
-    faq: [{ q: "C'est quoi un roast de CV?", a: "L'IA lit votre CV et donne un feedback brutal." }, { q: "C'est gratuit?", a: 'Oui — 5 roasts gratuits. Puis ₹49 illimité.' }, { q: 'Mon CV est safe?', a: 'Oui. Rien est sauvegardé.' }],
+    faq: [{ q: "C'est quoi un roast de CV?", a: "L'IA lit votre CV et donne un feedback brutal." }, { q: "C'est gratuit?", a: 'Oui — 2 roasts gratuits. Puis ₹149 illimité.' }, { q: 'Mon CV est safe?', a: 'Oui. Rien est sauvegardé.' }],
     fixes: ['Formatez pour ATS', 'Ajoutez des chiffres', 'Contenu original'],
     scoreLabels: { low: 'Rentre chez toi 💀', mid: 'CV moyen 😬', ok: 'Peut mieux faire 😐', good: 'CV solide 😎', great: 'Tu es prêt 🏆' },
     result: { verdict: '🎯 VERDICT IA', roast: '🔥 LE ROAST', fixesTitle: '✅ À FAIRE', share: '📤 PARTAGER', expand: 'Roast complet 👇', copied: '✅ Copié', copy: '📋 Copier' },
     onboarding: { welcome: '🔥 Bienvenue sur MyCVRoast', pickLang: "D'abord choisissez la langue", pickLangSub: 'Tout le site sera dans cette langue', yourName: 'Maintenant votre nom', namePlaceholder: 'Votre nom', next: 'Continuer →', start: '🔥 Commencer', loading: 'Chargement...', nameError: 'Entrez votre nom' },
     signup: { title: '📬 Rejoindre la liste', sub: 'Votre nom apparaît sur le ticker 🔥', emailPh: 'Email (optionnel)', submit: '🔥 Rejoindre', later: 'Plus tard' },
-    paywall: { title: 'Limite gratuite atteinte', sub: '5 roasts utilisés', price: '₹49 · Illimité', unlock: '🔥 Débloquer', later: 'Plus tard' },
+    paywall: { title: 'Limite gratuite atteinte', sub: '2 roasts utilisés', price: '₹49 · Illimité', unlock: '🔥 Débloquer', later: 'Plus tard' },
     footer: 'Sans compte · Fait avec ❤️ par un Indien',
   },
   german: {
@@ -353,7 +395,7 @@ export const UI: Record<string, UiStrings> = {
     clickUpload: 'oder klicken zum Hochladen',
     fileLimit: 'PDF oder TXT · Max 5MB',
     readyRoast: 'Bereit zum Roast 🔥',
-    intensity: { clean: { label: '😇 Clean', desc: 'Professionell. Keine Schimpfwörter.' }, gaali_light: { label: '😤 Mild', desc: 'Freundschafts-Roast. Leicht scharf.' }, savage: { label: '💀 Savage', desc: 'Keine Gnade. Brutal ehrlich.' } },
+    intensity: { clean: { label: '😇 Clean', desc: 'Professionell. Keine Schimpfwörter.' }, gaali_light: { label: '😏 Mild', desc: 'Freundschafts-Roast. Leicht scharf.' }, savage: { label: '💀 Savage', desc: 'Keine Gnade. Brutal ehrlich.' } },
     chooseLang: '🌍 SPRACHE WÄHLEN',
     langHint: '15 Sprachen · tippen zum Wechseln',
     roastBtn: '🔥 Roast Meinen Lebenslauf',
@@ -367,13 +409,13 @@ export const UI: Record<string, UiStrings> = {
     join: '📬 Beitreten',
     roastsFree: 'Roasts gratis',
     stats: { roasted: '🔥 ROASTED', modes: '🎚️ MODI', mercy: '😇 GNADE', dmg: '⚡ EMOTIONAL' },
-    faq: [{ q: 'Was ist ein CV-Roast?', a: 'KI liest deinen CV und gibt brutales Feedback.' }, { q: 'Ist es kostenlos?', a: 'Ja — 5 gratis. Dann ₹49 unbegrenzt.' }, { q: 'Ist mein CV safe?', a: 'Ja. Nichts wird gespeichert.' }],
+    faq: [{ q: 'Was ist ein CV-Roast?', a: 'KI liest deinen CV und gibt brutales Feedback.' }, { q: 'Ist es kostenlos?', a: 'Ja — 2 gratis. Dann ₹149 unbegrenzt.' }, { q: 'Ist mein CV safe?', a: 'Ja. Nichts wird gespeichert.' }],
     fixes: ['Formatierung für ATS', 'Zahlen hinzufügen', 'Originaler Inhalt'],
     scoreLabels: { low: 'Geh nach Hause 💀', mid: 'Durchschnitt 😬', ok: 'Geht besser 😐', good: 'Solider CV 😎', great: 'Du bist ready 🏆' },
     result: { verdict: '🎯 KI-URTEIL', roast: '🔥 DER ROAST', fixesTitle: '✅ WAS TUN', share: '📤 TEILEN', expand: 'Ganzen Roast 👇', copied: '✅ Kopiert', copy: '📋 Kopieren' },
     onboarding: { welcome: '🔥 Willkommen bei MyCVRoast', pickLang: 'Zuerst Sprache wählen', pickLangSub: 'Die ganze Seite öffnet in dieser Sprache', yourName: 'Jetzt dein Name', namePlaceholder: 'Dein Name', next: 'Weiter →', start: '🔥 Los gehts', loading: 'Lädt...', nameError: 'Name eingeben' },
     signup: { title: '📬 Liste beitreten', sub: 'Name erscheint im Ticker 🔥', emailPh: 'Email (optional)', submit: '🔥 Beitreten', later: 'Später' },
-    paywall: { title: 'Gratis-Limit erreicht', sub: '5 Roasts verbraucht', price: '₹49 · Unbegrenzt', unlock: '🔥 Freischalten', later: 'Später' },
+    paywall: { title: 'Gratis-Limit erreicht', sub: '2 Roasts verbraucht', price: '₹49 · Unbegrenzt', unlock: '🔥 Freischalten', later: 'Später' },
     footer: 'Kein Konto · Mit ❤️ von einem Inder gemacht',
   },
   arabic: {
@@ -384,7 +426,7 @@ export const UI: Record<string, UiStrings> = {
     clickUpload: 'أو انقر للرفع',
     fileLimit: 'PDF أو TXT · حد 5MB',
     readyRoast: 'جاهز للنقد 🔥',
-    intensity: { clean: { label: '😇 نظيف', desc: 'نقد محترف. بدون شتائم.' }, gaali_light: { label: '😤 خفيف', desc: 'نقد ودي. حرارة معتدلة.' }, savage: { label: '💀 وحشي', desc: 'بدون رحمة. مباشر.' } },
+    intensity: { clean: { label: '😇 نظيف', desc: 'نقد محترف. بدون شتائم.' }, gaali_light: { label: '😏 خفيف', desc: 'نقد ودي. حرارة معتدلة.' }, savage: { label: '💀 وحشي', desc: 'بدون رحمة. مباشر.' } },
     chooseLang: '🌍 اختر اللغة',
     langHint: '15 لغة · اضغط للتبديل',
     roastBtn: '🔥 انتقد سيرتي',
@@ -398,13 +440,13 @@ export const UI: Record<string, UiStrings> = {
     join: '📬 انضم',
     roastsFree: 'نقد مجاني',
     stats: { roasted: '🔥 نُقد', modes: '🎚️ أوضاع', mercy: '😇 رحمة', dmg: '⚡ ضرر' },
-    faq: [{ q: 'ما هو نقد السيرة؟', a: 'الذكاء الاصطناعي يقرأ سيرتك ويعطي رأياً صادقاً.' }, { q: 'هل مجاني؟', a: 'نعم — 5 مجاناً. ثم ₹49.' }, { q: 'هل سيرتي آمنة؟', a: 'نعم. لا نحفظ شيئاً.' }],
+    faq: [{ q: 'ما هو نقد السيرة؟', a: 'الذكاء الاصطناعي يقرأ سيرتك ويعطي رأياً صادقاً.' }, { q: 'هل مجاني؟', a: 'نعم — 2 مجاناً. ثم ₹149.' }, { q: 'هل سيرتي آمنة؟', a: 'نعم. لا نحفظ شيئاً.' }],
     fixes: ['أصلح التنسيق لـ ATS', 'أضف أرقاماً', 'محتوى أصلي'],
     scoreLabels: { low: 'اذهب للبيت 💀', mid: 'متوسط 😬', ok: 'يمكن أفضل 😐', good: 'جيد 😎', great: 'أنت جاهز 🏆' },
     result: { verdict: '🎯 حكم AI', roast: '🔥 النقد', fixesTitle: '✅ ماذا تفعل', share: '📤 شارك', expand: 'النقد كاملاً 👇', copied: '✅ نُسخ', copy: '📋 نسخ' },
     onboarding: { welcome: '🔥 مرحباً في MyCVRoast', pickLang: 'اختر لغتك أولاً', pickLangSub: 'الموقع كله بهذه اللغة', yourName: 'الآن اسمك', namePlaceholder: 'اسمك', next: 'متابعة →', start: '🔥 ابدأ', loading: 'جاري...', nameError: 'أدخل اسمك' },
     signup: { title: '📬 انضم للقائمة', sub: 'اسمك يظهر في الشريط 🔥', emailPh: 'بريد (اختياري)', submit: '🔥 انضم', later: 'لاحقاً' },
-    paywall: { title: 'انتهى المجاني', sub: '5 نقد مستخدم', price: '₹49 · غير محدود', unlock: '🔥 فتح', later: 'لاحقاً' },
+    paywall: { title: 'انتهى المجاني', sub: '2 نقد مستخدم', price: '₹49 · غير محدود', unlock: '🔥 فتح', later: 'لاحقاً' },
     footer: 'بدون حساب · صنعه هندي بـ ❤️',
   },
   japanese: {
@@ -415,7 +457,7 @@ export const UI: Record<string, UiStrings> = {
     clickUpload: 'またはクリックしてアップロード',
     fileLimit: 'PDFまたはTXT · 最大5MB',
     readyRoast: 'ロースト準備完了 🔥',
-    intensity: { clean: { label: '😇 クリーン', desc: 'プロ向け。汚い言葉なし。' }, gaali_light: { label: '😤 マイルド', desc: '友達レベルのロースト。' }, savage: { label: '💀 サベージ', desc: '容赦なし。' } },
+    intensity: { clean: { label: '😇 クリーン', desc: 'プロ向け。汚い言葉なし。' }, gaali_light: { label: '😏 マイルド', desc: '友達レベルのロースト。' }, savage: { label: '💀 サベージ', desc: '容赦なし。' } },
     chooseLang: '🌍 言語を選択',
     langHint: '15言語 · タップで切替',
     roastBtn: '🔥 履歴書をロースト',
@@ -446,7 +488,7 @@ export const UI: Record<string, UiStrings> = {
     clickUpload: '또는 클릭하여 업로드',
     fileLimit: 'PDF 또는 TXT · 최대 5MB',
     readyRoast: '로스트 준비 완료 🔥',
-    intensity: { clean: { label: '😇 클린', desc: '전문적. 욕설 없음.' }, gaali_light: { label: '😤 가벼움', desc: '친구 수준 로스트.' }, savage: { label: '💀 사비지', desc: '자비 없음.' } },
+    intensity: { clean: { label: '😇 클린', desc: '전문적. 욕설 없음.' }, gaali_light: { label: '😏 가벼움', desc: '친구 수준 로스트.' }, savage: { label: '💀 사비지', desc: '자비 없음.' } },
     chooseLang: '🌍 언어 선택',
     langHint: '15개 언어 · 탭하여 변경',
     roastBtn: '🔥 내 이력서 로스트',
@@ -477,7 +519,7 @@ export const UI: Record<string, UiStrings> = {
     clickUpload: 'или нажмите для загрузки',
     fileLimit: 'PDF или TXT · Макс 5MB',
     readyRoast: 'Готов к roast 🔥',
-    intensity: { clean: { label: '😇 Чистый', desc: 'Профессионально. Без мата.' }, gaali_light: { label: '😤 Мягкий', desc: 'Roast друга.' }, savage: { label: '💀 Savage', desc: 'Без пощады.' } },
+    intensity: { clean: { label: '😇 Чистый', desc: 'Профессионально. Без мата.' }, gaali_light: { label: '😏 Мягкий', desc: 'Roast друга.' }, savage: { label: '💀 Savage', desc: 'Без пощады.' } },
     chooseLang: '🌍 ВЫБЕРИТЕ ЯЗЫК',
     langHint: '15 языков · нажмите для смены',
     roastBtn: '🔥 Roast Моё Резюме',
@@ -491,13 +533,13 @@ export const UI: Record<string, UiStrings> = {
     join: '📬 Вступить',
     roastsFree: 'roasts бесплатно',
     stats: { roasted: '🔥 ROASTED', modes: '🎚️ РЕЖИМЫ', mercy: '😇 ПОЩАДА', dmg: '⚡ УРОН' },
-    faq: [{ q: 'Что такое roast резюме?', a: 'ИИ читает резюме и даёт честный feedback.' }, { q: 'Бесплатно?', a: 'Да — 5 бесплатно. Потом ₹49.' }, { q: 'Безопасно?', a: 'Да. Ничего не храним.' }],
+    faq: [{ q: 'Что такое roast резюме?', a: 'ИИ читает резюме и даёт честный feedback.' }, { q: 'Бесплатно?', a: 'Да — 2 бесплатно. Потом ₹149.' }, { q: 'Безопасно?', a: 'Да. Ничего не храним.' }],
     fixes: ['Формат для ATS', 'Добавь цифры', 'Оригинальный контент'],
     scoreLabels: { low: 'Домой 💀', mid: 'Средне 😬', ok: 'Можно лучше 😐', good: 'Хорошо 😎', great: 'Ты готов 🏆' },
     result: { verdict: '🎯 ВЕРДИКТ ИИ', roast: '🔥 ROAST', fixesTitle: '✅ ЧТО ДЕЛАТЬ', share: '📤 ПОДЕЛИТЬСЯ', expand: 'Полный roast 👇', copied: '✅ Скопировано', copy: '📋 Копировать' },
     onboarding: { welcome: '🔥 Добро пожаловать в MyCVRoast', pickLang: 'Сначала выберите язык', pickLangSub: 'Весь сайт откроется на этом языке', yourName: 'Теперь ваше имя', namePlaceholder: 'Ваше имя', next: 'Далее →', start: '🔥 Начать', loading: 'Загрузка...', nameError: 'Введите имя' },
     signup: { title: '📬 Вступить в список', sub: 'Имя появится в ticker 🔥', emailPh: 'Email (опц.)', submit: '🔥 Вступить', later: 'Позже' },
-    paywall: { title: 'Лимит исчерпан', sub: '5 roasts использовано', price: '₹49 · Безлимит', unlock: '🔥 Разблокировать', later: 'Позже' },
+    paywall: { title: 'Лимит исчерпан', sub: '2 roasts использовано', price: '₹49 · Безлимит', unlock: '🔥 Разблокировать', later: 'Позже' },
     footer: 'Без аккаунта · Сделано индийцем с ❤️',
   },
   chinese: {
@@ -508,7 +550,7 @@ export const UI: Record<string, UiStrings> = {
     clickUpload: '或点击上传',
     fileLimit: 'PDF或TXT · 最大5MB',
     readyRoast: '准备开 roast 🔥',
-    intensity: { clean: { label: '😇 干净', desc: '专业模式。无脏话。' }, gaali_light: { label: '😤 轻度', desc: '朋友式 roast。' }, savage: { label: '💀 狠辣', desc: '毫不留情。' } },
+    intensity: { clean: { label: '😇 干净', desc: '专业模式。无脏话。' }, gaali_light: { label: '😏 轻度', desc: '朋友式 roast。' }, savage: { label: '💀 狠辣', desc: '毫不留情。' } },
     chooseLang: '🌍 选择语言',
     langHint: '15种语言 · 点击切换',
     roastBtn: '🔥 Roast 我的简历',
@@ -528,7 +570,7 @@ export const UI: Record<string, UiStrings> = {
     result: { verdict: '🎯 AI 判决', roast: '🔥 ROAST', fixesTitle: '✅ 改什么', share: '📤 分享', expand: '看完整 roast 👇', copied: '✅ 已复制', copy: '📋 复制' },
     onboarding: { welcome: '🔥 欢迎来到 MyCVRoast', pickLang: '首先选择语言', pickLangSub: '整个网站将使用该语言', yourName: '输入你的名字', namePlaceholder: '你的名字', next: '继续 →', start: '🔥 开始', loading: '加载中...', nameError: '请输入名字' },
     signup: { title: '📬 加入列表', sub: '名字会显示在 ticker 🔥', emailPh: '邮箱（可选）', submit: '🔥 加入', later: '稍后' },
-    paywall: { title: '免费额度用完', sub: '已用 5 次', price: '₹49 · 无限', unlock: '🔥 解锁', later: '稍后' },
+    paywall: { title: '免费额度用完', sub: '已用 2 次', price: '₹49 · 无限', unlock: '🔥 解锁', later: '稍后' },
     footer: '无需账号 · 印度人用心 ❤️ 制作',
   },
   turkish: {
@@ -539,7 +581,7 @@ export const UI: Record<string, UiStrings> = {
     clickUpload: 'veya tıkla yükle',
     fileLimit: 'PDF veya TXT · Max 5MB',
     readyRoast: 'Roast hazır 🔥',
-    intensity: { clean: { label: '😇 Temiz', desc: 'Profesyonel. Küfür yok.' }, gaali_light: { label: '😤 Hafif', desc: 'Arkadaş roastu.' }, savage: { label: '💀 Savage', desc: 'Merhamet yok.' } },
+    intensity: { clean: { label: '😇 Temiz', desc: 'Profesyonel. Küfür yok.' }, gaali_light: { label: '😏 Hafif', desc: 'Arkadaş roastu.' }, savage: { label: '💀 Savage', desc: 'Merhamet yok.' } },
     chooseLang: '🌍 DİL SEÇ',
     langHint: '15 dil · değiştirmek için dokun',
     roastBtn: '🔥 Özgeçmişimi Roast Et',
@@ -553,13 +595,13 @@ export const UI: Record<string, UiStrings> = {
     join: '📬 Katıl',
     roastsFree: 'ücretsiz roast',
     stats: { roasted: '🔥 ROASTED', modes: '🎚️ MOD', mercy: '😇 MERHAMET', dmg: '⚡ HASAR' },
-    faq: [{ q: 'CV roast nedir?', a: 'AI CVni okur ve dürüst feedback verir.' }, { q: 'Ücretsiz mi?', a: 'Evet — 5 ücretsiz. Sonra ₹49.' }, { q: 'Güvenli mi?', a: 'Evet. Hiçbir şey saklanmaz.' }],
+    faq: [{ q: 'CV roast nedir?', a: 'AI CVni okur ve dürüst feedback verir.' }, { q: 'Ücretsiz mi?', a: 'Evet — 2 ücretsiz. Sonra ₹149.' }, { q: 'Güvenli mi?', a: 'Evet. Hiçbir şey saklanmaz.' }],
     fixes: ['ATS formatı düzelt', 'Rakam ekle', 'Orijinal içerik'],
     scoreLabels: { low: 'Eve git 💀', mid: 'Orta 😬', ok: 'Daha iyi olabilir 😐', good: 'İyi 😎', great: 'Hazırsın 🏆' },
     result: { verdict: '🎯 AI KARARI', roast: '🔥 ROAST', fixesTitle: '✅ NE YAP', share: '📤 PAYLAŞ', expand: 'Tam roast 👇', copied: '✅ Kopyalandı', copy: '📋 Kopyala' },
     onboarding: { welcome: '🔥 MyCVRoast ye hoş geldin', pickLang: 'Önce dilini seç', pickLangSub: 'Tüm site bu dilde açılır', yourName: 'Şimdi adın', namePlaceholder: 'Adın', next: 'Devam →', start: '🔥 Başla', loading: 'Yükleniyor...', nameError: 'Adını gir' },
     signup: { title: '📬 Listeye katıl', sub: 'Adın tickerda görünür 🔥', emailPh: 'Email (opsiyonel)', submit: '🔥 Katıl', later: 'Sonra' },
-    paywall: { title: 'Ücretsiz bitti', sub: '5 roast kullanıldı', price: '₹49 · Sınırsız', unlock: '🔥 Aç', later: 'Sonra' },
+    paywall: { title: 'Ücretsiz bitti', sub: '2 roast kullanıldı', price: '₹49 · Sınırsız', unlock: '🔥 Aç', later: 'Sonra' },
     footer: 'Hesap gerekmez · Bir Hintli ❤️ ile yaptı',
   },
   indonesian: {
@@ -570,7 +612,7 @@ export const UI: Record<string, UiStrings> = {
     clickUpload: 'atau klik untuk upload',
     fileLimit: 'PDF atau TXT · Max 5MB',
     readyRoast: 'Siap di-roast 🔥',
-    intensity: { clean: { label: '😇 Bersih', desc: 'Roast profesional. Tanpa makian.' }, gaali_light: { label: '😤 Ringan', desc: 'Roast teman.' }, savage: { label: '💀 Savage', desc: 'Tanpa ampun.' } },
+    intensity: { clean: { label: '😇 Bersih', desc: 'Roast profesional. Tanpa makian.' }, gaali_light: { label: '😏 Ringan', desc: 'Roast teman.' }, savage: { label: '💀 Savage', desc: 'Tanpa ampun.' } },
     chooseLang: '🌍 PILIH BAHASA',
     langHint: '15 bahasa · tap untuk ganti',
     roastBtn: '🔥 Roast CV-ku',
@@ -584,13 +626,13 @@ export const UI: Record<string, UiStrings> = {
     join: '📬 Gabung',
     roastsFree: 'roast gratis',
     stats: { roasted: '🔥 ROASTED', modes: '🎚️ MODE', mercy: '😇 AMPUN', dmg: '⚡ DMG' },
-    faq: [{ q: 'Apa itu roast CV?', a: 'AI baca CV dan kasih feedback jujur.' }, { q: 'Gratis?', a: 'Ya — 5 gratis. Lalu ₹49.' }, { q: 'Aman?', a: 'Ya. Tidak disimpan.' }],
+    faq: [{ q: 'Apa itu roast CV?', a: 'AI baca CV dan kasih feedback jujur.' }, { q: 'Gratis?', a: 'Ya — 2 gratis. Lalu ₹149.' }, { q: 'Aman?', a: 'Ya. Tidak disimpan.' }],
     fixes: ['Perbaiki format ATS', 'Tambah angka', 'Konten original'],
     scoreLabels: { low: 'Pulang 💀', mid: 'Biasa 😬', ok: 'Bisa lebih baik 😐', good: 'Solid 😎', great: 'Siap 🏆' },
     result: { verdict: '🎯 VERDICT AI', roast: '🔥 ROAST', fixesTitle: '✅ PERBAIKI', share: '📤 SHARE', expand: 'Roast lengkap 👇', copied: '✅ Copied', copy: '📋 Copy' },
     onboarding: { welcome: '🔥 Selamat datang di MyCVRoast', pickLang: 'Pilih bahasa dulu', pickLangSub: 'Seluruh situs dalam bahasa ini', yourName: 'Sekarang namamu', namePlaceholder: 'Namamu', next: 'Lanjut →', start: '🔥 Mulai', loading: 'Loading...', nameError: 'Masukkan nama' },
     signup: { title: '📬 Gabung list', sub: 'Nama muncul di ticker 🔥', emailPh: 'Email (opsional)', submit: '🔥 Gabung', later: 'Nanti' },
-    paywall: { title: 'Limit gratis habis', sub: '5 roast terpakai', price: '₹49 · Unlimited', unlock: '🔥 Unlock', later: 'Nanti' },
+    paywall: { title: 'Limit gratis habis', sub: '2 roast terpakai', price: '₹49 · Unlimited', unlock: '🔥 Unlock', later: 'Nanti' },
     footer: 'Tanpa akun · Dibuat dengan ❤️ oleh orang India',
   },
   italian: {
@@ -601,7 +643,7 @@ export const UI: Record<string, UiStrings> = {
     clickUpload: 'o clicca per caricare',
     fileLimit: 'PDF o TXT · Max 5MB',
     readyRoast: 'Pronto per il roast 🔥',
-    intensity: { clean: { label: '😇 Pulito', desc: 'Roast professionale.' }, gaali_light: { label: '😤 Leggero', desc: 'Roast da amici.' }, savage: { label: '💀 Savage', desc: 'Nessuna pietà.' } },
+    intensity: { clean: { label: '😇 Pulito', desc: 'Roast professionale.' }, gaali_light: { label: '😏 Leggero', desc: 'Roast da amici.' }, savage: { label: '💀 Savage', desc: 'Nessuna pietà.' } },
     chooseLang: '🌍 SCEGLI LINGUA',
     langHint: '15 lingue · tap per cambiare',
     roastBtn: '🔥 Roast Il Mio CV',
@@ -615,13 +657,13 @@ export const UI: Record<string, UiStrings> = {
     join: '📬 Unisciti',
     roastsFree: 'roast gratis',
     stats: { roasted: '🔥 ROASTED', modes: '🎚️ MODALITÀ', mercy: '😇 PIETÀ', dmg: '⚡ DANNO' },
-    faq: [{ q: 'Cos è un roast del CV?', a: "L'AI legge il CV e dà feedback onesto." }, { q: 'Gratis?', a: 'Sì — 5 gratis. Poi ₹49.' }, { q: 'Sicuro?', a: 'Sì. Non salviamo nulla.' }],
+    faq: [{ q: 'Cos è un roast del CV?', a: "L'AI legge il CV e dà feedback onesto." }, { q: 'Gratis?', a: 'Sì — 2 gratis. Poi ₹149.' }, { q: 'Sicuro?', a: 'Sì. Non salviamo nulla.' }],
     fixes: ['Formatta per ATS', 'Aggiungi numeri', 'Contenuto originale'],
     scoreLabels: { low: 'Vai a casa 💀', mid: 'Mediocre 😬', ok: 'Può migliorare 😐', good: 'Solido 😎', great: 'Sei pronto 🏆' },
     result: { verdict: '🎯 VERDETTO AI', roast: '🔥 IL ROAST', fixesTitle: '✅ DA FARE', share: '📤 CONdividi', expand: 'Roast completo 👇', copied: '✅ Copiato', copy: '📋 Copia' },
     onboarding: { welcome: '🔥 Benvenuto su MyCVRoast', pickLang: 'Prima scegli la lingua', pickLangSub: 'Tutto il sito sarà in questa lingua', yourName: 'Ora il tuo nome', namePlaceholder: 'Il tuo nome', next: 'Continua →', start: '🔥 Inizia', loading: 'Caricamento...', nameError: 'Inserisci il nome' },
     signup: { title: '📬 Unisciti alla lista', sub: 'Il nome appare nel ticker 🔥', emailPh: 'Email (opz.)', submit: '🔥 Unisciti', later: 'Dopo' },
-    paywall: { title: 'Limite gratis finito', sub: '5 roast usati', price: '₹49 · Illimitato', unlock: '🔥 Sblocca', later: 'Dopo' },
+    paywall: { title: 'Limite gratis finito', sub: '2 roast usati', price: '₹49 · Illimitato', unlock: '🔥 Sblocca', later: 'Dopo' },
     footer: 'Nessun account · Fatto con ❤️ da un indiano',
   },
   dutch: {
@@ -632,7 +674,7 @@ export const UI: Record<string, UiStrings> = {
     clickUpload: 'of klik om te uploaden',
     fileLimit: 'PDF of TXT · Max 5MB',
     readyRoast: 'Klaar om te roasten 🔥',
-    intensity: { clean: { label: '😇 Clean', desc: 'Professioneel. Geen scheldwoorden.' }, gaali_light: { label: '😤 Mild', desc: 'Vrienden-roast.' }, savage: { label: '💀 Savage', desc: 'Geen genade.' } },
+    intensity: { clean: { label: '😇 Clean', desc: 'Professioneel. Geen scheldwoorden.' }, gaali_light: { label: '😏 Mild', desc: 'Vrienden-roast.' }, savage: { label: '💀 Savage', desc: 'Geen genade.' } },
     chooseLang: '🌍 KIES TAAL',
     langHint: '15 talen · tik om te wisselen',
     roastBtn: '🔥 Roast Mijn CV',
@@ -646,13 +688,13 @@ export const UI: Record<string, UiStrings> = {
     join: '📬 Join',
     roastsFree: 'gratis roasts',
     stats: { roasted: '🔥 ROASTED', modes: '🎚️ MODI', mercy: '😇 GENADE', dmg: '⚡ SCHADE' },
-    faq: [{ q: 'Wat is een CV roast?', a: 'AI leest je CV en geeft eerlijke feedback.' }, { q: 'Gratis?', a: 'Ja — 5 gratis. Daarna ₹49.' }, { q: 'Veilig?', a: 'Ja. Niets opgeslagen.' }],
+    faq: [{ q: 'Wat is een CV roast?', a: 'AI leest je CV en geeft eerlijke feedback.' }, { q: 'Gratis?', a: 'Ja — 2 gratis. Daarna ₹149.' }, { q: 'Veilig?', a: 'Ja. Niets opgeslagen.' }],
     fixes: ['Fix ATS-formaat', 'Voeg cijfers toe', 'Originele content'],
     scoreLabels: { low: 'Ga naar huis 💀', mid: 'Gemiddeld 😬', ok: 'Kan beter 😐', good: 'Solide 😎', great: 'Je bent klaar 🏆' },
     result: { verdict: '🎯 AI VERDICT', roast: '🔥 DE ROAST', fixesTitle: '✅ FIX DIT', share: '📤 DELEN', expand: 'Volledige roast 👇', copied: '✅ Gekopieerd', copy: '📋 Kopieer' },
     onboarding: { welcome: '🔥 Welkom bij MyCVRoast', pickLang: 'Kies eerst je taal', pickLangSub: 'Hele site opent in deze taal', yourName: 'Nu je naam', namePlaceholder: 'Je naam', next: 'Verder →', start: '🔥 Start', loading: 'Laden...', nameError: 'Vul je naam in' },
     signup: { title: '📬 Join de lijst', sub: 'Naam verschijnt in ticker 🔥', emailPh: 'Email (optioneel)', submit: '🔥 Join', later: 'Later' },
-    paywall: { title: 'Gratis limiet bereikt', sub: '5 roasts gebruikt', price: '₹49 · Onbeperkt', unlock: '🔥 Unlock', later: 'Later' },
+    paywall: { title: 'Gratis limiet bereikt', sub: '2 roasts gebruikt', price: '₹49 · Onbeperkt', unlock: '🔥 Unlock', later: 'Later' },
     footer: 'Geen account · Met ❤️ gemaakt door een Indiër',
   },
 }
@@ -662,18 +704,27 @@ export function getUi(lang: string): UiStrings & {
   emailCapture: NonNullable<UiStrings['emailCapture']>
   howItWorks: UiStrings['howItWorks']
   disclaimer: NonNullable<UiStrings['disclaimer']>
-  support: SupportCopy
   scrollHint: string
+  resumeBuilderOnboarding: NonNullable<UiStrings['resumeBuilderOnboarding']>
 } {
   const ui = UI[lang] ?? UI.hinglish
+  const onboarding = {
+    ...ui.onboarding,
+    skip: (ui.onboarding as { skip?: string }).skip ?? 'Skip name',
+  }
   return {
     ...ui,
+    onboarding,
     warningBadge: ui.warningBadge ?? (UI.english.warningBadge ?? 'WARNING: HIGH VOLTAGE ROASTS'),
     emailCapture: ui.emailCapture ?? base.emailCapture,
     howItWorks: ui.howItWorks ?? base.howItWorks,
     disclaimer: ui.disclaimer ?? base.disclaimer!,
-    support: ui.support ?? base.support!,
     scrollHint: ui.scrollHint ?? base.scrollHint,
+    resumeBuilderOnboarding:
+      ui.resumeBuilderOnboarding ??
+      UI.english.resumeBuilderOnboarding ??
+      base.resumeBuilderOnboarding!,
+    headerStat: ui.headerStat ?? base.headerStat ?? 'CVs roasted',
   }
 }
 

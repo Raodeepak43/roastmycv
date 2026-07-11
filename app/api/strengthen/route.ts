@@ -8,7 +8,7 @@ export const maxDuration = 30
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
 
 const prompts: Record<string, (text: string) => string> = {
-  bullet: (text) => `Rewrite this resume bullet in STAR format for a top tech company (Amazon/Google level).
+  bullet: (text) => `Rewrite this resume bullet in STAR format for a competitive tech role.
 Rules:
 - Start with strong verb: Led/Owned/Drove/Built/Scaled/Reduced/Increased
 - Add specific numbers (estimate reasonably if missing)
@@ -19,7 +19,7 @@ Rules:
 
 Bullet: "${text}"`,
 
-  summary: (text) => `Rewrite this professional summary for Amazon/top tech company application.
+  summary: (text) => `Rewrite this professional summary for a strong tech job application.
 Rules:
 - 2-3 sentences max
 - Mention years of experience

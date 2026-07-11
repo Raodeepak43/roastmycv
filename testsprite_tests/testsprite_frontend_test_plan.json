@@ -1,0 +1,1644 @@
+[
+  {
+    "id": "TC001",
+    "title": "Guest roasts a resume and views the result",
+    "description": "A guest visitor can submit a resume roast from the homepage and reach a result page that shows the roast outcome and share link.",
+    "category": "Guest CV Roast",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Upload a valid resume file"
+      },
+      {
+        "type": "action",
+        "description": "Select a roast intensity"
+      },
+      {
+        "type": "action",
+        "description": "Select a language"
+      },
+      {
+        "type": "action",
+        "description": "Submit the roast request"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a loading state is shown"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the roast result page displays a score, feedback, and a share link"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "User signs in and lands on the dashboard",
+    "description": "An authenticated user can sign in with email and password and reach the dashboard overview.",
+    "category": "User Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user lands on the dashboard"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify dashboard usage stats are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Dashboard is protected from guest access",
+    "description": "A guest visitor who opens a protected dashboard route is redirected to sign in instead of seeing private content.",
+    "category": "User Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /dashboard"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the sign-in page is shown"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify dashboard content is not visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Guest roasts pasted resume text",
+    "description": "A guest visitor can paste resume text on the homepage and receive a completed roast result.",
+    "category": "Guest CV Roast",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the resume text field with sample resume content"
+      },
+      {
+        "type": "action",
+        "description": "Select a roast intensity"
+      },
+      {
+        "type": "action",
+        "description": "Select a language"
+      },
+      {
+        "type": "action",
+        "description": "Submit the roast request"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a loading state is shown"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the roast result page displays a score and feedback"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Start a mock interview with a selected voice",
+    "description": "A Pro user can choose an interviewer voice, enter interview details, and start a mock interview session successfully.",
+    "category": "Mock Interview",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the mock interview tool from the dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Select an interviewer voice"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the job role field with valid content"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the interview settings with valid values"
+      },
+      {
+        "type": "action",
+        "description": "Start the interview"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the first interview question is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "User creates a new account and lands on the dashboard",
+    "description": "A new user can sign up with email and password and reach the dashboard after account creation.",
+    "category": "User Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with a new email address"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with a valid password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-up form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user lands on the dashboard"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify dashboard usage stats are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Start a Pro upgrade from the dashboard billing page",
+    "description": "A signed-in user can open the dashboard billing page and begin the Pro checkout flow from there.",
+    "category": "Plans and Pro Upgrade",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Open the billing page from the dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Start the Pro upgrade flow"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the checkout flow is launched"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user remains on the upgrade journey"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Continue a multi-turn mock interview",
+    "description": "A Pro user can answer an interview question and advance to the next question in the same session.",
+    "category": "Mock Interview",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the mock interview tool from the dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Select an interviewer voice"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the job role field with valid content"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the interview settings with valid values"
+      },
+      {
+        "type": "action",
+        "description": "Start the interview"
+      },
+      {
+        "type": "action",
+        "description": "Type an answer into the response field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the answer"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the next interview question is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Signed-in user roasts a CV from the dashboard",
+    "description": "A signed-in user can submit a dashboard CV roast and receive a completed result saved to their account flow.",
+    "category": "Dashboard CV Roast",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /dashboard/roast"
+      },
+      {
+        "type": "action",
+        "description": "Upload a valid resume file"
+      },
+      {
+        "type": "action",
+        "description": "Submit the roast request"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a roast result is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the result can be opened in history"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC010",
+    "title": "Public resume builder preview updates before export",
+    "description": "A visitor can create or edit a resume in the public builder, preview the output, and reach the export action within normal limits.",
+    "category": "Resume Builder",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /resume-builder"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the resume details with valid content"
+      },
+      {
+        "type": "action",
+        "description": "Update a resume section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the live resume preview is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the builder export action is available"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC011",
+    "title": "Create a resume and see the live preview update",
+    "description": "A user can enter resume details on the public builder and see the preview reflect the completed resume content.",
+    "category": "Resume Builder",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /resume-builder"
+      },
+      {
+        "type": "action",
+        "description": "Fill in personal details with valid information"
+      },
+      {
+        "type": "action",
+        "description": "Fill in experience details with valid information"
+      },
+      {
+        "type": "action",
+        "description": "Fill in education details with valid information"
+      },
+      {
+        "type": "action",
+        "description": "Fill in skills with valid information"
+      },
+      {
+        "type": "action",
+        "description": "Switch to a different resume template"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a resume preview is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the entered resume content is reflected in the preview"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC012",
+    "title": "Use a dashboard career tool end to end",
+    "description": "A signed-in user can open a dashboard career tool, generate a result from valid inputs, and view the completed output.",
+    "category": "Career Tools Suite",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open a career tool from the dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the tool input field with valid content"
+      },
+      {
+        "type": "action",
+        "description": "Generate the result"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the generated output is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC013",
+    "title": "Resume export stays available within free limits",
+    "description": "A user can export a resume PDF from the builder while staying within the free export allowance.",
+    "category": "Resume Builder",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /resume-builder"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the resume details with valid content"
+      },
+      {
+        "type": "action",
+        "description": "Trigger the export action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the export completes successfully"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the exported resume remains accessible in the builder"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC014",
+    "title": "Export a resume within the free limit",
+    "description": "A user can complete a resume and download a PDF while still within the free export allowance.",
+    "category": "Resume Builder",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /resume-builder"
+      },
+      {
+        "type": "action",
+        "description": "Fill in personal details with valid information"
+      },
+      {
+        "type": "action",
+        "description": "Fill in experience details with valid information"
+      },
+      {
+        "type": "action",
+        "description": "Fill in education details with valid information"
+      },
+      {
+        "type": "action",
+        "description": "Fill in skills with valid information"
+      },
+      {
+        "type": "action",
+        "description": "Download the resume PDF"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the resume export completes successfully"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the exported resume remains available in the builder"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC015",
+    "title": "Signed-in user opens a saved roast from history",
+    "description": "A signed-in user can view a previously saved roast result from account history.",
+    "category": "Dashboard CV Roast",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /dashboard/history"
+      },
+      {
+        "type": "action",
+        "description": "Open a saved roast result"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the saved roast detail is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC016",
+    "title": "Open saved roast and tool history",
+    "description": "A signed-in user can review past roasts and generated tool results from history and open a saved entry.",
+    "category": "Roast and Tool History",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the history page from the dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Click a saved roast or tool history entry"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the saved detail view is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC017",
+    "title": "Guest reaches the public roast result page",
+    "description": "A guest visitor can open a shared roast result page and view the publicly visible roast details.",
+    "category": "Guest CV Roast",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Upload a valid resume file"
+      },
+      {
+        "type": "action",
+        "description": "Select a roast intensity"
+      },
+      {
+        "type": "action",
+        "description": "Select a language"
+      },
+      {
+        "type": "action",
+        "description": "Submit the roast request"
+      },
+      {
+        "type": "action",
+        "description": "Open the shared roast result page from the completed roast"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the roast result page displays the score and feedback"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC018",
+    "title": "Edit a saved resume from the dashboard and export the update",
+    "description": "A signed-in user can open a saved resume in the dashboard, make changes, review the updated preview, and export the revised PDF.",
+    "category": "Resume Builder",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Open the resume builder from the dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Edit the resume content with valid changes"
+      },
+      {
+        "type": "action",
+        "description": "Review the updated preview"
+      },
+      {
+        "type": "action",
+        "description": "Export the updated resume as a PDF"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the saved resume changes are visible in the preview"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the updated resume export completes successfully"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC019",
+    "title": "Signed-in user sees dashboard resume builder content",
+    "description": "A signed-in user can open the dashboard resume builder and view the editable resume workspace.",
+    "category": "Dashboard CV Roast",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /dashboard/resume-builder"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the resume builder workspace is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a saved CV or editable resume content is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC020",
+    "title": "Reach the linked career tools from the dashboard",
+    "description": "A signed-in user can browse from the dashboard to a career tool page and see the tool interface ready for input.",
+    "category": "Career Tools Suite",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the dashboard tools area"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open a career tool"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the selected tool interface is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC021",
+    "title": "Admin grants Pro access to a user",
+    "description": "This verifies that an admin can manage a user record from the admin dashboard and apply Pro access changes.",
+    "category": "Admin Panel",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /admin/login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the user management section"
+      },
+      {
+        "type": "action",
+        "description": "Select a user record"
+      },
+      {
+        "type": "action",
+        "description": "Grant Pro access to the selected user"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user is shown as Pro"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC022",
+    "title": "Admin signs in and reaches the admin dashboard",
+    "description": "An admin can sign in with the separate admin login and view the admin dashboard overview.",
+    "category": "Admin Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /admin/login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password with the valid admin password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the admin sign-in form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the admin dashboard is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify admin overview content is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC023",
+    "title": "Continue using free access after leaving the upgrade flow",
+    "description": "A signed-in user who abandons the upgrade flow returns to the dashboard without Pro access being applied.",
+    "category": "Plans and Pro Upgrade",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Open the billing page from the dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Start the Pro upgrade flow"
+      },
+      {
+        "type": "action",
+        "description": "Leave the payment flow"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the dashboard remains accessible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify Pro access is not shown as unlocked"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC024",
+    "title": "Guest roasts a LinkedIn profile",
+    "description": "A guest visitor can use the public LinkedIn roast flow and receive public feedback output.",
+    "category": "LinkedIn Roast",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /linkedin-roast"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the LinkedIn profile field with profile content"
+      },
+      {
+        "type": "action",
+        "description": "Submit the roast request"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the public feedback result is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC025",
+    "title": "Respect the free usage limit for career tools",
+    "description": "A free signed-in user can generate within the allowed limit and then sees an upgrade prompt when trying to exceed it.",
+    "category": "Career Tools Suite",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open a free-limited career tool from the dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the tool input field with valid content"
+      },
+      {
+        "type": "action",
+        "description": "Generate the result"
+      },
+      {
+        "type": "action",
+        "description": "Generate another result using the same tool"
+      },
+      {
+        "type": "action",
+        "description": "Attempt to generate one more result"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an upgrade prompt is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC026",
+    "title": "Signed-in user opens dashboard billing page",
+    "description": "An authenticated user can access the in-dashboard billing page to review upgrade options.",
+    "category": "Plans and Billing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /dashboard/plans"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the billing and upgrade page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify Pro upgrade options are visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC027",
+    "title": "Receive LinkedIn profile feedback from pasted text",
+    "description": "A visitor can paste LinkedIn profile text into the public roast tool and receive visible feedback.",
+    "category": "LinkedIn Roast",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /linkedin-roast"
+      },
+      {
+        "type": "action",
+        "description": "Paste LinkedIn headline and about text into the input"
+      },
+      {
+        "type": "action",
+        "description": "Submit the roast request"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify LinkedIn feedback is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the feedback reflects the submitted profile text"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC028",
+    "title": "Admin can view core dashboard sections",
+    "description": "An admin can open the admin dashboard and see the sections for signups, usage, users, and payments.",
+    "category": "Admin Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /admin/login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password with the valid admin password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the admin sign-in form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify signups, usage, users, and payments sections are visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC029",
+    "title": "Job tracker allows adding an application",
+    "description": "A signed-in user can create a job application entry in the tracker and see it in the list.",
+    "category": "Job Application Tracker",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /dashboard/tracker"
+      },
+      {
+        "type": "action",
+        "description": "Add a new job application with valid details"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new application appears in the tracker"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC030",
+    "title": "Generate a LinkedIn writing result",
+    "description": "A signed-in user can use the LinkedIn writer tool to produce a completed markdown response from provided profile details.",
+    "category": "Career Tools Suite",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the LinkedIn writing tool from the dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the required profile details"
+      },
+      {
+        "type": "action",
+        "description": "Generate the result"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the generated markdown output is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC031",
+    "title": "Admin reviews dashboard data views",
+    "description": "This verifies that an authenticated admin can open the admin dashboard and review the main operational data panels.",
+    "category": "Admin Panel",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /admin/login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify signups, usage, users, and payments data are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC032",
+    "title": "Compare Free and Pro plans on the public pricing page",
+    "description": "A visitor can review the plan comparison and understand the available upgrade path on the public pricing page.",
+    "category": "Plans and Pro Upgrade",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /plans"
+      },
+      {
+        "type": "action",
+        "description": "Review the plan comparison"
+      },
+      {
+        "type": "action",
+        "description": "Review the tool catalog"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Free and Pro offerings are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify upgrade options are available"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC033",
+    "title": "Job tracker allows updating application status",
+    "description": "A signed-in user can update an existing application status and see the change reflected in the tracker.",
+    "category": "Job Application Tracker",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /dashboard/tracker"
+      },
+      {
+        "type": "action",
+        "description": "Create a new job application with valid details"
+      },
+      {
+        "type": "action",
+        "description": "Update the application status"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the updated status is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC034",
+    "title": "Generate a cover letter from job details",
+    "description": "A signed-in user can use the cover letter tool to create a completed draft from job and candidate inputs.",
+    "category": "Career Tools Suite",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the cover letter tool from the dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the required job and candidate details"
+      },
+      {
+        "type": "action",
+        "description": "Generate the result"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the cover letter output is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC035",
+    "title": "Show an upgrade prompt after the free export limit is reached",
+    "description": "A user who keeps exporting resumes beyond the free allowance is prompted to upgrade instead of downloading again.",
+    "category": "Resume Builder",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /resume-builder"
+      },
+      {
+        "type": "action",
+        "description": "Fill in personal details with valid information"
+      },
+      {
+        "type": "action",
+        "description": "Fill in experience details with valid information"
+      },
+      {
+        "type": "action",
+        "description": "Fill in education details with valid information"
+      },
+      {
+        "type": "action",
+        "description": "Fill in skills with valid information"
+      },
+      {
+        "type": "action",
+        "description": "Download the resume PDF twice"
+      },
+      {
+        "type": "action",
+        "description": "Attempt another resume PDF download"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an upgrade prompt is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify additional export access is blocked"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC036",
+    "title": "Score a job description match",
+    "description": "A signed-in user can paste a job description and resume context into the match scorer and see a completed score result.",
+    "category": "Career Tools Suite",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the job description match tool from the dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the required job description and resume input fields"
+      },
+      {
+        "type": "action",
+        "description": "Generate the result"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the match result is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC037",
+    "title": "Admin accesses the signups overview",
+    "description": "This verifies that an admin can inspect the signups data view from the internal dashboard.",
+    "category": "Admin Panel",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /admin/login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the signups section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify signup records are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC038",
+    "title": "Public tool landing page is accessible",
+    "description": "A visitor can open a public tool landing page and view its overview content.",
+    "category": "Public Tool Landing Pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /tools/linkedin"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the tool landing page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify tool overview content is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC039",
+    "title": "Admin accesses the payments overview",
+    "description": "This verifies that an admin can inspect the payments data view from the internal dashboard.",
+    "category": "Admin Panel",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /admin/login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the payments section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify payment records are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC040",
+    "title": "Free user sees upgrade prompt after export limit",
+    "description": "A free user who exceeds the resume export allowance sees an upgrade prompt instead of another export.",
+    "category": "Resume Builder",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /resume-builder"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the resume details with valid content"
+      },
+      {
+        "type": "action",
+        "description": "Trigger exports until the free limit is reached"
+      },
+      {
+        "type": "action",
+        "description": "Attempt another export"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an upgrade prompt is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify another export is blocked"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC041",
+    "title": "Require CV input before starting a mock interview",
+    "description": "A user cannot start the mock interview without the required CV input and sees a validation error instead.",
+    "category": "Mock Interview",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the mock interview tool from the dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Select an interviewer voice"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the job role field with valid content"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the interview settings with valid values"
+      },
+      {
+        "type": "action",
+        "description": "Start the interview without providing CV input"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a validation error is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC042",
+    "title": "Guest sees unsupported file validation",
+    "description": "A guest visitor who uploads an unsupported resume file type sees a validation error and no roast is started.",
+    "category": "Guest CV Roast",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Upload an unsupported resume file type"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a file validation error is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC043",
+    "title": "Invalid login shows an error",
+    "description": "A user entering incorrect credentials on the login page sees a validation error and remains unauthenticated.",
+    "category": "User Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with an invalid email address"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with an invalid password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a validation error is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC044",
+    "title": "Admin login rejects invalid credentials",
+    "description": "This verifies that the admin login form shows an error when an invalid password is submitted.",
+    "category": "Admin Panel",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /admin/login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with invalid credentials"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an authentication error is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC045",
+    "title": "Guest sees oversize file validation",
+    "description": "A guest visitor who uploads a resume file that is too large sees a validation error and can try again.",
+    "category": "Guest CV Roast",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Upload an oversized resume file"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a file validation error is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC046",
+    "title": "Guest is shown a limit notice after repeated roasts",
+    "description": "A guest visitor who completes two roasts in the same browser is shown a guest limit notice when starting another roast.",
+    "category": "Guest CV Roast",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Upload a valid resume file"
+      },
+      {
+        "type": "action",
+        "description": "Select a roast intensity"
+      },
+      {
+        "type": "action",
+        "description": "Select a language"
+      },
+      {
+        "type": "action",
+        "description": "Submit the roast request"
+      },
+      {
+        "type": "action",
+        "description": "Complete a second valid roast in the same browser session"
+      },
+      {
+        "type": "action",
+        "description": "Attempt to start another roast"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a guest limit notice is visible"
+      }
+    ],
+    "priority": "Low"
+  }
+]

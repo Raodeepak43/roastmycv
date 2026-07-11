@@ -1,14 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server'
-import Anthropic from '@anthropic-ai/sdk'
-import { getRoastModel, RESUME_CHAR_LIMIT, type Intensity } from './prompts'
-import { isLimitReached } from '@/lib/usage'
+import { RESUME_CHAR_LIMIT, type Intensity } from './prompts'
+import {
+  attachGuestSession,
+  cvUsesLeft,
+  incrementCv,
+  isCvLimitReached,
+  readGuestSession,
+} from '@/lib/guest-session'
+import { isFingerprintPaid } from '@/lib/usage'
 import { incrementStatsCount } from '@/lib/stats'
+import { completeRoastText, hasRoastLlmKey } from '@/lib/roast/complete'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 export const maxDuration = 60
-
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
 
 const languageInstructions: Record<string, string> = {
   hinglish: "Respond in Hinglish — natural mix of Hindi and English like Indian millennials speak. Use words like 'yaar', 'bhai', 'kya bakwaas', 'saala', 'matlab'. Feel like a desi friend roasting you.",
@@ -62,7 +67,7 @@ function extractJson(raw: string): Record<string, unknown> {
 
 export async function POST(req: NextRequest) {
   try {
-    if (!process.env.ANTHROPIC_API_KEY) {
+    if (!hasRoastLlmKey()) {
       return NextResponse.json({ error: 'API key missing — .env.local check karo' }, { status: 500 })
     }
 
@@ -75,8 +80,9 @@ export async function POST(req: NextRequest) {
 
     const { resumeText, intensity = 'gaali_light', language = 'hinglish', fp } = body
 
-    const paid = false // Razorpay verification later
-    if (fp && typeof fp === 'string' && (await isLimitReached(fp, paid))) {
+    const paid = fp && typeof fp === 'string' ? await isFingerprintPaid(fp) : false
+    const session = readGuestSession(req)
+    if (!paid && isCvLimitReached(session, paid)) {
       return NextResponse.json({ error: 'Free limit reached' }, { status: 429 })
     }
 
@@ -91,33 +97,35 @@ export async function POST(req: NextRequest) {
     const level = (['clean', 'gaali_light', 'savage'].includes(intensity) ? intensity : 'gaali_light') as Intensity
     const lang = typeof language === 'string' ? language : 'hinglish'
     const trimmed = resumeText.slice(0, RESUME_CHAR_LIMIT)
-    const model = getRoastModel(level)
     const systemPrompt = buildSystemPrompt(lang, level)
 
-    const message = await client.messages.create({
-      model,
-      max_tokens: 2000,
-      system: systemPrompt,
-      messages: [{ role: 'user', content: `Analyze and roast this resume. Every field in your JSON response MUST be written in the language from the system instructions (code: ${lang}):\n\n${trimmed}` }],
+    const raw = await completeRoastText({
+      systemPrompt,
+      userMessage: `Analyze and roast this resume. Every field in your JSON response MUST be written in the language from the system instructions (code: ${lang}):\n\n${trimmed}`,
+      language: lang,
+      intensity: level,
     })
-
-    const raw = message.content
-      .filter((block) => block.type === 'text')
-      .map((block) => block.text)
-      .join('')
 
     const parsed = extractJson(raw)
     const score = typeof parsed.score === 'number' ? Math.min(10, Math.max(1, parsed.score)) : 5
     const statsCount = await incrementStatsCount()
 
-    return NextResponse.json({
+    const nextSession = incrementCv(session)
+    const usesLeft = cvUsesLeft(nextSession, paid)
+
+    const res = NextResponse.json({
       score,
       title: String(parsed.title ?? ''),
       roast: String(parsed.roast ?? ''),
       verdict: String(parsed.verdict ?? ''),
       fixes: Array.isArray(parsed.fixes) ? parsed.fixes.map(String).slice(0, 3) : [],
       statsCount,
+      usesLeft,
+      used: nextSession.cv,
+      paid,
     })
+    attachGuestSession(res, nextSession)
+    return res
   } catch (err) {
     console.error(err)
     return NextResponse.json({ error: 'Kuch gadbad ho gayi, dobara try karo' }, { status: 500 })

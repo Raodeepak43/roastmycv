@@ -1,0 +1,368 @@
+/* Elevate Agency–inspired theme — MyCVRoast content, elevated layout */
+
+:root {
+  --color-page: #eee9e3;
+  --color-card: #ffffff;
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-orange: #f43c00;
+  --color-ember: #f43c00;
+  --text-primary: #000000;
+  --text-secondary: rgba(0, 0, 0, 0.8);
+  --text-muted: rgba(0, 0, 0, 0.68);
+  --text-subtle: rgba(0, 0, 0, 0.52);
+  --text-faint: rgba(0, 0, 0, 0.4);
+  --color-bg-dark: #000000;
+  --color-card-dark: #141414;
+  --elevate-radius: 3rem;
+  --elevate-radius-md: 2rem;
+}
+
+.elevate-site {
+  color-scheme: light;
+}
+
+.elevate-site body {
+  background: var(--color-page);
+  color: var(--text-primary);
+}
+
+/* Light marketing pages — dark text instead of legacy white utilities */
+.elevate-site .bg-page .text-white,
+.elevate-site .bg-bg-beige .text-white,
+.elevate-site .elevate-white .text-white,
+.elevate-site main.bg-page .text-white,
+.elevate-site .min-h-screen.bg-page .text-white {
+  color: var(--text-primary) !important;
+}
+
+.elevate-site .bg-page .hover\:text-white:hover,
+.elevate-site .bg-bg-beige .hover\:text-white:hover,
+.elevate-site .elevate-white .hover\:text-white:hover {
+  color: var(--color-orange) !important;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-left { transform: translateX(-80px); }
+.reveal-right { transform: translateX(80px); }
+.reveal-up { transform: translateY(48px); }
+.reveal-visible {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
+/* Marquee */
+.elevate-marquee-track {
+  width: 200%;
+}
+
+@keyframes elevate-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-elevate-marquee {
+  animation: elevate-marquee 28s linear infinite;
+}
+
+/* Section shells */
+.elevate-dark {
+  background: var(--color-bg-dark);
+  color: #ffffff;
+  border-radius: var(--elevate-radius) var(--elevate-radius) 0 0;
+  position: relative;
+  z-index: 40;
+}
+
+.elevate-white {
+  background: #ffffff;
+  color: var(--text-primary);
+  border-radius: var(--elevate-radius) var(--elevate-radius) 0 0;
+  position: relative;
+  z-index: 45;
+}
+
+/* Strong contrast on white sections */
+.elevate-white .text-dim {
+  color: rgba(0, 0, 0, 0.82) !important;
+}
+
+.elevate-white .text-muted {
+  color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.elevate-white .text-subtle {
+  color: rgba(0, 0, 0, 0.52) !important;
+}
+
+.elevate-white h2,
+.elevate-white h3,
+.elevate-white .font-display {
+  color: var(--text-primary);
+}
+
+.elevate-white .section-label {
+  color: var(--color-orange);
+}
+
+.elevate-white .offerings-section__title,
+.elevate-white .offerings-card__title {
+  color: var(--text-primary);
+}
+
+.elevate-white .offerings-section__sub,
+.elevate-white .offerings-card__desc,
+.elevate-white .offerings-card__tiers p {
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.elevate-dark .text-white,
+.elevate-dark h1,
+.elevate-dark h2,
+.elevate-dark h3 {
+  color: #ffffff;
+}
+
+.elevate-dark .text-dim { color: rgba(255, 255, 255, 0.82); }
+.elevate-dark .text-muted { color: rgba(255, 255, 255, 0.68); }
+.elevate-dark .text-subtle { color: rgba(255, 255, 255, 0.55); }
+.elevate-dark .border-border { border-color: rgba(255, 255, 255, 0.12); }
+
+.elevate-dark .section-heading__title {
+  color: #ffffff;
+}
+
+.elevate-dark .section-heading__line {
+  background: var(--color-orange);
+}
+
+.elevate-dark .section-label {
+  color: var(--color-orange);
+}
+
+.elevate-dark .neo-frame {
+  background: var(--color-card-dark);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.elevate-dark .card-ui {
+  background: var(--color-card-dark);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.elevate-dark .stats-panel,
+.elevate-dark .step-card,
+.elevate-dark .disclaimer-box {
+  background: var(--color-card-dark);
+  border-radius: var(--elevate-radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.elevate-dark .step-card::before,
+.elevate-dark .disclaimer-box::before,
+.elevate-dark .stats-panel::before {
+  display: none;
+}
+
+.elevate-dark .pricing-card {
+  background: var(--color-card-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--elevate-radius-md);
+}
+
+.elevate-dark .pricing-card--highlight {
+  border-color: var(--color-orange);
+}
+
+.elevate-dark .pricing-card--highlight::before {
+  display: none;
+}
+
+.elevate-dark .pricing-card__name,
+.elevate-dark .pricing-card__price {
+  color: #ffffff;
+}
+
+.elevate-dark .pricing-card__price-note,
+.elevate-dark .pricing-card__features li {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.elevate-dark .pricing-footnote {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.82);
+  border-radius: 1rem;
+}
+
+.elevate-dark .pricing-footnote strong {
+  color: #ffffff;
+}
+
+.elevate-dark .hover\:text-white:hover {
+  color: #ffffff !important;
+}
+
+.elevate-light-panel {
+  background: rgba(238, 233, 227, 0.92);
+  backdrop-filter: blur(12px);
+  border-radius: var(--elevate-radius);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.06);
+}
+
+.elevate-hero-sticky {
+  position: sticky;
+  top: 6rem;
+  z-index: 1;
+}
+
+/* Header offset for fixed pill nav */
+.elevate-site main,
+.elevate-site .min-h-screen.flex.flex-col.bg-page,
+.elevate-site .min-h-screen.flex.flex-col.bg-bg-beige {
+  padding-top: 5.5rem;
+}
+
+.elevate-site .site-header__ticker {
+  pointer-events: auto;
+  max-width: 90rem;
+  margin: 0.5rem auto 0;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* White section — career tools & offerings */
+.elevate-white .career-hub__card {
+  border: 1px solid var(--color-border);
+  background: #faf8f5;
+}
+
+.elevate-white .career-hub__card h3 {
+  color: var(--text-primary);
+}
+
+.elevate-white .career-hub__card p {
+  color: var(--text-muted);
+}
+
+.elevate-white .career-hub__card:hover {
+  border-color: rgba(244, 60, 0, 0.35);
+}
+
+.elevate-white .offerings-section {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.elevate-white .offerings-section__more a {
+  color: var(--color-orange);
+}
+
+.elevate-white .offerings-section__more a:hover {
+  color: var(--text-primary);
+}
+
+/* Footer — single cohesive block */
+.site-footer-elevate .elevate-footer-card {
+  margin-top: 0;
+  box-shadow: 0 -4px 80px rgba(244, 60, 0, 0.15);
+}
+
+/* Unified Elevate footer */
+.site-footer-elevate {
+  color: #ffffff;
+}
+
+.site-footer-elevate .site-footer__col-title {
+  color: #ffffff;
+}
+
+/* Footer sits inside .bg-bg-beige wrappers — preserve white text utilities */
+.elevate-site .site-footer-elevate .text-white {
+  color: #ffffff !important;
+}
+
+.site-footer-elevate .text-brand-orange {
+  color: var(--color-orange);
+}
+
+.site-footer-elevate .elevate-footer-card a {
+  color: var(--text-primary);
+}
+.elevate-footer-card {
+  background: var(--color-orange);
+  border-radius: var(--elevate-radius-md);
+  color: var(--text-primary);
+}
+
+.elevate-footer-card a:hover {
+  opacity: 0.75;
+}
+
+/* Typography */
+.elevate-display-hero {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 10vw, 7.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.text-text-dark { color: var(--text-primary); }
+.text-brand-orange { color: var(--color-orange); }
+.bg-bg-beige { background-color: var(--color-page); }
+.bg-brand-orange { background-color: var(--color-orange); }
+
+/* Blog & content CTAs on light bg */
+.elevate-site .blog-cta-card,
+.elevate-site .elevate-cta-panel {
+  background: #ffffff !important;
+  border: 2px solid var(--color-orange) !important;
+  border-radius: 2rem !important;
+}
+
+.elevate-site .blog-cta-card .text-white,
+.elevate-site .elevate-cta-panel .text-white {
+  color: var(--text-primary) !important;
+}
+
+/* Scrollbar */
+.elevate-site ::-webkit-scrollbar-track {
+  background: var(--color-page);
+}
+
+.elevate-site ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+/* Marketing pages — force beige canvas */
+.elevate-site main.bg-bg-beige,
+.elevate-site .min-h-screen.bg-bg-beige,
+.elevate-site .min-h-screen.bg-page {
+  background-color: var(--color-page) !important;
+}
+
+/* Dashboard keeps its own UI */
+.elevate-site .dash-app {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none; opacity: 1; transform: none; }
+  .animate-elevate-marquee { animation: none; }
+}

@@ -6,22 +6,30 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "db:setup": "node scripts/setup-db.mjs"
+    "seo:parse": "npx tsx scripts/parse-keywords.ts",
+    "seo:generate": "node scripts/generate-p0-seo-data.mjs && node scripts/generate-hinglish-samples.mjs",
+    "seo:ping": "node scripts/ping-sitemaps.mjs",
+    "db:setup": "node scripts/setup-db.mjs",
+    "db:migrate": "node scripts/migrate-user-tables.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.26.0",
+    "@auth/prisma-adapter": "^2.11.2",
     "@fingerprintjs/fingerprintjs": "^5.2.0",
+    "@prisma/client": "^7.8.0",
     "@radix-ui/react-checkbox": "^1.3.5",
     "@radix-ui/react-dropdown-menu": "^2.1.18",
     "@radix-ui/react-label": "^2.1.10",
     "@radix-ui/react-scroll-area": "^1.2.12",
     "@radix-ui/react-separator": "^1.1.10",
     "@radix-ui/react-slot": "^1.3.0",
+    "@react-oauth/google": "^0.13.5",
     "@supabase/ssr": "^0.12.0",
     "@supabase/supabase-js": "^2.108.2",
     "@vercel/analytics": "^2.0.1",
     "@vercel/kv": "^3.0.0",
     "@vercel/speed-insights": "^2.0.0",
+    "bcryptjs": "^3.0.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.42.0",
@@ -32,16 +40,23 @@
     "lucide-react": "^1.21.0",
     "motion": "^12.42.0",
     "next": "14.2.5",
+    "next-auth": "^4.24.14",
     "pdf-parse": "^1.1.1",
+    "prisma": "^7.8.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-markdown": "^10.1.0",
+    "recharts": "^3.9.0",
     "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1",
     "tailwind-merge": "^3.6.0",
     "tailwindcss-animate": "^1.0.7",
-    "three": "^0.185.0"
+    "three": "^0.185.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/three": "^0.185.0",
@@ -50,6 +65,8 @@
     "postcss": "^8",
     "sharp": "^0.35.2",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vercel": "^54.18.0",
+    "xlsx": "^0.18.5"
   }
 }

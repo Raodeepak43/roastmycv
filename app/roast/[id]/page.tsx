@@ -4,17 +4,20 @@ import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useParams, useRouter } from 'next/navigation'
 import { RoastResultView, getShareText } from '@/components/RoastResultView'
+import { PublicRoastCard, PublicRoastUnavailable } from '@/components/roast/PublicRoastCard'
 import { SiteFooter } from '@/components/SiteFooter'
 import { RoastIntensityBackground } from '@/components/ui/roast-intensity-background'
 import { buildTickerMessage, mergeTickerItems, PINNED_TICKER_KEY } from '@/lib/ticker'
-import { loadRoast, type StoredRoast } from '@/lib/roast-session'
+import { loadRoast, saveRoast, type StoredRoast } from '@/lib/roast-session'
+import { savePublicRoastViaApi } from '@/lib/roast/public-save'
+import type { PublicRoastRow } from '@/lib/public-roasts'
 import { getUi } from '@/app/i18n'
+import {
+  getConsentedDisplayName,
+  setConsentedDisplayName,
+} from '@/lib/client-storage/display-name'
 
-const NAME_KEY = 'rcv_display_name'
-const TICKER_ITEMS = [
-  '⚡ WARNING: HIGH VOLTAGE ROASTS',
-  '🔥 ZERO SYMPATHY', '⚡ RECRUITER KI NAZAR', '💀 TERI CV NEXT',
-]
+type ViewMode = 'loading' | 'owner' | 'public' | 'unavailable'
 
 export default function RoastResultPage() {
   const params = useParams()
@@ -22,7 +25,12 @@ export default function RoastResultPage() {
   const id = typeof params.id === 'string' ? params.id : ''
 
   const [roast, setRoast] = useState<StoredRoast | null>(null)
-  const [ready, setReady] = useState(false)
+  const [publicRoast, setPublicRoast] = useState<Pick<
+    PublicRoastRow,
+    'score' | 'intensity' | 'language' | 'summary' | 'top_issues' | 'share_token'
+  > | null>(null)
+  const [shareToken, setShareToken] = useState<string | null>(null)
+  const [viewMode, setViewMode] = useState<ViewMode>('loading')
   const [copied, setCopied] = useState(false)
   const [showTickerNamePrompt, setShowTickerNamePrompt] = useState(false)
   const [resultNameInput, setResultNameInput] = useState('')
@@ -34,20 +42,62 @@ export default function RoastResultPage() {
       router.replace('/')
       return
     }
-    const stored = loadRoast(id)
-    if (!stored) {
-      router.replace('/')
-      return
+
+    let cancelled = false
+
+    ;(async () => {
+      const stored = loadRoast(id)
+
+      if (stored && !cancelled) {
+        setRoast(stored)
+        setShareToken(stored.shareToken ?? id)
+        setShowTickerNamePrompt(Boolean(stored.showTickerNamePrompt))
+        setResultNameInput(getConsentedDisplayName())
+        setViewMode('owner')
+
+        if (!stored.shareToken) {
+          const token = await savePublicRoastViaApi({
+            score: stored.score,
+            intensity: stored.intensity,
+            language: stored.language,
+            lines: stored.lines,
+            title: stored.title,
+            verdict: stored.verdict,
+            fixes: stored.fixes,
+          })
+          if (token && !cancelled) {
+            setShareToken(token)
+            saveRoast(id, { ...stored, shareToken: token })
+          }
+        }
+        return
+      }
+
+      try {
+        const res = await fetch(`/api/public-roasts/${encodeURIComponent(id)}`)
+        if (res.ok) {
+          const data = await res.json()
+          if (data.roast && !cancelled) {
+            setPublicRoast(data.roast)
+            setViewMode('public')
+            return
+          }
+        }
+      } catch {
+        /* fall through */
+      }
+
+      if (!cancelled) setViewMode('unavailable')
+    })()
+
+    return () => {
+      cancelled = true
     }
-    setRoast(stored)
-    setShowTickerNamePrompt(Boolean(stored.showTickerNamePrompt))
-    setResultNameInput(localStorage.getItem(NAME_KEY)?.trim() || '')
-    setReady(true)
   }, [id, router])
 
   useEffect(() => {
     const fetchTicker = () => {
-      fetch('/api/signups', { cache: 'no-store' })
+      fetch('/api/signups', { cache: 'no-store', credentials: 'include' })
         .then((r) => r.json())
         .then((d) => {
           setTickerNames(d.items ?? [])
@@ -61,7 +111,7 @@ export default function RoastResultPage() {
     return () => clearInterval(interval)
   }, [])
 
-  const language = roast?.language ?? 'hinglish'
+  const language = roast?.language ?? publicRoast?.language ?? 'hinglish'
   const t = getUi(language)
   const isRtl = language === 'arabic'
 
@@ -73,6 +123,7 @@ export default function RoastResultPage() {
     fetch('/api/signups', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify({ name, score, language: roastLang }),
     }).catch(() => {})
   }, [language])
@@ -87,21 +138,23 @@ export default function RoastResultPage() {
   const submitResultName = () => {
     const name = resultNameInput.trim()
     if (name.length < 2 || !roast) return
-    localStorage.setItem(NAME_KEY, name)
+    setConsentedDisplayName(name)
     publishRoastToTicker(name, roast.score)
     setShowTickerNamePrompt(false)
   }
 
   const userTicker = mergeTickerItems(pinnedTicker, tickerNames.slice(0, 4))
-  const tickerItems = userTicker.length > 0 ? userTicker : TICKER_ITEMS
+  const tickerItems = userTicker
 
-  if (!ready || !roast) {
+  if (viewMode === 'loading') {
     return (
       <main className="min-h-screen flex items-center justify-center bg-page">
         <div className="w-8 h-8 border-2 border-orange border-t-transparent rounded-full spinner" />
       </main>
     )
   }
+
+  const intensity = roast?.intensity ?? publicRoast?.intensity ?? 'gaali_light'
 
   return (
     <main
@@ -110,21 +163,21 @@ export default function RoastResultPage() {
       lang={language}
     >
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <RoastIntensityBackground intensity={roast.intensity} className="absolute inset-0" />
+        <RoastIntensityBackground intensity={intensity} className="absolute inset-0" />
       </div>
 
       <div className="relative z-10 flex flex-col flex-1 min-h-screen">
         <header className="w-full border-b border-border bg-black/50 backdrop-blur-md">
-          <div className="max-w-6xl mx-auto px-4 md:px-8 py-3 md:py-4 flex items-center justify-between">
+          <div className="max-w-6xl mx-auto px-4 md:px-8 py-3 md:py-4 flex items-center justify-between gap-3">
             <Link
               href="/"
-              className="font-body text-[13px] text-[#888888] hover:text-white transition-colors"
+              className="font-body text-[13px] text-dim hover:text-white transition-colors shrink-0"
             >
               ← {t.tryAgain}
             </Link>
             <Link
               href="/"
-              className="font-display text-lg md:text-xl text-white hover:text-orange transition-colors"
+              className="font-display text-lg md:text-xl text-white hover:text-orange transition-colors shrink-0"
             >
               🔥 MyCVRoast
             </Link>
@@ -135,36 +188,48 @@ export default function RoastResultPage() {
               {t.roastBtn.replace(/^🔥\s*/, '🔥 ')}
             </Link>
           </div>
-          <div className="w-full bg-card/80 backdrop-blur-sm border-t border-border overflow-hidden py-2">
-            <div className="ticker-track font-body text-[11px] whitespace-nowrap">
-              {[...tickerItems, ...tickerItems].map((item, i) => (
-                <span
-                  key={`${item}-${i}`}
-                  className={`mx-5 inline-flex items-center ${pinnedTicker === item ? 'text-orange font-semibold' : 'text-white'}`}
-                >
-                  <span className="text-orange mr-1.5">·</span>
-                  {item}
-                </span>
-              ))}
+          {viewMode === 'owner' && (
+            <div className="w-full bg-card/80 backdrop-blur-sm border-t border-border overflow-hidden py-2">
+              <div className="ticker-track font-body text-[11px] whitespace-nowrap">
+                {[...tickerItems, ...tickerItems].map((item, i) => (
+                  <span
+                    key={`${item}-${i}`}
+                    className={`mx-5 inline-flex items-center ${pinnedTicker === item ? 'text-orange font-semibold' : 'text-white'}`}
+                  >
+                    <span className="text-orange mr-1.5">·</span>
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </header>
 
         <div className="flex-1 w-full max-w-6xl mx-auto px-4 md:px-8 py-6 md:py-10 pb-8">
-          <RoastResultView
-            result={roast}
-            t={t}
-            copied={copied}
-            onCopy={copyShare}
-            onReset={() => router.push('/')}
-            showTickerNamePrompt={showTickerNamePrompt}
-            resultNameInput={resultNameInput}
-            onResultNameInput={setResultNameInput}
-            onSubmitResultName={submitResultName}
-          />
+          {viewMode === 'owner' && roast && (
+            <RoastResultView
+              roastId={id}
+              shareToken={shareToken ?? undefined}
+              result={roast}
+              t={t}
+              copied={copied}
+              onCopy={copyShare}
+              onReset={() => router.push('/')}
+              showTickerNamePrompt={showTickerNamePrompt}
+              resultNameInput={resultNameInput}
+              onResultNameInput={setResultNameInput}
+              onSubmitResultName={submitResultName}
+            />
+          )}
+
+          {viewMode === 'public' && publicRoast && (
+            <PublicRoastCard roast={publicRoast} />
+          )}
+
+          {viewMode === 'unavailable' && <PublicRoastUnavailable />}
         </div>
 
-        <SiteFooter tagline={t.footer} support={t.support} cinematicInstant />
+        <SiteFooter tagline={t.footer} cinematicInstant />
       </div>
     </main>
   )

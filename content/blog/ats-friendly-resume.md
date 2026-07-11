@@ -1,10 +1,22 @@
 ---
 title: "Is My Resume ATS Friendly? Free Check Guide 2026"
+metaTitle: "Is My Resume ATS Friendly? Free Check (India)"
 slug: "ats-friendly-resume"
 date: "2025-07-19"
-description: "Check if your resume passes ATS. Free guide on making your resume ATS friendly and beating the bots."
-keywords: "ats resume checker free, ats friendly resume, beat the ats, ats keywords"
+description: "Is my resume ATS friendly? Free instant check for India — upload PDF, get parsing score & fixes in 30 sec. 2 free roasts, no signup required."
+keywords: "is my resume ats friendly, check if resume is ats friendly, ats friendly resume, ats resume checker free, analyse ats friendly cv"
+faq:
+  - q: "Is my resume ATS friendly?"
+    a: "Copy-paste your PDF into plain text — if sections scramble, ATS will too. Use MyCVRoast's free ATS checker at /ats-friendly-resume-checker for an instant score and parsing feedback."
+  - q: "How do I check if my resume is ATS friendly for free?"
+    a: "Upload your CV at mycvroast.in/ats-friendly-resume-checker. You get a score, formatting flags, and specific fixes in 30 seconds — 2 free checks per device, no signup."
+  - q: "What makes a resume ATS friendly?"
+    a: "Single-column layout, standard headings (Experience, Education, Skills), text-based PDF, no tables or graphics, and keywords from the job description."
+  - q: "Can I analyse if my ATS friendly CV will pass Indian company filters?"
+    a: "Yes. MyCVRoast checks parsing, keyword density, and fresher-specific sections (CGPA, projects) used by TCS, Infosys, and Naukri employers."
 ---
+
+> **Quick check:** Upload your CV to our [free ATS friendly resume checker](/ats-friendly-resume-checker) — see if bots can read your resume in 30 seconds.
 
 Before a recruiter ever reads your CV, a machine probably decides your fate. If you are asking **"Is my resume ATS friendly?"** you are already ahead of most applicants — because the majority never check until they have sent fifty applications with zero response. Applicant Tracking Systems scan, parse, and rank resumes against job descriptions. This guide explains how ATS works, how to run a free **ATS resume checker**, and how to build a resume that beats the bots while still impressing humans.
 

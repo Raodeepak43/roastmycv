@@ -1,19 +1,17 @@
 import type { Metadata } from 'next'
-import { ResumeBuilderApp } from '@/components/resume-builder/ResumeBuilderApp'
+import { PublicResumeBuilder } from '@/components/resume-builder/PublicResumeBuilder'
+import { pageMetadata } from '@/lib/seo'
+import './resume-builder.css'
 
-export const metadata: Metadata = {
-  title: 'Free ATS Resume Builder — Amazon Ready | MyCVRoast',
+export const metadata: Metadata = pageMetadata({
+  title: 'Free Resume Builder India — ATS CV Maker Online | MyCVRoast',
   description:
-    'Build ATS-friendly resume that passes Amazon, Google, Flipkart screening. Free, AI-powered bullet strengthener included.',
-  alternates: { canonical: 'https://mycvroast.in/resume-builder' },
-  openGraph: {
-    title: 'Free ATS Resume Builder — Amazon Ready',
-    description:
-      'Build ATS-friendly resume that passes Amazon, Google, Flipkart screening. Free AI bullet strengthener.',
-    url: 'https://mycvroast.in/resume-builder',
-  },
-}
+    'Free resume builder & CV maker for India — create resume online free, ATS-friendly templates, live score, PDF export. Best for freshers, campus placement & job applications. No download paywall.',
+  path: '/resume-builder',
+  keywords:
+    'free resume builder, free resume builder india, resume builder for freshers, cv maker free, online cv maker, create resume online free, indian resume builder, resume maker online free, ats resume builder free, build your resume for free',
+})
 
 export default function ResumeBuilderPage() {
-  return <ResumeBuilderApp />
+  return <PublicResumeBuilder />
 }

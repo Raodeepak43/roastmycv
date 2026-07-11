@@ -1,0 +1,573 @@
+/* Public resume builder — MyCVRoast neo-brutalist theme */
+
+.rb-public {
+  position: relative;
+  isolation: isolate;
+}
+
+.rb-public-header {
+  padding-top: env(safe-area-inset-top, 0);
+}
+
+.rb-public-hero {
+  position: relative;
+  border-bottom: 1px solid rgba(255, 69, 0, 0.2);
+  background: linear-gradient(180deg, rgba(255, 69, 0, 0.06) 0%, transparent 100%);
+}
+
+.rb-public-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.rb-public-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-syne), Syne;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ccc;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid #1a1a1a;
+  border-radius: 999px;
+}
+
+.rb-public-chip--hot {
+  color: var(--color-ember);
+  border-color: rgba(255, 69, 0, 0.45);
+  background: rgba(255, 69, 0, 0.1);
+}
+
+.rb-public-workspace {
+  position: relative;
+  border-top: 1px solid #1a1a1a;
+}
+
+.rb-public-tabs {
+  background: rgba(0, 0, 0, 0.85);
+  border-bottom: 1px solid #1a1a1a;
+  backdrop-filter: blur(10px);
+}
+
+.rb-public-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  padding: 0.875rem 0.5rem;
+  font-family: var(--font-syne), Syne;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #A1A1AA;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.rb-public-tab--active {
+  color: var(--color-ember);
+  border-bottom-color: var(--color-ember);
+  background: rgba(255, 69, 0, 0.1);
+  text-shadow: 0 0 24px rgba(255, 69, 0, 0.35);
+}
+
+.rb-public-editor-col {
+  background: rgba(5, 5, 5, 0.72);
+  border-right: 1px solid #1a1a1a;
+}
+
+.rb-public-editor-inner {
+  padding: 1rem 1rem 6.5rem;
+}
+
+@media (min-width: 768px) {
+  .rb-public-editor-inner {
+    padding: 1.5rem 1.75rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rb-public-editor-inner {
+    padding: 1.75rem 2rem 2rem;
+    max-height: calc(100vh - 53px);
+    overflow-y: auto;
+  }
+}
+
+.rb-public-start {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 1rem 1.125rem;
+  margin-bottom: 1.25rem;
+  background: rgba(255, 69, 0, 0.08);
+  border: 1px solid rgba(255, 69, 0, 0.35);
+  border-radius: 0;
+  border-left: 3px solid var(--color-ember);
+}
+
+.rb-public-start-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: var(--color-ember);
+  color: #000;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.rb-public-start-title {
+  font-family: var(--font-syne), Syne;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.25rem;
+}
+
+.rb-public-start-desc {
+  font-family: var(--font-syne), Syne;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #888;
+  margin: 0;
+}
+
+/* Preview column — dark cinematic stage */
+.rb-public-preview {
+  position: relative;
+  min-height: 40vh;
+  background: #030303;
+  background-image:
+    radial-gradient(ellipse 90% 55% at 50% 15%, rgba(255, 69, 0, 0.14), transparent 55%),
+    linear-gradient(180deg, #0a0a0a 0%, #030303 100%);
+}
+
+.rb-public-preview::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.rb-public-preview-head {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.rb-public-preview-label {
+  font-family: var(--font-syne), Syne;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.rb-public-preview-score {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.625rem;
+  font-family: var(--font-syne), Syne;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 69, 0, 0.35);
+  background: rgba(255, 69, 0, 0.08);
+}
+
+.rb-public-preview-frame {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  max-width: 780px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 24px 48px rgba(0, 0, 0, 0.65),
+    0 0 80px rgba(255, 69, 0, 0.12);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.rb-public-preview-frame:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px rgba(255, 69, 0, 0.25),
+    0 28px 56px rgba(0, 0, 0, 0.7),
+    0 0 100px rgba(255, 69, 0, 0.18);
+}
+
+.rb-public-preview-caption {
+  position: relative;
+  z-index: 1;
+  margin: 1rem auto 0;
+  max-width: 780px;
+  text-align: center;
+  font-family: var(--font-syne), Syne;
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+@media (min-width: 1024px) {
+  .rb-public-preview {
+    position: sticky;
+    top: 53px;
+    max-height: calc(100vh - 53px);
+    overflow-y: auto;
+  }
+}
+
+.rb-public-mobile-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  background: rgba(0, 0, 0, 0.94);
+  border-top: 1px solid rgba(255, 69, 0, 0.25);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 1024px) {
+  .rb-public-mobile-bar {
+    display: none;
+  }
+}
+
+.rb-public-btn-secondary {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  padding: 0.875rem 1rem;
+  font-family: var(--font-syne), Syne;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #0a0a0a;
+  border: 1px solid #333;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.rb-public-btn-secondary:hover {
+  border-color: var(--color-ember);
+  color: var(--color-ember);
+}
+
+.rb-public-btn-primary {
+  flex: 1.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  padding: 0.875rem 1rem;
+  font-family: var(--font-syne), Syne;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #000;
+  background: var(--color-ember);
+  border: none;
+  box-shadow: 0 0 24px rgba(255, 69, 0, 0.35);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.rb-public-btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 0 32px rgba(255, 69, 0, 0.5);
+}
+
+.rb-public-btn-primary:disabled {
+  opacity: 0.65;
+}
+
+/* ATS panel */
+.rb-ats-panel {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding: 1.125rem 1.25rem;
+  background: #0f0f0f;
+  border: 1px solid #fff;
+}
+
+.rb-ats-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translate(4px, 4px);
+  border: 1px solid var(--color-ember);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.rb-ats-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.rb-ats-panel__score {
+  font-family: var(--font-syne), Syne;
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.rb-ats-panel__track {
+  height: 0.375rem;
+  background: #1a1a1a;
+  overflow: hidden;
+}
+
+.rb-ats-panel__fill {
+  height: 100%;
+  border-radius: 0;
+  transition: width 0.4s ease;
+  box-shadow: 0 0 12px currentColor;
+}
+
+/* Form sections */
+.rb-public .rb-form-section {
+  position: relative;
+  margin-bottom: 1.25rem;
+  padding: 1.125rem 1.25rem;
+  background: #0a0a0a;
+  border: 1px solid #1a1a1a;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.rb-public .rb-form-section:hover {
+  border-color: rgba(255, 69, 0, 0.35);
+}
+
+.rb-public .rb-form-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #1a1a1a;
+  font-family: var(--font-syne), Syne;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.rb-public .rb-form-section-title::before {
+  content: '';
+  width: 3px;
+  height: 1rem;
+  background: var(--color-ember);
+  flex-shrink: 0;
+}
+
+.rb-public .rb-form-input {
+  width: 100%;
+  background: #000;
+  border: 1px solid #1a1a1a;
+  padding: 0.625rem 0.75rem;
+  font-family: var(--font-syne), Syne;
+  font-size: 0.8125rem;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.rb-public .rb-form-input::placeholder {
+  color: #444;
+}
+
+.rb-public .rb-form-input:focus {
+  border-color: var(--color-ember);
+  box-shadow: 0 0 0 1px rgba(255, 69, 0, 0.35);
+}
+
+.rb-public .rb-form-label {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-family: var(--font-syne), Syne;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.rb-public .rb-form-ai {
+  margin-top: 0.375rem;
+  font-family: var(--font-syne), Syne;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-ember);
+  transition: color 0.15s;
+}
+
+.rb-public .rb-form-ai:hover:not(:disabled) {
+  color: #fff;
+}
+
+.rb-public .rb-form-add {
+  font-family: var(--font-syne), Syne;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-ember);
+  border: 1px solid rgba(255, 69, 0, 0.45);
+  padding: 0.5rem 0.875rem;
+  background: transparent;
+  transition: background 0.15s, color 0.15s;
+}
+
+.rb-public .rb-form-add:hover {
+  background: rgba(255, 69, 0, 0.12);
+  color: #fff;
+}
+
+.rb-section-active {
+  border-color: var(--color-ember) !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 69, 0, 0.4),
+    0 0 32px rgba(255, 69, 0, 0.12);
+}
+
+.rb-preview-active {
+  box-shadow: inset 0 0 0 2px rgba(255, 69, 0, 0.55);
+}
+
+.rb-public--guided .rb-public-editor-inner {
+  padding-bottom: 11rem;
+}
+
+@media (min-width: 1024px) {
+  .rb-public--guided .rb-public-editor-inner {
+    padding-bottom: 2rem;
+  }
+
+  .rb-public--guided .rb-public-preview {
+    padding-bottom: 11rem;
+  }
+}
+
+.rb-guide {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 45;
+  bottom: calc(4.25rem + env(safe-area-inset-bottom, 0px));
+  padding: 0 1rem 0.5rem;
+  pointer-events: none;
+}
+
+.rb-guide-panel {
+  pointer-events: auto;
+  background: #0a0a0a;
+  padding: 1rem 1.125rem;
+  max-height: 42vh;
+  overflow-y: auto;
+}
+
+@media (min-width: 1024px) {
+  .rb-guide {
+    bottom: 1.5rem;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: min(100%, 420px);
+    padding: 0;
+  }
+
+  .rb-public--guided .rb-public-mobile-bar {
+    display: none;
+  }
+}
+
+/* Full-screen wizard on public resume builder */
+.rb-public--builder-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.rb-public--builder-page .rb-wizard,
+.rb-public--builder-page .rb-wizard * {
+  color-scheme: light;
+}
+
+.rb-public-builder-shell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.rb-public-builder-banner {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.625rem 1.25rem;
+  background: #fff7ed;
+  border-bottom: 1px solid rgba(255, 69, 0, 0.25);
+  color: #0f172a;
+  font-size: 0.8125rem;
+}
+
+.rb-public-builder-banner p {
+  margin: 0;
+  color: #334155;
+}
+
+.rb-public-builder-banner a {
+  font-weight: 700;
+  color: #ff4500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.rb-public--builder-page .rb-wizard--public {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  height: 100%;
+}

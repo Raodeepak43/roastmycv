@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { cn } from '@/lib/utils'
+import { FREE_LIMIT } from '@/lib/usage'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -13,7 +14,7 @@ if (typeof window !== 'undefined') {
 
 const STYLES = `
 .cinematic-footer-wrapper {
-  font-family: Syne, sans-serif;
+  font-family: var(--font-syne), Syne;
   -webkit-font-smoothing: antialiased;
   --foreground: #ffffff;
   --background: #000000;
@@ -103,15 +104,42 @@ const STYLES = `
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: clamp(7rem, 24vw, 15rem);
-  padding: 0 clamp(1rem, 3vw, 2rem) clamp(0.75rem, 2vh, 1.5rem);
+  height: clamp(4.5rem, 16vw, 11rem);
+  padding: 0 clamp(0.75rem, 3vw, 2rem) clamp(0.75rem, 2vh, 1.25rem);
   overflow: hidden;
   pointer-events: none;
   user-select: none;
 }
 
+.footer-bottom-bar {
+  position: relative;
+  z-index: 20;
+  padding-bottom: clamp(4.5rem, 16vw, 11rem);
+}
+
+.footer-tagline-pill {
+  position: relative;
+  z-index: 15;
+  max-width: min(100%, 28rem);
+}
+
+.footer-tagline-pill span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .footer-tagline-pill span {
+    white-space: normal;
+    font-size: 0.625rem;
+    line-height: 1.35;
+  }
+}
+
 .footer-giant-bg-text {
-  font-size: clamp(3.5rem, 14vw, 11rem);
+  font-size: clamp(2.75rem, 12vw, 11rem);
   line-height: 0.92;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -217,7 +245,7 @@ const MARQUEE_ITEMS = [
   'AI Resume Roast',
   'Brutal Honest Feedback',
   '15 Languages',
-  '5 Free Roasts',
+  `${FREE_LIMIT} Free Roasts`,
   'Zero Sympathy',
   'High Voltage Roasts',
 ]
@@ -284,7 +312,6 @@ function GiantBrandText({
 export type CinematicFooterProps = {
   brandName?: string
   tagline?: string
-  supportSlot?: React.ReactNode
   /** Show CTA content immediately — use on short pages like /roast/[id] */
   instant?: boolean
 }
@@ -292,20 +319,21 @@ export type CinematicFooterProps = {
 export function CinematicFooter({
   brandName = 'MyCVRoast',
   tagline = 'No account needed · Made with ❤️ by an Indian',
-  supportSlot,
   instant = false,
 }: CinematicFooterProps) {
   const wrapperRef = useRef<HTMLDivElement>(null)
   const giantTextRef = useRef<HTMLDivElement>(null)
+  const marqueeRef = useRef<HTMLDivElement>(null)
   const headingRef = useRef<HTMLHeadingElement>(null)
   const linksRef = useRef<HTMLDivElement>(null)
+  const bottomRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (typeof window === 'undefined' || !wrapperRef.current) return
 
     const ctx = gsap.context(() => {
       if (instant) {
-        gsap.set([giantTextRef.current, headingRef.current, linksRef.current], {
+        gsap.set([giantTextRef.current, marqueeRef.current, headingRef.current, linksRef.current, bottomRef.current], {
           opacity: 1,
           y: 0,
           scale: 1,
@@ -315,15 +343,15 @@ export function CinematicFooter({
 
       gsap.fromTo(
         giantTextRef.current,
-        { y: '10vh', scale: 0.8, opacity: 0 },
+        { y: '12vh', scale: 0.78, opacity: 0 },
         {
           y: '0vh',
           scale: 1,
           opacity: 1,
-          ease: 'power1.out',
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: wrapperRef.current,
-            start: 'top 80%',
+            start: 'top 90%',
             end: 'bottom bottom',
             scrub: 1,
           },
@@ -331,18 +359,67 @@ export function CinematicFooter({
       )
 
       gsap.fromTo(
-        [headingRef.current, linksRef.current],
-        { y: 50, opacity: 0 },
+        marqueeRef.current,
+        { y: -24, opacity: 0, scale: 0.96 },
         {
           y: 0,
           opacity: 1,
-          stagger: 0.15,
+          scale: 1,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: wrapperRef.current,
-            start: 'top 40%',
-            end: 'bottom bottom',
-            scrub: 1,
+            start: 'top 88%',
+            end: 'top 35%',
+            scrub: 0.8,
+          },
+        },
+      )
+
+      gsap.fromTo(
+        headingRef.current,
+        { y: 48, opacity: 0, scale: 0.94 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: wrapperRef.current,
+            start: 'top 75%',
+            end: 'top 25%',
+            scrub: 0.8,
+          },
+        },
+      )
+
+      gsap.fromTo(
+        linksRef.current,
+        { y: 56, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: wrapperRef.current,
+            start: 'top 65%',
+            end: 'top 20%',
+            scrub: 0.8,
+          },
+        },
+      )
+
+      gsap.fromTo(
+        bottomRef.current,
+        { y: 24, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: wrapperRef.current,
+            start: 'top 55%',
+            end: 'top 15%',
+            scrub: 0.8,
           },
         },
       )
@@ -360,55 +437,64 @@ export function CinematicFooter({
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />
       <div
         ref={wrapperRef}
-        className={instant ? 'relative w-full min-h-screen' : 'relative h-screen w-full'}
+        className={instant ? 'relative w-full min-h-0' : 'relative h-auto md:h-screen w-full'}
         style={instant ? undefined : { clipPath: 'polygon(0% 0, 100% 0%, 100% 100%, 0 100%)' }}
       >
-        <footer className={`${instant ? 'relative' : 'fixed bottom-0 left-0'} flex h-screen w-full flex-col justify-between overflow-hidden bg-page text-white cinematic-footer-wrapper`}>
+        <footer
+          className={`${
+            instant
+              ? 'relative min-h-[70vh] py-12 md:py-16'
+              : 'fixed bottom-0 left-0 min-h-[100dvh] md:min-h-0 md:h-screen'
+          } flex w-full flex-col overflow-hidden bg-page text-white cinematic-footer-wrapper`}
+        >
           <div className="footer-aurora absolute left-1/2 top-1/2 h-[60vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 animate-footer-breathe rounded-[50%] blur-[80px] pointer-events-none z-0" />
           <div className="footer-bg-grid absolute inset-0 z-0 pointer-events-none" />
 
           <GiantBrandText text={brandName} textRef={giantTextRef} />
 
-          <div className="absolute top-12 left-0 w-full overflow-hidden border-y border-border/50 bg-page/60 backdrop-blur-md py-4 z-10 -rotate-2 scale-110 shadow-2xl">
-            <div className="flex w-max animate-footer-scroll-marquee text-xs md:text-sm font-bold tracking-[0.3em] text-dim uppercase font-body">
+          <div
+            ref={marqueeRef}
+            className="relative z-10 shrink-0 w-full overflow-hidden border-y border-border/50 bg-page/60 backdrop-blur-md py-3 md:py-4 mt-6 md:mt-10 -rotate-2 scale-[1.04] shadow-2xl"
+          >
+            <div className="flex w-max animate-footer-scroll-marquee text-[10px] md:text-sm font-bold tracking-[0.2em] md:tracking-[0.3em] text-dim uppercase font-body">
               <MarqueeItem />
               <MarqueeItem />
             </div>
           </div>
 
-          <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 mt-20 w-full max-w-5xl mx-auto">
+          <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 sm:px-6 py-8 md:py-10 w-full max-w-5xl mx-auto min-h-0">
             <h2
               ref={headingRef}
-              className="text-4xl md:text-7xl font-black footer-text-glow tracking-tighter mb-10 md:mb-12 text-center"
+              className="text-2xl sm:text-4xl md:text-7xl font-black footer-text-glow tracking-tighter mb-6 md:mb-10 text-center px-2"
             >
               Ready for your roast?
             </h2>
 
-            <div ref={linksRef} className="flex flex-col items-center gap-6 w-full">
-              <div className="flex flex-wrap justify-center gap-4 w-full">
+            <div ref={linksRef} className="flex flex-col items-center gap-4 md:gap-6 w-full">
+              <div className="flex flex-wrap justify-center gap-3 md:gap-4 w-full px-2">
                 <MagneticButton
                   as={Link}
                   href="/"
-                  className="footer-glass-pill px-8 py-4 rounded-full text-white font-bold text-sm md:text-base"
+                  className="footer-glass-pill px-6 py-3 md:px-8 md:py-4 rounded-full text-white font-bold text-sm md:text-base min-w-[9rem]"
                 >
                   🔥 Roast My CV
                 </MagneticButton>
                 <MagneticButton
                   as={Link}
                   href="/blog"
-                  className="footer-glass-pill px-8 py-4 rounded-full text-white font-bold text-sm md:text-base"
+                  className="footer-glass-pill px-6 py-3 md:px-8 md:py-4 rounded-full text-white font-bold text-sm md:text-base min-w-[9rem]"
                 >
                   📖 Blog
                 </MagneticButton>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-3 md:gap-4 w-full mt-2">
+              <div className="flex flex-wrap justify-center gap-2 md:gap-4 w-full mt-1 md:mt-2 px-2">
                 <MagneticButton
                   as="a"
-                  href="https://www.producthunt.com/products/get-brutally-honest-feedback"
+                  href="https://www.producthunt.com/products/mycvroast"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-glass-pill px-6 py-3 rounded-full text-dim font-medium text-xs md:text-sm hover:text-white"
+                  rel="nofollow noopener noreferrer"
+                  className="footer-glass-pill px-4 py-2.5 md:px-6 md:py-3 rounded-full text-dim font-medium text-xs md:text-sm hover:text-white"
                 >
                   Product Hunt
                 </MagneticButton>
@@ -416,36 +502,34 @@ export function CinematicFooter({
                   as="a"
                   href="https://x.com/mycvroast"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-glass-pill px-6 py-3 rounded-full text-dim font-medium text-xs md:text-sm hover:text-white"
+                  rel="nofollow noopener noreferrer"
+                  className="footer-glass-pill px-4 py-2.5 md:px-6 md:py-3 rounded-full text-dim font-medium text-xs md:text-sm hover:text-white"
                 >
                   X / Twitter
                 </MagneticButton>
-                {supportSlot ? (
-                  <div className="footer-glass-pill px-2 py-1 rounded-full inline-flex items-center">
-                    {supportSlot}
-                  </div>
-                ) : null}
+              </div>
+
+              <div className="footer-tagline-pill footer-glass-pill px-4 py-2.5 md:px-6 md:py-3 rounded-full mt-2 md:mt-4 cursor-default border-border/50">
+                <span className="text-dim text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide md:tracking-widest font-body text-center leading-snug">
+                  {tagline}
+                </span>
               </div>
             </div>
           </div>
 
-          <div className="relative z-20 w-full pb-8 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-dim text-[10px] md:text-xs font-semibold tracking-widest uppercase order-2 md:order-1 font-body">
+          <div
+            ref={bottomRef}
+            className="footer-bottom-bar shrink-0 w-full pb-[max(1rem,env(safe-area-inset-bottom))] pt-2 px-4 md:px-12 flex items-center justify-between gap-4"
+          >
+            <div className="text-dim text-[10px] md:text-xs font-semibold tracking-widest uppercase font-body">
               © {new Date().getFullYear()} MyCVRoast
-            </div>
-
-            <div className="footer-glass-pill px-6 py-3 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default border-border/50">
-              <span className="text-dim text-[10px] md:text-xs font-bold uppercase tracking-widest font-body">
-                {tagline}
-              </span>
             </div>
 
             <MagneticButton
               as="button"
               type="button"
               onClick={scrollToTop}
-              className="w-12 h-12 rounded-full footer-glass-pill flex items-center justify-center text-dim hover:text-white group order-3"
+              className="w-11 h-11 md:w-12 md:h-12 rounded-full footer-glass-pill flex items-center justify-center text-dim hover:text-white group shrink-0"
               aria-label="Back to top"
             >
               <svg
