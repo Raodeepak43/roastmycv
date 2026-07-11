@@ -4,13 +4,13 @@ import { useState } from 'react'
 import { useDashboardCv } from '@/components/dashboard/DashboardCvProvider'
 import { InterviewPrepWizard } from '@/components/dashboard/interview/InterviewPrepWizard'
 import {
-  MarkdownBlock,
+  StreamingOutput,
   ToolAnalyzingPanel,
   ToolError,
   ToolPaywall,
   ToolShell,
 } from '@/components/dashboard/tools/ToolShell'
-import { callToolApi, useToolHistory, useToolPlan } from '@/components/dashboard/tools/useToolPlan'
+import { streamToolApi, useToolHistory, useToolPlan } from '@/components/dashboard/tools/useToolPlan'
 
 export default function InterviewPrepPage() {
   const { isPro, used, limit, loading, access } = useToolPlan('interview-prep')
@@ -30,13 +30,21 @@ export default function InterviewPrepPage() {
   const submit = async () => {
     setError('')
     setBusy(true)
-    const res = await callToolApi('/api/tools/interview-prep', { cv, jobTitle, company, types })
+    setResult('')
+    history.bumpHistory()
+    const res = await streamToolApi(
+      '/api/tools/interview-prep',
+      { cv, jobTitle, company, types },
+      (chunk) => setResult((prev) => prev + chunk),
+    )
     setBusy(false)
     if (res.ok === false) {
-      setError(res.error)
-      return
+      setError(
+        res.status === 504 || res.error.toLowerCase().includes('timeout')
+          ? 'Generation took too long — try again with a shorter CV or fewer question types.'
+          : res.error,
+      )
     }
-    setResult((res.data as { result: string }).result)
   }
 
   if (loading) return null
@@ -67,7 +75,9 @@ export default function InterviewPrepPage() {
       />
       {busy && <ToolAnalyzingPanel title="Building your personalised question list" />}
       {error && (error.includes('Pro') ? <ToolPaywall message={error} /> : <ToolError message={error} />)}
-      {result && !busy && <MarkdownBlock content={result} />}
+      {(result || busy) && !error && (
+        <StreamingOutput text={result} loading={busy} title="Your interview questions" analyzingTitle="Building questions" />
+      )}
     </ToolShell>
   )
 }

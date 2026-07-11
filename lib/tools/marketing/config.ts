@@ -41,7 +41,7 @@ const CONTENT: Partial<
     headline: 'AI Mock Interview with Voice',
     tagline: 'Practice with a real interviewer — not a chatbot form.',
     whatItDoes:
-      'MyCVRoast reads your CV, picks questions for your target role, and runs a live mock interview. The AI interviewer speaks each question (ElevenLabs voice), you type or speak answers, and get a scored debrief at the end.',
+      'MyCVRoast reads your CV, picks questions for your target role, and runs a live mock interview. The AI interviewer speaks each question in a natural voice, you type or speak answers, and get a scored debrief at the end.',
     howItWorks: [
       'Paste or upload your CV and choose target role + interview style.',
       'Start the session — the AI interviewer asks questions one at a time.',
@@ -55,7 +55,7 @@ const CONTENT: Partial<
       'Overall 7/10 — strong STAR examples on leadership; tighten metrics on project impact. Sample framework provided for "Tell me about a conflict at work."',
     seoTitle: 'AI Mock Interview India — Practice with Voice | MyCVRoast',
     seoDescription:
-      'Practice job interviews with an AI interviewer that reads your CV. Voice + text answers, ElevenLabs speech, scored feedback. Pro tool on MyCVRoast.',
+      'Practice job interviews with an AI interviewer that reads your CV. Voice + text answers, natural speech, scored feedback. Pro tool on MyCVRoast.',
     keywords: ['mock interview ai', 'ai mock interview india', 'practice interview online', 'voice mock interview'],
     relatedSlugs: ['voice-interview', 'interview-prep', 'debrief'],
     relatedBlogSlugs: ['ai-mock-interview-tool', 'best-mock-interview-ai-india-2026'],
@@ -66,7 +66,7 @@ const CONTENT: Partial<
     headline: 'Voice Mock Interview',
     tagline: 'Speak your answers — get delivery + content feedback.',
     whatItDoes:
-      'Same AI interviewer as text mode, but you answer out loud. Live transcription tracks words, fillers, and pace. Claude scores both what you said and how you said it.',
+      'Same AI interviewer as text mode, but you answer out loud. Live transcription tracks words, fillers, and pace. AI scores both what you said and how you said it.',
     howItWorks: [
       'Set up role, style, and session length from your saved CV.',
       'Listen to each question (optional voice playback).',

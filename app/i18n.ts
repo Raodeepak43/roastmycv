@@ -243,7 +243,7 @@ export const UI: Record<string, UiStrings> = {
       stepOf: 'Step {n} / {total}',
     },
     signup: { title: '📬 Join the Roast List', sub: 'Naam daal — ticker pe dikhega jab roast hogi 🔥', emailPh: 'Email (optional)', submit: '🔥 Join Kar', later: 'baad mein' },
-    paywall: { title: 'Free Limit Khatam Bhai', sub: `${FREE_LIMIT} free roasts use ho gaye`, price: '₹149 · Lifetime Unlimited', unlock: '🔥 Razorpay se Unlock Kar', later: 'baad mein karta hoon' },
+    paywall: { title: 'Free Limit Khatam Bhai', sub: `${FREE_LIMIT} free roasts use ho gaye`, price: '₹149 · Lifetime Unlimited', unlock: '🔥 Pay & Unlock Kar', later: 'baad mein karta hoon' },
     footer: 'No account needed · Made with ❤️ by an Indian',
   },
   english: {

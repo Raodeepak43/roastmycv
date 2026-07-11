@@ -26,14 +26,14 @@ function loadRazorpayScript(): Promise<void> {
     const existing = document.querySelector('script[src="https://checkout.razorpay.com/v1/checkout.js"]')
     if (existing) {
       existing.addEventListener('load', () => resolve())
-      existing.addEventListener('error', () => reject(new Error('Razorpay script failed')))
+      existing.addEventListener('error', () => reject(new Error('Payment checkout failed to load')))
       return
     }
     const script = document.createElement('script')
     script.src = 'https://checkout.razorpay.com/v1/checkout.js'
     script.async = true
     script.onload = () => resolve()
-    script.onerror = () => reject(new Error('Razorpay script failed'))
+    script.onerror = () => reject(new Error('Payment checkout failed to load'))
     document.body.appendChild(script)
   })
 }
@@ -188,7 +188,7 @@ export function RazorpayProButton({ fp, className, children, onSuccess, disabled
 
   return (
     <button type="button" className={className} onClick={pay} disabled={disabled || loading}>
-      {loading ? 'Opening Razorpay…' : children}
+      {loading ? 'Opening checkout…' : children}
     </button>
   )
 }

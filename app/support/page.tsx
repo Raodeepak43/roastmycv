@@ -21,7 +21,7 @@ const SUPPORT_FAQ = [
   },
   {
     q: 'Payment succeeded but Pro not unlocked?',
-    a: `Contact ${SUPPORT_EMAIL} with your Razorpay payment ID. We manually verify and upgrade if needed.`,
+    a: `Contact ${SUPPORT_EMAIL} with your payment ID. We manually verify and upgrade if needed.`,
   },
   {
     q: 'How do I delete my account?',

@@ -28,7 +28,7 @@ export type ElevenLabsTtsOptions = {
 /** ElevenLabs TTS — returns MP3 bytes. */
 export async function elevenLabsTextToSpeech(opts: ElevenLabsTtsOptions): Promise<Buffer> {
   const key = elevenLabsKey()
-  if (!key) throw new Error('ELEVENLABS_API_KEY missing')
+  if (!key) throw new Error('Speech engine not configured')
 
   const text = opts.text.trim().slice(0, 5000)
   if (text.length < 2) throw new Error('Text too short for speech')
@@ -57,12 +57,12 @@ export async function elevenLabsTextToSpeech(opts: ElevenLabsTtsOptions): Promis
 
   if (!res.ok) {
     const detail = await res.text().catch(() => '')
-    let message = `ElevenLabs TTS ${res.status}`
+    let message = `Speech engine error ${res.status}`
     try {
       const parsed = JSON.parse(detail) as { detail?: { message?: string; code?: string } }
       const apiMsg = parsed.detail?.message
       if (parsed.detail?.code === 'invalid_api_key' || res.status === 401) {
-        message = 'Invalid ElevenLabs API key — update ELEVENLABS_API_KEY in your environment'
+        message = 'Invalid speech API key'
       } else if (apiMsg) {
         message = apiMsg
       }
@@ -73,6 +73,6 @@ export async function elevenLabsTextToSpeech(opts: ElevenLabsTtsOptions): Promis
   }
 
   const arrayBuffer = await res.arrayBuffer()
-  if (!arrayBuffer.byteLength) throw new Error('ElevenLabs TTS returned no audio')
+  if (!arrayBuffer.byteLength) throw new Error('Speech engine returned no audio')
   return Buffer.from(arrayBuffer)
 }

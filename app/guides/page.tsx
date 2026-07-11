@@ -28,7 +28,7 @@ const CORE_PAGES = [
   { href: '/resume-builder', label: 'ATS resume builder' },
   { href: '/linkedin-roast', label: 'LinkedIn profile roast' },
   { href: '/plans', label: 'Plans & pricing' },
-  { href: '/career-tools/jobs', label: 'Job search portal' },
+  { href: '/career-tools/jobs', label: 'Job search portal (coming soon)' },
   { href: '/privacy', label: 'Privacy policy' },
   { href: '/terms', label: 'Terms of service' },
   { href: '/contact', label: 'Contact' },

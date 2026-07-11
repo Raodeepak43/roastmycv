@@ -1,15 +1,15 @@
 import type { Metadata } from 'next'
-import { JobSearchPortal } from '@/components/jobs/JobSearchPortal'
+import { JobSearchComingSoon } from '@/components/jobs/JobSearchComingSoon'
 import { pageMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Job Search Portal — Find Roles & Match Your CV | MyCVRoast',
+  title: 'Job Search Portal — Coming Soon | MyCVRoast',
   description:
-    'Search live job listings in India and abroad via Careerjet. Find roles, apply smarter, then roast or match your CV before you send applications.',
+    'Live job search inside MyCVRoast is coming soon. Roast your CV, match JDs, and use 29+ career tools while we build the portal.',
   path: '/career-tools/jobs',
-  keywords: 'job search india, find jobs online, careerjet jobs, job portal india, software developer jobs',
+  keywords: 'job search india, find jobs online, job portal india',
 })
 
 export default function JobSearchPage() {
-  return <JobSearchPortal />
+  return <JobSearchComingSoon />
 }

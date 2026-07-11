@@ -8,7 +8,7 @@ description: "Compare the best AI mock interview tools for Indian job seekers �
 keywords: "mock interview ai india, ai mock interview free, online mock interview india, practice interview ai, voice mock interview"
 faq:
   - q: "What is the best AI mock interview for India in 2026?"
-    a: "For CV-aware practice with natural voice, MyCVRoast Pro uses ElevenLabs and reads your resume. For peer-to-peer practice, Pramp is popular globally. Chat-only bots help with question lists but not spoken fluency."
+    a: "For CV-aware practice with natural voice, MyCVRoast Pro reads your resume and speaks questions aloud. For peer-to-peer practice, Pramp is popular globally. Chat-only bots help with question lists but not spoken fluency."
   - q: "Is there a free AI mock interview?"
     a: "Most voice mock interviews are paid. MyCVRoast includes Interview Prep free; full mock interview with AI voice is on Pro (₹149 one-time). Google Interview Warmup is free but not CV-specific."
   - q: "Mock interview AI vs reading questions — difference?"
@@ -25,7 +25,7 @@ This comparison maps **voice vs text**, **CV-aware vs generic**, and **free vs p
 
 | Tool | Voice | CV-aware | Free tier | Best for |
 |------|-------|----------|-----------|----------|
-| **MyCVRoast** | ✅ ElevenLabs | ✅ | Prep free; mock Pro | Indian freshers, campus |
+| **MyCVRoast** | ✅ AI voice | ✅ | Prep free; mock Pro | Indian freshers, campus |
 | Google Interview Warmup | ✅ (Google) | ❌ | ✅ Free | General speaking practice |
 | Pramp | ✅ Peer video | Partial | Limited free | Global peer matching |
 | ChatGPT / generic bots | ❌ Text only | Manual paste | Free tier | Question brainstorming |
@@ -41,7 +41,7 @@ This comparison maps **voice vs text**, **CV-aware vs generic**, and **free vs p
 ### Stage 2 — You Need to Answer Out Loud
 
 **Tool:** [MyCVRoast Mock Interview](/blog/ai-mock-interview-tool) (Pro)  
-**Why:** AI interviewer with **ElevenLabs voice**, speak-or-type answers, follow-ups on weak bullets.
+**Why:** AI interviewer with **natural voice**, speak-or-type answers, follow-ups on weak bullets.
 
 ### Stage 3 — Phone Screen Anxiety
 

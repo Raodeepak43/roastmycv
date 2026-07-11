@@ -39,7 +39,7 @@ export default function DebriefPage() {
     <ToolShell
       needsCv={false}
       title="Interview Debrief"
-      subtitle="Describe what happened. Claude tells you what went wrong and what to do next time."
+      subtitle="Describe what happened. AI tells you what went wrong and what to do next time."
       access={access}
       isPro={isPro}
       used={used}

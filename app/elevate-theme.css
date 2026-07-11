@@ -370,6 +370,17 @@
   color: #0f172a;
 }
 
+/* Dashboard light cards — never white-on-cream text */
+.elevate-site .dash-app .dash-upgrade-card h4,
+.elevate-site .dash-app .dash-side-pro b {
+  color: #0f172a !important;
+}
+
+.elevate-site .dash-app .dash-upgrade-card p,
+.elevate-site .dash-app .dash-side-pro span {
+  color: #64748b !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal { transition: none; opacity: 1; transform: none; }
   .animate-elevate-marquee { animation: none; }

@@ -30,7 +30,7 @@ export const LLMS_FEATURES = [
   'Actionable bullet rewrites',
   'Resume builder with ATS score panel',
   'Roast history for signed-in users',
-  'Razorpay one-time Pro upgrade',
+  'One-time Pro upgrade (UPI, cards, net banking)',
 ] as const
 
 export const LLMS_SUPPORTED_FORMATS = ['PDF (max 5 MB)', 'TXT (plain text resume)'] as const

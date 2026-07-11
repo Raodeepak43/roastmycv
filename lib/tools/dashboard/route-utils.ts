@@ -69,3 +69,10 @@ export async function finishToolUse(
 export function cvTooShort(cv: unknown): boolean {
   return typeof cv !== 'string' || cv.trim().length < 50
 }
+
+/** Keep tool prompts within serverless time limits on Vercel Hobby/Pro. */
+export function trimCvForTool(cv: string, maxChars = 7000): string {
+  const trimmed = cv.trim()
+  if (trimmed.length <= maxChars) return trimmed
+  return `${trimmed.slice(0, maxChars)}\n\n[CV trimmed for analysis — key sections only]`
+}

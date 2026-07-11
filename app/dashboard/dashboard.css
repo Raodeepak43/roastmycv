@@ -2205,6 +2205,43 @@
   background: var(--dt-accent-soft);
 }
 
+.dash-target-role {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.dash-target-role__hint {
+  font-size: 0.8125rem;
+  color: var(--dash-muted, var(--dt-muted));
+  line-height: 1.45;
+  margin: 0.375rem 0 0;
+}
+
+.dash-target-role__section {
+  margin-top: 1rem;
+}
+
+.dash-target-role__label {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dash-muted, var(--dt-muted));
+  margin-bottom: 0.5rem;
+}
+
+.dash-target-role__cat-hint {
+  font-size: 0.75rem;
+  color: var(--dash-muted, var(--dt-muted));
+  margin: 0.5rem 0 0.625rem;
+}
+
+.dash-target-role__cat {
+  font-size: 0.75rem;
+}
+
 .dash-tools-voice-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
@@ -4502,12 +4539,31 @@
 
 .dash-upgrade-card h4,
 .dash-upgrade-card p {
-  color: #fff;
+  color: var(--dash-text);
+}
+
+.dash-upgrade-card p {
+  color: var(--dash-muted);
 }
 
 .dash-upgrade-card a {
-  color: var(--dash-accent-deep) !important;
-  background: #fff;
+  color: #fff !important;
+  background-color: var(--dash-accent) !important;
+  background-image: none !important;
+  border: none !important;
+}
+
+.dash-upgrade-card a:hover {
+  background-color: var(--dash-accent-deep) !important;
+  color: #fff !important;
+}
+
+.dash-side-pro b {
+  color: var(--dash-text);
+}
+
+.dash-side-pro span {
+  color: var(--dash-muted);
 }
 
 .dash-topbar {

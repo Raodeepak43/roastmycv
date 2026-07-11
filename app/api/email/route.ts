@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json(
-      { error: 'Storage not configured — add Supabase env vars on Vercel' },
+      { error: 'Storage not configured on the server' },
       { status: 503 }
     )
   } catch (err) {

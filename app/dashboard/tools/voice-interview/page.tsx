@@ -536,7 +536,7 @@ export default function VoiceInterviewPage() {
     <ToolShell
       {...shellProps}
       title="Voice Mock Interview"
-      subtitle="Pro · ElevenLabs voice · speak your answers"
+      subtitle="Pro · AI voice · speak your answers"
       needsCv
       wide
     >

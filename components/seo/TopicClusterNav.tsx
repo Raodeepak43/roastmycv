@@ -12,7 +12,7 @@ const TOPIC_CLUSTERS = [
   { label: 'Resume Templates', href: '/resume-builder', description: 'ATS resume builder' },
   { label: 'Cover Letter', href: '/career-tools/cover-letter', description: 'Cover letter writer' },
   { label: 'LinkedIn Review', href: '/linkedin-roast', description: 'LinkedIn profile roast' },
-  { label: 'Job Search', href: '/career-tools/jobs', description: 'Live job listings' },
+  { label: 'Job Search', href: '/blog/best-job-search-sites-india', description: 'Job sites guide (blog)' },
   { label: 'Career Growth', href: '/career-tools', description: '29+ career tools' },
 ] as const
 

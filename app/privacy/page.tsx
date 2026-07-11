@@ -28,7 +28,7 @@ export default function PrivacyPage() {
 
           <h2 className="font-display text-lg text-white">Account data</h2>
           <p>
-            If you sign in, we store your email, roast history, and usage limits via Supabase to
+            If you sign in, we store your email, roast history, and usage limits in our secure cloud database to
             power your dashboard. You can request deletion by emailing{' '}
             <a href={SUPPORT_MAILTO} className="text-orange">
               {SUPPORT_EMAIL}
@@ -38,14 +38,13 @@ export default function PrivacyPage() {
 
           <h2 className="font-display text-lg text-white">Analytics &amp; ads</h2>
           <p>
-            We may use Vercel Analytics, Google Analytics (if configured), and Google AdSense. These
+            We may use privacy-friendly analytics and Google Analytics (if configured), and Google AdSense. These
             services may set cookies. You can block cookies in your browser settings.
           </p>
 
           <h2 className="font-display text-lg text-white">Payments</h2>
           <p>
-            Pro upgrades are processed by Razorpay. We do not store card or UPI details — Razorpay
-            handles payment data under their own privacy policy.
+            Pro upgrades are processed by our secure payment partner. We do not store card or UPI details — payment data is handled under their privacy policy.
           </p>
 
           <h2 className="font-display text-lg text-white">Contact</h2>

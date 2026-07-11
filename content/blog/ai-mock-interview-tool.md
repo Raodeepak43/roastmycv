@@ -13,7 +13,7 @@ faq:
     a: "Yes — paste or upload CV text so AI can tailor output to your actual experience. MyCVRoast does not sell your data; processing is for your session output."
 ---
 
-Reading questions is not the same as answering under pressure. **Mock Interview** simulates a real round: AI asks follow-ups, probes weak CV areas, and gives feedback on clarity and structure — before the actual call with a hiring manager. Turn on **Voice mode** for a natural ElevenLabs interviewer that reads questions aloud (George, Rachel, and more). Answer by **typing or speaking** — mic auto-sends after a short pause.
+Reading questions is not the same as answering under pressure. **Mock Interview** simulates a real round: AI asks follow-ups, probes weak CV areas, and gives feedback on clarity and structure — before the actual call with a hiring manager. Turn on **Voice mode** for a natural AI interviewer that reads questions aloud (multiple voice options). Answer by **typing or speaking** — mic auto-sends after a short pause.
 
 This guide explains how the MyCVRoast **Mock Interview** 🎙️ tool works, who it is for, and how to get the best results in India's 2026 job market.
 

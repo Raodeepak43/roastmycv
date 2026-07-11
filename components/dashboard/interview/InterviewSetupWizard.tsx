@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Mic } from 'lucide-react'
 import { InterviewVoicePicker } from '@/components/dashboard/tools/InterviewVoicePicker'
+import { TargetRolePicker } from '@/components/dashboard/tools/TargetRolePicker'
 import type { InterviewVoiceId } from '@/lib/tools/dashboard/interview-voices'
 import {
   INTERVIEW_DURATIONS,
@@ -87,14 +88,11 @@ export function InterviewSetupWizard({
         >
           {step === 0 && (
             <div className="dash-interview-wizard__panel">
-              <h3 className="dash-interview-wizard__title">What role are you interviewing for?</h3>
-              <p className="dash-interview-wizard__hint">We tailor questions to your CV and this role.</p>
-              <input
-                className="dash-tools-input mt-4"
+              <TargetRolePicker
                 value={role}
-                onChange={(e) => onRoleChange(e.target.value)}
-                placeholder="e.g. Software Engineer, Product Manager"
-                autoFocus
+                onChange={onRoleChange}
+                inputId="mock-interview-role"
+                hint="Pick a suggestion or type your own — we tailor questions to your CV and this role."
               />
             </div>
           )}
@@ -137,7 +135,7 @@ export function InterviewSetupWizard({
           {step === 2 && (
             <div className="dash-interview-wizard__panel">
               <h3 className="dash-interview-wizard__title">Choose interviewer voice</h3>
-              <p className="dash-interview-wizard__hint">ElevenLabs reads each question aloud when voice is on.</p>
+              <p className="dash-interview-wizard__hint">The AI interviewer reads each question aloud when voice is on.</p>
               <div className="mt-4">
                 <InterviewVoicePicker value={voiceId} onChange={onVoiceChange} />
               </div>

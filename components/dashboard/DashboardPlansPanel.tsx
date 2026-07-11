@@ -173,7 +173,7 @@ export function DashboardPlansPanel() {
               </button>
             )}
             {!razorpayEnabled && (
-              <p className="mt-2 text-center text-xs text-gray-400">UPI / Razorpay integration in progress</p>
+              <p className="mt-2 text-center text-xs text-gray-400">UPI / card payments coming soon</p>
             )}
             {plan === 'pro' && (
               <div className="mt-4 text-center">
@@ -181,7 +181,7 @@ export function DashboardPlansPanel() {
               </div>
             )}
             <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-[11px] font-medium text-gray-400">
-              {['UPI', 'Cards', 'Net Banking', 'Razorpay secured'].map((label) => (
+              {['UPI', 'Cards', 'Net Banking', 'Secure checkout'].map((label) => (
                 <span key={label} className="rounded-full border border-gray-200 bg-gray-50 px-2.5 py-1">
                   {label}
                 </span>

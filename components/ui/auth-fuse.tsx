@@ -504,21 +504,8 @@ export function AuthUI({
           </div>
           {envError && (
             <div className="auth-fuse-alert auth-fuse-alert-warn">
-              <strong>Missing anon key.</strong> Open{' '}
-              <a
-                href="https://supabase.com/dashboard/project/rrtokbvxauxsgtjmuqof/settings/api"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: '#fcd34d', textDecoration: 'underline' }}
-              >
-                Supabase → Settings → API
-              </a>
-              , copy the <code>anon</code> <code>public</code> key, add to{' '}
-              <code>.env.local</code>:
-              <pre style={{ marginTop: '0.5rem', fontSize: '0.75rem', overflow: 'auto' }}>
-                SUPABASE_ANON_KEY=paste_key_here
-              </pre>
-              Then restart: <code>rm -rf .next && npm run dev</code>
+              <strong>Auth not configured.</strong> Add your public auth key to{' '}
+              <code>.env.local</code> as <code>SUPABASE_ANON_KEY</code>, then restart the dev server.
             </div>
           )}
           {sessionExpired && (

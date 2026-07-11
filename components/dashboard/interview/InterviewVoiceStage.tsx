@@ -97,7 +97,7 @@ export function InterviewVoiceStage({
             {showQuestion
               ? formatInterviewDisplay(question)
               : voiceLoading
-                ? 'Listen — question plays with ElevenLabs voice…'
+                ? 'Listen — question plays with AI voice…'
                 : streaming
                   ? 'Preparing your next question…'
                   : 'Waiting for interviewer…'}
@@ -107,7 +107,7 @@ export function InterviewVoiceStage({
         {hearPrompt && onHearQuestion && (
           <button type="button" className="dash-voice-stage__hear-btn" onClick={onHearQuestion}>
             <Volume2 className="size-5" aria-hidden />
-            Tap to hear question (ElevenLabs)
+            Tap to hear question
           </button>
         )}
 

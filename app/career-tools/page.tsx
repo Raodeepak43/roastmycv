@@ -38,10 +38,18 @@ export default function CareerToolsHubPage() {
           interviews, and negotiate offers — all from one dashboard.
         </p>
 
-        <Link href="/career-tools/jobs" className="career-hub__card mb-10 block max-w-xl">
-          <h2 className="!text-lg">🔎 Job Search Portal</h2>
-          <p>Search live listings via Careerjet — then roast or match your CV before you apply.</p>
-        </Link>
+        <div className="career-hub__card mb-10 block max-w-xl opacity-90">
+          <div className="flex items-center gap-2 mb-1">
+            <h2 className="!text-lg !mb-0">🔎 Job Search Portal</h2>
+            <span className="font-body text-[10px] uppercase tracking-wider text-orange border border-orange/30 rounded-full px-2 py-0.5">
+              Coming soon
+            </span>
+          </div>
+          <p className="!mb-3">Search live listings from MyCVRoast — launching soon.</p>
+          <Link href="/career-tools/jobs" className="font-body text-sm text-orange hover:underline">
+            Learn more →
+          </Link>
+        </div>
 
         {CAREER_TOOL_CATEGORIES.map((cat) => {
           const tools = getCareerToolsByCategory(cat.id)

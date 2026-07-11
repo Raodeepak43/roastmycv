@@ -47,8 +47,6 @@ export async function POST(req: NextRequest) {
     })
   } catch (err) {
     console.error('[tools/speech]', err)
-    const message = err instanceof Error ? err.message : 'Speech failed'
-    const status = message.includes('Invalid ElevenLabs API key') ? 502 : 500
-    return NextResponse.json({ error: message, fallback: 'browser' }, { status })
+    return NextResponse.json({ error: 'Speech unavailable', fallback: 'browser' }, { status: 502 })
   }
 }

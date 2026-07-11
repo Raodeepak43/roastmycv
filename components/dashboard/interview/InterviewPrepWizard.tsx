@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react'
+import { TargetCompanyPicker } from '@/components/dashboard/tools/TargetCompanyPicker'
+import { TargetRolePicker } from '@/components/dashboard/tools/TargetRolePicker'
 
 const QUESTION_TYPES = ['Behavioural', 'Technical', 'CV-specific', 'Situational'] as const
 
@@ -63,24 +65,8 @@ export function InterviewPrepWizard({
               {!hasCv && (
                 <p className="dash-interview-wizard__warn">Paste or upload your CV above before generating questions.</p>
               )}
-              <div>
-                <label className="dash-tools-label">What role are you interviewing for?</label>
-                <input
-                  className="dash-tools-input mt-2"
-                  value={jobTitle}
-                  onChange={(e) => onJobTitleChange(e.target.value)}
-                  placeholder="e.g. Data Analyst"
-                />
-              </div>
-              <div>
-                <label className="dash-tools-label">Company name (optional)</label>
-                <input
-                  className="dash-tools-input mt-2"
-                  value={company}
-                  onChange={(e) => onCompanyChange(e.target.value)}
-                  placeholder="e.g. Flipkart"
-                />
-              </div>
+              <TargetRolePicker value={jobTitle} onChange={onJobTitleChange} inputId="interview-prep-role" />
+              <TargetCompanyPicker value={company} onChange={onCompanyChange} inputId="interview-prep-company" />
             </div>
           )}
 

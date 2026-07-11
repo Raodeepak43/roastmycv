@@ -44,7 +44,7 @@ export default function RejectionAnalyserPage() {
   return (
     <ToolShell
       title="Why Am I Getting Rejected?"
-      subtitle="Paste 3-5 job descriptions you applied to and didn't get a response. Claude finds the pattern."
+      subtitle="Paste 3-5 job descriptions you applied to and didn't get a response. AI finds the pattern."
       access={access}
       isPro={isPro}
       used={used}

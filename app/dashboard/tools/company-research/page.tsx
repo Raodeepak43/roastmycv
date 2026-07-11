@@ -47,7 +47,7 @@ export default function CompanyResearchPage() {
       <div className="dash-tools-card dash-tools-card--frame p-5 space-y-5">
         <div>
           <label className="dash-tools-label">Company name</label>
-          <input className="dash-tools-input" value={company} onChange={(e) => setCompany(e.target.value)} placeholder="e.g. Razorpay" />
+          <input className="dash-tools-input" value={company} onChange={(e) => setCompany(e.target.value)} placeholder="e.g. Flipkart" />
         </div>
         <div>
           <label className="dash-tools-label">Role you're interviewing for</label>

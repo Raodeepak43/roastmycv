@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { pageMetadata } from '@/lib/seo'
 import { SUPPORT_EMAIL, SUPPORT_MAILTO } from '@/lib/support'
+import { ContactForm } from '@/components/contact/ContactForm'
 import { SiteFooter } from '@/components/SiteFooter'
 import { SiteHeader } from '@/components/SiteHeader'
 
@@ -25,6 +26,14 @@ export default function ContactPage() {
             For resume roast bugs, billing issues, or partnerships
           </p>
         </header>
+
+        <div className="rounded-[2rem] border border-black/10 bg-white p-5 md:p-8 space-y-8 shadow-sm mb-8">
+          <div>
+            <h2 className="font-display text-xl text-text-dark mb-1">Send us a message</h2>
+            <p className="font-body text-sm text-muted">We reply within 24 hours.</p>
+          </div>
+          <ContactForm />
+        </div>
 
         <div className="rounded-[2rem] border border-black/10 bg-white p-5 md:p-8 space-y-6 shadow-sm">
           <div>

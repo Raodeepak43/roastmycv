@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic'
 
 export async function POST(req: NextRequest) {
   if (!isRazorpayConfigured()) {
-    return NextResponse.json({ error: 'Razorpay not configured' }, { status: 503 })
+    return NextResponse.json({ error: 'Payments unavailable' }, { status: 503 })
   }
 
   let body: { fp?: string }

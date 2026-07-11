@@ -110,7 +110,7 @@ const BY_PREFIX: { match: (slug: string) => boolean; cta: BlogCtaConfig }[] = [
     cta: {
       emoji: '🎙️',
       headline: 'Practice mock interviews with AI voice',
-      sub: 'Pro — speak or type answers. ElevenLabs interviewer reads your CV.',
+      sub: 'Pro — speak or type answers. AI interviewer reads your CV.',
       primary: { label: 'Try Mock Interview →', href: '/login?next=/dashboard/tools/mock-interview' },
       secondary: { label: 'View Pro plans', href: '/plans' },
     },

@@ -10,8 +10,7 @@
     "seo:generate": "node scripts/generate-p0-seo-data.mjs && node scripts/generate-hinglish-samples.mjs",
     "seo:ping": "node scripts/ping-sitemaps.mjs",
     "db:setup": "node scripts/setup-db.mjs",
-    "db:migrate": "node scripts/migrate-user-tables.mjs",
-    "jobs:careerjet-ip": "node scripts/careerjet-ip.mjs"
+    "db:migrate": "node scripts/migrate-user-tables.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.26.0",
@@ -51,6 +50,7 @@
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1",
+    "resend": "^6.17.2",
     "tailwind-merge": "^3.6.0",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.185.0",

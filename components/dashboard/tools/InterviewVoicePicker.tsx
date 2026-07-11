@@ -82,9 +82,9 @@ export function InterviewVoicePicker({ value, onChange }: Props) {
           const errBody = (await res.json().catch(() => null)) as { error?: string } | null
           setPreviewingId(null)
           setPreviewError(
-            errBody?.error?.includes('Invalid ElevenLabs API key')
-              ? 'ElevenLabs API key is invalid. Update ELEVENLABS_API_KEY in Vercel → Settings → Environment Variables.'
-              : errBody?.error || 'Voice preview failed — check ElevenLabs configuration.',
+            errBody?.error?.includes('Invalid') && errBody?.error?.includes('API key')
+              ? 'Voice preview is temporarily unavailable. Try again later or use browser voice.'
+              : errBody?.error || 'Voice preview failed — try again or use browser voice.',
           )
           return
         }

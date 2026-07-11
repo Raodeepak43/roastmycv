@@ -1,12 +1,13 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { completeToolText, SONNET_MODEL } from '@/lib/tools/dashboard/llm'
-import { requireToolUser, finishToolUse, cvTooShort } from '@/lib/tools/dashboard/route-utils'
+import { NextRequest } from 'next/server'
+import { streamToolText } from '@/lib/tools/dashboard/llm'
+import { requireToolUser, finishToolUse, cvTooShort, trimCvForTool } from '@/lib/tools/dashboard/route-utils'
+import { HAIKU_MODEL } from '@/lib/tools/dashboard/config'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
-export const maxDuration = 90
+export const maxDuration = 60
 
-const SYSTEM = `You are an expert interview coach. Based on the candidate's CV and target role, generate 10-12 interview questions they are LIKELY to be asked. Focus on: gaps in their CV, transitions in their career, specific achievements they've listed, and standard role-specific questions. For each question provide: why the interviewer asks it, and a specific answer framework using the candidate's actual CV content. Group by: Behavioural, Technical, CV-specific, Situational.
+const SYSTEM = `You are an expert interview coach. Based on the candidate's CV and target role, generate 8-10 interview questions they are LIKELY to be asked. Focus on: gaps in their CV, career transitions, specific achievements, and standard role-specific questions. For each question provide: why the interviewer asks it, and a specific answer framework using the candidate's actual CV content. Group by: Behavioural, Technical, CV-specific, Situational.
 
 For each question use this format:
 ### [Category] Question text
@@ -30,25 +31,33 @@ export async function POST(req: NextRequest) {
     }
 
     if (cvTooShort(cv)) {
-      return NextResponse.json({ error: 'CV text too short' }, { status: 400 })
+      return new Response(JSON.stringify({ error: 'CV text too short' }), { status: 400 })
     }
     if (!jobTitle?.trim()) {
-      return NextResponse.json({ error: 'Job title required' }, { status: 400 })
+      return new Response(JSON.stringify({ error: 'Job title required' }), { status: 400 })
     }
 
-    const typeList = Array.isArray(types) && types.length ? types.join(', ') : 'Behavioural, Technical, CV-specific, Situational'
+    const typeList =
+      Array.isArray(types) && types.length ? types.join(', ') : 'Behavioural, Technical, CV-specific, Situational'
 
-    const text = await completeToolText({
+    const cvText = trimCvForTool(cv!.trim())
+    const role = jobTitle.trim()
+    const companyName = company?.trim() || 'Not specified'
+
+    return streamToolText({
       system: SYSTEM,
-      user: `Role: ${jobTitle.trim()}\nCompany: ${company?.trim() || 'Not specified'}\nQuestion types to include: ${typeList}\n\nCV:\n${cv!.trim()}`,
-      model: SONNET_MODEL,
-      maxTokens: 6000,
+      user: `Role: ${role}\nCompany: ${companyName}\nQuestion types to include: ${typeList}\n\nCV:\n${cvText}`,
+      model: HAIKU_MODEL,
+      maxTokens: 4096,
+      onComplete: async (fullText) => {
+        await finishToolUse(auth.user.id, 'interview-prep', auth.gate.isPro, {
+          result: fullText,
+          inputSummary: role,
+        })
+      },
     })
-
-    await finishToolUse(auth.user.id, 'interview-prep', auth.gate.isPro, { result: text })
-    return NextResponse.json({ result: text })
   } catch (err) {
     console.error('[interview-prep]', err)
-    return NextResponse.json({ error: 'Generation failed' }, { status: 500 })
+    return new Response(JSON.stringify({ error: 'Generation failed' }), { status: 500 })
   }
 }

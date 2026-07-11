@@ -50,7 +50,7 @@ export type PlanTier = {
 }
 
 const PRO_TOOL_HIGHLIGHTS = [
-  'Mock Interview (voice + text, ElevenLabs)',
+  'Mock Interview (voice + text)',
   'Voice Interview (speak your answers)',
   'Interview Prep & Debrief',
   'LinkedIn Audit & post writer',
@@ -167,7 +167,7 @@ export const PRODUCT_OFFERINGS: ProductOffering[] = [
     emoji: '🎙️',
     title: 'Mock Interview',
     description:
-      'AI interviewer reads your CV, asks real questions, speaks with ElevenLabs voice. Type or speak your answers.',
+      'AI interviewer reads your CV, asks real questions, and speaks in a natural voice. Type or speak your answers.',
     freeLabel: 'Pro only',
     proLabel: 'Unlimited mock interviews',
     href: '/login?next=/dashboard/tools/mock-interview',

@@ -64,7 +64,7 @@ Read more: [What is a resume roast?](/blog/what-is-resume-roast) · [Resume buil
 | Tool | Blog guide |
 |------|------------|
 | **Interview Prep** — CV-specific questions + answer frameworks | [Guide →](/blog/ai-interview-prep-questions) |
-| **Mock Interview** — simulated interview with AI voice (ElevenLabs) | [Guide →](/blog/ai-mock-interview-tool) |
+| **Mock Interview** — simulated interview with AI voice | [Guide →](/blog/ai-mock-interview-tool) |
 | **Voice Interview** — speak answers; mic auto-send after pause | [Guide →](/blog/voice-mock-interview-tool) |
 | **Interview Debrief** — analyse what went well or poorly | [Guide →](/blog/interview-debrief-tool) |
 | **Company Research** — 5-minute brief before interview | [Guide →](/blog/company-research-interview-tool) |
@@ -72,7 +72,7 @@ Read more: [What is a resume roast?](/blog/what-is-resume-roast) · [Resume buil
 
 ### Mock interview highlights (Pro)
 
-- **ElevenLabs voice** — natural interviewer reads questions (pick male/female voice, hear a demo first)
+- **AI voice** — natural interviewer reads questions (pick male/female voice, hear a demo first)
 - **Speak or type** — use the mic; answers send automatically after ~1.8s silence, or type if you prefer
 - **CV-aware** — questions probe weak spots on your actual resume, not generic templates
 - **Text sync** — with voice on, question text appears when audio starts so you practice real timing

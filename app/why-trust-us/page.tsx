@@ -63,7 +63,7 @@ export default function WhyTrustUsPage() {
           items={[
             'Guest roasts: no account required; files not stored after processing',
             'Signed-in users control account data; delete account from dashboard settings',
-            'Payments via Razorpay; Pro is one-time — not a subscription trap',
+            'Payments via secure checkout; Pro is one-time — not a subscription trap',
             `Support: ${SUPPORT_EMAIL} — reply within 24 hours`,
           ]}
         />

@@ -53,7 +53,6 @@ export function getCoreSitemapEntries(): SitemapEntry[] {
     { url: siteUrl('/guides'), lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: siteUrl('/plans'), lastModified: now, changeFrequency: 'weekly', priority: 0.92 },
     { url: siteUrl('/career-tools'), lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: siteUrl('/career-tools/jobs'), lastModified: now, changeFrequency: 'daily', priority: 0.88 },
     { url: siteUrl('/contact'), lastModified: now, changeFrequency: 'yearly', priority: 0.5 },
     { url: siteUrl('/privacy'), lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: siteUrl('/terms'), lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
