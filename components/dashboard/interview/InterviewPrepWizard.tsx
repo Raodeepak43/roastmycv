@@ -1,10 +1,9 @@
 'use client'
 
-import { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react'
+import { Sparkles } from 'lucide-react'
 import { TargetCompanyPicker } from '@/components/dashboard/tools/TargetCompanyPicker'
 import { TargetRolePicker } from '@/components/dashboard/tools/TargetRolePicker'
+import { AnimatedStepper, Step } from '@/components/ui/AnimatedStepper'
 
 const QUESTION_TYPES = ['Behavioural', 'Technical', 'CV-specific', 'Situational'] as const
 
@@ -20,8 +19,6 @@ type Props = {
   busy?: boolean
 }
 
-const STEPS = ['Role details', 'Question types', 'Generate']
-
 export function InterviewPrepWizard({
   hasCv,
   jobTitle,
@@ -33,109 +30,72 @@ export function InterviewPrepWizard({
   onSubmit,
   busy,
 }: Props) {
-  const [step, setStep] = useState(0)
-  const isLast = step === STEPS.length - 1
-  const canNext = step === 0 ? jobTitle.trim().length > 0 && hasCv : step === 1 ? types.length > 0 : true
+  const canGoNext = (step: number) => {
+    if (step === 1) return jobTitle.trim().length > 0 && hasCv
+    if (step === 2) return types.length > 0
+    return true
+  }
 
   return (
     <div className="dash-interview-wizard">
-      <div className="dash-interview-wizard__steps">
-        {STEPS.map((label, i) => (
-          <span
-            key={label}
-            className={`dash-interview-wizard__step ${i === step ? 'dash-interview-wizard__step--active' : ''} ${i < step ? 'dash-interview-wizard__step--done' : ''}`}
-          >
-            <span className="dash-interview-wizard__step-num">{i + 1}</span>
-            {label}
-          </span>
-        ))}
-      </div>
+      <AnimatedStepper
+        disableStepIndicators
+        canGoNext={canGoNext}
+        onFinalStepCompleted={onSubmit}
+        footerLoading={busy}
+        finalButtonText="Generate my questions"
+        nextButtonProps={{ className: 'animated-stepper__next dash-tools-btn w-full sm:w-auto' }}
+      >
+        <Step title="Role details">
+          <div className="dash-interview-wizard__panel space-y-4">
+            {!hasCv && (
+              <p className="dash-interview-wizard__warn">Paste or upload your CV above before generating questions.</p>
+            )}
+            <TargetRolePicker value={jobTitle} onChange={onJobTitleChange} inputId="interview-prep-role" />
+            <TargetCompanyPicker value={company} onChange={onCompanyChange} inputId="interview-prep-company" />
+          </div>
+        </Step>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={step}
-          className="dash-interview-wizard__body"
-          initial={{ opacity: 0, x: 12 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -12 }}
-          transition={{ duration: 0.2 }}
-        >
-          {step === 0 && (
-            <div className="dash-interview-wizard__panel space-y-4">
-              {!hasCv && (
-                <p className="dash-interview-wizard__warn">Paste or upload your CV above before generating questions.</p>
+        <Step title="Question types">
+          <div className="dash-interview-wizard__panel">
+            <p className="dash-interview-wizard__hint">Pick one or more — we tailor questions to your CV.</p>
+            <div className="flex flex-wrap gap-2 mt-4">
+              {QUESTION_TYPES.map((t) => (
+                <button
+                  key={t}
+                  type="button"
+                  className={`dash-tools-chip ${types.includes(t) ? 'dash-tools-chip--active' : ''}`}
+                  onClick={() => onToggleType(t)}
+                >
+                  {t}
+                </button>
+              ))}
+            </div>
+          </div>
+        </Step>
+
+        <Step title="Ready to generate">
+          <div className="dash-interview-wizard__panel dash-interview-wizard__panel--summary">
+            <ul className="dash-interview-wizard__summary-list">
+              <li>
+                <strong>Role:</strong> {jobTitle}
+              </li>
+              {company && (
+                <li>
+                  <strong>Company:</strong> {company}
+                </li>
               )}
-              <TargetRolePicker value={jobTitle} onChange={onJobTitleChange} inputId="interview-prep-role" />
-              <TargetCompanyPicker value={company} onChange={onCompanyChange} inputId="interview-prep-company" />
-            </div>
-          )}
-
-          {step === 1 && (
-            <div className="dash-interview-wizard__panel">
-              <h3 className="dash-interview-wizard__title">Which question types?</h3>
-              <p className="dash-interview-wizard__hint">Pick one or more — we tailor questions to your CV.</p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                {QUESTION_TYPES.map((t) => (
-                  <button
-                    key={t}
-                    type="button"
-                    className={`dash-tools-chip ${types.includes(t) ? 'dash-tools-chip--active' : ''}`}
-                    onClick={() => onToggleType(t)}
-                  >
-                    {t}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {step === 2 && (
-            <div className="dash-interview-wizard__panel dash-interview-wizard__panel--summary">
-              <h3 className="dash-interview-wizard__title">Ready to generate</h3>
-              <ul className="dash-interview-wizard__summary-list">
-                <li>
-                  <strong>Role:</strong> {jobTitle}
-                </li>
-                {company && (
-                  <li>
-                    <strong>Company:</strong> {company}
-                  </li>
-                )}
-                <li>
-                  <strong>Types:</strong> {types.join(', ')}
-                </li>
-              </ul>
-            </div>
-          )}
-        </motion.div>
-      </AnimatePresence>
-
-      <div className="dash-interview-wizard__nav">
-        {step > 0 ? (
-          <button type="button" className="dash-tools-btn--ghost dash-tools-btn" onClick={() => setStep((s) => s - 1)}>
-            <ChevronLeft className="size-4" aria-hidden />
-            Back
-          </button>
-        ) : (
-          <span />
-        )}
-        {isLast ? (
-          <button type="button" className="dash-tools-btn w-full sm:w-auto" disabled={busy || !canNext} onClick={onSubmit}>
-            <Sparkles className="size-4" aria-hidden />
-            {busy ? 'Generating…' : 'Generate my questions'}
-          </button>
-        ) : (
-          <button
-            type="button"
-            className="dash-tools-btn"
-            disabled={!canNext}
-            onClick={() => setStep((s) => s + 1)}
-          >
-            Continue
-            <ChevronRight className="size-4" aria-hidden />
-          </button>
-        )}
-      </div>
+              <li>
+                <strong>Types:</strong> {types.join(', ')}
+              </li>
+            </ul>
+            <p className="dash-interview-wizard__hint mt-4 flex items-center gap-1.5">
+              <Sparkles className="size-4 shrink-0 text-[var(--dash-accent)]" aria-hidden />
+              We&apos;ll generate tailored questions based on your CV and selections.
+            </p>
+          </div>
+        </Step>
+      </AnimatedStepper>
     </div>
   )
 }

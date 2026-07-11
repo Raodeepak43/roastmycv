@@ -4698,6 +4698,179 @@
   flex-wrap: wrap;
 }
 
+/* ── Animated stepper (Framer Motion wizard) ── */
+
+.animated-stepper {
+  width: 100%;
+}
+
+.animated-stepper__shell {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid var(--dash-border);
+  background: var(--dash-surface);
+  box-shadow: var(--dash-shadow-sm);
+}
+
+.animated-stepper__indicators {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 1.25rem 1.25rem 0.75rem;
+}
+
+.animated-stepper__indicator {
+  position: relative;
+  display: flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 2px solid var(--dash-border);
+  background: #f1f5f9;
+  color: var(--dash-muted);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.animated-stepper__indicator:disabled {
+  cursor: default;
+}
+
+.animated-stepper__indicator--active {
+  background: #fff;
+  border-color: var(--dash-accent);
+  color: var(--dash-accent-deep);
+}
+
+.animated-stepper__indicator--complete {
+  background: var(--dash-accent);
+  border-color: var(--dash-accent);
+  color: #fff;
+}
+
+.animated-stepper__indicator-glow {
+  position: absolute;
+  inset: -4px;
+  border-radius: 999px;
+  background: rgba(234, 88, 12, 0.18);
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+.animated-stepper__connector {
+  position: relative;
+  margin-inline: 0.75rem;
+  height: 2px;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--dash-border);
+}
+
+.animated-stepper__connector-fill {
+  position: absolute;
+  inset: 0;
+  transform-origin: left;
+  background: var(--dash-accent);
+}
+
+.animated-stepper__content {
+  padding-inline: 1.25rem;
+}
+
+.animated-stepper__step {
+  padding-block: 0.75rem 0.25rem;
+}
+
+.animated-stepper__step-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--dash-text);
+}
+
+.animated-stepper__step-body {
+  color: var(--dash-text);
+  line-height: 1.55;
+}
+
+.animated-stepper__footer {
+  padding: 0.75rem 1.25rem 1.25rem;
+}
+
+.animated-stepper__footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.animated-stepper__footer-row--split {
+  justify-content: space-between;
+}
+
+.animated-stepper__back {
+  border: none;
+  background: none;
+  padding: 0.5rem 0.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--dash-muted);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.animated-stepper__back:hover:not(:disabled) {
+  color: var(--dash-text);
+}
+
+.animated-stepper__back:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.animated-stepper__next {
+  min-width: 8.5rem;
+}
+
+.dash-interview-wizard .animated-stepper__shell {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.dash-interview-wizard .animated-stepper__indicators {
+  padding-inline: 0;
+  padding-top: 0;
+}
+
+.dash-interview-wizard .animated-stepper__content {
+  padding-inline: 0;
+}
+
+.dash-interview-wizard .animated-stepper__footer {
+  padding-inline: 0;
+  padding-bottom: 0;
+}
+
+.dash-interview-wizard .animated-stepper__step {
+  padding-top: 0;
+}
+
+.dash-interview-wizard .animated-stepper__step-body > .dash-interview-wizard__panel {
+  background: var(--dash-surface);
+  border: 1px solid var(--dash-border);
+  border-radius: var(--dash-radius);
+  padding: 1.25rem 1.5rem;
+}
+
 .dash-interview-room {
   display: flex;
   flex-direction: column;

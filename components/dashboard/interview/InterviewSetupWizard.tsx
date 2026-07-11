@@ -1,10 +1,9 @@
 'use client'
 
-import { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronLeft, ChevronRight, Mic } from 'lucide-react'
+import { Mic } from 'lucide-react'
 import { InterviewVoicePicker } from '@/components/dashboard/tools/InterviewVoicePicker'
 import { TargetRolePicker } from '@/components/dashboard/tools/TargetRolePicker'
+import { AnimatedStepper, Step } from '@/components/ui/AnimatedStepper'
 import type { InterviewVoiceId } from '@/lib/tools/dashboard/interview-voices'
 import {
   INTERVIEW_DURATIONS,
@@ -28,8 +27,6 @@ type Props = {
   variant?: 'mock' | 'voice'
 }
 
-const STEPS = ['Role', 'Style & length', 'Voice']
-
 export function InterviewSetupWizard({
   role,
   onRoleChange,
@@ -44,10 +41,7 @@ export function InterviewSetupWizard({
   startLabel = 'Start interview',
   variant = 'mock',
 }: Props) {
-  const [step, setStep] = useState(0)
-
-  const canNext = step === 0 ? role.trim().length > 0 : true
-  const isLast = step === STEPS.length - 1
+  const canGoNext = (step: number) => (step === 1 ? role.trim().length > 0 : true)
 
   return (
     <div className={`dash-interview-wizard${variant === 'voice' ? ' dash-interview-wizard--voice' : ''}`}>
@@ -65,111 +59,69 @@ export function InterviewSetupWizard({
         </div>
       )}
 
-      <div className="dash-interview-wizard__steps">
-        {STEPS.map((label, i) => (
-          <span
-            key={label}
-            className={`dash-interview-wizard__step ${i === step ? 'dash-interview-wizard__step--active' : ''} ${i < step ? 'dash-interview-wizard__step--done' : ''}`}
-          >
-            <span className="dash-interview-wizard__step-num">{i + 1}</span>
-            {label}
-          </span>
-        ))}
-      </div>
+      <AnimatedStepper
+        disableStepIndicators
+        canGoNext={canGoNext}
+        onFinalStepCompleted={onStart}
+        footerLoading={starting}
+        finalButtonText={startLabel}
+        nextButtonProps={{ className: 'animated-stepper__next dash-tools-btn w-full sm:w-auto' }}
+      >
+        <Step title="Target role">
+          <div className="dash-interview-wizard__panel">
+            <TargetRolePicker
+              value={role}
+              onChange={onRoleChange}
+              inputId="mock-interview-role"
+              hint="Pick a suggestion or type your own — we tailor questions to your CV and this role."
+            />
+          </div>
+        </Step>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={step}
-          className="dash-interview-wizard__body"
-          initial={{ opacity: 0, x: 12 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -12 }}
-          transition={{ duration: 0.2 }}
-        >
-          {step === 0 && (
-            <div className="dash-interview-wizard__panel">
-              <TargetRolePicker
-                value={role}
-                onChange={onRoleChange}
-                inputId="mock-interview-role"
-                hint="Pick a suggestion or type your own — we tailor questions to your CV and this role."
-              />
-            </div>
-          )}
-
-          {step === 1 && (
-            <div className="dash-interview-wizard__panel space-y-5">
-              <div>
-                <span className="dash-tools-label">Interview style</span>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {INTERVIEW_STYLES.map((s) => (
-                    <button
-                      key={s.id}
-                      type="button"
-                      className={`dash-tools-chip ${style === s.id ? 'dash-tools-chip--active' : ''}`}
-                      onClick={() => onStyleChange(s.id)}
-                    >
-                      {s.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <span className="dash-tools-label">Session length</span>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {INTERVIEW_DURATIONS.map((d) => (
-                    <button
-                      key={d.id}
-                      type="button"
-                      className={`dash-tools-chip ${duration === d.id ? 'dash-tools-chip--active' : ''}`}
-                      onClick={() => onDurationChange(d.id)}
-                    >
-                      {d.label}
-                    </button>
-                  ))}
-                </div>
+        <Step title="Style & length">
+          <div className="dash-interview-wizard__panel space-y-5">
+            <div>
+              <span className="dash-tools-label">Interview style</span>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {INTERVIEW_STYLES.map((s) => (
+                  <button
+                    key={s.id}
+                    type="button"
+                    className={`dash-tools-chip ${style === s.id ? 'dash-tools-chip--active' : ''}`}
+                    onClick={() => onStyleChange(s.id)}
+                  >
+                    {s.label}
+                  </button>
+                ))}
               </div>
             </div>
-          )}
-
-          {step === 2 && (
-            <div className="dash-interview-wizard__panel">
-              <h3 className="dash-interview-wizard__title">Choose interviewer voice</h3>
-              <p className="dash-interview-wizard__hint">The AI interviewer reads each question aloud when voice is on.</p>
-              <div className="mt-4">
-                <InterviewVoicePicker value={voiceId} onChange={onVoiceChange} />
+            <div>
+              <span className="dash-tools-label">Session length</span>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {INTERVIEW_DURATIONS.map((d) => (
+                  <button
+                    key={d.id}
+                    type="button"
+                    className={`dash-tools-chip ${duration === d.id ? 'dash-tools-chip--active' : ''}`}
+                    onClick={() => onDurationChange(d.id)}
+                  >
+                    {d.label}
+                  </button>
+                ))}
               </div>
             </div>
-          )}
-        </motion.div>
-      </AnimatePresence>
+          </div>
+        </Step>
 
-      <div className="dash-interview-wizard__nav">
-        {step > 0 ? (
-          <button type="button" className="dash-tools-btn--ghost dash-tools-btn" onClick={() => setStep((s) => s - 1)}>
-            <ChevronLeft className="size-4" aria-hidden />
-            Back
-          </button>
-        ) : (
-          <span />
-        )}
-        {isLast ? (
-          <button type="button" className="dash-tools-btn" disabled={starting} onClick={onStart}>
-            <Mic className="size-4" aria-hidden />
-            {starting ? 'Starting…' : startLabel}
-          </button>
-        ) : (
-          <button
-            type="button"
-            className="dash-tools-btn"
-            disabled={!canNext}
-            onClick={() => setStep((s) => s + 1)}
-          >
-            Continue
-            <ChevronRight className="size-4" aria-hidden />
-          </button>
-        )}
-      </div>
+        <Step title="Interviewer voice">
+          <div className="dash-interview-wizard__panel">
+            <p className="dash-interview-wizard__hint">The AI interviewer reads each question aloud when voice is on.</p>
+            <div className="mt-4">
+              <InterviewVoicePicker value={voiceId} onChange={onVoiceChange} />
+            </div>
+          </div>
+        </Step>
+      </AnimatedStepper>
     </div>
   )
 }
