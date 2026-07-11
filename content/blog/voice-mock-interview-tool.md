@@ -18,7 +18,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: Voice Mock Interview — Free Tool Guide
+metaTitle: Voice Mock Interview — Practice Answers With AI
 ---
 
 Typing answers is easy. Saying them aloud while a stranger watches is not. **Voice Interview** runs a spoken mock round — a natural AI voice reads questions aloud, you talk back via mic or keyboard, and AI probes with follow-ups like a real interviewer.

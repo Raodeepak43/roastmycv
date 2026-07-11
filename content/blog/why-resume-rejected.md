@@ -26,7 +26,7 @@ faq:
     a: >-
       One page, CGPA visible, project tech stack listed, tailored keywords from
       the JD. See our fresher resume format guide and free roast tool.
-metaTitle: Why Is My Resume Rejected? 7 Reasons Recruiters Skip…
+metaTitle: Why Is My Resume Rejected? 7 Reasons Recruiters Skip Your CV
 ---
 
 If you have ever wondered **why is my resume rejected** after sending dozens of applications, you are not alone. Recruiters spend an average of six to ten seconds on each resume before moving on. That is not enough time to discover your potential — only enough time to spot red flags. Understanding these rejection triggers is the fastest way to turn silence into interview calls. This guide breaks down the seven most common reasons recruiters skip your CV and exactly how to fix each one.

@@ -20,7 +20,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: Referral Request Email — Free Tool Guide
+metaTitle: Referral Request Email — Ask Connections With AI
 ---
 
 Referrals get 4× more responses than cold applications. But "Can you refer me?" to someone you met once at a webinar feels cringe. **Referral Ask** writes messages that make it **easy for them to say yes** — short, specific, with your CV highlights attached in text.

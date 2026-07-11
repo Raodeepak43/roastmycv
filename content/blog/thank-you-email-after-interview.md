@@ -18,7 +18,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: 'Thank You Email After Interview: Templates That Stan…'
+metaTitle: 'Thank You Email After Interview: Templates That Stand Out'
 ---
 
 Sending a thank-you email within 24 hours puts you ahead of 70% of candidates who never follow up. It is not grovelling — it is professional closure plus one more chance to reinforce why you fit. The **Thank You Email** tool writes it from your CV and interview notes.

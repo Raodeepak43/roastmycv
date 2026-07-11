@@ -23,7 +23,7 @@ faq:
     a: >-
       Upload your CV at mycvroast.in for a free AI resume roast — instant score,
       Hinglish feedback, and specific fixes in under 30 seconds.
-metaTitle: 'Freelance Jobs for Beginners in India: 2026 Starter…'
+metaTitle: 'Freelance Jobs for Beginners in India: 2026 Starter Guide'
 ---
 
 **Freelance jobs for beginners** are one of the fastest ways for Indian students, freshers, and career-switchers to earn money and build real experience without waiting for a full-time offer. Whether you write, design, code, edit videos, or run social media, there is a market for your skills online. The challenge is not a lack of opportunity — it is knowing where to start, how to win your first client, and how to avoid the trap of working for free forever.

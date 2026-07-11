@@ -9,20 +9,18 @@ export const HOME_DESCRIPTION =
 export const HOME_TITLE =
   'Free Resume Roast India — AI CV Checker (Instant Score)'
 
-/** Google SERP title — keep under ~60 characters */
+/** Google SERP title — prefer complete phrases; avoid mid-word truncation. */
 export function serpTitle(title: string, brand = 'MyCVRoast'): string {
+  const base = title.trim()
   const suffix = ` | ${brand}`
-  if (title.length + suffix.length <= 60) return `${title}${suffix}`
-  const max = 60 - suffix.length - 1
-  return `${title.slice(0, max).trim()}…${suffix}`
+  return `${base}${suffix}`
 }
 
 export function blogSerpTitle(post: { metaTitle?: string; title: string }): string {
   const base = (post.metaTitle ?? post.title).trim()
   const suffix = ' | MyCVRoast'
-  // Prefer full metaTitle on mobile SERP when close to limit (GSC CTR testing)
-  if (base.length + suffix.length <= 62) return `${base}${suffix}`
-  return serpTitle(base, 'MyCVRoast')
+  // Never slice — Google may rewrite long titles, but broken fragments hurt CTR more
+  return `${base}${suffix}`
 }
 
 export function blogHeadline(post: { h1?: string; title: string }): string {

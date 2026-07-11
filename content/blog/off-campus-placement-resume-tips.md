@@ -26,7 +26,7 @@ faq:
       Yes. MyCVRoast and our guides are built for Indian freshers, campus
       placement, and off-campus job seekers — CGPA, projects, and ATS context
       included.
-metaTitle: 'Off'
+metaTitle: Off-Campus Placement Resume Tips for Freshers
 ---
 
 **Off-campus placement** mein college TPO shortcut nahi hota — resume khud sell karni padti hai on Naukri, LinkedIn, company careers pages, and referrals.

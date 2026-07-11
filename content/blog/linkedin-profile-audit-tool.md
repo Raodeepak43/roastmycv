@@ -20,7 +20,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: LinkedIn Profile Audit — Free Tool Guide
+metaTitle: LinkedIn Profile Audit — Free AI Profile Review
 ---
 
 LinkedIn Writer fixes your About section. **LinkedIn Audit** reviews your **entire profile** — headline keyword density, experience bullets, skills order, banner, and recruiter discoverability — with a prioritized fix list.

@@ -20,7 +20,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: 'Salary Negotiation Script: What to Say When HR Names…'
+metaTitle: Salary Negotiation Script — What to Say When HR Names a Number
 ---
 
 HR says "This is our best offer." Most candidates say "Okay." That one moment can cost you ₹2–5 LPA over three years. The **Salary Script** tool generates negotiation language tailored to your role, experience, and market — so you know exactly what to say on the call.

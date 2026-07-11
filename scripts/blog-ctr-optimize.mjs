@@ -161,37 +161,16 @@ function inferType(slug, explicit) {
 }
 
 function stripSubtitle(title) {
-  return title.replace(/\s*[—–-]\s*.+$/, '').replace(/\s*\(\d{4}\)\s*$/, '').trim()
+  let t = String(title).trim()
+  t = t.replace(/\s*\(\d{4}\)\s*$/, '').trim()
+  if (/\s[—–]\s/.test(t)) return t.split(/\s[—–]\s/)[0].trim()
+  if (/\s-\s/.test(t)) return t.split(/\s-\s/)[0].trim()
+  return t
 }
 
-function genMetaTitle(slug, title, type, hinglish) {
-  const base = stripSubtitle(title)
+function genMetaTitle(slug, title) {
   if (MANUAL[slug]?.metaTitle) return MANUAL[slug].metaTitle
-
-  if (hinglish) {
-    let q = base.includes('?') ? base : `${base}?`
-    if (q.length <= 48 && !q.includes('2026')) return `${q} Format 2026`
-    if (!q.includes('2026')) return `${q.replace(/\?$/, '')}? Guide 2026`
-    return q
-  }
-
-  if (type === 'tool') {
-    const short = base.replace(/:\s*.+$/, '').trim()
-    if (short.length <= 44) return `${short} — Free Tool Guide`
-    return short.slice(0, 50)
-  }
-
-  if (type === 'comparison') {
-    return base.includes('2026') ? base : `${base} (2026)`
-  }
-
-  if (slug.endsWith('-guide') || slug.includes('resume-guide')) {
-    if (base.length <= 42) return `${base}: Examples & Format`
-    return base
-  }
-
-  if (base.length <= 55) return base
-  return base.slice(0, 52).trim() + '…'
+  return String(title).replace(/\s*\(\d{4}\)\s*$/, '').trim()
 }
 
 function polishDescription(slug, title, desc, hinglish, type) {
@@ -259,7 +238,7 @@ for (const file of files) {
   const type = inferType(slug, data.type)
   const hinglish = isHinglish(slug, content)
 
-  const metaTitle = genMetaTitle(slug, oldTitle, type, hinglish)
+  const metaTitle = genMetaTitle(slug, oldTitle)
   const description = polishDescription(slug, oldTitle, oldDesc, hinglish, type)
   const h1 = genH1(slug, oldTitle, metaTitle)
   const title = MANUAL[slug]?.title ?? (h1 !== oldTitle && data.h1 === undefined ? h1 : oldTitle)

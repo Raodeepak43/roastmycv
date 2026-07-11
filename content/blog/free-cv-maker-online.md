@@ -1,6 +1,6 @@
 ---
 title: 'Free CV Maker Online: Build a Job-Ready CV (2026)'
-metaTitle: 'Free CV Maker Online: Build a Job'
+metaTitle: Free CV Maker Online — Build a Job-Ready CV
 slug: free-cv-maker-online
 date: '2025-10-23'
 description: >-

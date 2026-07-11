@@ -20,7 +20,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: Skills Gap Analyser — Free Tool Guide
+metaTitle: Skills Gap Analyser — Find Missing Skills for Your Role
 ---
 
 You keep applying but never get shortlisted. Often the problem is not your degree — it is a **skills gap** between your CV and what employers actually list in job descriptions. A skills gap analyser reads your resume and target role, then shows exactly what you have, what you are missing, and how to close the gap fast.

@@ -20,7 +20,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: How to Reply to a Rejection Email (And Stay on The
+metaTitle: How to Reply to a Rejection Email (Stay on Their Radar)
 ---
 
 You got the "we regret to inform you" mail. Ignore it, or send a 3-sentence reply that hiring managers remember when the next role opens? **Rejection Reply** writes gracious responses that keep relationships warm — without arguing the decision.

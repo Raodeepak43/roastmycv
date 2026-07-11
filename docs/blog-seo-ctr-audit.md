@@ -165,7 +165,7 @@ Date: 2026-07-12
 - Added optional h1 frontmatter (visible H1 separate from SERP metaTitle)
 - Removed keywords from blog <title> metadata output (not rendered as meta keywords tag in Next.js by default; internal frontmatter preserved)
 - BlogPosting JSON-LD headline now uses visible H1
-- logSerpTitle() allows up to 62 chars before brand suffix for mobile CTR
+- `blogSerpTitle()` returns the full metaTitle + ` | MyCVRoast` — no character slicing
 - Removed generic opening filler where detected
 - FAQ schema unchanged — only on pages with visible FAQ blocks
 
@@ -186,3 +186,115 @@ Date: 2026-07-12
 - Role resume guides (software-engineer-resume-guide, etc.) — metadata only; body already specific
 - Tool -tool posts — metadata CTR pass only; product copy unchanged
 - Posts with strong existing rankings — body preserved per safety rules
+
+## SERP Title Quality Validation
+
+Second pass (2026-07-12) — fix semantically broken titles before deploy.
+
+| Metric | Count |
+|--------|-------|
+| Total titles checked | 132 |
+| Broken titles found | 42 |
+| Broken titles fixed | 42 |
+| Titles preserved (already complete) | 90 |
+| Meta descriptions with truncation issues found | 5 |
+| Meta descriptions fixed | 5 |
+| Titles manually rewritten (curated overrides) | 28 |
+
+### Root cause
+
+Two bugs in `scripts/blog-ctr-optimize.mjs` destroyed title meaning:
+
+1. **`stripSubtitle()` used `/\s*[—–-]\s*.+$/`** — treated **any hyphen** as a subtitle separator, splitting compound search phrases:
+   - `Off-Campus` → `Off`
+   - `Step-by-Step` → `Step`
+   - `Follow-Up` → `Follow`
+   - `1-Page` → `1`
+   - `Service-Based` → `Service`
+   - `Job-Ready` → `Build a Job`
+
+2. **`genMetaTitle()` hard-truncated** with `base.slice(0, 52) + '…'` and applied a generic tool pattern `"— Free Tool Guide"` regardless of page intent.
+
+Secondary: `blogSerpTitle()` in `lib/seo.ts` previously sliced titles at ~60 characters.
+
+### Title processing code changed
+
+| File | Change |
+|------|--------|
+| `lib/seo.ts` | `blogSerpTitle()` / `serpTitle()` — never slice; append brand suffix only |
+| `lib/blog/serp-title.ts` | New safe helpers: `stripTitleSubtitle()`, `hasIncompleteSerpEnding()`, `isBrokenSerpTitle()` |
+| `scripts/blog-ctr-optimize.mjs` | Fixed `stripSubtitle()` to split only on spaced em/en/ASCII dashes; removed slicing and generic tool titles |
+| `scripts/blog-ctr-repair.mjs` | Curated SERP overrides for 28 tool/high-impact pages; repairs broken frontmatter |
+| `scripts/seo-validate.mjs` | Report-only validation (`npm run seo:validate`) |
+
+### Validation
+
+- `npm run seo:validate` — **0 warnings** (132 posts)
+- `npm run build` — **success** (426 static pages)
+- Rendered title format: `{metaTitle} | MyCVRoast` (no root layout title template — no brand duplication)
+- Priority page `/blog/12th-pass-resume-kaise-banaye` — **unchanged** (approved metaTitle, H1, description preserved)
+
+### Fixed titles (second pass)
+
+| URL | Broken Title | Fixed Title | Problem | Validation |
+| --- | ------------ | ----------- | ------- | ---------- |
+| /blog/off-campus-placement-resume-tips | Off | Off-Campus Placement Resume Tips for Freshers | hyphen split | OK |
+| /blog/service-based-company-resume-india | Service | Service-Based Company Resume Guide for Freshers | hyphen split | OK |
+| /blog/how-to-write-a-cv | How to Write a CV: Step | How to Write a CV: Step-by-Step Guide 2026 | hyphen split | OK |
+| /blog/how-to-find-a-job-india | How to Find a Job in India 2026: A Step | How to Find a Job in India: Step-by-Step Plan 2026 | hyphen split | OK |
+| /blog/how-to-write-cover-letter | How to Write a Cover Letter in 2026 (Step | How to Write a Cover Letter in 2026: Step-by-Step Guide | hyphen split + paren cut | OK |
+| /blog/job-application-follow-up-email | Job Application Follow | Job Application Follow-Up Email: Examples & Timing | hyphen split | OK |
+| /blog/free-cv-maker-online | Free CV Maker Online: Build a Job | Free CV Maker Online — Build a Job-Ready CV | hyphen split | OK |
+| /blog/one-page-resume-compressor-tool | 1 — Free Tool Guide | 1-Page Resume Compressor — Shorten Your CV With AI | hyphen split + generic tool | OK |
+| /blog/naukri-resume-tips-india | Naukri Resume Tips | Naukri Resume Tips — Why Recruiters Skip Your Profile | stripSubtitle over-trim | OK |
+| /blog/rejection-email-reply-tool | How to Reply to a Rejection Email (And Stay on The | How to Reply to a Rejection Email (Stay on Their Radar) | ellipsis truncation | OK |
+| /blog/ai-mock-interview-tool | AI Mock Interview — Free Tool Guide | AI Mock Interview Free — Practice Job Interviews Online | generic tool title | OK |
+| /blog/voice-mock-interview-tool | Voice Mock Interview — Free Tool Guide | Voice Mock Interview — Practice Answers With AI | generic tool title | OK |
+| /blog/career-gap-explainer-tool | Career Gap Explainer — Free Tool Guide | Career Gap Explainer — Explain Resume Gaps With AI | generic tool title | OK |
+| /blog/jd-match-ats-score-tool | JD Match Tool — Free Tool Guide | JD Match Tool — Check Resume Match With Any Job | generic tool title | OK |
+| /blog/linkedin-profile-audit-tool | LinkedIn Profile Audit — Free Tool Guide | LinkedIn Profile Audit — Free AI Profile Review | generic tool title | OK |
+| /blog/skills-gap-analyser-tool | Skills Gap Analyser — Free Tool Guide | Skills Gap Analyser — Find Missing Skills for Your Role | generic tool title | OK |
+| /blog/cold-email-recruiter-tool | Cold Email to Recruiters — Free Tool Guide | Cold Email to Recruiters — AI Outreach Templates | generic tool title | OK |
+| /blog/company-research-interview-tool | Company Research for Interviews — Free Tool Guide | Company Research Brief — Pre-Interview Prep With AI | generic tool title | OK |
+| /blog/interview-debrief-tool | Interview Debrief — Free Tool Guide | Interview Debrief — Analyse What Went Wrong With AI | generic tool title | OK |
+| /blog/first-90-days-plan-tool | First 90 Days Plan — Free Tool Guide | First 90 Days Plan — Onboarding Plan From Your CV | generic tool title | OK |
+| /blog/job-application-tracker-tool | Job Application Tracker — Free Tool Guide | Job Application Tracker — Track Applications in One Place | generic tool title | OK |
+| /blog/job-offer-comparator-tool | Job Offer Comparator — Free Tool Guide | Offer Comparator — Compare Job Offers Side by Side | generic tool title | OK |
+| /blog/freelancer-profile-builder-tool | Freelancer Profile Builder — Free Tool Guide | Freelancer Profile Writer — Upwork & Fiverr Bios | generic tool title | OK |
+| /blog/rejection-analyser-tool | Rejection Analyser — Free Tool Guide | Rejection Analyser — Find Patterns in Failed Applications | generic tool title | OK |
+| /blog/referral-request-email-tool | Referral Request Email — Free Tool Guide | Referral Request Email — Ask Connections With AI | generic tool title | OK |
+| /blog/resume-bias-checker-tool | Resume Bias Checker — Free Tool Guide | Resume Bias Checker — Spot HR Bias Triggers in Your CV | generic tool title | OK |
+| /blog/ai-cover-letter-generator | AI Cover Letter Generator: Tailored Letters From You… | AI Cover Letter Generator — Tailored Letters From CV + JD | ellipsis truncation | OK |
+| /blog/ai-linkedin-about-writer | AI LinkedIn About Writer: 3 Profile Versions From Yo… | LinkedIn About Writer — 3 Profile Versions From Your CV | ellipsis truncation | OK |
+| /blog/btech-fresher-resume-mistakes | 10 BTech Fresher Resume Mistakes That Kill Your Shor… | 10 BTech Fresher Resume Mistakes That Kill Your Shortlist Chances | ellipsis truncation | OK |
+| /blog/campus-placement-resume-tips | Campus Placement Resume Tips: Beat TPO Shortlists in… | Campus Placement Resume Tips: Beat TPO Shortlists in 2026 | ellipsis truncation | OK |
+| /blog/cv-localiser-international-jobs | CV Localiser: Adapt Your Resume for US, UK, EU, and… | CV Localiser: Adapt Your Resume for US, UK, EU, and Gulf Markets | ellipsis truncation | OK |
+| /blog/elevator-pitch-generator | Elevator Pitch Generator: Introduce Yourself in 30 S… | Elevator Pitch Generator — 30-Second Intro From Your CV | ellipsis truncation | OK |
+| /blog/freelance-jobs-beginners-india | Freelance Jobs for Beginners in India: 2026 Starter… | Freelance Jobs for Beginners in India: 2026 Starter Guide | ellipsis truncation | OK |
+| /blog/job-scam-detector-india | Job Scam Detector India: Spot Fake Jobs on WhatsApp… | Job Scam Detector India: Spot Fake Jobs on WhatsApp and Naukri | ellipsis truncation | OK |
+| /blog/linkedin-profile-optimization | LinkedIn Profile Optimization 2026: Get Recruiters t… | LinkedIn Profile Optimization 2026: Get Recruiters to Notice You | ellipsis truncation | OK |
+| /blog/no-interview-calls-after-50-applications | Applied to 50+ Jobs, Still No Calls? Here's What's A… | Applied to 50+ Jobs, Still No Calls? Here's What's Actually Wrong | ellipsis truncation | OK |
+| /blog/resume-not-shortlisted-reasons-fresher | Why Your Resume Isn't Getting Shortlisted (Fresher E… | Why Your Resume Isn't Getting Shortlisted (Fresher Edition) | ellipsis truncation | OK |
+| /blog/salary-negotiation-script-ai | Salary Negotiation Script: What to Say When HR Names… | Salary Negotiation Script — What to Say When HR Names a Number | ellipsis truncation | OK |
+| /blog/thank-you-email-after-interview | Thank You Email After Interview: Templates That Stan… | Thank You Email After Interview: Templates That Stand Out | ellipsis truncation | OK |
+| /blog/why-resume-not-getting-shortlisted | Why Is My Resume Not Getting Shortlisted? (Real Reas… | Why Is My Resume Not Getting Shortlisted? (Real Reasons) | ellipsis truncation | OK |
+| /blog/why-resume-rejected | Why Is My Resume Rejected? 7 Reasons Recruiters Skip… | Why Is My Resume Rejected? 7 Reasons Recruiters Skip Your CV | ellipsis truncation | OK |
+| /blog/resume-bullet-rewriter-ai | Resume Bullet Rewriter: Turn Weak Lines Into Metric | Bullet Rewriter — Turn Weak CV Bullets Into Strong Lines | ellipsis + intent rewrite | OK |
+
+### Meta descriptions fixed
+
+| URL | Issue | Fix |
+| --- | ----- | --- |
+| /blog/naukri-resume-tips-india | Duplicated topic prefix from broken stripSubtitle | Single complete sentence |
+| /blog/cgpa-on-resume-india-rules | Over 170 chars | Rewritten shorter complete description |
+| /blog/off-campus-placement-resume-tips | Topic prefix truncated to "Off" | Full topic restored in description |
+| /blog/service-based-company-resume-india | Topic prefix truncated to "Service" | Full topic restored in description |
+| /blog/one-page-resume-compressor-tool | Topic prefix truncated to "1" | Full tool name restored in description |
+
+### Automated quality check
+
+```bash
+npm run seo:validate
+```
+
+Flags only (does not rewrite): empty/duplicate metaTitle, titles under 15 chars, one-word titles, incomplete endings, ellipsis, generic tool titles, double spaces, unmatched brackets, trailing hyphens, long descriptions, duplicate descriptions, duplicate brand suffix.

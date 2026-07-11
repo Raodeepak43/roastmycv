@@ -18,7 +18,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: 'AI Career Path Planner: Routes From Your Current Role'
+metaTitle: AI Career Path Planner — Routes From Your Current Role
 ---
 
 Stuck as "Software Engineer" with no idea if you should go toward PM, DevOps, or engineering manager? **Career Paths** maps realistic next steps from your actual CV — not generic "learn leadership" advice.

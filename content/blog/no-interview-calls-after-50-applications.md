@@ -21,7 +21,7 @@ faq:
     a: >-
       Upload your CV at mycvroast.in for a free AI resume roast — instant score,
       Hinglish feedback, and specific fixes in under 30 seconds.
-metaTitle: 'Applied to 50+ Jobs, Still No Calls? Here''s What''s A…'
+metaTitle: 'Applied to 50+ Jobs, Still No Calls? Here''s What''s Actually Wrong'
 ---
 
 **Applied to 50+ jobs and still no calls?** You're not alone — and it's usually not *only* the job market. One broken resume multiplied by 50 applications still equals zero interviews.

@@ -3,8 +3,8 @@ title: 'Rejection Analyser: Find the Pattern Across All Your Job Applications'
 slug: rejection-analyser-tool
 date: '2026-06-21'
 description: >-
-  Paste multiple job descriptions you were rejected from — AI finds the
-  consistent gap in your CV across all of them.
+  Rejection Analyser: Find the Pattern Across All Your Job Applications — AI
+  finds the consistent gap in your CV across all of them.
 keywords: >-
   why am i getting rejected jobs, rejection pattern resume, multiple job
   rejections, cv rejection analysis
@@ -18,7 +18,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: Rejection Analyser — Free Tool Guide
+metaTitle: Rejection Analyser — Find Patterns in Failed Applications
 ---
 
 One rejection might be bad luck. Ten rejections with zero interviews means a **pattern** — usually a missing skill, wrong title targeting, or CV keyword gap that repeats across every JD. **Rejection Analyser** compares your CV to multiple JDs you failed at and finds the common root cause.

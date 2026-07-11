@@ -20,7 +20,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: Interview Debrief — Free Tool Guide
+metaTitle: Interview Debrief — Analyse What Went Wrong With AI
 ---
 
 You walk out of an interview unsure if you nailed it or bombed it. **Interview Debrief** turns your raw notes into structured feedback: strong moments, weak answers, likely interviewer concerns, and prep for round 2.

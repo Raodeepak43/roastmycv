@@ -28,7 +28,7 @@ faq:
       Yes. MyCVRoast and our guides are built for Indian freshers, campus
       placement, and off-campus job seekers — CGPA, projects, and ATS context
       included.
-metaTitle: 'Campus Placement Resume Tips: Beat TPO Shortlists in…'
+metaTitle: 'Campus Placement Resume Tips: Beat TPO Shortlists in 2026'
 ---
 
 Your **campus placement resume** is not the same document you send on LinkedIn after graduation. TPO portals, company-specific formats, and batch-wide competition change the rules. One weak section — wrong CGPA format, missing project detail, photo in header — and your CV never reaches the recruiter even if you are technically qualified.

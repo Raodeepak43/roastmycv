@@ -23,7 +23,7 @@ faq:
     a: >-
       Upload your CV at mycvroast.in for a free AI resume roast — instant score,
       Hinglish feedback, and specific fixes in under 30 seconds.
-metaTitle: How to Write a Cover Letter in 2026 (Step
+metaTitle: 'How to Write a Cover Letter in 2026: Step-by-Step Guide'
 ---
 
 Knowing **how to write a cover letter** is one of the highest-return skills in a job hunt, and almost nobody bothers to learn it properly. While hundreds of candidates fire off the same copy-pasted "Respected Sir, kindly find my resume attached" message, you can stand out with a focused, 200-word letter that speaks directly to the role. This guide walks you through the process line by line, with real cover letter examples you can adapt for any application in the Indian market.

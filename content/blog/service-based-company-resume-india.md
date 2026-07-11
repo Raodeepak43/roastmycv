@@ -3,8 +3,9 @@ title: 'Service-Based Company Resume Guide — TCS, Infosys, Wipro (2026)'
 slug: service-based-company-resume-india
 date: '2026-07-02'
 description: >-
-  Service — practical format tips, examples, and mistakes to avoid for Indian
-  freshers. Free AI resume check linked.
+  Service-Based Company Resume Guide — TCS, Infosys, Wipro — practical format
+  tips, examples, and mistakes to avoid for Indian freshers. Free AI resume
+  check linked.
 keywords: >-
   service based company resume, tcs infosys wipro resume format, service company
   cv fresher india, mass recruiter resume
@@ -23,7 +24,7 @@ faq:
     a: >-
       MyCVRoast ATS resume checker for TCS/Infosys/Wipro freshers plus campus
       placement checker — free roast for content fixes.
-metaTitle: Service
+metaTitle: Service-Based Company Resume Guide for Freshers
 ---
 
 **Service-based company resume** — TCS, Infosys, Wipro, Cognizant, Accenture, HCL — hire tens of thousands of Indian freshers per cycle. Your CV hits an ATS, then a recruiter who has **10 seconds** and **300 more PDFs** in queue.

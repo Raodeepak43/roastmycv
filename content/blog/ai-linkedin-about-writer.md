@@ -20,7 +20,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: 'AI LinkedIn About Writer: 3 Profile Versions From Yo…'
+metaTitle: LinkedIn About Writer — 3 Profile Versions From Your CV
 ---
 
 Your LinkedIn About section is empty or still says "Aspiring professional seeking opportunities." Recruiters search LinkedIn by keywords — a weak About means invisible profile. The **LinkedIn Writer** turns your CV into three distinct About sections you can paste and edit in minutes.

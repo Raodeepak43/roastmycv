@@ -23,7 +23,7 @@ faq:
     a: >-
       Upload your CV at mycvroast.in for a free AI resume roast — instant score,
       Hinglish feedback, and specific fixes in under 30 seconds.
-metaTitle: 'LinkedIn Profile Optimization 2026: Get Recruiters t…'
+metaTitle: 'LinkedIn Profile Optimization 2026: Get Recruiters to Notice You'
 ---
 
 Your **LinkedIn profile** is often the first thing a recruiter sees — frequently before your resume. In India's 2026 job market, recruiters actively search LinkedIn for candidates, and a complete, keyword-rich profile can bring opportunities to you instead of you chasing them. Yet most profiles are half-finished: a blurry photo, a headline that just says "Student," and an empty About section. That is a missed goldmine.

@@ -20,7 +20,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: Freelancer Profile Builder — Free Tool Guide
+metaTitle: Freelancer Profile Writer — Upwork & Fiverr Bios
 ---
 
 Your resume is for jobs. Freelance platforms need a **different pitch** — outcome-focused bio, service packages, and keywords clients search. **Freelancer Profile** converts your CV into platform-ready copy for Upwork, Fiverr, and LinkedIn Services.

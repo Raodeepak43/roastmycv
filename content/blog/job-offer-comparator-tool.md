@@ -20,7 +20,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: Job Offer Comparator — Free Tool Guide
+metaTitle: Offer Comparator — Compare Job Offers Side by Side
 ---
 
 Two offers. One pays ₹2 LPA more. The other has better learning and brand. Spreadsheets do not capture **growth potential** or **culture red flags**. **Offer Comparator** breaks down 2–3 offers and recommends which to take — with negotiation script for the winner.

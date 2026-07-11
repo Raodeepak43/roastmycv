@@ -3,8 +3,8 @@ title: Should You Put CGPA on Your Resume? India Fresher Rules (2026)
 slug: cgpa-on-resume-india-rules
 date: '2026-07-02'
 description: >-
-  CGPA on resume India — when to show it, when to hide it, percentage
-  conversion, and what TCS, Infosys, and startups expect from freshers in 2026.
+  Should you put CGPA on your resume? India fresher rules — when to show or hide
+  it, percentage conversion, and what TCS, Infosys and startups expect in 2026.
 keywords: >-
   cgpa on resume india, should i put cgpa on resume, cgpa in resume fresher,
   resume cgpa format india

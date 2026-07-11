@@ -28,7 +28,7 @@ faq:
       Yes. MyCVRoast and our guides are built for Indian freshers, campus
       placement, and off-campus job seekers — CGPA, projects, and ATS context
       included.
-metaTitle: 'How to Write a CV: Step'
+metaTitle: 'How to Write a CV: Step-by-Step Guide 2026'
 ---
 
 Learning **how to write a cv** from a blank page is intimidating — you stare at the cursor, unsure what to include, what to leave out, and what recruiters actually want to see. The truth is that writing a curriculum vitae is a repeatable process, not a creative gift. Follow the right steps in the right order and you will produce a clean, persuasive CV that survives ATS filters and earns the six-second recruiter scan. This guide walks you through cv how to write it from scratch — section by section, with examples geared to the Indian job market and a clear path from blank document to interview-ready.

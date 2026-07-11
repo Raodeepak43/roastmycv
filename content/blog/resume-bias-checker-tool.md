@@ -18,7 +18,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: Resume Bias Checker — Free Tool Guide
+metaTitle: Resume Bias Checker — Spot HR Bias Triggers in Your CV
 ---
 
 Indian CVs often include date of birth, photo, marital status, and religion — all of which can trigger **unconscious bias** and get you filtered before skills are read. Abroad, some of these are illegal to ask. **Bias Detector** flags risky content and suggests neutral alternatives.

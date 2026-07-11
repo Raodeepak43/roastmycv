@@ -18,7 +18,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: 'CV Localiser: Adapt Your Resume for US, UK, EU, and…'
+metaTitle: 'CV Localiser: Adapt Your Resume for US, UK, EU, and Gulf Markets'
 ---
 
 Your Indian CV with photo, 10th marks, and "father's name" will get rejected in the US and UK in seconds. **CV Localiser** adapts your content to target country conventions — not just spelling, but what to remove, add, and reorder.

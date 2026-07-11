@@ -20,7 +20,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: 'Resume Bullet Rewriter: Turn Weak Lines Into Metric'
+metaTitle: Bullet Rewriter — Turn Weak CV Bullets Into Strong Lines
 ---
 
 "Worked on various projects" and "Responsible for team coordination" are resume killers. Recruiters want **metrics, action verbs, and outcomes**. The **Bullet Rewriter** takes your existing bullets and returns stronger versions grounded in what you actually did — without inventing fake numbers.

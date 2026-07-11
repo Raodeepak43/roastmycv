@@ -20,7 +20,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: Cold Email to Recruiters — Free Tool Guide
+metaTitle: Cold Email to Recruiters — AI Outreach Templates
 ---
 
 LinkedIn Easy Apply is a black hole. A sharp **cold email** to a recruiter or hiring manager can skip the queue — if it is under 150 words, specific, and not "Dear Sir/Madam I hope this email finds you well." The **Cold Email** tool writes human outreach from your CV.

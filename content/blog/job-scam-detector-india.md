@@ -18,7 +18,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: 'Job Scam Detector India: Spot Fake Jobs on WhatsApp…'
+metaTitle: 'Job Scam Detector India: Spot Fake Jobs on WhatsApp and Naukri'
 ---
 
 ₹45,000/month work-from-home data entry. Pay ₹999 registration. Interview only on Telegram. If it sounds too good, it probably is a **job scam** — and India saw a surge in fake recruiter fraud in 2024–2026. **Job Scam Detector** analyses suspicious messages and job posts before you share Aadhaar or pay anyone.

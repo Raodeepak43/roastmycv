@@ -26,7 +26,7 @@ faq:
       Yes. MyCVRoast and our guides are built for Indian freshers, campus
       placement, and off-campus job seekers — CGPA, projects, and ATS context
       included.
-metaTitle: 10 BTech Fresher Resume Mistakes That Kill Your Shor…
+metaTitle: 10 BTech Fresher Resume Mistakes That Kill Your Shortlist Chances
 ---
 
 **BTech fresher resume mistakes** cost shortlists silently — TPO ne forward kar diya, par ATS ya recruiter ne 8 seconds mein reject kar diya. Yeh 10 errors Indian engineering campus cycles mein sabse common hain.

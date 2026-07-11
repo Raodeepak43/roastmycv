@@ -26,7 +26,7 @@ faq:
       Yes. MyCVRoast and our guides are built for Indian freshers, campus
       placement, and off-campus job seekers — CGPA, projects, and ATS context
       included.
-metaTitle: Why Your Resume Isn't Getting Shortlisted (Fresher E…
+metaTitle: Why Your Resume Isn't Getting Shortlisted (Fresher Edition)
 ---
 
 **Resume not getting shortlisted** as a fresher usually is not one big failure — it is 3–4 small signals recruiters filter on in the first pass.

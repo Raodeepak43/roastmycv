@@ -20,7 +20,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: Career Gap Explainer — Free Tool Guide
+metaTitle: Career Gap Explainer — Explain Resume Gaps With AI
 ---
 
 A six-month gap after graduation. A layoff. Maternity leave. Health issues. Indian recruiters notice gaps in seconds — and most candidates either hide them (which backfires) or write vague excuses. The **Gap Explainer** tool turns your real story into professional, honest CV language that does not sound defensive.

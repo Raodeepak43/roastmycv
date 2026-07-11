@@ -5,7 +5,7 @@ date: '2026-06-30'
 description: >-
   MyCVRoast AI Tools: Complete Guide to 29+ Free Career Tools — practical format
   tips, examples, and mistakes to avoid for Indian freshers. Free AI resume
-  check linked.
+  check…
 keywords: >-
   mycvroast tools, ai career tools india, resume ai tools, job search ai tools,
   free resume tools

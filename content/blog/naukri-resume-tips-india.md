@@ -3,8 +3,8 @@ title: Naukri Resume Tips — Why Recruiters Skip Your Profile (2026)
 slug: naukri-resume-tips-india
 date: '2026-07-02'
 description: >-
-  Naukri Resume Tips — practical format tips, examples, and mistakes to avoid
-  for Indian freshers. Free AI resume check linked.
+  Naukri resume tips for India — why recruiters skip your profile, format fixes,
+  and common fresher mistakes. Improve visibility and free-check your CV.
 keywords: >-
   naukri resume tips, naukri cv tips, naukri profile not getting views, naukri
   resume format india
@@ -24,7 +24,7 @@ faq:
       External ATS-safe PDF (from MyCVRoast builder or Word) often parses
       better. Upload to Naukri and ensure text is extractable — test by copying
       text from preview.
-metaTitle: Naukri Resume Tips
+metaTitle: Naukri Resume Tips — Why Recruiters Skip Your Profile
 ---
 
 **Naukri resume tips** matter because Naukri is still India's largest job portal — but uploading a PDF and clicking "Apply" 200 times is not a strategy. Recruiters search Naukri's database; if your profile ranks low, you get **zero views** while competitors with keyword-matched headlines show up first.

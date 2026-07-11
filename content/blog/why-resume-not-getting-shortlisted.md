@@ -24,7 +24,7 @@ faq:
       Yes. Fix summary, add metrics to top 2 projects, match 5 keywords from the
       job post, and use a single-column ATS-safe PDF. Then re-test with a free
       AI roast.
-metaTitle: Why Is My Resume Not Getting Shortlisted? (Real Reas…
+metaTitle: Why Is My Resume Not Getting Shortlisted? (Real Reasons)
 ---
 
 **Why is my resume not getting shortlisted?** Because recruiters and ATS filter out most files in seconds — not because you have zero talent. The fix starts with diagnosing *which* filter is killing you.

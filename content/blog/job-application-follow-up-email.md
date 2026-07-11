@@ -18,7 +18,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: Job Application Follow
+metaTitle: 'Job Application Follow-Up Email: Examples & Timing'
 ---
 
 Applied two weeks ago. Silence. A single **follow-up email** can resurface your application — if it is timed right and does not read like "please please hire me." The **Follow-Up** tool writes context-aware nudges for post-application or post-interview scenarios.

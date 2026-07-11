@@ -16,7 +16,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: First 90 Days Plan — Free Tool Guide
+metaTitle: First 90 Days Plan — Onboarding Plan From Your CV
 ---
 
 Starting a new job without a plan means reactive firefighting for three months. A **30-60-90 day plan** shows your manager you are strategic — and helps you earn trust fast. **First 90 Days** generates a role-specific plan from your CV and new job details.

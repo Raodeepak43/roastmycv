@@ -18,7 +18,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: Company Research for Interviews — Free Tool Guide
+metaTitle: Company Research Brief — Pre-Interview Prep With AI
 ---
 
 "What do you know about our company?" eliminates candidates who did not prepare. **Company Research** builds a 5-minute brief: what they do, recent moves, culture clues from public info, and **5 smart questions** to ask your interviewer.

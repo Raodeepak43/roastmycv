@@ -20,7 +20,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: JD Match Tool — Free Tool Guide
+metaTitle: JD Match Tool — Check Resume Match With Any Job
 ---
 
 You send the same CV to 50 companies and hear nothing. ATS systems at TCS, Amazon India, and startups rank candidates by **keyword match** to the job description. The **JD Match** tool scores your CV against any pasted JD and tells you exactly what to add, rewrite, or remove.

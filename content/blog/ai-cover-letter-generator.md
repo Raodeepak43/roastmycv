@@ -20,7 +20,7 @@ faq:
       Yes — paste or upload CV text so AI can tailor output to your actual
       experience. MyCVRoast does not sell your data; processing is for your
       session output.
-metaTitle: 'AI Cover Letter Generator: Tailored Letters From You…'
+metaTitle: AI Cover Letter Generator — Tailored Letters From CV + JD
 ---
 
 Most cover letters are copy-paste disasters. Hiring managers spot generic letters in one line. A good cover letter connects **your CV achievements** to **this specific job** — and the **Cover Letter** tool does that automatically.

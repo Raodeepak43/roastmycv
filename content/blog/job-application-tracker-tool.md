@@ -21,7 +21,7 @@ faq:
     a: >-
       For most job seekers applying to 20–100 roles, yes. Faster than
       spreadsheets and linked to your MyCVRoast account.
-metaTitle: Job Application Tracker — Free Tool Guide
+metaTitle: Job Application Tracker — Track Applications in One Place
 ---
 
 Applying to 40 companies without a **job application tracker** is how you forget to follow up, double-apply, or miss an interview email buried in promotions. Spreadsheets work — until they don't. MyCVRoast **Application Tracker** lives in your dashboard next to your AI tools, so tracking and action stay in one place.
