@@ -15,7 +15,7 @@ type Props = {
 export function DashboardJourneyNav({ onNavigate, compact }: Props) {
   const pathname = useDashboardPathname()
   const activePhase = journeyForPath(pathname)
-  const [openId, setOpenId] = useState<string | null>(activePhase?.id ?? 'fix-cv')
+  const [openId, setOpenId] = useState<string | null>(compact ? null : activePhase?.id ?? 'fix-cv')
 
   useEffect(() => {
     if (activePhase) setOpenId(activePhase.id)

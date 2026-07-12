@@ -50,8 +50,8 @@ export function FinalizeStep({
             )}
           </ul>
         </div>
-        <div className="rb-wiz-card">
-          <TemplatePicker value={templateId} onChange={onTemplateChange} variant="panel" />
+        <div className="rb-wiz-card rb-wiz-card--full">
+          <TemplatePicker value={templateId} onChange={onTemplateChange} variant="gallery" />
         </div>
         <button
           type="button"

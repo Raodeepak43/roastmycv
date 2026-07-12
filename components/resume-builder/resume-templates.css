@@ -1,4 +1,4 @@
-/* ATS-safe resume templates — single column, no tables */
+/* ATS-safe resume templates — professional layouts */
 
 .rb-resume {
   font-family: var(--font-syne), Syne, system-ui, sans-serif;
@@ -10,6 +10,10 @@
   width: 100%;
   background: #fff;
   box-sizing: border-box;
+}
+
+.rb-resume__placeholder {
+  color: #94a3b8;
 }
 
 .rb-resume__header {
@@ -74,6 +78,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  gap: 0.5rem;
 }
 
 .rb-resume__company {
@@ -85,6 +90,7 @@
 .rb-resume__dates {
   font-size: 10px;
   color: #666;
+  white-space: nowrap;
 }
 
 .rb-resume__role {
@@ -119,6 +125,10 @@
   font-weight: 400;
 }
 
+.rb-resume__project-desc {
+  margin-top: 2px;
+}
+
 .rb-resume__skills-grid {
   display: grid;
   grid-template-columns: 120px 1fr;
@@ -139,6 +149,7 @@
 .rb-resume__edu-row {
   display: flex;
   justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .rb-resume__degree {
@@ -152,7 +163,119 @@
   color: #555;
 }
 
-/* Classic — orange left accent */
+/* Layout: sidebar */
+.rb-resume--layout-sidebar {
+  display: grid;
+  grid-template-columns: 32% 1fr;
+  gap: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+.rb-resume--layout-sidebar .rb-resume__sidebar {
+  background: var(--rb-sidebar-bg, #0f172a);
+  color: #e2e8f0;
+  padding: 24px 18px;
+}
+
+.rb-resume--layout-sidebar .rb-resume__main {
+  padding: 28px 26px;
+}
+
+.rb-resume--layout-sidebar .rb-resume__header {
+  border-bottom: none;
+  margin-bottom: 18px;
+  padding-bottom: 0;
+}
+
+.rb-resume--layout-sidebar .rb-resume__name {
+  font-size: 18px;
+  color: #fff;
+}
+
+.rb-resume--layout-sidebar .rb-resume__title {
+  color: var(--rb-sidebar-accent, #38bdf8);
+}
+
+.rb-resume--layout-sidebar .rb-resume__contact {
+  flex-direction: column;
+  gap: 6px;
+  color: #cbd5e1;
+  font-size: 9px;
+}
+
+.rb-resume--layout-sidebar .rb-resume__section-title {
+  color: var(--rb-sidebar-accent, #38bdf8);
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.rb-resume--layout-sidebar .rb-resume__skill-label,
+.rb-resume--layout-sidebar .rb-resume__skill-value,
+.rb-resume--layout-sidebar .rb-resume__degree,
+.rb-resume--layout-sidebar .rb-resume__school,
+.rb-resume--layout-sidebar .rb-resume__dates {
+  color: #e2e8f0;
+}
+
+.rb-resume--layout-sidebar .rb-resume__skills-grid {
+  grid-template-columns: 1fr;
+  gap: 2px;
+}
+
+/* Layout: header band */
+.rb-resume--layout-header-band {
+  padding: 0;
+}
+
+.rb-resume--layout-header-band .rb-resume__band {
+  background: var(--rb-band-bg, #ff4500);
+  color: #fff;
+  padding: 28px 36px 22px;
+  margin-bottom: 0;
+}
+
+.rb-resume--layout-header-band .rb-resume__band .rb-resume__name {
+  color: #fff;
+  font-size: 26px;
+}
+
+.rb-resume--layout-header-band .rb-resume__band .rb-resume__title {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.rb-resume--layout-header-band .rb-resume__band .rb-resume__contact {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.rb-resume--layout-header-band .rb-resume__content {
+  padding: 24px 36px 32px;
+}
+
+/* Layout: compact */
+.rb-resume--layout-compact {
+  padding: 22px 28px;
+  font-size: 10px;
+}
+
+.rb-resume--layout-compact .rb-resume__name {
+  font-size: 19px;
+}
+
+.rb-resume--layout-compact .rb-resume__section {
+  margin-bottom: 10px;
+}
+
+.rb-resume--layout-compact .rb-resume__job {
+  margin-bottom: 7px;
+}
+
+.rb-resume--layout-compact .rb-resume__body,
+.rb-resume--layout-compact .rb-resume__list li {
+  font-size: 9.5px;
+  line-height: 1.45;
+}
+
+/* Template: Classic */
 .rb-resume--classic {
   --rb-accent: #ff4500;
   --rb-rule: #e5e7eb;
@@ -160,7 +283,7 @@
   border-left: 4px solid var(--rb-accent);
 }
 
-/* Modern — centered header, blue accent */
+/* Template: Modern */
 .rb-resume--modern {
   --rb-accent: #2563eb;
   --rb-rule: #dbeafe;
@@ -181,7 +304,7 @@
   border-bottom-color: #bfdbfe;
 }
 
-/* Minimal — monochrome */
+/* Template: Minimal */
 .rb-resume--minimal {
   --rb-accent: #111827;
   --rb-rule: #d1d5db;
@@ -200,7 +323,7 @@
   border-bottom: 1px solid #111827;
 }
 
-/* Professional — navy, structured */
+/* Template: Professional */
 .rb-resume--professional {
   --rb-accent: #1e3a5f;
   --rb-rule: #cbd5e1;
@@ -219,10 +342,172 @@
   margin-bottom: 8px;
 }
 
+/* Template: Executive */
+.rb-resume--executive {
+  --rb-accent: #f8fafc;
+  --rb-sidebar-bg: #0c1929;
+  --rb-sidebar-accent: #fbbf24;
+  --rb-section-rule: #e2e8f0;
+}
+
+.rb-resume--executive .rb-resume__main .rb-resume__section-title {
+  color: #0c1929;
+  border-bottom: 2px solid #0c1929;
+}
+
+/* Template: Sidebar */
+.rb-resume--sidebar {
+  --rb-accent: #ff4500;
+  --rb-sidebar-bg: #1e293b;
+  --rb-sidebar-accent: #ff4500;
+  --rb-section-rule: #fed7aa;
+}
+
+/* Template: Fresher */
+.rb-resume--fresher {
+  --rb-accent: #059669;
+  --rb-rule: #d1fae5;
+  --rb-section-rule: #a7f3d0;
+}
+
+.rb-resume--fresher .rb-resume__name {
+  color: #065f46;
+}
+
+.rb-resume--fresher .rb-resume__header {
+  border-bottom: 2px solid #059669;
+}
+
+/* Template: Harvard */
+.rb-resume--harvard {
+  --rb-accent: #7c2d12;
+  --rb-rule: #d6d3d1;
+  --rb-section-rule: #e7e5e4;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.rb-resume--harvard .rb-resume__name {
+  font-size: 24px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.rb-resume--harvard .rb-resume__header {
+  text-align: center;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.rb-resume--harvard .rb-resume__contact {
+  justify-content: center;
+}
+
+.rb-resume--harvard .rb-resume__section-title {
+  text-align: center;
+  border-bottom: 1px solid #1a1a1a;
+  letter-spacing: 0.14em;
+}
+
+/* Template: Bold */
+.rb-resume--bold {
+  --rb-accent: #7c3aed;
+  --rb-band-bg: linear-gradient(135deg, #6d28d9 0%, #7c3aed 50%, #8b5cf6 100%);
+  --rb-section-rule: #ede9fe;
+}
+
+.rb-resume--bold .rb-resume__section-title {
+  color: #5b21b6;
+}
+
+/* Template: Compact */
+.rb-resume--compact {
+  --rb-accent: #334155;
+  --rb-rule: #cbd5e1;
+  --rb-section-rule: #e2e8f0;
+}
+
+/* Template: Elegant */
+.rb-resume--elegant {
+  --rb-accent: #92400e;
+  --rb-rule: #fde68a;
+  --rb-section-rule: #fef3c7;
+}
+
+.rb-resume--elegant .rb-resume__name {
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.rb-resume--elegant .rb-resume__section-title {
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #78350f;
+}
+
+/* Template: Timeline */
+.rb-resume--timeline {
+  --rb-accent: #0ea5e9;
+  --rb-rule: #e0f2fe;
+  --rb-section-rule: #bae6fd;
+}
+
+.rb-resume--timeline .rb-resume__job {
+  position: relative;
+  padding-left: 14px;
+  border-left: 2px solid #0ea5e9;
+  margin-left: 4px;
+}
+
+.rb-resume--timeline .rb-resume__job::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0ea5e9;
+}
+
 .rb-resume__header.rb-resume__section--active,
-.rb-resume__section.rb-resume__section--active {
+.rb-resume__section.rb-resume__section--active,
+.rb-resume__band.rb-resume__section--active {
   outline: 2px solid rgba(255, 69, 0, 0.55);
   outline-offset: 4px;
   border-radius: 4px;
   background: rgba(255, 247, 237, 0.65);
+}
+
+/* Template gallery thumbnails */
+.rb-template-thumb {
+  width: 100%;
+  aspect-ratio: 210 / 297;
+  overflow: hidden;
+  border-radius: 0.375rem;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+}
+
+.rb-template-thumb__frame {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.rb-template-thumb__paper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 400%;
+  transform: scale(0.25);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.rb-template-thumb__paper .rb-resume {
+  max-width: none;
+  width: 780px;
+  min-height: 1100px;
+  box-shadow: none;
 }

@@ -39,8 +39,7 @@ export function WizardPreviewPane({
         </div>
       </div>
       <div className="rb-wizard__preview-templates">
-        <p className="rb-wizard__preview-templates-label">Change template</p>
-        <TemplatePicker value={templateId} onChange={onTemplateChange} variant="toolbar" />
+        <TemplatePicker value={templateId} onChange={onTemplateChange} variant="panel" />
       </div>
     </>
   )

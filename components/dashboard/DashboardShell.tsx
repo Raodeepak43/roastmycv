@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   Flame,
   LayoutGrid,
@@ -126,10 +126,21 @@ export function DashboardShell({ email, onSignOut, children }: DashboardShellPro
   const isPro = plan === 'pro'
   const meta = pageMeta(pathname)
   const crumbs = dashboardBreadcrumbs(pathname)
-  const isOverview = pathname === '/dashboard'
   const isResumeBuilder = pathname.startsWith('/dashboard/resume-builder')
 
   const closeSidebar = () => setSidebarOpen(false)
+
+  useEffect(() => {
+    document.body.style.overflow = sidebarOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [sidebarOpen])
+
+  useEffect(() => {
+    setSidebarOpen(false)
+    setMenuOpen(false)
+  }, [pathname])
 
   const searchHref =
     searchQuery.trim() &&
@@ -137,10 +148,7 @@ export function DashboardShell({ email, onSignOut, children }: DashboardShellPro
 
   const searchTarget = searchHref ? dashboardHref(searchHref) : null
 
-  const subtitle =
-    isOverview && name
-      ? `${meta.desc} · Welcome back, ${name}`
-      : meta.desc
+  const subtitle = meta.desc
 
   const showUpgradeCard = !isPro
   const upgradeTitle = usage.roastsLeft <= 0 ? 'Roast limit reached' : 'Upgrade to Pro'
@@ -150,7 +158,7 @@ export function DashboardShell({ email, onSignOut, children }: DashboardShellPro
       : 'Unlimited roasts, PDF exports, and every career tool.'
 
   return (
-    <div className="dash-shell">
+    <div className={`dash-shell${sidebarOpen ? ' dash-shell--sidebar-open' : ''}`}>
       {sidebarOpen && (
         <button
           type="button"
@@ -257,15 +265,17 @@ export function DashboardShell({ email, onSignOut, children }: DashboardShellPro
           <div className="dash-topbar__main min-w-0">
             <button
               type="button"
-              className="dash-mobile-menu mr-2 align-middle min-[861px]:hidden"
+              className="dash-mobile-menu dash-topbar__menu-btn min-[861px]:hidden"
               onClick={() => setSidebarOpen(true)}
               aria-label="Open menu"
             >
               <Menu className="size-5" />
             </button>
-            <DashboardBreadcrumb crumbs={crumbs} />
-            <h1>{meta.title}</h1>
-            <p className="truncate">{subtitle}</p>
+            <div className="dash-topbar__titles min-w-0">
+              <DashboardBreadcrumb crumbs={crumbs} />
+              <h1>{meta.title}</h1>
+              <p className="dash-topbar__subtitle">{subtitle}</p>
+            </div>
           </div>
           <div className="dash-topbar__right">
             <form
