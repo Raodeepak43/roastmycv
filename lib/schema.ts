@@ -173,6 +173,39 @@ export function toolBreadcrumbJsonLd(title: string, slug: string) {
   }
 }
 
+export function careerToolBreadcrumbJsonLd(title: string, slug: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Career Tools', item: siteUrl('/career-tools') },
+      { '@type': 'ListItem', position: 3, name: title, item: siteUrl(`/career-tools/${slug}`) },
+    ],
+  }
+}
+
+export function careerToolWebPageJsonLd({
+  name,
+  description,
+  slug,
+}: {
+  name: string
+  description: string
+  slug: string
+}) {
+  return webPageJsonLd({
+    name,
+    description,
+    path: `/career-tools/${slug}`,
+    breadcrumb: [
+      { name: 'Home', path: '/' },
+      { name: 'Career Tools', path: '/career-tools' },
+      { name, path: `/career-tools/${slug}` },
+    ],
+  })
+}
+
 export function homeFaqPageJsonLd() {
   return faqPageJsonLd(HOME_FAQ.map(({ q, a }) => ({ question: q, answer: a })))
 }

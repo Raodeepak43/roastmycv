@@ -1,4 +1,4 @@
-/** Curated ElevenLabs voices for mock interviews (pre-made library). */
+/** Curated interviewer voices for mock interviews. */
 export const INTERVIEW_VOICES = [
   { id: 'JBFqnCBsd6RMkjVDRZzb', label: 'George', gender: 'male' as const, hint: 'Calm British interviewer' },
   { id: 'bIHbv24MWmeRgasZH58o', label: 'James', gender: 'male' as const, hint: 'Professional, steady tone' },

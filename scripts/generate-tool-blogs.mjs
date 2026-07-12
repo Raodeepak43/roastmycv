@@ -229,7 +229,7 @@ const TOOLS = [
     path: '/dashboard/tools/mock-interview',
     icon: '🎙️',
     intro:
-      'Reading questions is not the same as answering under pressure. **Mock Interview** simulates a real round: AI asks follow-ups, probes weak CV areas, and gives feedback on clarity and structure — before the actual call with a hiring manager. Turn on **Voice mode** for a natural ElevenLabs interviewer that reads questions aloud (George, Rachel, and more). Answer by **typing or speaking** — mic auto-sends after a short pause.',
+      'Reading questions is not the same as answering under pressure. **Mock Interview** simulates a real round: AI asks follow-ups, probes weak CV areas, and gives feedback on clarity and structure — before the actual call with a hiring manager. Turn on **Voice mode** for a natural AI interviewer that reads questions aloud. Answer by **typing or speaking** — mic auto-sends after a short pause.',
     what: 'Choose interview style (HR, Technical, Mixed) and role. AI acts as interviewer with your CV in context — asks questions, responds to your answers, and summarises strengths and fixes at the end. With voice enabled, questions stay hidden until audio starts so you practice real timing. Pick your interviewer voice and hear a demo before you begin.',
     steps: [
       'Complete **Interview Prep** first for question familiarity.',
@@ -518,7 +518,7 @@ const TOOLS = [
     path: '/dashboard/tools/voice-interview',
     icon: '🎙️',
     intro:
-      'Typing answers is easy. Saying them aloud while a stranger watches is not. **Voice Interview** runs a spoken mock round — ElevenLabs reads questions in a natural voice, you talk back via mic or keyboard, and AI probes with follow-ups like a real interviewer.',
+      'Typing answers is easy. Saying them aloud while a stranger watches is not. **Voice Interview** runs a spoken mock round — the AI interviewer reads questions in a natural voice, you talk back via mic or keyboard, and AI probes with follow-ups like a real interviewer.',
     what: 'Choose role and interview style. The interviewer speaks through high-quality AI voice (male/female options). Use the microphone to answer — your speech is transcribed and sent automatically after a brief pause — or type if you prefer. AI evaluates clarity, structure, and content between questions.',
     steps: [
       'Use headphones in a quiet room and allow mic access.',

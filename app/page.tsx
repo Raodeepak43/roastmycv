@@ -616,13 +616,23 @@ export default function Home() {
       <div className="flex-1 w-full max-w-[90rem] mx-auto px-4 md:px-8 py-6 md:py-10">
         <section className="flex flex-col relative">
           <div className="lg:sticky lg:top-28 z-[1] min-h-[50vh] flex flex-col justify-center py-12 lg:py-20">
-            <Reveal direction="left" className="elevate-light-panel p-8 md:p-12 mb-8">
-              <div className="flex flex-col lg:flex-row justify-between items-end gap-10">
-                <div className="flex flex-col gap-6 lg:w-2/5">
-                  <HighVoltageBadge text={t.warningBadge} className="w-fit" />
-                  <p className="font-body text-[11px] text-muted tracking-[0.1em] uppercase">{t.tagline}</p>
-                  <p className="text-lg md:text-xl leading-relaxed text-text-dark/80 max-w-sm">{t.hero.sub}</p>
-                  <p className="font-body text-[13px] text-text-dark hidden lg:block">
+            <Reveal direction="left" className="elevate-light-panel home-hero-panel p-8 md:p-12 lg:p-14 mb-8">
+              <div className="home-hero-grid">
+                <div className="home-hero-copy">
+                  <HighVoltageBadge text={t.warningBadge} className="w-fit home-hero-badge" />
+                  <div className="home-hero-pills" aria-label="Product highlights">
+                    {t.tagline.split('·').map((item) => {
+                      const label = item.trim()
+                      if (!label) return null
+                      return (
+                        <span key={label} className="home-hero-pill">
+                          {label}
+                        </span>
+                      )
+                    })}
+                  </div>
+                  <p className="home-hero-sub">{t.hero.sub}</p>
+                  <p className="home-hero-stat">
                     {statsLoading ? (
                       <span className="inline-flex items-center gap-2">
                         🔥 <span className="skeleton inline-block h-4 w-14" /> <span className="skeleton inline-block h-4 w-36" />
@@ -642,8 +652,8 @@ export default function Home() {
                     )}
                   </p>
                 </div>
-                <div className="lg:w-3/5 flex justify-end">
-                  <h1 className="elevate-display-hero text-right text-text-dark">
+                <div className="home-hero-headline">
+                  <h1 className="elevate-display-hero text-text-dark">
                     {t.hero.line1}
                     <span className="text-brand-orange"> {t.hero.line2}</span>
                   </h1>

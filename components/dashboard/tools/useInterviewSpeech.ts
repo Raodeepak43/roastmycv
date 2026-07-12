@@ -54,8 +54,8 @@ export function useInterviewSpeech() {
           if (!mountedRef.current) return
           setSpeechWarning(
             reason.includes('Invalid') && reason.includes('API key')
-              ? 'Premium voice is unavailable — using your browser voice instead.'
-              : `Premium voice unavailable — using browser voice.`,
+              ? 'Interviewer voice is unavailable — using your browser voice instead.'
+              : 'Interviewer voice unavailable — using browser voice.',
           )
         },
         onStart: () => {
