@@ -22,9 +22,10 @@ import { createRoastId, saveRoast } from '@/lib/roast-session'
 import { savePublicRoastViaApi } from '@/lib/roast/public-save'
 import { RecentRoastsFeed } from '@/components/home/RecentRoastsFeed'
 import { ElevateMarquee } from '@/components/home/ElevateMarquee'
+import { HomePracticalCtas } from '@/components/home/HomePracticalCtas'
+import { HomeLongTailSection } from '@/components/home/HomeLongTailSection'
 import { Reveal } from '@/components/ui/Reveal'
 import { TrustBar } from '@/components/home/TrustBar'
-import { SeoIntroSection } from '@/components/home/SeoIntroSection'
 import { TopicClusterNav } from '@/components/seo/TopicClusterNav'
 import {
   clearDisplayNameOnSkip,
@@ -265,6 +266,7 @@ export default function Home() {
   const [pinnedTicker, setPinnedTicker] = useState<string | null>(null)
   const [accountDeletedToast, setAccountDeletedToast] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
+  const roastSectionRef = useRef<HTMLDivElement>(null)
 
   const t = getUi(language)
   const loadingT = getUi(loadingLang ?? language)
@@ -459,6 +461,11 @@ export default function Home() {
     setShowSignup(true)
   }
 
+  const scrollToRoast = useCallback(() => {
+    roastSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    window.setTimeout(() => fileInputRef.current?.click(), 400)
+  }, [])
+
   useEffect(() => {
     setLoadMsgIdx(0)
   }, [language])
@@ -614,153 +621,140 @@ export default function Home() {
       />
 
       <div className="flex-1 w-full max-w-[90rem] mx-auto px-4 md:px-8 py-6 md:py-10">
-        <section className="flex flex-col relative">
-          <div className="lg:sticky lg:top-28 z-[1] min-h-[50vh] flex flex-col justify-center py-12 lg:py-20">
-            <Reveal direction="left" className="elevate-light-panel home-hero-panel p-8 md:p-12 lg:p-14 mb-8">
-              <div className="home-hero-grid">
-                <div className="home-hero-copy">
-                  <HighVoltageBadge text={t.warningBadge} className="w-fit home-hero-badge" />
-                  <div className="home-hero-pills" aria-label="Product highlights">
-                    {t.tagline.split('·').map((item) => {
-                      const label = item.trim()
-                      if (!label) return null
-                      return (
-                        <span key={label} className="home-hero-pill">
-                          {label}
-                        </span>
-                      )
-                    })}
-                  </div>
-                  <p className="home-hero-sub">{t.hero.sub}</p>
-                  <p className="home-hero-stat">
-                    {statsLoading ? (
-                      <span className="inline-flex items-center gap-2">
-                        🔥 <span className="skeleton inline-block h-4 w-14" /> <span className="skeleton inline-block h-4 w-36" />
+        <section className="home-landing-hero">
+          <Reveal direction="left" className="elevate-light-panel home-landing-hero__panel p-8 md:p-10 lg:p-12">
+            <div className="home-landing-hero__grid">
+              <div className="home-landing-hero__copy">
+                <HighVoltageBadge text={t.warningBadge} className="w-fit home-hero-badge" />
+                <div className="home-hero-pills" aria-label="Product highlights">
+                  {t.tagline.split('·').map((item) => {
+                    const label = item.trim()
+                    if (!label) return null
+                    return (
+                      <span key={label} className="home-hero-pill">
+                        {label}
                       </span>
-                    ) : (
-                      <>🔥{' '}
-                        <NumberTicker
-                          value={roastCount}
-                          startOnView={false}
-                          blur
-                          duration={0.85}
-                          format={(n) => n.toLocaleString('en-US')}
-                          className="font-semibold text-brand-orange"
-                        />{' '}
-                        {t.destroyed}
-                      </>
-                    )}
-                  </p>
+                    )
+                  })}
                 </div>
-                <div className="home-hero-headline">
-                  <h1 className="elevate-display-hero text-text-dark">
-                    {t.hero.line1}
-                    <span className="text-brand-orange"> {t.hero.line2}</span>
-                  </h1>
+                <h1 className="home-landing-hero__title">
+                  {t.hero.line1}
+                  <span className="text-brand-orange"> {t.hero.line2}</span>
+                </h1>
+                <p className="home-landing-hero__sub">{t.hero.sub}</p>
+                <HomePracticalCtas
+                  roastCount={roastCount}
+                  statsLoading={statsLoading}
+                  roastLabel={t.destroyed}
+                  onRoastClick={scrollToRoast}
+                />
+              </div>
+
+              <div id="roast" ref={roastSectionRef} className="home-landing-hero__upload">
+                <div className="home-upload-panel">
+                  <p className="home-upload-panel__label">Try it now</p>
+                  <p className="home-upload-panel__title">Upload your CV</p>
+                  <p className="home-upload-panel__sub">PDF or TXT · Max 5MB · {usesLeft} free roast{usesLeft === 1 ? '' : 's'} left</p>
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault()
+                      void handleRoast()
+                    }}
+                  >
+                    <p
+                      className="mb-3 rounded-lg border border-orange/30 bg-orange/[0.06] px-3 py-2 text-center font-body text-[12px] text-orange"
+                      role="note"
+                    >
+                      ⚠️ Word (.docx) not supported — export as PDF first (File → Save as PDF)
+                    </p>
+                    <div
+                      className={`upload-card home-upload-panel__drop p-5 md:p-6 text-center cursor-pointer mb-4 ${dragging ? 'dragover' : ''} ${uploadHighlight ? 'upload-error' : ''}`}
+                      onClick={() => fileInputRef.current?.click()}
+                      onDragOver={(e) => { e.preventDefault(); setDragging(true) }}
+                      onDragLeave={() => setDragging(false)}
+                      onDrop={handleDrop}
+                      role="button"
+                      tabIndex={0}
+                      aria-label="Upload your resume — PDF or TXT, max 5MB"
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          fileInputRef.current?.click()
+                        }
+                      }}
+                    >
+                      <input
+                        ref={fileInputRef}
+                        id="resume-upload"
+                        name="resume"
+                        type="file"
+                        accept=".pdf,.txt,application/pdf,text/plain"
+                        className="hidden"
+                        aria-label="Choose resume file"
+                        onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
+                      />
+                      {file ? (
+                        <>
+                          <p className="text-4xl mb-2">✅</p>
+                          <p className="font-display text-lg text-orange mb-1 truncate px-2">{file.name}</p>
+                          <p className="font-body text-[13px] text-muted">{t.readyRoast}</p>
+                        </>
+                      ) : (
+                        <>
+                          <UploadIcon />
+                          <p className="font-display text-xl text-text-dark mb-1">{t.dropResume}</p>
+                          <p className="font-body text-[13px] text-muted">{t.clickUpload}</p>
+                          <p className="font-body text-[11px] text-subtle mt-1">{t.fileLimit}</p>
+                        </>
+                      )}
+                    </div>
+
+                    <div className="flex gap-2 mb-2 max-[380px]:flex-col min-[381px]:overflow-x-auto min-[381px]:flex-nowrap lang-scroll pb-1">
+                      {INTENSITY_IDS.map((id) => (
+                        <button
+                          key={id}
+                          type="button"
+                          onClick={() => setIntensity(id)}
+                          aria-label={`${t.intensity[id].label} roast mode`}
+                          aria-pressed={intensity === id}
+                          className="intensity-btn max-[380px]:w-full min-[381px]:flex-shrink-0"
+                        >
+                          {t.intensity[id].label}
+                        </button>
+                      ))}
+                    </div>
+                    <p className="font-body text-xs text-muted text-center mb-3">{activeDesc}</p>
+
+                    <p className="font-body text-[11px] text-muted uppercase tracking-[0.1em] mb-2 text-center">{t.chooseLang}</p>
+                    <LanguagePicker language={language} onSelect={selectLanguage} scrollHint={t.scrollHint} />
+                    <p className="font-body text-[10px] text-subtle text-center mt-1 mb-4 hidden md:block">{t.langHint}</p>
+
+                    {error && (
+                      <div className="card-ui p-3 mb-3 font-body text-sm text-red-400 border-red-500/30">{error}</div>
+                    )}
+
+                    {loading ? (
+                      <div className="btn-roast w-full py-3.5 md:py-4 flex flex-col items-center justify-center gap-1.5 opacity-90">
+                        <div className="flex items-center justify-center gap-3">
+                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full spinner shrink-0" />
+                          <span className="font-display text-base md:text-lg text-white">{loadingT.roastingBtn}</span>
+                        </div>
+                        <span className="font-body text-xs text-white/80">{loadingMsgs[loadMsgIdx % loadingMsgs.length]}</span>
+                      </div>
+                    ) : (
+                      <button
+                        type="submit"
+                        aria-label={t.roastBtn}
+                        className="btn-roast w-full py-3.5 md:py-4 text-base md:text-lg">
+                        {t.roastBtn}
+                      </button>
+                    )}
+                  </form>
                 </div>
               </div>
-            </Reveal>
-            <TrustBar roastCount={roastCount} statsLoading={statsLoading} roastLabel={t.destroyed} />
-          </div>
+            </div>
+          </Reveal>
 
-          <div className="lg:sticky lg:top-28 z-[2] pb-12 lg:pb-24">
-            <Reveal direction="up" className="max-w-xl mx-auto w-full">
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault()
-                    void handleRoast()
-                  }}
-                >
-                <p
-                  className="mb-3 rounded-lg border border-orange/30 bg-orange/[0.06] px-3 py-2 text-center font-body text-[12px] text-orange"
-                  role="note"
-                >
-                  ⚠️ Word (.docx) not supported — export as PDF first (File → Save as PDF)
-                </p>
-                <div
-                  className={`upload-card p-5 md:p-8 text-center cursor-pointer mb-4 ${dragging ? 'dragover' : ''} ${uploadHighlight ? 'upload-error' : ''}`}
-                  onClick={() => fileInputRef.current?.click()}
-                  onDragOver={(e) => { e.preventDefault(); setDragging(true) }}
-                  onDragLeave={() => setDragging(false)}
-                  onDrop={handleDrop}
-                  role="button"
-                  tabIndex={0}
-                  aria-label="Upload your resume — PDF or TXT, max 5MB"
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      fileInputRef.current?.click()
-                    }
-                  }}
-                >
-                  <input
-                    ref={fileInputRef}
-                    id="resume-upload"
-                    name="resume"
-                    type="file"
-                    accept=".pdf,.txt,application/pdf,text/plain"
-                    className="hidden"
-                    aria-label="Choose resume file"
-                    onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
-                  />
-                  {file ? (
-                    <>
-                      <p className="text-4xl mb-2">✅</p>
-                      <p className="font-display text-lg text-orange mb-1 truncate px-2">{file.name}</p>
-                      <p className="font-body text-[13px] text-muted">{t.readyRoast}</p>
-                    </>
-                  ) : (
-                    <>
-                      <UploadIcon />
-                      <p className="font-display text-xl md:text-2xl text-text-dark mb-1">{t.dropResume}</p>
-                      <p className="font-body text-[13px] text-muted">{t.clickUpload}</p>
-                      <p className="font-body text-[11px] text-subtle mt-1">{t.fileLimit}</p>
-                    </>
-                  )}
-                </div>
-
-                <div className="flex gap-2 mb-2 max-[380px]:flex-col min-[381px]:overflow-x-auto min-[381px]:flex-nowrap lang-scroll pb-1">
-                  {INTENSITY_IDS.map((id) => (
-                    <button
-                      key={id}
-                      type="button"
-                      onClick={() => setIntensity(id)}
-                      aria-label={`${t.intensity[id].label} roast mode`}
-                      aria-pressed={intensity === id}
-                      className="intensity-btn max-[380px]:w-full min-[381px]:flex-shrink-0"
-                    >
-                      {t.intensity[id].label}
-                    </button>
-                  ))}
-                </div>
-                <p className="font-body text-xs text-muted text-center mb-3">{activeDesc}</p>
-
-                <p className="font-body text-[11px] text-muted uppercase tracking-[0.1em] mb-2 text-center">{t.chooseLang}</p>
-                <LanguagePicker language={language} onSelect={selectLanguage} scrollHint={t.scrollHint} />
-                <p className="font-body text-[10px] text-subtle text-center mt-1 mb-4 hidden md:block">{t.langHint}</p>
-
-                {error && (
-                  <div className="card-ui p-3 mb-3 font-body text-sm text-red-400 border-red-500/30">{error}</div>
-                )}
-
-                {loading ? (
-                  <div className="btn-roast w-full py-3.5 md:py-4 flex flex-col items-center justify-center gap-1.5 opacity-90">
-                    <div className="flex items-center justify-center gap-3">
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full spinner shrink-0" />
-                      <span className="font-display text-base md:text-lg text-white">{loadingT.roastingBtn}</span>
-                    </div>
-                    <span className="font-body text-xs text-white/80">{loadingMsgs[loadMsgIdx % loadingMsgs.length]}</span>
-                  </div>
-                ) : (
-                  <button
-                    type="submit"
-                    aria-label={t.roastBtn}
-                    className="btn-roast w-full py-3.5 md:py-4 text-base md:text-lg">
-                    {t.roastBtn}
-                  </button>
-                )}
-                </form>
-            </Reveal>
-          </div>
+          <TrustBar roastCount={roastCount} statsLoading={statsLoading} roastLabel={t.destroyed} />
         </section>
 
         <ElevateMarquee />
@@ -894,9 +888,9 @@ export default function Home() {
 
             <CareerToolsSection />
 
-            <SeoIntroSection />
+            <HomeLongTailSection />
 
-            <TopicClusterNav className="mt-8 md:mt-10 rounded-[2rem] border border-border bg-bg-beige/50 p-5 md:p-6" />
+            <TopicClusterNav className="home-topic-nav" />
           </div>
         </div>
       </div>

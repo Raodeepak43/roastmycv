@@ -1,12 +1,11 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
-import Link from 'next/link'
 import { useParams, useRouter } from 'next/navigation'
 import { RoastResultView, getShareText } from '@/components/RoastResultView'
 import { PublicRoastCard, PublicRoastUnavailable } from '@/components/roast/PublicRoastCard'
 import { SiteFooter } from '@/components/SiteFooter'
-import { RoastIntensityBackground } from '@/components/ui/roast-intensity-background'
+import { SiteHeader } from '@/components/SiteHeader'
 import { buildTickerMessage, mergeTickerItems, PINNED_TICKER_KEY } from '@/lib/ticker'
 import { loadRoast, saveRoast, type StoredRoast } from '@/lib/roast-session'
 import { savePublicRoastViaApi } from '@/lib/roast/public-save'
@@ -148,64 +147,28 @@ export default function RoastResultPage() {
 
   if (viewMode === 'loading') {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-page">
+      <main className="roast-result-page min-h-screen flex items-center justify-center">
         <div className="w-8 h-8 border-2 border-orange border-t-transparent rounded-full spinner" />
       </main>
     )
   }
 
-  const intensity = roast?.intensity ?? publicRoast?.intensity ?? 'gaali_light'
-
   return (
     <main
-      className="min-h-screen flex flex-col w-full relative overflow-x-hidden"
+      className="roast-result-page elevate-site min-h-screen flex flex-col w-full relative overflow-x-hidden"
       dir={isRtl ? 'rtl' : 'ltr'}
       lang={language}
     >
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <RoastIntensityBackground intensity={intensity} className="absolute inset-0" />
-      </div>
-
       <div className="relative z-10 flex flex-col flex-1 min-h-screen">
-        <header className="w-full border-b border-border bg-black/50 backdrop-blur-md">
-          <div className="max-w-6xl mx-auto px-4 md:px-8 py-3 md:py-4 flex items-center justify-between gap-3">
-            <Link
-              href="/"
-              className="font-body text-[13px] text-dim hover:text-white transition-colors shrink-0"
-            >
-              ← {t.tryAgain}
-            </Link>
-            <Link
-              href="/"
-              className="font-display text-lg md:text-xl text-white hover:text-orange transition-colors shrink-0"
-            >
-              🔥 MyCVRoast
-            </Link>
-            <Link
-              href="/"
-              className="font-body text-xs text-orange border border-orange px-3 py-1 rounded-full hover:bg-orange hover:text-black transition-colors"
-            >
-              {t.roastBtn.replace(/^🔥\s*/, '🔥 ')}
-            </Link>
-          </div>
-          {viewMode === 'owner' && (
-            <div className="w-full bg-card/80 backdrop-blur-sm border-t border-border overflow-hidden py-2">
-              <div className="ticker-track font-body text-[11px] whitespace-nowrap">
-                {[...tickerItems, ...tickerItems].map((item, i) => (
-                  <span
-                    key={`${item}-${i}`}
-                    className={`mx-5 inline-flex items-center ${pinnedTicker === item ? 'text-orange font-semibold' : 'text-white'}`}
-                  >
-                    <span className="text-orange mr-1.5">·</span>
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-        </header>
+        <SiteHeader
+          variant="default"
+          activePath="home"
+          breadcrumb="Roast result"
+          tickerItems={viewMode === 'owner' ? tickerItems : undefined}
+          pinnedTicker={viewMode === 'owner' ? pinnedTicker : undefined}
+        />
 
-        <div className="flex-1 w-full max-w-6xl mx-auto px-4 md:px-8 py-6 md:py-10 pb-8">
+        <div className="flex-1 w-full max-w-[90rem] mx-auto px-4 md:px-8 py-6 md:py-10 pb-8">
           {viewMode === 'owner' && roast && (
             <RoastResultView
               roastId={id}
@@ -222,9 +185,7 @@ export default function RoastResultPage() {
             />
           )}
 
-          {viewMode === 'public' && publicRoast && (
-            <PublicRoastCard roast={publicRoast} />
-          )}
+          {viewMode === 'public' && publicRoast && <PublicRoastCard roast={publicRoast} />}
 
           {viewMode === 'unavailable' && <PublicRoastUnavailable />}
         </div>

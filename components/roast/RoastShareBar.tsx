@@ -1,7 +1,7 @@
 'use client'
 
 import { useCallback, useState } from 'react'
-import { buildPublicRoastPayload } from '@/lib/public-roasts'
+import { Link2, Share2 } from 'lucide-react'
 import { LinkedInPostModal } from '@/components/roast/LinkedInPostModal'
 import type { IntensityKey } from '@/app/i18n'
 
@@ -23,6 +23,8 @@ function buildWhatsAppMessage(score: number, language: string, token: string): s
   return `My CV just got roasted ${score}/10 💀 by AI. Brutal but true. Try yours free → ${url}`
 }
 
+type ShareBarVariant = 'light' | 'dark'
+
 export function RoastShareBar({
   shareToken,
   score,
@@ -33,6 +35,7 @@ export function RoastShareBar({
   verdict,
   fixes,
   onVisibilityChange,
+  variant = 'dark',
 }: {
   shareToken: string
   score: number
@@ -43,11 +46,13 @@ export function RoastShareBar({
   verdict?: string
   fixes?: string[]
   onVisibilityChange?: (isPublic: boolean) => void
+  variant?: ShareBarVariant
 }) {
   const [isPublic, setIsPublic] = useState(true)
   const [linkCopied, setLinkCopied] = useState(false)
   const [linkedinOpen, setLinkedinOpen] = useState(false)
   const [updating, setUpdating] = useState(false)
+  const isLight = variant === 'light'
 
   const shareUrl = `${SHARE_BASE}/roast/${shareToken}`
 
@@ -88,6 +93,78 @@ export function RoastShareBar({
     if (!isPublic) return
     const text = buildWhatsAppMessage(score, language, shareToken)
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer')
+  }
+
+  if (isLight) {
+    return (
+      <>
+        <div className="roast-result-panel">
+          <header className="roast-result-panel__header">
+            <h2 className="roast-result-panel__title">Share your roast</h2>
+            <Share2 className="size-4 text-[var(--text-muted)]" aria-hidden />
+          </header>
+          <div className="roast-result-panel__body space-y-3">
+            <div className="roast-result-actions">
+              <button
+                type="button"
+                onClick={copyShareLink}
+                disabled={!isPublic}
+                className="roast-result-btn roast-result-btn--primary"
+              >
+                <Link2 className="size-4" aria-hidden />
+                {linkCopied ? 'Link copied!' : 'Copy share link'}
+              </button>
+
+              <button
+                type="button"
+                onClick={openWhatsApp}
+                disabled={!isPublic}
+                className="roast-result-btn roast-result-btn--whatsapp"
+              >
+                <WhatsAppIcon />
+                Share on WhatsApp
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setLinkedinOpen(true)}
+                className="roast-result-btn roast-result-btn--secondary"
+              >
+                Generate LinkedIn post
+              </button>
+            </div>
+
+            <label className="flex cursor-pointer select-none items-center gap-2.5 pt-1">
+              <input
+                type="checkbox"
+                checked={isPublic}
+                disabled={updating}
+                onChange={(e) => togglePublic(e.target.checked)}
+                className="size-4 accent-[var(--color-orange)]"
+              />
+              <span className="text-xs leading-snug text-[var(--text-muted)]">Make my roast public</span>
+            </label>
+
+            {!isPublic && (
+              <p className="text-xs text-[var(--text-faint)]">
+                Private roasts cannot be shared via link or WhatsApp.
+              </p>
+            )}
+          </div>
+        </div>
+
+        <LinkedInPostModal
+          open={linkedinOpen}
+          onClose={() => setLinkedinOpen(false)}
+          score={score}
+          language={language}
+          lines={lines}
+          fixes={fixes}
+          title={title}
+          verdict={verdict}
+        />
+      </>
+    )
   }
 
   return (

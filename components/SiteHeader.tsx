@@ -83,6 +83,8 @@ export function SiteHeader({
   const showStats = variant === 'home' && (statsLoading || roastCount > 0)
   const doubledTicker = showTicker ? [...tickerItems!, ...tickerItems!] : []
   const joinText = stripJoinEmoji(joinLabel)
+  const usesLabel =
+    showUses && usesLeft === 1 ? roastsFreeLabel.replace(/\broasts\b/i, 'roast') : roastsFreeLabel
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
@@ -155,9 +157,9 @@ export function SiteHeader({
               {showUses && (
                 <span
                   className="site-header__badge site-header__badge--accent site-header__badge--uses hidden sm:inline-flex"
-                  title={usesTitle ?? `${usesLeft} ${roastsFreeLabel}`}
+                  title={usesTitle ?? `${usesLeft} ${usesLabel}`}
                 >
-                  {usesLeft} {roastsFreeLabel}
+                  {usesLeft} {usesLabel}
                 </span>
               )}
 
@@ -213,7 +215,7 @@ export function SiteHeader({
               {showUses && (
                 <span className="site-header__stats-uses">
                   {' '}
-                  · {usesLeft} {roastsFreeLabel}
+                  · {usesLeft} {usesLabel}
                 </span>
               )}
             </div>
@@ -233,7 +235,7 @@ export function SiteHeader({
             {showUses && (
               <p className="site-header__mobile-uses" aria-live="polite">
                 <span className="site-header__mobile-uses-dot" aria-hidden />
-                {usesLeft} {roastsFreeLabel} remaining
+                {usesLeft} {usesLabel} remaining
               </p>
             )}
             <div className="site-header__mobile-links">

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
 /** Semantic internal links for AI retrieval topic clusters */
 const TOPIC_CLUSTERS = [
@@ -18,17 +19,16 @@ const TOPIC_CLUSTERS = [
 
 export function TopicClusterNav({ className = '' }: { className?: string }) {
   return (
-    <nav aria-label="Related resume and career topics" className={className}>
-      <h2 className="font-display text-base md:text-lg text-text-dark mb-3">Related topics</h2>
-      <ul className="grid sm:grid-cols-2 gap-2">
+    <nav aria-label="Related resume and career topics" className={`home-topic-nav ${className}`.trim()}>
+      <p className="section-label mb-3">Quick links</p>
+      <h2 className="home-topic-nav__title">Related topics</h2>
+      <ul className="home-topic-nav__grid">
         {TOPIC_CLUSTERS.map((item) => (
           <li key={item.href}>
-            <Link
-              href={item.href}
-              className="block rounded-xl border border-border px-3 py-2.5 hover:border-orange/40 hover:bg-bg-beige/40 transition-colors"
-            >
-              <span className="font-body text-sm font-medium text-brand-orange">{item.label}</span>
-              <span className="block font-body text-[11px] text-dim mt-0.5">{item.description}</span>
+            <Link href={item.href} className="home-topic-nav__card">
+              <span className="home-topic-nav__label">{item.label}</span>
+              <span className="home-topic-nav__desc">{item.description}</span>
+              <ArrowRight className="size-3.5 home-topic-nav__arrow" aria-hidden />
             </Link>
           </li>
         ))}

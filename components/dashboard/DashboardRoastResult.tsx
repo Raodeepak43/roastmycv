@@ -116,6 +116,7 @@ export function DashboardRoastResult({
       {shareToken && (
         <div className="mt-6">
           <RoastShareBar
+            variant="light"
             shareToken={shareToken}
             score={roast.score}
             language={roast.language}
