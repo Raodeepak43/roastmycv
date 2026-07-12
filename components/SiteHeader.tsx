@@ -123,13 +123,13 @@ export function SiteHeader({
                 variant="mark"
                 href="/"
                 onClick={closeMenu}
-                className="site-header__logo md:hidden"
+                className="site-header__logo site-header__logo--mobile"
               />
               <Logo
                 variant="light"
                 href="/"
                 onClick={closeMenu}
-                className="site-header__logo hidden md:inline-flex"
+                className="site-header__logo site-header__logo--desktop"
               />
               {showBreadcrumb ? (
                 <>
@@ -156,7 +156,7 @@ export function SiteHeader({
             <div className="site-header__actions">
               {showUses && (
                 <span
-                  className="site-header__badge site-header__badge--accent site-header__badge--uses hidden sm:inline-flex"
+                  className="site-header__badge site-header__badge--accent site-header__badge--uses site-header__hide-sm"
                   title={usesTitle ?? `${usesLeft} ${usesLabel}`}
                 >
                   {usesLeft} {usesLabel}
@@ -165,7 +165,7 @@ export function SiteHeader({
 
               {badge && !showUses ? (
                 <span
-                  className={`site-header__badge hidden sm:inline-flex${badge.accent ? ' site-header__badge--accent' : ''}`}
+                  className={`site-header__badge site-header__hide-sm${badge.accent ? ' site-header__badge--accent' : ''}`}
                   title={badge.title}
                 >
                   {badge.label}
@@ -174,7 +174,7 @@ export function SiteHeader({
 
               <Link
                 href="/login?next=/dashboard"
-                className="site-header__link site-header__link--login hidden sm:inline-flex"
+                className="site-header__link site-header__link--login site-header__hide-sm"
               >
                 Login
               </Link>
@@ -183,19 +183,19 @@ export function SiteHeader({
                 <button
                   type="button"
                   onClick={onJoinClick}
-                  className="site-header__btn-primary hidden sm:inline-flex"
+                  className="site-header__btn-primary site-header__hide-sm"
                 >
                   {joinText}
                 </button>
               ) : activePath !== 'home' ? (
-                <Link href="/" className="site-header__btn-primary hidden sm:inline-flex">
+                <Link href="/" className="site-header__btn-primary site-header__hide-sm">
                   Roast Free
                 </Link>
               ) : null}
 
               <button
                 type="button"
-                className="site-header__menu-btn md:hidden"
+                className="site-header__menu-btn"
                 aria-expanded={menuOpen}
                 aria-controls="site-header-mobile-nav"
                 aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -221,59 +221,59 @@ export function SiteHeader({
             </div>
           )}
         </div>
-      </div>
 
-      {menuOpen ? (
-        <>
-          <button
-            type="button"
-            className="site-header__backdrop md:hidden"
-            aria-label="Close menu"
-            onClick={closeMenu}
-          />
-          <nav id="site-header-mobile-nav" className="site-header__mobile-nav md:hidden" aria-label="Mobile">
-            {showUses && (
-              <p className="site-header__mobile-uses" aria-live="polite">
-                <span className="site-header__mobile-uses-dot" aria-hidden />
-                {usesLeft} {usesLabel} remaining
-              </p>
-            )}
-            <div className="site-header__mobile-links">
-              {NAV_ITEMS.map((item) => (
-                <Link
-                  key={item.key}
-                  href={item.href}
-                  onClick={closeMenu}
-                  className={`site-header__mobile-link${activePath === item.key ? ' site-header__mobile-link--active' : ''}`}
-                >
-                  {item.label}
-                  <span className="site-header__mobile-link-arrow" aria-hidden>
-                    →
-                  </span>
-                </Link>
-              ))}
-            </div>
-            <div className="site-header__mobile-footer">
-              <Link
-                href="/login?next=/dashboard"
-                onClick={closeMenu}
-                className="site-header__mobile-login"
-              >
-                Login
-              </Link>
-              {onJoinClick ? (
-                <button type="button" onClick={() => { closeMenu(); onJoinClick() }} className="site-header__mobile-cta">
-                  {joinText}
-                </button>
-              ) : (
-                <Link href="/" onClick={closeMenu} className="site-header__mobile-cta site-header__mobile-cta--link">
-                  🔥 Roast Free
-                </Link>
+        {menuOpen ? (
+          <>
+            <button
+              type="button"
+              className="site-header__backdrop"
+              aria-label="Close menu"
+              onClick={closeMenu}
+            />
+            <nav id="site-header-mobile-nav" className="site-header__mobile-nav" aria-label="Mobile">
+              {showUses && (
+                <p className="site-header__mobile-uses" aria-live="polite">
+                  <span className="site-header__mobile-uses-dot" aria-hidden />
+                  {usesLeft} {usesLabel} remaining
+                </p>
               )}
-            </div>
-          </nav>
-        </>
-      ) : null}
+              <div className="site-header__mobile-links">
+                {NAV_ITEMS.map((item) => (
+                  <Link
+                    key={item.key}
+                    href={item.href}
+                    onClick={closeMenu}
+                    className={`site-header__mobile-link${activePath === item.key ? ' site-header__mobile-link--active' : ''}`}
+                  >
+                    {item.label}
+                    <span className="site-header__mobile-link-arrow" aria-hidden>
+                      →
+                    </span>
+                  </Link>
+                ))}
+              </div>
+              <div className="site-header__mobile-footer">
+                <Link
+                  href="/login?next=/dashboard"
+                  onClick={closeMenu}
+                  className="site-header__mobile-login"
+                >
+                  Login
+                </Link>
+                {onJoinClick ? (
+                  <button type="button" onClick={() => { closeMenu(); onJoinClick() }} className="site-header__mobile-cta">
+                    {joinText}
+                  </button>
+                ) : (
+                  <Link href="/" onClick={closeMenu} className="site-header__mobile-cta site-header__mobile-cta--link">
+                    🔥 Roast Free
+                  </Link>
+                )}
+              </div>
+            </nav>
+          </>
+        ) : null}
+      </div>
 
       {showTicker ? (
         <div className="site-header__ticker" aria-label="Live roast activity">
