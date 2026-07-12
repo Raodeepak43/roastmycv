@@ -1,9 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
-import { Logo } from '@/components/Logo'
 
 type ActivePath = 'home' | 'linkedin-roast' | 'blog' | 'resume-builder' | 'plans' | 'career-tools'
 
@@ -114,23 +114,34 @@ export function SiteHeader({
   )
 
   return (
-    <header className="site-header">
+    <header className={`site-header${menuOpen ? ' site-header--menu-open' : ''}`}>
       <div className="site-header__bar">
         <div className="site-header__inner">
           <div className="site-header__row">
             <div className="site-header__brand">
-              <Logo
-                variant="mark"
+              <Link
                 href="/"
                 onClick={closeMenu}
-                className="site-header__logo site-header__logo--mobile"
-              />
-              <Logo
-                variant="light"
-                href="/"
-                onClick={closeMenu}
-                className="site-header__logo site-header__logo--desktop"
-              />
+                className="site-header__logo"
+                aria-label="MyCVRoast home"
+              >
+                <Image
+                  src="/brand/mark-saas.svg"
+                  alt=""
+                  width={32}
+                  height={32}
+                  className="site-header__logo-img site-header__logo-img--mark h-8 w-8"
+                  priority
+                />
+                <Image
+                  src="/brand/logo-saas-light.svg"
+                  alt=""
+                  width={132}
+                  height={32}
+                  className="site-header__logo-img site-header__logo-img--full h-7 w-auto max-w-[140px] sm:max-w-[160px]"
+                  priority
+                />
+              </Link>
               {showBreadcrumb ? (
                 <>
                   <span className="site-header__crumb-sep hidden sm:inline" aria-hidden>
@@ -221,59 +232,59 @@ export function SiteHeader({
             </div>
           )}
         </div>
-
-        {menuOpen ? (
-          <>
-            <button
-              type="button"
-              className="site-header__backdrop"
-              aria-label="Close menu"
-              onClick={closeMenu}
-            />
-            <nav id="site-header-mobile-nav" className="site-header__mobile-nav" aria-label="Mobile">
-              {showUses && (
-                <p className="site-header__mobile-uses" aria-live="polite">
-                  <span className="site-header__mobile-uses-dot" aria-hidden />
-                  {usesLeft} {usesLabel} remaining
-                </p>
-              )}
-              <div className="site-header__mobile-links">
-                {NAV_ITEMS.map((item) => (
-                  <Link
-                    key={item.key}
-                    href={item.href}
-                    onClick={closeMenu}
-                    className={`site-header__mobile-link${activePath === item.key ? ' site-header__mobile-link--active' : ''}`}
-                  >
-                    {item.label}
-                    <span className="site-header__mobile-link-arrow" aria-hidden>
-                      →
-                    </span>
-                  </Link>
-                ))}
-              </div>
-              <div className="site-header__mobile-footer">
-                <Link
-                  href="/login?next=/dashboard"
-                  onClick={closeMenu}
-                  className="site-header__mobile-login"
-                >
-                  Login
-                </Link>
-                {onJoinClick ? (
-                  <button type="button" onClick={() => { closeMenu(); onJoinClick() }} className="site-header__mobile-cta">
-                    {joinText}
-                  </button>
-                ) : (
-                  <Link href="/" onClick={closeMenu} className="site-header__mobile-cta site-header__mobile-cta--link">
-                    🔥 Roast Free
-                  </Link>
-                )}
-              </div>
-            </nav>
-          </>
-        ) : null}
       </div>
+
+      {menuOpen ? (
+        <>
+          <button
+            type="button"
+            className="site-header__backdrop"
+            aria-label="Close menu"
+            onClick={closeMenu}
+          />
+          <nav id="site-header-mobile-nav" className="site-header__mobile-nav" aria-label="Mobile">
+            {showUses && (
+              <p className="site-header__mobile-uses" aria-live="polite">
+                <span className="site-header__mobile-uses-dot" aria-hidden />
+                {usesLeft} {usesLabel} remaining
+              </p>
+            )}
+            <div className="site-header__mobile-links">
+              {NAV_ITEMS.map((item) => (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  onClick={closeMenu}
+                  className={`site-header__mobile-link${activePath === item.key ? ' site-header__mobile-link--active' : ''}`}
+                >
+                  {item.label}
+                  <span className="site-header__mobile-link-arrow" aria-hidden>
+                    →
+                  </span>
+                </Link>
+              ))}
+            </div>
+            <div className="site-header__mobile-footer">
+              <Link
+                href="/login?next=/dashboard"
+                onClick={closeMenu}
+                className="site-header__mobile-login"
+              >
+                Login
+              </Link>
+              {onJoinClick ? (
+                <button type="button" onClick={() => { closeMenu(); onJoinClick() }} className="site-header__mobile-cta">
+                  {joinText}
+                </button>
+              ) : (
+                <Link href="/" onClick={closeMenu} className="site-header__mobile-cta site-header__mobile-cta--link">
+                  🔥 Roast Free
+                </Link>
+              )}
+            </div>
+          </nav>
+        </>
+      ) : null}
 
       {showTicker ? (
         <div className="site-header__ticker" aria-label="Live roast activity">
