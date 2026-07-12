@@ -18,8 +18,8 @@ export function DashboardJourneyNav({ onNavigate, compact }: Props) {
   const [openId, setOpenId] = useState<string | null>(compact ? null : activePhase?.id ?? 'fix-cv')
 
   useEffect(() => {
-    if (activePhase) setOpenId(activePhase.id)
-  }, [activePhase?.id])
+    if (!compact && activePhase) setOpenId(activePhase.id)
+  }, [activePhase?.id, compact])
 
   return (
     <div className={compact ? 'dash-journey-nav dash-journey-nav--compact' : 'dash-journey-nav'}>

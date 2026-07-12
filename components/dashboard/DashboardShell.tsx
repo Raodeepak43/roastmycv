@@ -142,6 +142,14 @@ export function DashboardShell({ email, onSignOut, children }: DashboardShellPro
     setMenuOpen(false)
   }, [pathname])
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSidebarOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
   const searchHref =
     searchQuery.trim() &&
     DASHBOARD_TOOLS.find((t) => t.label.toLowerCase().includes(searchQuery.trim().toLowerCase()))?.href
@@ -169,9 +177,9 @@ export function DashboardShell({ email, onSignOut, children }: DashboardShellPro
       )}
 
       <aside
-        className={`dash-sidebar ${
-          sidebarOpen ? 'dash-sidebar--mobile max-[860px]:flex' : 'max-[860px]:hidden'
-        } min-[861px]:flex`}
+        className={`dash-sidebar${sidebarOpen ? ' dash-sidebar--open' : ''}${
+          sidebarOpen ? ' dash-sidebar--mobile' : ''
+        }`}
       >
         <div className="dash-sidebar__brand">
           <DashboardLink href="/dashboard" className="flex min-w-0 flex-1 items-center gap-2.5" onClick={closeSidebar}>
@@ -180,11 +188,11 @@ export function DashboardShell({ email, onSignOut, children }: DashboardShellPro
           </DashboardLink>
           <button
             type="button"
-            className="dash-mobile-menu min-[861px]:hidden"
+            className="dash-sidebar__close min-[861px]:hidden"
             onClick={closeSidebar}
             aria-label="Close menu"
           >
-            <X className="size-5" />
+            <X className="size-5" aria-hidden />
           </button>
         </div>
 
